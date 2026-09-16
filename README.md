@@ -5,7 +5,7 @@ Falta implemtar conexiones de poblaciones el script no configura migración ni e
 # ms → msprime
 
 Simulaciones de coalescencia equivalentes a comandos de `ms`, corridas con
-[`msprime`](https://tskit.dev/msprime/docs/stable/intro.html) y exportadas a CSV.
+[`msprime`](https://tskit.dev/msprime/docs/stable/intro.html).
 
 ## Contenido
 
