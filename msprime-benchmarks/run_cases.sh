@@ -4,10 +4,9 @@
 #
 # Nota: ms_msprime_simple.py no soporta -T/-L ni matrices de migracion
 # asimetricas (--ma). Los casos 03 y 05 usan migracion asimetrica y por eso
-# estan deshabilitados abajo; si los necesitas, hay que restaurar --ma en el
-# script de Python.
+# estan deshabilitados abajo;
 #
-# Uso:
+#
 #   ./run_cases.sh                  # corre todos los casos soportados
 #   ./run_cases.sh 01 04            # corre solo los casos 01 y 04
 #   N0=25000 ./run_cases.sh         # cambiar el N0 de referencia
@@ -15,7 +14,7 @@
 set -euo pipefail
 
 PY=${PY:-python3}
-SCRIPT=${SCRIPT:-ms_msprime_simple.py}
+SCRIPT=${SCRIPT:-ms_sim.py}
 OUTDIR=${OUTDIR:-results}
 N0=${N0:-10000}
 REPS=${REPS:-}          # si esta vacio se usan las replicas de cada caso
@@ -80,15 +79,14 @@ if quiere 02; then
 fi
 
 # ---------------------------------------------------------------------------
-# case 03 (DESHABILITADO)
+# case 03 
 #   ms 15 100000 -t 10 -r 10 100000 -I 3 10 4 1
 #      -ma x 1.0 2.0 3.0 x 4.0 5.0 6.0 x
 #      -eN 1 .1 -eN 3 10 -ej .7 2 1 -ej 4 3 1
-#   Matriz de migracion asimetrica: no se puede representar sin --ma.
 # ---------------------------------------------------------------------------
 if quiere 03; then
-    echo "case03: requiere migracion asimetrica (--ma), no soportado por" \
-         "ms_msprime_simple.py. Se omite." >&2
+    echo "case03: no implementado" \
+         "ms_sim.py. Se omite." >&2
 fi
 
 # ---------------------------------------------------------------------------
@@ -106,14 +104,12 @@ if quiere 04; then
 fi
 
 # ---------------------------------------------------------------------------
-# case 05 (DESHABILITADO)
+# case 05 
 #   ms 4 100000 -t 10 -r 10 100000 -I 2 2 2 -ma x 10.0 5.0 x
-#   Matriz asimetrica: 10 en un sentido, 5 en el otro. No representable sin
-#   --ma.
 # ---------------------------------------------------------------------------
 if quiere 05; then
-    echo "case05: requiere migracion asimetrica (--ma), no soportado por" \
-         "ms_msprime_simple.py. Se omite." >&2
+    echo "case05: no implementado" \
+         "ms_sim.py. Se omite." >&2
 fi
 
 # ---------------------------------------------------------------------------
