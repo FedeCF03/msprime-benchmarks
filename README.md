@@ -1,40 +1,24 @@
-# Prueba corrida con : 
-time python3 ms_sim.py --nsam 10 --reps 1000 --seqlen 100000 \
-    --theta 10 --rho 10 --seed 40328 --N0 10000
-Falta implemtar conexiones de poblaciones el script no configura migración ni eventos
-# ms → msprime
+# Traducción de `ms` a `msprime`
 
-Simulaciones de coalescencia equivalentes a comandos de `ms`, corridas con
-[`msprime`](https://tskit.dev/msprime/docs/stable/intro.html).
+Este repositorio contiene la equivalencia y traducción directa entre comandos clásicos del simulador de coalescencia **`ms`** y la librería en Python **`msprime`**.
 
-## Contenido
+---
 
-| Archivo                 | Descripción                                                        |
-|--------------------------|---------------------------------------------------------------------|
-| `ms_sim.py`  | Script principal: arma la demografía y corre la simulación         |
-| `run_cases.sh`          | Corre un set de testcases predefinidos              |
+## 1. Convenciones y Escalado de Parámetros
 
-## Uso rápido
+`ms` formula todos sus parámetros en unidades coalescentes continuas dependientes del tamaño efectivo de referencia $N_0$ . `msprime` modela generaciones e individuos de forma explícita.
 
-```bash
-python3 ms_simp.py --nsam 20 --reps 1000 \
-    --theta 10 --rho 5 --seqlen 100000 \
-```
+Para mantener una equivalencia sin alterar los resultados matemáticos, se fija una escala canónica de **$N_e = 1$**:
 
-Esto corre el equivalente a:
+| Concepto | Comando `ms` | Fórmula / Escala | En `msprime` |
+| :--- | :--- | :--- | :--- |
+| **Tamaño efectivo base** | Implícito ($N_0$) | $N_e = 1$ | `initial_size = 1` |
+| **Tiempo hacia el pasado** | $t$ (unidades de $4N_0$ gen.) | $T = t \times 4N_e$ | `T(t) = t * 4` |
+| **Tasa de recombinación** | `-r rho L` | $\rho = 4N_e r L \implies r = \frac{\rho}{4N_e L}$ | `re_rate(rho, L)` |
+| **Tasa de mutación** | `-t theta` | $\theta = 4N_e \mu L \implies \mu = \frac{\theta}{4N_e L}$ | `mu_rate(theta, L)` |
+| **Tasa de migración** | `-I ... M` o `-ma` | $M = 4N_e m \implies m = \frac{M}{4N_e}$ | `mig_rate(M)` |
+| **Cambios de tamaño** | `-eN t x` o `-en t i x` | $N(t) = x \cdot N_0$ | `initial_size = x * NE` |
 
-```
-ms 20 1000 -t 10 -r 5 100000
-```
-
-
-## Escalado ms → msprime
-
-`ms` expresa todo en unidades de `4·N0`. El script traduce automáticamente
-usando `--N0` (tamaño efectivo de referencia, `10000` por defecto):
-
-`N0` es arbitrario: reescala tiempos y tasas de forma compensada, así que
-las genealogías resultantes no cambian.
 
 ## Opciones
 
@@ -49,7 +33,6 @@ las genealogías resultantes no cambian.
 | `--N0`      | —                  | tamaño efectivo de referencia                           |
 
 
-## Definiciones 
 
 ### Parámetros del Motor de Simulación (`msprime.sim_ancestry`)
 
