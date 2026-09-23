@@ -8,7 +8,7 @@ Este repositorio contiene la equivalencia y traducción directa entre comandos c
 
 `ms` formula todos sus parámetros en unidades coalescentes continuas dependientes del tamaño efectivo de referencia $N_0$ . `msprime` modela generaciones e individuos de forma explícita.
 
-Para mantener una equivalencia sin alterar los resultados matemáticos, se fija una escala canónica de **$N_e = 1$**:
+Para mantener una equivalencia sin alterar los resultados matemáticos, se fija mantiene la escala:
 
 | Concepto | Comando `ms` | Fórmula / Escala | En `msprime` |
 | :--- | :--- | :--- | :--- |
@@ -44,4 +44,4 @@ Para mantener una equivalencia sin alterar los resultados matemáticos, se fija 
 | **`num_replicates`** | **Número de réplicas:** Cantidad de repeticiones independientes de la genealogía que se simulan bajo las mismas condiciones. |
 | **`random_seed`** | **Semilla aleatoria:** Entero que inicializa el generador de números. |
 
-[text](https://tskit.dev/msprime/docs/stable/switch_from_other_simulators.html)
+[msprime switch from other simulators](https://tskit.dev/msprime/docs/stable/switch_from_other_simulators.html)
