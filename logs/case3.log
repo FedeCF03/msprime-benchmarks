@@ -1,0 +1,304 @@
+Traceback (most recent call last):
+  File "/home/fede/msprime-benchmarks/ms_sim.py", line 237, in <module>
+    main()
+    ~~~~^^
+  File "/home/fede/msprime-benchmarks/ms_sim.py", line 234, in main
+    CASES[c]()
+    ~~~~~~~~^^
+  File "/home/fede/msprime-benchmarks/ms_sim.py", line 139, in case3
+    return mutate(reps, theta, L)
+  File "/home/fede/msprime-benchmarks/ms_sim.py", line 38, in mutate
+    return [msprime.sim_mutations(ts, rate=rate) for ts in reps]
+                                                           ^^^^
+  File "/home/fede/miniconda3/lib/python3.14/site-packages/msprime/ancestry.py", line 1616, in run_replicates
+    self.run()
+    ~~~~~~~~^^
+  File "/home/fede/miniconda3/lib/python3.14/site-packages/msprime/ancestry.py", line 1581, in run
+    exit_reason = self._run_until(end_time, event_chunk, debug_func)
+  File "/home/fede/miniconda3/lib/python3.14/site-packages/msprime/ancestry.py", line 1546, in _run_until
+    ret = ExitReason(super().run(end_time, event_chunk))
+                     ~~~~~~~~~~~^^^^^^^^^^^^^^^^^^^^^^^
+msprime._msprime.LibraryError: Attempt to move a lineage into an inactive population
+
+===================================================================
+== INICIO caso 3  |  2026-09-23 00:47:27  |  run 20260923_004727
+===================================================================
+Traceback (most recent call last):
+  File "/home/fede/msprime-benchmarks/ms_sim.py", line 237, in <module>
+    main()
+    ~~~~^^
+  File "/home/fede/msprime-benchmarks/ms_sim.py", line 234, in main
+    CASES[c]()
+    ~~~~~~~~^^
+  File "/home/fede/msprime-benchmarks/ms_sim.py", line 139, in case3
+    return mutate(reps, theta, L)
+  File "/home/fede/msprime-benchmarks/ms_sim.py", line 38, in mutate
+    return [msprime.sim_mutations(ts, rate=rate) for ts in reps]
+                                                           ^^^^
+  File "/home/fede/miniconda3/lib/python3.14/site-packages/msprime/ancestry.py", line 1616, in run_replicates
+    self.run()
+    ~~~~~~~~^^
+  File "/home/fede/miniconda3/lib/python3.14/site-packages/msprime/ancestry.py", line 1581, in run
+    exit_reason = self._run_until(end_time, event_chunk, debug_func)
+  File "/home/fede/miniconda3/lib/python3.14/site-packages/msprime/ancestry.py", line 1546, in _run_until
+    ret = ExitReason(super().run(end_time, event_chunk))
+                     ~~~~~~~~~~~^^^^^^^^^^^^^^^^^^^^^^^
+msprime._msprime.LibraryError: Attempt to move a lineage into an inactive population
+== FIN caso 3  |  2026-09-23 00:47:27  |  FALLO rc=1
+===================================================================
+
+===================================================================
+== INICIO caso 3  |  2026-09-23 00:50:19  |  run 20260923_005019
+===================================================================
+Traceback (most recent call last):
+  File "/home/fede/msprime-benchmarks/ms_sim.py", line 248, in <module>
+    main()
+    ~~~~^^
+  File "/home/fede/msprime-benchmarks/ms_sim.py", line 245, in main
+    CASES[c]()
+    ~~~~~~~~^^
+  File "/home/fede/msprime-benchmarks/ms_sim.py", line 122, in case3
+    dem.set_migration_rate(source="p0", dest="p1", rate=0.0, time=T(0.7))
+    ~~~~~~~~~~~~~~~~~~~~~~^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+TypeError: Demography.set_migration_rate() got an unexpected keyword argument 'time'
+== FIN caso 3  |  2026-09-23 00:50:20  |  FALLO rc=1
+===================================================================
+
+===================================================================
+== INICIO caso 3  |  2026-09-23 00:51:07  |  run 20260923_005107
+===================================================================
+Traceback (most recent call last):
+  File "/home/fede/msprime-benchmarks/ms_sim.py", line 248, in <module>
+    main()
+    ~~~~^^
+  File "/home/fede/msprime-benchmarks/ms_sim.py", line 245, in main
+    CASES[c]()
+    ~~~~~~~~^^
+  File "/home/fede/msprime-benchmarks/ms_sim.py", line 151, in case3
+    return mutate(reps, theta, L)
+  File "/home/fede/msprime-benchmarks/ms_sim.py", line 38, in mutate
+    return [msprime.sim_mutations(ts, rate=rate) for ts in reps]
+                                                           ^^^^
+  File "/home/fede/miniconda3/lib/python3.14/site-packages/msprime/ancestry.py", line 1616, in run_replicates
+    self.run()
+    ~~~~~~~~^^
+  File "/home/fede/miniconda3/lib/python3.14/site-packages/msprime/ancestry.py", line 1581, in run
+    exit_reason = self._run_until(end_time, event_chunk, debug_func)
+  File "/home/fede/miniconda3/lib/python3.14/site-packages/msprime/ancestry.py", line 1546, in _run_until
+    ret = ExitReason(super().run(end_time, event_chunk))
+                     ~~~~~~~~~~~^^^^^^^^^^^^^^^^^^^^^^^
+msprime._msprime.LibraryError: Attempt to move a lineage into an inactive population
+== FIN caso 3  |  2026-09-23 00:51:07  |  FALLO rc=1
+===================================================================
+
+===================================================================
+== INICIO caso 3  |  2026-09-23 00:52:07  |  run 20260923_005207
+===================================================================
+Traceback (most recent call last):
+  File "/home/fede/msprime-benchmarks/ms_sim.py", line 244, in <module>
+    main()
+    ~~~~^^
+  File "/home/fede/msprime-benchmarks/ms_sim.py", line 241, in main
+    CASES[c]()
+    ~~~~~~~~^^
+  File "/home/fede/msprime-benchmarks/ms_sim.py", line 147, in case3
+    return mutate(reps, theta, L)
+  File "/home/fede/msprime-benchmarks/ms_sim.py", line 38, in mutate
+    return [msprime.sim_mutations(ts, rate=rate) for ts in reps]
+                                                           ^^^^
+  File "/home/fede/miniconda3/lib/python3.14/site-packages/msprime/ancestry.py", line 1616, in run_replicates
+    self.run()
+    ~~~~~~~~^^
+  File "/home/fede/miniconda3/lib/python3.14/site-packages/msprime/ancestry.py", line 1581, in run
+    exit_reason = self._run_until(end_time, event_chunk, debug_func)
+  File "/home/fede/miniconda3/lib/python3.14/site-packages/msprime/ancestry.py", line 1546, in _run_until
+    ret = ExitReason(super().run(end_time, event_chunk))
+                     ~~~~~~~~~~~^^^^^^^^^^^^^^^^^^^^^^^
+msprime._msprime.LibraryError: Attempt to move a lineage into an inactive population
+== FIN caso 3  |  2026-09-23 00:52:07  |  FALLO rc=1
+===================================================================
+
+===================================================================
+== INICIO caso 3  |  2026-09-23 00:53:31  |  run 20260923_005331
+===================================================================
+Traceback (most recent call last):
+  File "/home/fede/msprime-benchmarks/ms_sim.py", line 244, in <module>
+    main()
+    ~~~~^^
+  File "/home/fede/msprime-benchmarks/ms_sim.py", line 241, in main
+    CASES[c]()
+    ~~~~~~~~^^
+  File "/home/fede/msprime-benchmarks/ms_sim.py", line 147, in case3
+    return mutate(reps, theta, L)
+  File "/home/fede/msprime-benchmarks/ms_sim.py", line 38, in mutate
+    return [msprime.sim_mutations(ts, rate=rate) for ts in reps]
+                                                           ^^^^
+  File "/home/fede/miniconda3/lib/python3.14/site-packages/msprime/ancestry.py", line 1616, in run_replicates
+    self.run()
+    ~~~~~~~~^^
+  File "/home/fede/miniconda3/lib/python3.14/site-packages/msprime/ancestry.py", line 1581, in run
+    exit_reason = self._run_until(end_time, event_chunk, debug_func)
+  File "/home/fede/miniconda3/lib/python3.14/site-packages/msprime/ancestry.py", line 1546, in _run_until
+    ret = ExitReason(super().run(end_time, event_chunk))
+                     ~~~~~~~~~~~^^^^^^^^^^^^^^^^^^^^^^^
+msprime._msprime.LibraryError: Attempt to move a lineage into an inactive population
+== FIN caso 3  |  2026-09-23 00:53:31  |  FALLO rc=1
+===================================================================
+
+===================================================================
+== INICIO caso 3  |  2026-09-23 00:54:40  |  run 20260923_005440
+===================================================================
+DemographyDebugger
+╠════════════════════════════════╗
+║ Epoch[0]: [0, 2.8) generations ║
+╠════════════════════════════════╝
+╟    Populations (total=3 active=2)
+║    ┌────────────────────────────────────────────┐
+║    │    │  start│   end│growth_rate  │ p1  │ p2 │
+║    ├────────────────────────────────────────────┤
+║    │  p1│    1.0│   1.0│ 0           │  0  │ 1  │
+║    │  p2│    1.0│   1.0│ 0           │ 1.5 │ 0  │
+║    └────────────────────────────────────────────┘
+╟    Events @ generation 2.8
+║    ┌──────────────────────────────────────────────────────────────────────────┐
+║    │  time│type        │parameters     │effect                                │
+║    ├──────────────────────────────────────────────────────────────────────────┤
+║    │   2.8│Population  │derived=[p1],  │Moves all lineages from the 'p1'      │
+║    │      │Split       │ancestral=p0   │derived population to the ancestral   │
+║    │      │            │               │'p0' population. Also set 'p1' to     │
+║    │      │            │               │inactive, and all migration rates to  │
+║    │      │            │               │and from the derived population to    │
+║    │      │            │               │zero.                                 │
+║    └──────────────────────────────────────────────────────────────────────────┘
+╠════════════════════════════════╗
+║ Epoch[1]: [2.8, 4) generations ║
+╠════════════════════════════════╝
+╟    Populations (total=3 active=2)
+║    ┌──────────────────────────────────────────────┐
+║    │    │  start│   end│growth_rate  │  p0  │ p2  │
+║    ├──────────────────────────────────────────────┤
+║    │  p0│    1.0│   1.0│ 0           │  0   │ 0.5 │
+║    │  p2│    1.0│   1.0│ 0           │ 1.25 │  0  │
+║    └──────────────────────────────────────────────┘
+╟    Events @ generation 4
+║    ┌─────────────────────────────────────────────────────────────────────────────┐
+║    │  time│type        │parameters        │effect                                │
+║    ├─────────────────────────────────────────────────────────────────────────────┤
+║    │     4│Population  │population=p0,    │initial_size → 0.1 for population p0  │
+║    │      │parameter   │initial_size=0.1  │                                      │
+║    │      │change      │                  │                                      │
+║    │┈┈┈┈┈┈┈┈┈┈┈┈┈┈┈┈┈┈┈┈┈┈┈┈┈┈┈┈┈┈┈┈┈┈┈┈┈┈┈┈┈┈┈┈┈┈┈┈┈┈┈┈┈┈┈┈┈┈┈┈┈┈┈┈┈┈┈┈┈┈┈┈┈┈┈┈┈│
+║    │     4│Population  │population=p2,    │initial_size → 0.1 for population p2  │
+║    │      │parameter   │initial_size=0.1  │                                      │
+║    │      │change      │                  │                                      │
+║    └─────────────────────────────────────────────────────────────────────────────┘
+╠═══════════════════════════════╗
+║ Epoch[2]: [4, 12) generations ║
+╠═══════════════════════════════╝
+╟    Populations (total=3 active=2)
+║    ┌──────────────────────────────────────────────┐
+║    │    │  start│   end│growth_rate  │  p0  │ p2  │
+║    ├──────────────────────────────────────────────┤
+║    │  p0│    0.1│   0.1│ 0           │  0   │ 0.5 │
+║    │  p2│    0.1│   0.1│ 0           │ 1.25 │  0  │
+║    └──────────────────────────────────────────────┘
+╟    Events @ generation 12
+║    ┌─────────────────────────────────────────────────────────────────────────────┐
+║    │  time│type        │parameters         │effect                               │
+║    ├─────────────────────────────────────────────────────────────────────────────┤
+║    │    12│Population  │population=p0,     │initial_size → 10 for population p0  │
+║    │      │parameter   │initial_size=10.0  │                                     │
+║    │      │change      │                   │                                     │
+║    │┈┈┈┈┈┈┈┈┈┈┈┈┈┈┈┈┈┈┈┈┈┈┈┈┈┈┈┈┈┈┈┈┈┈┈┈┈┈┈┈┈┈┈┈┈┈┈┈┈┈┈┈┈┈┈┈┈┈┈┈┈┈┈┈┈┈┈┈┈┈┈┈┈┈┈┈┈│
+║    │    12│Population  │population=p2,     │initial_size → 10 for population p2  │
+║    │      │parameter   │initial_size=10.0  │                                     │
+║    │      │change      │                   │                                     │
+║    └─────────────────────────────────────────────────────────────────────────────┘
+╠════════════════════════════════╗
+║ Epoch[3]: [12, 16) generations ║
+╠════════════════════════════════╝
+╟    Populations (total=3 active=2)
+║    ┌───────────────────────────────────────────────┐
+║    │    │  start│    end│growth_rate  │  p0  │ p2  │
+║    ├───────────────────────────────────────────────┤
+║    │  p0│   10.0│   10.0│ 0           │  0   │ 0.5 │
+║    │  p2│   10.0│   10.0│ 0           │ 1.25 │  0  │
+║    └───────────────────────────────────────────────┘
+╟    Events @ generation 16
+║    ┌──────────────────────────────────────────────────────────────────────────┐
+║    │  time│type        │parameters     │effect                                │
+║    ├──────────────────────────────────────────────────────────────────────────┤
+║    │    16│Population  │derived=[p2],  │Moves all lineages from the 'p2'      │
+║    │      │Split       │ancestral=p0   │derived population to the ancestral   │
+║    │      │            │               │'p0' population. Also set 'p2' to     │
+║    │      │            │               │inactive, and all migration rates to  │
+║    │      │            │               │and from the derived population to    │
+║    │      │            │               │zero.                                 │
+║    └──────────────────────────────────────────────────────────────────────────┘
+╠═════════════════════════════════╗
+║ Epoch[4]: [16, inf) generations ║
+╠═════════════════════════════════╝
+╟    Populations (total=3 active=1)
+║    ┌──────────────────────────────────┐
+║    │    │  start│    end│growth_rate  │
+║    ├──────────────────────────────────┤
+║    │  p0│   10.0│   10.0│ 0           │
+║    └──────────────────────────────────┘
+
+Traceback (most recent call last):
+  File "/home/fede/msprime-benchmarks/ms_sim.py", line 244, in <module>
+    main()
+    ~~~~^^
+  File "/home/fede/msprime-benchmarks/ms_sim.py", line 241, in main
+    CASES[c]()
+    ~~~~~~~~^^
+  File "/home/fede/msprime-benchmarks/ms_sim.py", line 147, in case3
+    return mutate(reps, theta, L)
+  File "/home/fede/msprime-benchmarks/ms_sim.py", line 38, in mutate
+    return [msprime.sim_mutations(ts, rate=rate) for ts in reps]
+                                                           ^^^^
+  File "/home/fede/miniconda3/lib/python3.14/site-packages/msprime/ancestry.py", line 1616, in run_replicates
+    self.run()
+    ~~~~~~~~^^
+  File "/home/fede/miniconda3/lib/python3.14/site-packages/msprime/ancestry.py", line 1581, in run
+    exit_reason = self._run_until(end_time, event_chunk, debug_func)
+  File "/home/fede/miniconda3/lib/python3.14/site-packages/msprime/ancestry.py", line 1546, in _run_until
+    ret = ExitReason(super().run(end_time, event_chunk))
+                     ~~~~~~~~~~~^^^^^^^^^^^^^^^^^^^^^^^
+msprime._msprime.LibraryError: Attempt to move a lineage into an inactive population
+== FIN caso 3  |  2026-09-23 00:54:40  |  FALLO rc=1
+===================================================================
+
+===================================================================
+== INICIO caso 3  |  2026-09-23 00:55:45  |  run 20260923_005545
+===================================================================
+
+===================================================================
+== INICIO caso 3  |  2026-09-23 00:59:55  |  run 20260923_005955
+===================================================================
+== FIN caso 3  |  2026-09-23 00:59:56  |  OK
+===================================================================
+
+===================================================================
+== INICIO caso 3  |  2026-09-23 01:00:24  |  run 20260923_010024
+===================================================================
+== FIN caso 3  |  2026-09-23 01:00:24  |  OK
+===================================================================
+
+===================================================================
+== INICIO caso 3  |  2026-09-23 01:15:58  |  run 20260923_011558
+===================================================================
+== INICIO caso 3  |  2026-09-23 01:15:59
+caso 3: T_MRCA media = 3.5789 (n=10)
+== FIN caso 3  |  2026-09-23 01:15:59  |  0.03 s  |  OK
+== FIN caso 3  |  2026-09-23 01:15:59  |  OK
+===================================================================
+
+===================================================================
+== INICIO caso 3  |  2026-09-23 01:17:30  |  run 20260923_011730
+===================================================================
+== INICIO caso 3  |  2026-09-23 01:17:31
+caso 3: T_MRCA media = 2.6844 (n=100000)
+== FIN caso 3  |  2026-09-23 01:21:00  |  209.34 s  |  OK
+== FIN caso 3  |  2026-09-23 01:21:00  |  OK
+===================================================================

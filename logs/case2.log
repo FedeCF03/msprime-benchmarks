@@ -1,0 +1,65 @@
+Traceback (most recent call last):
+  File "/home/fede/msprime-benchmarks/ms_sim.py", line 237, in <module>
+    main()
+    ~~~~^^
+  File "/home/fede/msprime-benchmarks/ms_sim.py", line 234, in main
+    CASES[c]()
+    ~~~~~~~~^^
+  File "/home/fede/msprime-benchmarks/ms_sim.py", line 174, in case2
+    return mutate(reps, theta, L)
+  File "/home/fede/msprime-benchmarks/ms_sim.py", line 38, in mutate
+    return [msprime.sim_mutations(ts, rate=rate) for ts in reps]
+                                                           ^^^^
+  File "/home/fede/miniconda3/lib/python3.14/site-packages/msprime/ancestry.py", line 1616, in run_replicates
+    self.run()
+    ~~~~~~~~^^
+  File "/home/fede/miniconda3/lib/python3.14/site-packages/msprime/ancestry.py", line 1581, in run
+    exit_reason = self._run_until(end_time, event_chunk, debug_func)
+  File "/home/fede/miniconda3/lib/python3.14/site-packages/msprime/ancestry.py", line 1546, in _run_until
+    ret = ExitReason(super().run(end_time, event_chunk))
+                     ~~~~~~~~~~~^^^^^^^^^^^^^^^^^^^^^^^
+msprime._msprime.LibraryError: Attempt to move a lineage into an inactive population
+
+===================================================================
+== INICIO caso 2  |  2026-09-23 01:00:27  |  run 20260923_010027
+===================================================================
+== FIN caso 2  |  2026-09-23 01:00:28  |  OK
+===================================================================
+
+===================================================================
+== INICIO caso 2  |  2026-09-23 01:22:04  |  run 20260923_012204
+===================================================================
+== INICIO caso 2  |  2026-09-23 01:22:04
+Traceback (most recent call last):
+  File "/home/fede/msprime-benchmarks/ms_sim.py", line 247, in <module>
+    main()
+    ~~~~^^
+  File "/home/fede/msprime-benchmarks/ms_sim.py", line 243, in main
+    stats(CASES[c](), label=f"caso {c}")   # ✅ generador
+    ~~~~~^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/fede/msprime-benchmarks/ms_sim.py", line 226, in stats
+    for i, ts in enumerate(gen):
+                 ~~~~~~~~~^^^^^
+  File "/home/fede/msprime-benchmarks/ms_sim.py", line 38, in mutate
+    for ts in reps:
+              ^^^^
+  File "/home/fede/miniconda3/lib/python3.14/site-packages/msprime/ancestry.py", line 1616, in run_replicates
+    self.run()
+    ~~~~~~~~^^
+  File "/home/fede/miniconda3/lib/python3.14/site-packages/msprime/ancestry.py", line 1581, in run
+    exit_reason = self._run_until(end_time, event_chunk, debug_func)
+  File "/home/fede/miniconda3/lib/python3.14/site-packages/msprime/ancestry.py", line 1546, in _run_until
+    ret = ExitReason(super().run(end_time, event_chunk))
+                     ~~~~~~~~~~~^^^^^^^^^^^^^^^^^^^^^^^
+msprime._msprime.LibraryError: Attempt to move a lineage into an inactive population
+== FIN caso 2  |  2026-09-23 01:22:04  |  FALLO rc=1
+===================================================================
+
+===================================================================
+== INICIO caso 2  |  2026-09-23 01:23:50  |  run 20260923_012350
+===================================================================
+== INICIO caso 2  |  2026-09-23 01:23:50
+caso 2: T_MRCA media = 18.7986 (n=20000)
+== FIN caso 2  |  2026-09-23 01:25:21  |  90.87 s  |  OK
+== FIN caso 2  |  2026-09-23 01:25:21  |  OK
+===================================================================

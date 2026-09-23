@@ -43,3 +43,5 @@ Para mantener una equivalencia sin alterar los resultados matemáticos, se fija 
 | **`recombination_rate`** | **Tasa de recombinación ($r$):** Probabilidad de entrecruzamiento. |
 | **`num_replicates`** | **Número de réplicas:** Cantidad de repeticiones independientes de la genealogía que se simulan bajo las mismas condiciones. |
 | **`random_seed`** | **Semilla aleatoria:** Entero que inicializa el generador de números. |
+
+[text](https://tskit.dev/msprime/docs/stable/switch_from_other_simulators.html)
