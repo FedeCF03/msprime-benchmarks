@@ -17,15 +17,15 @@ import sys
 import msprime
 
 NE    = 1
-SCALE = 4 * NE          # ms mide tiempos en unidades de 4N generaciones
+SCALE = 4 * NE        
 
-def T(t):                # tiempo ms -> generaciones msprime
+def T(t):                
     return t * SCALE
-def mu_rate(theta, L):   # theta = 4N*mu*L
+def mu_rate(theta, L):   # theta = 4N*mu*L  ----  mu = theta / (4N0 * L) = theta / (SCALE * L)
     return theta / (SCALE * L)
-def re_rate(rho, L):     # rho   = 4N*r*L
-    return rho / (SCALE * L)
-def mig_rate(M):         # M = 4N*m
+def re_rate(rho, L):     # rho   = 4N*r*L ---- r = rho / (4N0 * L) = rho / (SCALE * L)
+    return rho / (SCALE * L) 
+def mig_rate(M):         # M = 4N*m --- m = M / (4N0) = M / SCALE
     return M / SCALE
 def size(N_ms):          # tamaño en unidades de N
     return N_ms * NE
@@ -150,14 +150,10 @@ def case2():
     nsam, rep, L, rho, theta = 15, 20_000, 100_000, 10, 10
     dem = msprime.Demography()
     
-    # p0 es la población troncal (ancestral en ambos splits)
-    # Necesita initially_active=True para poder muestrear de ella en t=0
     dem.add_population(name="p0", initial_size=NE, initially_active=True)
     dem.add_population(name="p1", initial_size=NE)
     dem.add_population(name="p2", initial_size=NE)
 
-    # Migraciones SOLO entre p0 y las que estarán activas
-    # p1 y p2 tienen migración con p0 mientras están activas
     dem.set_migration_rate(source="p0", dest="p1", rate=mig_rate(5.0))
     dem.set_migration_rate(source="p1", dest="p0", rate=mig_rate(5.0))
     dem.set_migration_rate(source="p0", dest="p2", rate=mig_rate(5.0))
@@ -250,8 +246,8 @@ def main():
             continue
         t0 = time.perf_counter()
         print(f"== INICIO caso {c}  |  {time.strftime('%Y-%m-%d %H:%M:%S')}")
-        stats(CASES[c](), label=f"caso {c}")   # ✅ generador
+        stats(CASES[c](), label=f"caso {c}")   
         t1 = time.perf_counter()
-        print(f"== FIN caso {c}  |  {time.strftime('%Y-%m-%d %H:%M:%S')}  |  {t1-t0:.2f} s  |  OK")
+        print(f"== FIN caso {c}  |  {time.strftime('%Y-%m-%d %H:%M:%S')}  |  {t1-t0:.2f} s  | OK")
 if __name__ == "__main__":
     main()
