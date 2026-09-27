@@ -13,3 +13,27 @@ caso 4: T_MRCA media = 2.0030 (n=100000)
 == FIN caso 4  |  2026-09-23 01:32:01  |  182.41 s  |  OK
 == FIN caso 4  |  2026-09-23 01:32:01  |  OK
 ===================================================================
+
+===================================================================
+== INICIO caso 4  |  2026-09-27 19:52:35  |  run 20260927_195235
+===================================================================
+== INICIO caso 4  |  2026-09-27 19:52:35
+--- caso 4  (n=100000 réplicas) ---
+  T_MRCA (primer árbol, s0-s1) : media = 3.9997  desvio = 4.1715   [escala temporal de coalescencia]
+  Nº de árboles (breakpoints)  : media = 40.16  desvio = 13.58   [recombinación]
+  Nº de eventos de migración   : media = 114.39  desvio = 43.89   [tasas de migración]
+  Nº de eventos de coalescencia: media = 35.00  desvio = 17.20   [tamaños poblacionales]
+== FIN caso 4  |  2026-09-27 19:56:58  |  262.94 s  | OK
+
+===================================================================
+== INICIO caso 4  |  2026-09-27 19:58:22  |  run 20260927_195822
+===================================================================
+== INICIO caso 4  |  2026-09-27 19:58:23
+--- caso 4  (n=100000 réplicas) ---
+  T_MRCA (primer árbol, s0-s1) : media = 3.9997  desvio = 4.1715   [escala temporal de coalescencia]
+  Nº de árboles (breakpoints)  : media = 40.16  desvio = 13.58   [recombinación]
+  Nº de eventos de migración   : media = 114.39  desvio = 43.89   [tasas de migración]
+  Nº de eventos de coalescencia: media = 35.00  desvio = 17.20   [tamaños poblacionales]
+== FIN caso 4  |  2026-09-27 20:00:32  |  129.21 s  | OK
+== FIN caso 4  |  2026-09-27 20:00:32  |  OK
+===================================================================

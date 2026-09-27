@@ -12,12 +12,13 @@ Para mantener una equivalencia sin alterar los resultados matemáticos, se fija 
 
 | Concepto | Comando `ms` | Fórmula / Escala | En `msprime` |
 | :--- | :--- | :--- | :--- |
-| **Tamaño efectivo base** | Implícito ($N_0$) | $N_e = 1$ | `initial_size = 1` |
+| **Ploidía** | Muestras haploides (cromosomas) | `nsam` = copias génicas | `ploidy=1`, `samples=nsam` |
+| **Tamaño efectivo base** | Implícito ($N_0$ diploides, $2N_0$ copias) | $N_e = 1$ | `population_size = 2·NE` (haploides) |
 | **Tiempo hacia el pasado** | $t$ (unidades de $4N_0$ gen.) | $T = t \times 4N_e$ | `T(t) = t * 4` |
 | **Tasa de recombinación** | `-r rho L` | $\rho = 4N_e r L \implies r = \frac{\rho}{4N_e L}$ | `re_rate(rho, L)` |
 | **Tasa de mutación** | `-t theta` | $\theta = 4N_e \mu L \implies \mu = \frac{\theta}{4N_e L}$ | `mu_rate(theta, L)` |
 | **Tasa de migración** | `-I ... M` o `-ma` | $M = 4N_e m \implies m = \frac{M}{4N_e}$ | `mig_rate(M)` |
-| **Cambios de tamaño** | `-eN t x` o `-en t i x` | $N(t) = x \cdot N_0$ | `initial_size = x * NE` |
+| **Cambios de tamaño** | `-eN t x` o `-en t i x` | $N(t) = x \cdot N_0$ diploides $= 2x N_0$ haploides | `initial_size = size(x) = 2·x·NE` |
 
 
 ## Opciones

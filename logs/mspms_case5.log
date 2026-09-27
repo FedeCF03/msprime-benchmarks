@@ -1,0 +1,13 @@
+
+===================================================================
+== INICIO caso 5 (mspms)  |  2026-09-27 19:50:51
+== cmd: /home/fedecalta/msprime-benchmarks/venv/bin/mspms 4 50 -seeds 40328 19150 54118 -t 10 -r 10 100000 -I 2 2 2 -ma x 10 5 x -T -p 6
+===================================================================
+--- caso 5 (mspms)  (n=50 réplicas) ---
+  T_MRCA                        : media = 0.9706 u.ms = 3.8824 gen  desvio = 4.0913   [escala de coalescencia]
+  Nº de árboles                 : media = 36.48  desvio = 12.98   [recombinación (rho)]
+  Nº de eventos de migración    : n/a   [el formato ms no los expone]
+  Nº de eventos de coalescencia : media = 109.44  desvio = 38.94   [tamaños poblacionales]
+  cmd: /home/fedecalta/msprime-benchmarks/venv/bin/mspms 4 50 -seeds 40328 19150 54118 -t 10 -r 10 100000 -I 2 2 2 -ma x 10 5 x -T -p 6
+== FIN caso 5 (mspms)  |  2026-09-27 19:50:51  |  0.60 s  | OK
+===================================================================

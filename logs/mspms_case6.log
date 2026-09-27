@@ -1,0 +1,26 @@
+
+===================================================================
+== INICIO caso 6 (mspms)  |  2026-09-27 19:37:41
+== cmd: /home/fedecalta/msprime-benchmarks/venv/bin/mspms 20 20 -seeds 40328 19150 54118 -t 1000 -r 2000 100000 -T -p 6
+===================================================================
+--- caso 6 (mspms)  (n=20 réplicas) ---
+  T_MRCA                        : media = 0.4274 u.ms = 1.7094 gen  desvio = 1.4101   [escala de coalescencia]
+  Nº de árboles                 : media = 6781.30  desvio = 205.74   [recombinación (rho)]
+  Nº de eventos de migración    : n/a   [el formato ms no los expone]
+  Nº de eventos de coalescencia : media = 128844.70  desvio = 3908.99   [tamaños poblacionales; suma sobre árboles marginales]
+  cmd: /home/fedecalta/msprime-benchmarks/venv/bin/mspms 20 20 -seeds 40328 19150 54118 -t 1000 -r 2000 100000 -T -p 6
+== FIN caso 6 (mspms)  |  2026-09-27 19:37:41  |  43.42 s  | OK
+===================================================================
+
+===================================================================
+== INICIO caso 6 (mspms)  |  2026-09-27 19:52:27
+== cmd: /home/fedecalta/msprime-benchmarks/venv/bin/mspms 20 20 -seeds 40328 19150 54118 -t 1000 -r 2000 100000 -T -p 6
+===================================================================
+--- caso 6 (mspms)  (n=20 réplicas) ---
+  T_MRCA                        : media = 0.4274 u.ms = 1.7094 gen  desvio = 1.4101   [escala de coalescencia]
+  Nº de árboles                 : media = 6781.30  desvio = 205.74   [recombinación (rho)]
+  Nº de eventos de migración    : n/a   [el formato ms no los expone]
+  Nº de eventos de coalescencia : media = 128844.70  desvio = 3908.99   [tamaños poblacionales]
+  cmd: /home/fedecalta/msprime-benchmarks/venv/bin/mspms 20 20 -seeds 40328 19150 54118 -t 1000 -r 2000 100000 -T -p 6
+== FIN caso 6 (mspms)  |  2026-09-27 19:52:27  |  96.05 s  | OK
+===================================================================

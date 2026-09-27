@@ -22,3 +22,14 @@ caso 1: T_MRCA media = 12.0200 (n=100000)
 == FIN caso 1  |  2026-09-24 11:19:58  |  91.62 s  |  OK
 == FIN caso 1  |  2026-09-24 11:19:58  |  OK
 ===================================================================
+
+===================================================================
+== INICIO caso 1  |  2026-09-27 19:52:35  |  run 20260927_195235
+===================================================================
+== INICIO caso 1  |  2026-09-27 19:52:35
+--- caso 1  (n=100000 réplicas) ---
+  T_MRCA (primer árbol, s0-s1) : media = 2.1287  desvio = 1.6471   [escala temporal de coalescencia]
+  Nº de árboles (breakpoints)  : media = 78.63  desvio = 9.86   [recombinación]
+  Nº de eventos de migración   : media = 1.05  desvio = 0.22   [tasas de migración]
+  Nº de eventos de coalescencia: media = 64.52  desvio = 8.77   [tamaños poblacionales]
+== FIN caso 1  |  2026-09-27 19:56:33  |  238.05 s  | OK

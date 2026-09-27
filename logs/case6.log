@@ -122,3 +122,63 @@ caso 6: T_MRCA media = 2.3162 (n=50)
 == FIN caso 6  |  2026-09-23 01:35:41  |  11.46 s  |  OK
 == FIN caso 6  |  2026-09-23 01:35:41  |  OK
 ===================================================================
+
+===================================================================
+== INICIO caso 6  |  2026-09-25 15:20:15  |  run 20260925_152015
+===================================================================
+== INICIO caso 6  |  2026-09-25 15:20:15
+caso 6: T_MRCA media = 2.1651 (n=50)
+== FIN caso 6  |  2026-09-25 15:20:40  |  25.05 s  | OK
+== FIN caso 6  |  2026-09-25 15:20:41  |  OK
+===================================================================
+
+===================================================================
+== INICIO caso 6  |  2026-09-27 15:05:21  |  run 20260927_150521
+===================================================================
+== INICIO caso 6  |  2026-09-27 15:05:21
+--- caso 6  (n=50 réplicas) ---
+  T_MRCA (primer árbol, s0-s1) : media = 1.7308  desvio = 1.4245   [escala temporal de coalescencia]
+  Nº de árboles (breakpoints)  : media = 8091.00  desvio = 219.38   [recombinación]
+  Nº de eventos de migración   : media = 0.00  desvio = 0.00   [tasas de migración]
+  Nº de eventos de coalescencia: media = 83902.62  desvio = 3128.46   [tamaños poblacionales]
+  Diversidad π (por bp)        : media = 0.009847  desvio = 0.000327   [mutación + demografía]
+== FIN caso 6  |  2026-09-27 15:06:31  |  70.20 s  | OK
+== FIN caso 6  |  2026-09-27 15:06:31  |  OK
+===================================================================
+
+===================================================================
+== INICIO caso 6  |  2026-09-27 19:40:41  |  run 20260927_194041
+===================================================================
+== INICIO caso 6  |  2026-09-27 19:40:41
+--- caso 6  (n=50 réplicas) ---
+  T_MRCA (primer árbol, s0-s1) : media = 2.1010  desvio = 1.8730   [escala temporal de coalescencia]
+  Nº de árboles (breakpoints)  : media = 6789.12  desvio = 219.80   [recombinación]
+  Nº de eventos de migración   : media = 0.00  desvio = 0.00   [tasas de migración]
+  Nº de eventos de coalescencia: media = 80483.42  desvio = 3593.01   [tamaños poblacionales]
+== FIN caso 6  |  2026-09-27 19:41:51  |  69.80 s  | OK
+== FIN caso 6  |  2026-09-27 19:41:51  |  OK
+===================================================================
+
+===================================================================
+== INICIO caso 6  |  2026-09-27 19:42:14  |  run 20260927_194214
+===================================================================
+== INICIO caso 6  |  2026-09-27 19:42:14
+--- caso 6  (n=50 réplicas) ---
+  T_MRCA (primer árbol, s0-s1) : media = 2.1010  desvio = 1.8730   [escala temporal de coalescencia]
+  Nº de árboles (breakpoints)  : media = 6789.12  desvio = 219.80   [recombinación]
+  Nº de eventos de migración   : media = 0.00  desvio = 0.00   [tasas de migración]
+  Nº de eventos de coalescencia: media = 80483.42  desvio = 3593.01   [tamaños poblacionales]
+== FIN caso 6  |  2026-09-27 19:43:11  |  57.07 s  | OK
+== FIN caso 6  |  2026-09-27 19:43:11  |  OK
+===================================================================
+
+===================================================================
+== INICIO caso 6  |  2026-09-27 19:52:35  |  run 20260927_195235
+===================================================================
+== INICIO caso 6  |  2026-09-27 19:52:35
+--- caso 6  (n=50 réplicas) ---
+  T_MRCA (primer árbol, s0-s1) : media = 2.1010  desvio = 1.8730   [escala temporal de coalescencia]
+  Nº de árboles (breakpoints)  : media = 6789.12  desvio = 219.80   [recombinación]
+  Nº de eventos de migración   : media = 0.00  desvio = 0.00   [tasas de migración]
+  Nº de eventos de coalescencia: media = 80483.42  desvio = 3593.01   [tamaños poblacionales]
+== FIN caso 6  |  2026-09-27 19:54:42  |  126.43 s  | OK
