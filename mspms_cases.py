@@ -7,12 +7,11 @@ Uso:
     python mspms_cases.py 1 3 5            # solo los casos indicados
 
 Notas:
-    - Los valores por réplica no coinciden bit a bit con ms_sim.py (el flujo
+    - Los valores por réplica no coinciden bit a bit con msprime (el flujo
       de RNG es distinto); la comparación es estadística (media ± desvío).
     - Los árboles Newick se leen con DendroPy.
-    - El formato texto de ms no expone migraciones; las coalescencias se
-      aproximan contando nodos internos de los árboles marginales (puede
-      haber doble conteo entre segmentos).
+    - Solo se reportan T_MRCA y nº de árboles, que son los únicos
+      estadísticos directamente comparables con msprime.
 """
 import argparse
 import os
@@ -32,14 +31,14 @@ LOG_DIR = os.path.join(SCRIPT_DIR, "logs")
 SEEDS = ["40328", "19150", "54118"]
 
 CASES = {
-    1: dict(nsam=10, L=100_000, reps=50, args=[
+    1: dict(nsam=10, L=100_000, reps=100000, args=[
         "-t", "10", "-r", "10", "100000",
         "-I", "2", "2", "8",
         "-en", "0.25", "2", "0.2",
         "-eN", "0.4", "10.01", "-eN", "1", "0.01",
         "-ej", "3", "2", "1",
     ]),
-    2: dict(nsam=15, L=100_000, reps=50, args=[
+    2: dict(nsam=15, L=100_000, reps=20000, args=[
         "-t", "10", "-r", "10", "100000",
         "-I", "3", "10", "4", "1",
         "-ma", "x", "5", "5", "5", "x", "5", "5", "5", "x",
@@ -47,7 +46,7 @@ CASES = {
         "-eN", "0.8", "15",
         "-ej", "1", "3", "1",
     ]),
-    3: dict(nsam=15, L=100_000, reps=50, args=[
+    3: dict(nsam=15, L=100_000, reps=100000, args=[
         "-t", "10", "-r", "10", "100000",
         "-I", "3", "10", "4", "1",
         "-ma", "x", "1", "2", "3", "x", "4", "5", "6", "x",
@@ -55,16 +54,16 @@ CASES = {
         "-eN", "1", ".1", "-eN", "3", "10",
         "-ej", "4", "3", "1",
     ]),
-    4: dict(nsam=4, L=100_000, reps=50, args=[
+    4: dict(nsam=4, L=100_000, reps=100000, args=[
         "-t", "10", "-r", "10", "100000",
         "-I", "2", "2", "2", "5.0",
     ]),
-    5: dict(nsam=4, L=100_000, reps=50, args=[
+    5: dict(nsam=4, L=100_000, reps=100000, args=[
         "-t", "10", "-r", "10", "100000",
         "-I", "2", "2", "2",
         "-ma", "x", "10", "5", "x",
     ]),
-    6: dict(nsam=20, L=100_000, reps=20, args=[
+    6: dict(nsam=20, L=100_000, reps=50, args=[
         "-t", "1000", "-r", "2000", "100000",
     ]),
 }
@@ -94,7 +93,7 @@ def newick_tmrca(tree, la, lb):
 # ------------------------------------------------------------------
 def iter_mspms_replicates(cmd):
     """Ejecuta mspms y rinde dicts por réplica con:
-    n_trees, tmrca_ms (unidades 4N0), n_coal."""
+    n_trees, tmrca_ms (unidades 4N0)."""
     proc = subprocess.Popen(cmd, stdout=subprocess.PIPE,
                             stderr=subprocess.PIPE, text=True)
     newicks = []
@@ -105,15 +104,12 @@ def iter_mspms_replicates(cmd):
         if segsites is None:
             return None
         tmrca = float("nan")
-        n_coal = 0
         if newicks:
-            trees = [parse_newick(nw) for nw in newicks]
-            tmrca = newick_tmrca(trees[0], "1", "2")
-            n_coal = sum(len(t.internal_nodes()) for t in trees)
+            tree = parse_newick(newicks[0])
+            tmrca = newick_tmrca(tree, "1", "2")
         return {
             "n_trees": len(newicks),
             "tmrca_ms": tmrca,
-            "n_coal": n_coal,
         }
 
     for line in proc.stdout:
@@ -160,26 +156,24 @@ def run_case(case):
     print(f"== INICIO caso {case} (mspms)  |  "
           f"{time.strftime('%Y-%m-%d %H:%M:%S')}")
 
-    tmrcas, n_trees, n_coals = [], [], []
+    rows = []
     for rep in iter_mspms_replicates(cmd):
-        tmrcas.append(rep["tmrca_ms"])
-        n_trees.append(rep["n_trees"])
-        n_coals.append(rep["n_coal"])
+        rows.append((rep["tmrca_ms"] * SCALE,   # 4N0 -> generaciones
+                     rep["n_trees"]))
 
     t1 = time.perf_counter()
-    n = len(tmrcas)
-    tmr_gen = np.array(tmrcas) * SCALE
+
+    arr = np.asarray(rows, dtype=float)
+    n   = arr.shape[0]
+    mu  = arr.mean(axis=0)
+    sd  = arr.std(axis=0)
 
     lines = [
         f"--- caso {case} (mspms)  (n={n} réplicas) ---",
-        f"  T_MRCA                        : media = {np.mean(tmrcas):.4f} u.ms"
-        f" = {np.mean(tmr_gen):.4f} gen  desvio = {np.std(tmr_gen):.4f}"
-        f"   [escala de coalescencia]",
-        f"  Nº de árboles                 : media = {np.mean(n_trees):.2f}  "
-        f"desvio = {np.std(n_trees):.2f}   [recombinación (rho)]",
-        "  Nº de eventos de migración    : n/a   [el formato ms no los expone]",
-        f"  Nº de eventos de coalescencia : media = {np.mean(n_coals):.2f}  "
-        f"desvio = {np.std(n_coals):.2f}   [tamaños poblacionales]",
+        f"  T_MRCA                        : media = {mu[0]:.4f} gen  "
+        f"desvio = {sd[0]:.4f}   [escala de coalescencia]",
+        f"  Nº de árboles                 : media = {mu[1]:.2f}  "
+        f"desvio = {sd[1]:.2f}   [recombinación (rho)]",
         f"  cmd: {cmd_str}",
     ]
     block = "\n".join(lines)
@@ -203,7 +197,7 @@ def run_case(case):
 def main():
     ap = argparse.ArgumentParser(
         description="Corre los test cases de ms en mspms y loguea "
-                    "T_MRCA, nº de árboles y nº de coalescencias")
+                    "T_MRCA y nº de árboles")
     ap.add_argument("cases", nargs="*", type=int)
     args = ap.parse_args()
 

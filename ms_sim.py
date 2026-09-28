@@ -5,67 +5,55 @@ Ejecuta en msprime los 6 casos traducidos desde ms.
 Uso:
     python run_cases.py                  # corre todos
     python run_cases.py 1 3 5            # solo los casos 1, 3 y 5
+
 """
 import argparse
-import sys
-import msprime
 import hashlib
+import sys
+import time
+
+import msprime
+import numpy as np
+
 NE    = 1
 SCALE = 4 * NE
 
+
 def get_single_seed(seeds):
-  assert len(seeds) == 3
-  m = hashlib.md5()
-  for s in seeds:
-    m.update(f"{s}:".encode())
-  return int(m.hexdigest(), 16) % (2**32)
+    assert len(seeds) == 3
+    m = hashlib.md5()
+    for s in seeds:
+        m.update(f"{s}:".encode())
+    return int(m.hexdigest(), 16) % (2 ** 32)
 
 
-# Las semillas originales de tu comando ms:
 seeds = [40328, 19150, 54118]
 seed_int = get_single_seed(seeds)
-def T(t):
-    return t * SCALE
-def mu_rate(theta, L):   # theta = 4N*mu*L  ----  mu = theta / (4N0 * L) = theta / (SCALE * L)
-    return theta / (SCALE * L)
-def re_rate(rho, L):     # rho   = 4N*r*L ---- r = rho / (4N0 * L) = rho / (SCALE * L)
-    return rho / (SCALE * L)
-def mig_rate(M):         # M = 4N*m --- m = M / (4N0) = M / SCALE
-    return M / SCALE
-def size(N_ms):
-    return N_ms * 2 * NE
 
-def count_migrations(ts):
-    return int(((ts.tables.nodes.flags & msprime.NODE_IS_MIG_EVENT) != 0).sum())
 
-def count_coalescences(ts):
-    """Nº de eventos de coalescencia (nodos de ancestro común del ARG)."""
-    return int(((ts.tables.nodes.flags & msprime.NODE_IS_CA_EVENT) != 0).sum())
+def T(t):                    return t * SCALE
+def mu_rate(theta, L):       return theta / (SCALE * L)
+def re_rate(rho, L):         return rho / (SCALE * L)
+def mig_rate(M):             return M / SCALE
+def size(N_ms):              return N_ms * 2 * NE
 
-SEED1 = 40328
-SEED2 = 19150
 
-def mutate(reps, theta, L):
-    rate = mu_rate(theta, L)
-    for ts in reps:
-        yield msprime.sim_mutations(ts, rate=rate)
 # ------------------------------------------------------------------
 # Caso 6: modelo básico, sin estructura
 #   ms: 20 50 -seeds 40328 19150 54118 -t 1000 -r 2000 100000
 # ------------------------------------------------------------------
 def case6():
     nsam, rep, L, rho, theta = 20, 50, 100_000, 2000, 1000
-    reps = msprime.sim_ancestry(
+    return msprime.sim_ancestry(
         samples=nsam,
-        population_size=size(1.0),   # 2*N0 haploides (equivalente a N0 diploides de ms)
-        ploidy=1,                    # los samples de ms son cromosomas (haplotipos)
+        population_size=size(1.0),
+        ploidy=1,
         sequence_length=L,
         recombination_rate=re_rate(rho, L),
         random_seed=seed_int,
         num_replicates=rep,
-        record_full_arg=True,
     )
-    return mutate(reps, theta, L)
+
 
 # ------------------------------------------------------------------
 # Caso 5: 2 poblaciones, migración asimétrica (-ma)
@@ -80,23 +68,20 @@ def case5():
     dem.set_migration_rate(source="p1", dest="p0", rate=mig_rate(5.0))
     dem.sort_events()
 
-    reps = msprime.sim_ancestry(
+    return msprime.sim_ancestry(
         samples={"p0": 2, "p1": 2},
         demography=dem,
         sequence_length=L,
         recombination_rate=re_rate(rho, L),
         random_seed=seed_int,
         num_replicates=rep,
-        record_full_arg=True,
-        ploidy=1,                    # los samples de ms son cromosomas (haplotipos)
+        ploidy=1,
     )
-    return mutate(reps, theta, L)
+
 
 # ------------------------------------------------------------------
 # Caso 4: 2 poblaciones, migración simétrica (-I ... 5.0)
 #   ms: 4 100000 ... -I 2 2 2 5.0
-#   En ms, el rate de -I se aplica como M/(npop-1) a TODOS los elementos
-#   fuera de la diagonal: con 2 poblaciones -> 5.0 en ambas direcciones.
 # ------------------------------------------------------------------
 def case4():
     nsam, rep, L, rho, theta = 4, 100_000, 100_000, 10, 10
@@ -107,17 +92,16 @@ def case4():
     dem.set_migration_rate(source="p1", dest="p0", rate=mig_rate(5.0))
     dem.sort_events()
 
-    reps = msprime.sim_ancestry(
+    return msprime.sim_ancestry(
         samples={"p0": 2, "p1": 2},
         demography=dem,
         sequence_length=L,
         recombination_rate=re_rate(rho, L),
         random_seed=seed_int,
         num_replicates=rep,
-        record_full_arg=True,
-        ploidy=1,                    # los samples de ms son cromosomas (haplotipos)
+        ploidy=1,
     )
-    return mutate(reps, theta, L)
+
 
 # ------------------------------------------------------------------
 # Caso 3: 3 poblaciones, -ma, -eN x2, -ej x2
@@ -151,20 +135,19 @@ def case3():
         )
 
     dem.add_population_split(time=T(4.0), derived=["p2"], ancestral="p0")
-
     dem.sort_events()
 
-    reps = msprime.sim_ancestry(
+    return msprime.sim_ancestry(
         samples={"p0": 10, "p1": 4, "p2": 1},
         demography=dem,
         sequence_length=L,
         recombination_rate=re_rate(rho, L),
         random_seed=seed_int,
         num_replicates=rep,
-        record_full_arg=True,
-        ploidy=1,                    # los samples de ms son cromosomas (haplotipos)
+        ploidy=1,
     )
-    return mutate(reps, theta, L)
+
+
 # ------------------------------------------------------------------
 # Caso 2:
 #   ms: 15 20000 ... -I 3 10 4 1 -ma x 5 5 5 x 5 5 5 x
@@ -185,29 +168,26 @@ def case2():
     dem.set_migration_rate(source="p1", dest="p2", rate=mig_rate(5.0))
     dem.set_migration_rate(source="p2", dest="p1", rate=mig_rate(5.0))
 
-    # Cambios de tamaño (solo p0 y p2, porque p1 será inactiva pronto)
     for p in ("p0", "p2"):
         dem.add_population_parameters_change(
             time=T(0.8), population=p, initial_size=size(15.0)
         )
 
-    # Splits: p1 se vuelve inactiva primero, luego p2
-    # NO agregar ningún add_migration_rate_change después de estos
     dem.add_population_split(time=T(0.7), derived=["p1"], ancestral="p0")
     dem.add_population_split(time=T(1.0), derived=["p2"], ancestral="p0")
-
     dem.sort_events()
-    reps = msprime.sim_ancestry(
+
+    return msprime.sim_ancestry(
         samples={"p0": 10, "p1": 4, "p2": 1},
         demography=dem,
         sequence_length=L,
         recombination_rate=re_rate(rho, L),
         random_seed=seed_int,
         num_replicates=rep,
-        record_full_arg=True,
-        ploidy=1,                    # los samples de ms son cromosomas (haplotipos)
+        ploidy=1,
     )
-    return mutate(reps, theta, L)
+
+
 # ------------------------------------------------------------------
 # Caso 1: 2 poblaciones, -eN/-en/-ej
 #   ms: 10 100000 ... -I 2 2 8 -eN 0.4 10.01 -eN 1 0.01
@@ -220,74 +200,66 @@ def case1():
     dem.add_population(name="p1", initial_size=size(1.0))
 
     for p in ("p0", "p1"):
-        dem.add_population_parameters_change(time=T(0.4),
-                                             population=p,
-                                             initial_size=size(10.01))
-        dem.add_population_parameters_change(time=T(1.0),
-                                             population=p,
-                                             initial_size=size(0.01))
+        dem.add_population_parameters_change(
+            time=T(0.4), population=p, initial_size=size(10.01)
+        )
+        dem.add_population_parameters_change(
+            time=T(1.0), population=p, initial_size=size(0.01)
+        )
 
-    dem.add_population_parameters_change(time=T(0.25),
-                                         population="p1",
-                                         initial_size=size(0.2))
-
+    dem.add_population_parameters_change(
+        time=T(0.25), population="p1", initial_size=size(0.2)
+    )
     dem.add_population_split(time=T(3.0), derived=["p1"], ancestral="p0")
     dem.sort_events()
 
-    reps = msprime.sim_ancestry(
+    return msprime.sim_ancestry(
         samples={"p0": 2, "p1": 8},
         demography=dem,
         sequence_length=L,
         recombination_rate=re_rate(rho, L),
         random_seed=seed_int,
         num_replicates=rep,
-        record_full_arg=True,
-        ploidy=1,                    # los samples de ms son cromosomas (haplotipos)
+        ploidy=1,
     )
-    return mutate(reps, theta, L)
+
 
 # ------------------------------------------------------------------
 # Registro de casos
 # ------------------------------------------------------------------
-CASES = {
-    1: case1, 2: case2, 3: case3,
-    4: case4, 5: case5, 6: case6,
-}
-import numpy as np
-import time
-def stats(gen, label="", n_max=10):
-    """Estadisticas por réplica para validar las conversiones ms -> msprime.
+CASES = {1: case1, 2: case2, 3: case3, 4: case4, 5: case5, 6: case6}
 
-    | Estadístico                    | Qué valida             | Cálculo                          |
-    |--------------------------------|------------------------|----------------------------------|
-    | T_MRCA                         | escala de coalescencia | ts.first().tmrca(s[0], s[1])     |
-    | Nº de árboles                  | recombinación (rho)    | ts.num_trees                     |
-    | Nº de eventos de migración     | tasas de migración (M) | count_migrations(ts)             |
-    | Nº de eventos de coalescencia  | tamaños poblacionales  | count_coalescences(ts)           |
 
+# ------------------------------------------------------------------
+# Estadísticas
+# ------------------------------------------------------------------
+def stats(gen, label=""):
+    """Estadísticas por réplica.
+
+    | Estadístico   | Qué valida             | Cálculo                      |
+    |---------------|------------------------|------------------------------|
+    | T_MRCA        | escala de coalescencia | ts.first().tmrca(s[0], s[1]) |
+    | Nº de árboles | recombinación (rho)    | ts.num_trees                 |
     """
-    tmrcas   = []   # T_MRCA del primer árbol entre las 2 primeras muestras
-    n_trees  = []   # nº de árboles locales (breakpoints de recombinación + 1)
-    n_migs   = []   # nº de eventos de migración registrados
-    n_coal   = []   # nº de eventos de coalescencia (nodos internos)
-
-    for i, ts in enumerate(gen):
+    rows = []
+    for ts in gen:
         s = ts.samples()
-        tmrcas.append(ts.first().tmrca(s[0], s[1]))
-        n_trees.append(ts.num_trees)
-        n_migs.append(count_migrations(ts))
-        n_coal.append(count_coalescences(ts))
+        rows.append((
+            ts.first().tmrca(s[0], s[1]),
+            ts.num_trees,
+        ))
 
-    n = len(tmrcas)
+    arr = np.asarray(rows, dtype=float)
+    n   = arr.shape[0]
+    mu  = arr.mean(axis=0)
+    sd  = arr.std(axis=0)
+
     print(f"--- {label}  (n={n} réplicas) ---")
-    print(f"  T_MRCA (primer árbol, s0-s1) : media = {np.mean(tmrcas):.4f}  "
-          f"desvio = {np.std(tmrcas):.4f}   [escala temporal de coalescencia]")
-    print(f"  Nº de árboles (breakpoints)  : media = {np.mean(n_trees):.2f}  "
-          f"desvio = {np.std(n_trees):.2f}   [recombinación]")
-    print(f"  Nº de eventos de migración   : media = {np.mean(n_migs):.2f}  "
-          f"desvio = {np.std(n_migs):.2f}   [tasas de migración]")
-    print(f"  Nº de eventos de coalescencia: media = {np.mean(n_coal):.2f}  "
-          f"desvio = {np.std(n_coal):.2f}   [tamaños poblacionales]")
+    print(f"  T_MRCA                        : media = {mu[0]:.4f} gen  "
+          f"desvio = {sd[0]:.4f}   [escala de coalescencia]")
+    print(f"  Nº de árboles                 : media = {mu[1]:.2f}  "
+          f"desvio = {sd[1]:.2f}   [recombinación (rho)]")
+
 
 def main():
     ap = argparse.ArgumentParser(description="Corre casos ms->msprime")
@@ -303,6 +275,9 @@ def main():
         print(f"== INICIO caso {c}  |  {time.strftime('%Y-%m-%d %H:%M:%S')}")
         stats(CASES[c](), label=f"caso {c}")
         t1 = time.perf_counter()
-        print(f"== FIN caso {c}  |  {time.strftime('%Y-%m-%d %H:%M:%S')}  |  {t1-t0:.2f} s  | OK")
+        print(f"== FIN caso {c}  |  {time.strftime('%Y-%m-%d %H:%M:%S')}  |  "
+              f"{t1 - t0:.2f} s  | OK")
+
+
 if __name__ == "__main__":
     main()
