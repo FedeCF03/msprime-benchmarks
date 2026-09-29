@@ -5,9 +5,11 @@
 # Ejecuta el script ms_sim.py (traducción ms -> msprime).
 #
 # Uso:
-#   ./run_cases.sh              # corre todos los casos (1-6)
+#   ./run_cases.sh              # corre todos los casos (1-6) en secuencia
 #   ./run_cases.sh 1 3 5        # corre solo los casos indicados
 #   ./run_cases.sh --help
+#
+# Nota: los casos se ejecutan de forma SECUENCIAL, uno a uno.
 #
 # Variables de entorno opcionales:
 #   PYTHON        intérprete a usar (por defecto: python3)
@@ -93,8 +95,6 @@ RUN_TS="$(date +%Y%m%d_%H%M%S)"
 # ------------------------------------------------------------------
 # Runner
 # ------------------------------------------------------------------
-declare -A PIDS=()
-declare -A LOGFILES=()
 FAILED=()
 START_ALL=$(date +%s)
 
@@ -110,80 +110,51 @@ run_case() {
         runlog="${LOG_DIR}/case${c}_${RUN_TS}.log"
     fi
 
-    log "==> Lanzando caso ${c}  (log acumulativo: ${logfile})"
+    log "==> Ejecutando caso ${c}  (log acumulativo: ${logfile})"
 
-    # Función interna que escribe la salida del caso en uno o dos destinos
+    # Encabezado al log acumulativo y (opcional) al log por corrida
+    {
+        echo
+        echo "==================================================================="
+        echo "== INICIO caso ${c}  |  $(date '+%Y-%m-%d %H:%M:%S')  |  run ${RUN_TS}"
+        echo "==================================================================="
+    } >>"${logfile}"
     if [[ -n "${runlog}" ]]; then
-        # Encabezado al log acumulativo y al log por corrida
-        {
-            echo
-            echo "==================================================================="
-            echo "== INICIO caso ${c}  |  $(date '+%Y-%m-%d %H:%M:%S')  |  run ${RUN_TS}"
-            echo "==================================================================="
-        } >>"${logfile}"
         {
             echo "==================================================================="
             echo "== INICIO caso ${c}  |  $(date '+%Y-%m-%d %H:%M:%S')  |  run ${RUN_TS}"
             echo "==================================================================="
         } >"${runlog}"
-
-        if [[ -n "${TIME_LIMIT}" ]]; then
-            timeout "${TIME_LIMIT}" "${PYTHON}" "${RUN_SCRIPT}" "${c}" \
-                >>"${logfile}" 2>&1 &
-            PIDS["${c}"]=$!
-            # Guardamos también el runlog para el resumen
-            LOGFILES["${c}"]="${logfile} (y ${runlog})"
-        else
-            "${PYTHON}" "${RUN_SCRIPT}" "${c}" \
-                >>"${logfile}" 2>&1 &
-            PIDS["${c}"]=$!
-            LOGFILES["${c}"]="${logfile} (y ${runlog})"
-        fi
-    else
-        {
-            echo
-            echo "==================================================================="
-            echo "== INICIO caso ${c}  |  $(date '+%Y-%m-%d %H:%M:%S')  |  run ${RUN_TS}"
-            echo "==================================================================="
-        } >>"${logfile}"
-
-        if [[ -n "${TIME_LIMIT}" ]]; then
-            timeout "${TIME_LIMIT}" "${PYTHON}" "${RUN_SCRIPT}" "${c}" \
-                >>"${logfile}" 2>&1 &
-            PIDS["${c}"]=$!
-        else
-            "${PYTHON}" "${RUN_SCRIPT}" "${c}" \
-                >>"${logfile}" 2>&1 &
-            PIDS["${c}"]=$!
-        fi
-        LOGFILES["${c}"]="${logfile}"
     fi
-}
 
-# Lanzar todos los casos (en paralelo)
-for c in "${CASES[@]}"; do
-    run_case "${c}"
-done
+    # Comando a ejecutar (con timeout opcional)
+    local runcmd=("${PYTHON}" "${RUN_SCRIPT}" "${c}")
+    if [[ -n "${TIME_LIMIT}" ]]; then
+        runcmd=(timeout "${TIME_LIMIT}" "${PYTHON}" "${RUN_SCRIPT}" "${c}")
+    fi
 
-# Esperar a cada uno
-for c in "${CASES[@]}"; do
-    pid="${PIDS[${c}]}"
-    if wait "${pid}"; then
-        log "OK  caso ${c}  (pid ${pid})"
+    # Ejecución en primer plano (secuencial)
+    if "${runcmd[@]}" >>"${logfile}" 2>&1; then
+        log "OK  caso ${c}"
         # Sello de fin en el log acumulativo
         {
             echo "== FIN caso ${c}  |  $(date '+%Y-%m-%d %H:%M:%S')  |  OK"
             echo "==================================================================="
-        } >>"${LOG_DIR}/case${c}.log"
+        } >>"${logfile}"
     else
         rc=$?
-        warn "FALLO caso ${c}  (rc=${rc})  -> ver ${LOGFILES[${c}]}"
+        warn "FALLO caso ${c}  (rc=${rc})  -> ver ${logfile}"
         FAILED+=("${c}")
         {
             echo "== FIN caso ${c}  |  $(date '+%Y-%m-%d %H:%M:%S')  |  FALLO rc=${rc}"
             echo "==================================================================="
-        } >>"${LOG_DIR}/case${c}.log"
+        } >>"${logfile}"
     fi
+}
+
+# Ejecutar los casos de forma secuencial
+for c in "${CASES[@]}"; do
+    run_case "${c}"
 done
 
 END_ALL=$(date +%s)

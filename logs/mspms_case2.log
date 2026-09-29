@@ -9,3 +9,14 @@
   cmd: /home/fedecalta/msprime-benchmarks/venv/bin/mspms 15 20000 -seeds 40328 19150 54118 -t 10 -r 10 100000 -I 3 10 4 1 -ma x 5 5 5 x 5 5 5 x -ej .7 2 1 -eN 0.8 15 -ej 1 3 1 -T -p 6
 == FIN caso 2 (mspms)  |  2026-09-27 23:47:22  |  330.22 s  | OK
 ===================================================================
+
+===================================================================
+== INICIO caso 2 (mspms)  |  2026-09-29 17:27:14
+== cmd: /home/fedecalta/msprime-benchmarks/venv/bin/mspms 15 20000 -seeds 40328 19150 54118 -t 10 -r 10 100000 -I 3 10 4 1 -ma x 5 5 5 x 5 5 5 x -ej .7 2 1 -eN 0.8 15 -ej 1 3 1 -T -p 6
+===================================================================
+--- caso 2 (mspms)  (n=20000 réplicas) ---
+  T_MRCA                        : media = 19.3148 gen  desvio = 27.6357   [escala de coalescencia]
+  Nº de árboles                 : media = 282.05  desvio = 54.89   [recombinación (rho)]
+  cmd: /home/fedecalta/msprime-benchmarks/venv/bin/mspms 15 20000 -seeds 40328 19150 54118 -t 10 -r 10 100000 -I 3 10 4 1 -ma x 5 5 5 x 5 5 5 x -ej .7 2 1 -eN 0.8 15 -ej 1 3 1 -T -p 6
+== FIN caso 2 (mspms)  |  2026-09-29 17:27:14  |  281.30 s  | OK
+===================================================================

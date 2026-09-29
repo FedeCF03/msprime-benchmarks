@@ -1,0 +1,11 @@
+
+===================================================================
+== INICIO caso 4 (mspms)  |  2026-09-29 17:36:39
+== cmd: /home/fedecalta/msprime-benchmarks/venv/bin/mspms 4 100000 -seeds 40328 19150 54118 -t 10 -r 10 100000 -I 2 2 2 5.0 -T -p 6
+===================================================================
+--- caso 4 (mspms)  (n=100000 réplicas) ---
+  T_MRCA                        : media = 3.9959 gen  desvio = 4.1806   [escala de coalescencia]
+  Nº de árboles                 : media = 40.02  desvio = 13.50   [recombinación (rho)]
+  cmd: /home/fedecalta/msprime-benchmarks/venv/bin/mspms 4 100000 -seeds 40328 19150 54118 -t 10 -r 10 100000 -I 2 2 2 5.0 -T -p 6
+== FIN caso 4 (mspms)  |  2026-09-29 17:36:39  |  218.89 s  | OK
+===================================================================
