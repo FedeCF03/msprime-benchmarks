@@ -6,12 +6,6 @@ Uso:
     python mspms_cases.py                  # corre todos los casos
     python mspms_cases.py 1 3 5            # solo los casos indicados
 
-Notas:
-    - Los valores por réplica no coinciden bit a bit con msprime (el flujo
-      de RNG es distinto); la comparación es estadística (media ± desvío).
-    - Los árboles Newick se leen con DendroPy.
-    - Solo se reportan T_MRCA y nº de árboles, que son los únicos
-      estadísticos directamente comparables con msprime.
 """
 import argparse
 import os
@@ -73,7 +67,7 @@ CASES = {
 # Árboles con DendroPy
 # ------------------------------------------------------------------
 def parse_newick(s):
-    """Parsea un Newick con DendroPy y devuelve un Tree enraizado."""
+    """Parsea un Newick con DendroPy"""
     s = s.strip()
     if s.startswith("["):                 # prefijo [longitud] del segmento
         s = s[s.index("]") + 1:].strip()
@@ -83,7 +77,6 @@ def parse_newick(s):
 
 
 def newick_tmrca(tree, la, lb):
-    """T_MRCA entre las hojas la y lb (altura del LCA, unidades 4N0)."""
     node = tree.mrca(taxon_labels=[la, lb])
     return float("nan") if node is None else node.distance_from_tip()
 
@@ -92,8 +85,7 @@ def newick_tmrca(tree, la, lb):
 # Lector en streaming de la salida de mspms
 # ------------------------------------------------------------------
 def iter_mspms_replicates(cmd):
-    """Ejecuta mspms y rinde dicts por réplica con:
-    n_trees, tmrca_ms (unidades 4N0)."""
+
     proc = subprocess.Popen(cmd, stdout=subprocess.PIPE,
                             stderr=subprocess.PIPE, text=True)
     newicks = []

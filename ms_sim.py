@@ -3,8 +3,8 @@
 Ejecuta en msprime los 6 casos traducidos desde ms.
 
 Uso:
-    python run_cases.py                  # corre todos
-    python run_cases.py 1 3 5            # solo los casos 1, 3 y 5
+    python ms_sim.py                  # corre todos
+    python ms_sim.py 1 3 5            # solo los casos 1, 3 y 5
 
 """
 import argparse
@@ -32,7 +32,6 @@ seed_int = get_single_seed(seeds)
 
 
 def T(t):                    return t * SCALE
-def mu_rate(theta, L):       return theta / (SCALE * L)
 def re_rate(rho, L):         return rho / (SCALE * L)
 def mig_rate(M):             return M / SCALE
 def size(N_ms):              return N_ms * 2 * NE
@@ -43,7 +42,7 @@ def size(N_ms):              return N_ms * 2 * NE
 #   ms: 20 50 -seeds 40328 19150 54118 -t 1000 -r 2000 100000
 # ------------------------------------------------------------------
 def case6():
-    nsam, rep, L, rho, theta = 20, 50, 100_000, 2000, 1000
+    nsam, rep, L, rho = 20, 50, 100_000, 2000
     return msprime.sim_ancestry(
         samples=nsam,
         population_size=size(1.0),
@@ -60,7 +59,7 @@ def case6():
 #   ms: 4 100000 ... -I 2 2 2 -ma x 10 5 x
 # ------------------------------------------------------------------
 def case5():
-    nsam, rep, L, rho, theta = 4, 100_000, 100_000, 10, 10
+    nsam, rep, L, rho = 4, 100_000, 100_000, 10
     dem = msprime.Demography()
     dem.add_population(name="p0", initial_size=size(1.0))
     dem.add_population(name="p1", initial_size=size(1.0))
@@ -84,7 +83,7 @@ def case5():
 #   ms: 4 100000 ... -I 2 2 2 5.0
 # ------------------------------------------------------------------
 def case4():
-    nsam, rep, L, rho, theta = 4, 100_000, 100_000, 10, 10
+    nsam, rep, L, rho = 4, 100_000, 100_000, 10
     dem = msprime.Demography()
     dem.add_population(name="p0", initial_size=size(1.0))
     dem.add_population(name="p1", initial_size=size(1.0))
@@ -110,7 +109,7 @@ def case4():
 #       -ej .7 2 1  -ej 4 3 1
 # ------------------------------------------------------------------
 def case3():
-    nsam, rep, L, rho, theta = 15, 100_000, 100_000, 10, 10
+    nsam, rep, L, rho = 15, 100_000, 100_000, 10
     dem = msprime.Demography()
 
     dem.add_population(name="p0", initial_size=size(1.0), initially_active=True)
@@ -154,7 +153,7 @@ def case3():
 #       -eN 0.8 15 -ej .7 2 1 -ej 1 3 1
 # ------------------------------------------------------------------
 def case2():
-    nsam, rep, L, rho, theta = 15, 20_000, 100_000, 10, 10
+    nsam, rep, L, rho = 15, 20_000, 100_000, 10
     dem = msprime.Demography()
 
     dem.add_population(name="p0", initial_size=size(1.0), initially_active=True)
@@ -194,7 +193,7 @@ def case2():
 #       -en 0.25 2 0.2 -ej 3 2 1
 # ------------------------------------------------------------------
 def case1():
-    nsam, rep, L, rho, theta = 10, 100_000, 100_000, 10, 10
+    nsam, rep, L, rho = 10, 100_000, 100_000, 10
     dem = msprime.Demography()
     dem.add_population(name="p0", initial_size=size(1.0), initially_active=True)
     dem.add_population(name="p1", initial_size=size(1.0))
