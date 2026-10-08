@@ -1,0 +1,41 @@
+=== CPROFILE CASO 6 ===
+Wed Oct  7 20:34:37 2026    logs/cprofile/case6.prof
+
+         274491 function calls (267464 primitive calls) in 10.959 seconds
+
+   Ordered by: cumulative time
+   List reduced from 2651 to 30 due to restriction <30>
+
+   ncalls  tottime  percall  cumtime  percall filename:lineno(function)
+    320/1    0.026    0.000   10.966   10.966 {built-in method builtins.exec}
+        1    0.000    0.000   10.966   10.966 ms_sim.py:1(<module>)
+        1    0.000    0.000    8.545    8.545 ms_sim.py:263(main)
+        1    0.004    0.004    8.462    8.462 ms_sim.py:235(stats)
+       51    0.006    0.000    8.443    0.166 /home/fede/miniconda3/lib/python3.14/site-packages/msprime/ancestry.py:1593(run_replicates)
+       50    0.010    0.000    8.298    0.166 /home/fede/miniconda3/lib/python3.14/site-packages/msprime/ancestry.py:1561(run)
+       50    0.025    0.001    7.987    0.160 /home/fede/miniconda3/lib/python3.14/site-packages/msprime/ancestry.py:1533(_run_until)
+      879    7.936    0.009    7.936    0.009 {function Simulator.run at 0x7f80a24d37f0}
+    321/3    0.012    0.000    2.420    0.807 <frozen importlib._bootstrap>:1360(_find_and_load)
+    320/3    0.015    0.000    2.419    0.806 <frozen importlib._bootstrap>:1308(_find_and_load_unlocked)
+    296/3    0.009    0.000    2.414    0.805 <frozen importlib._bootstrap>:914(_load_unlocked)
+    261/3    0.004    0.000    2.413    0.804 <frozen importlib._bootstrap_external>:753(exec_module)
+    909/6    0.008    0.000    2.410    0.402 <frozen importlib._bootstrap>:483(_call_with_frames_removed)
+        1    0.000    0.000    2.401    2.401 /home/fede/miniconda3/lib/python3.14/site-packages/msprime/__init__.py:1(<module>)
+   620/65    0.006    0.000    1.565    0.024 {built-in method builtins.__import__}
+        1    0.000    0.000    1.545    1.545 /home/fede/miniconda3/lib/python3.14/site-packages/msprime/ancestry.py:1(<module>)
+   209/63    0.008    0.000    1.413    0.022 <frozen importlib._bootstrap>:1409(_handle_fromlist)
+        1    0.000    0.000    0.953    0.953 /home/fede/miniconda3/lib/python3.14/site-packages/tskit/__init__.py:1(<module>)
+  296/189    0.007    0.000    0.895    0.005 <frozen importlib._bootstrap>:809(module_from_spec)
+    27/21    0.000    0.000    0.842    0.040 <frozen importlib._bootstrap_external>:1051(create_module)
+    27/21    0.010    0.000    0.842    0.040 {built-in method _imp.create_dynamic}
+        1    0.001    0.001    0.830    0.830 /home/fede/miniconda3/lib/python3.14/site-packages/numpy/__init__.py:1(<module>)
+        1    0.000    0.000    0.703    0.703 /home/fede/miniconda3/lib/python3.14/site-packages/tskit/provenance.py:1(<module>)
+        1    0.000    0.000    0.692    0.692 /home/fede/miniconda3/lib/python3.14/site-packages/jsonschema/__init__.py:1(<module>)
+        1    0.000    0.000    0.550    0.550 /home/fede/miniconda3/lib/python3.14/site-packages/numpy/__config__.py:1(<module>)
+        1    0.000    0.000    0.539    0.539 /home/fede/miniconda3/lib/python3.14/site-packages/numpy/_core/__init__.py:1(<module>)
+        1    0.000    0.000    0.359    0.359 /home/fede/miniconda3/lib/python3.14/site-packages/jsonschema/validators.py:1(<module>)
+        1    0.000    0.000    0.348    0.348 /home/fede/miniconda3/lib/python3.14/site-packages/msprime/demography.py:1(<module>)
+        1    0.001    0.001    0.322    0.322 /home/fede/miniconda3/lib/python3.14/site-packages/jsonschema/_format.py:1(<module>)
+      316    0.020    0.000    0.302    0.001 <frozen importlib._bootstrap>:1243(_find_spec)
+
+
