@@ -1,0 +1,5 @@
+== INICIO caso 4  |  2026-10-25 16:02:27
+--- caso 4  (n=100000 réplicas) ---
+  T_MRCA                        : media = 4.0240 gen  desvio = 4.1986   [escala de coalescencia]
+  Nº de árboles                 : media = 28.23  desvio = 9.28   [recombinación (rho)]
+== FIN caso 4  |  2026-10-25 16:05:45  |  198.49 s  |  RSS 65.6 MB  | OK

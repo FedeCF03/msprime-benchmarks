@@ -1,41 +1,80 @@
 === CPROFILE CASO 6 ===
-Wed Oct  7 20:34:37 2026    logs/cprofile/case6.prof
 
-         274491 function calls (267464 primitive calls) in 10.959 seconds
+Tiempo medido : 8.60 s
+Llamadas      : 21058
 
-   Ordered by: cumulative time
-   List reduced from 2651 to 30 due to restriction <30>
+## Hotspots: top 25 por tiempo propio (tottime)
+
+Sun Oct 25 16:09:12 2026    /home/fedecf/msprime-benchmarks/logs/cprofile/case6.prof
+
+         21058 function calls (20712 primitive calls) in 8.596 seconds
+
+   Ordered by: internal time
+   List reduced from 588 to 25 due to restriction <25>
 
    ncalls  tottime  percall  cumtime  percall filename:lineno(function)
-    320/1    0.026    0.000   10.966   10.966 {built-in method builtins.exec}
-        1    0.000    0.000   10.966   10.966 ms_sim.py:1(<module>)
-        1    0.000    0.000    8.545    8.545 ms_sim.py:263(main)
-        1    0.004    0.004    8.462    8.462 ms_sim.py:235(stats)
-       51    0.006    0.000    8.443    0.166 /home/fede/miniconda3/lib/python3.14/site-packages/msprime/ancestry.py:1593(run_replicates)
-       50    0.010    0.000    8.298    0.166 /home/fede/miniconda3/lib/python3.14/site-packages/msprime/ancestry.py:1561(run)
-       50    0.025    0.001    7.987    0.160 /home/fede/miniconda3/lib/python3.14/site-packages/msprime/ancestry.py:1533(_run_until)
-      879    7.936    0.009    7.936    0.009 {function Simulator.run at 0x7f80a24d37f0}
-    321/3    0.012    0.000    2.420    0.807 <frozen importlib._bootstrap>:1360(_find_and_load)
-    320/3    0.015    0.000    2.419    0.806 <frozen importlib._bootstrap>:1308(_find_and_load_unlocked)
-    296/3    0.009    0.000    2.414    0.805 <frozen importlib._bootstrap>:914(_load_unlocked)
-    261/3    0.004    0.000    2.413    0.804 <frozen importlib._bootstrap_external>:753(exec_module)
-    909/6    0.008    0.000    2.410    0.402 <frozen importlib._bootstrap>:483(_call_with_frames_removed)
-        1    0.000    0.000    2.401    2.401 /home/fede/miniconda3/lib/python3.14/site-packages/msprime/__init__.py:1(<module>)
-   620/65    0.006    0.000    1.565    0.024 {built-in method builtins.__import__}
-        1    0.000    0.000    1.545    1.545 /home/fede/miniconda3/lib/python3.14/site-packages/msprime/ancestry.py:1(<module>)
-   209/63    0.008    0.000    1.413    0.022 <frozen importlib._bootstrap>:1409(_handle_fromlist)
-        1    0.000    0.000    0.953    0.953 /home/fede/miniconda3/lib/python3.14/site-packages/tskit/__init__.py:1(<module>)
-  296/189    0.007    0.000    0.895    0.005 <frozen importlib._bootstrap>:809(module_from_spec)
-    27/21    0.000    0.000    0.842    0.040 <frozen importlib._bootstrap_external>:1051(create_module)
-    27/21    0.010    0.000    0.842    0.040 {built-in method _imp.create_dynamic}
-        1    0.001    0.001    0.830    0.830 /home/fede/miniconda3/lib/python3.14/site-packages/numpy/__init__.py:1(<module>)
-        1    0.000    0.000    0.703    0.703 /home/fede/miniconda3/lib/python3.14/site-packages/tskit/provenance.py:1(<module>)
-        1    0.000    0.000    0.692    0.692 /home/fede/miniconda3/lib/python3.14/site-packages/jsonschema/__init__.py:1(<module>)
-        1    0.000    0.000    0.550    0.550 /home/fede/miniconda3/lib/python3.14/site-packages/numpy/__config__.py:1(<module>)
-        1    0.000    0.000    0.539    0.539 /home/fede/miniconda3/lib/python3.14/site-packages/numpy/_core/__init__.py:1(<module>)
-        1    0.000    0.000    0.359    0.359 /home/fede/miniconda3/lib/python3.14/site-packages/jsonschema/validators.py:1(<module>)
-        1    0.000    0.000    0.348    0.348 /home/fede/miniconda3/lib/python3.14/site-packages/msprime/demography.py:1(<module>)
-        1    0.001    0.001    0.322    0.322 /home/fede/miniconda3/lib/python3.14/site-packages/jsonschema/_format.py:1(<module>)
-      316    0.020    0.000    0.302    0.001 <frozen importlib._bootstrap>:1243(_find_spec)
+      879    7.989    0.009    7.989    0.009 {function Simulator.run at 0x7f09fd01e160}
+       50    0.283    0.006    0.283    0.006 {method 'finalise_tables' of '_msprime.Simulator' objects}
+       50    0.039    0.001    0.039    0.001 {method 'load_tables' of '_tskit.TreeSequence' objects}
+       50    0.033    0.001    0.033    0.001 {method 'reset' of '_msprime.Simulator' objects}
+       50    0.023    0.000    8.038    0.161 /home/fedecf/msprime-benchmarks/.venv/lib/python3.13/site-packages/msprime/ancestry.py:1533(_run_until)
+       50    0.014    0.000    0.014    0.000 {method 'fromdict' of '_tskit.TableCollection' objects}
+       50    0.010    0.000    8.341    0.167 /home/fedecf/msprime-benchmarks/.venv/lib/python3.13/site-packages/msprime/ancestry.py:1561(run)
+       50    0.010    0.000    0.010    0.000 {method 'asdict' of 'LightweightTableCollection' objects}
+      885    0.009    0.000    0.014    0.000 /usr/lib/python3.13/enum.py:695(__call__)
+       50    0.009    0.000    0.017    0.000 /home/fedecf/msprime-benchmarks/.venv/lib/python3.13/site-packages/tskit/trees.py:4157(__init__)
+      929    0.008    0.000    0.012    0.000 /usr/lib/python3.13/logging/__init__.py:1498(debug)
+     1354    0.006    0.000    0.006    0.000 {method 'startswith' of 'str' objects}
+       51    0.006    0.000    8.483    0.166 /home/fedecf/msprime-benchmarks/.venv/lib/python3.13/site-packages/msprime/ancestry.py:1593(run_replicates)
+      409    0.006    0.000    0.009    0.000 /home/fedecf/msprime-benchmarks/.venv/lib/python3.13/site-packages/tskit/tables.py:674(__init__)
+      885    0.005    0.000    0.005    0.000 /usr/lib/python3.13/enum.py:1156(__new__)
+     1130    0.005    0.000    0.005    0.000 /usr/lib/python3.13/logging/__init__.py:1765(isEnabledFor)
+     1000    0.005    0.000    0.005    0.000 {built-in method builtins.getattr}
+     1027    0.004    0.000    0.006    0.000 {built-in method builtins.isinstance}
+        1    0.004    0.004    8.501    8.501 /home/fedecf/msprime-benchmarks/ms_sim.py:235(stats)
+      820    0.004    0.000    0.004    0.000 /home/fedecf/msprime-benchmarks/.venv/lib/python3.13/site-packages/tskit/tables.py:703(__setattr__)
+        1    0.004    0.004    0.005    0.005 /home/fedecf/msprime-benchmarks/.venv/lib/python3.13/site-packages/msprime/ancestry.py:1385(__init__)
+   102/18    0.004    0.000    0.049    0.003 /home/fedecf/msprime-benchmarks/.venv/lib/python3.13/site-packages/jsonschema/validators.py:396(descend)
+       51    0.003    0.000    0.016    0.000 /home/fedecf/msprime-benchmarks/.venv/lib/python3.13/site-packages/tskit/tables.py:3048(__init__)
+       94    0.003    0.000    0.012    0.000 /home/fedecf/msprime-benchmarks/.venv/lib/python3.13/site-packages/jsonschema/validators.py:339(evolve)
+      615    0.003    0.000    0.003    0.000 {method 'get' of 'dict' objects}
+
+
+
+## Flujo: top 25 por tiempo acumulado (cumtime)
+
+Sun Oct 25 16:09:12 2026    /home/fedecf/msprime-benchmarks/logs/cprofile/case6.prof
+
+         21058 function calls (20712 primitive calls) in 8.596 seconds
+
+   Ordered by: cumulative time
+   List reduced from 588 to 25 due to restriction <25>
+
+   ncalls  tottime  percall  cumtime  percall filename:lineno(function)
+      2/1    0.000    0.000    8.596    8.596 {built-in method builtins.exec}
+        1    0.000    0.000    8.596    8.596 <string>:1(<module>)
+        1    0.000    0.000    8.596    8.596 /home/fedecf/msprime-benchmarks/ms_sim.py:275(main)
+        1    0.004    0.004    8.501    8.501 /home/fedecf/msprime-benchmarks/ms_sim.py:235(stats)
+       51    0.006    0.000    8.483    0.166 /home/fedecf/msprime-benchmarks/.venv/lib/python3.13/site-packages/msprime/ancestry.py:1593(run_replicates)
+       50    0.010    0.000    8.341    0.167 /home/fedecf/msprime-benchmarks/.venv/lib/python3.13/site-packages/msprime/ancestry.py:1561(run)
+       50    0.023    0.000    8.038    0.161 /home/fedecf/msprime-benchmarks/.venv/lib/python3.13/site-packages/msprime/ancestry.py:1533(_run_until)
+      879    7.989    0.009    7.989    0.009 {function Simulator.run at 0x7f09fd01e160}
+       50    0.283    0.006    0.283    0.006 {method 'finalise_tables' of '_msprime.Simulator' objects}
+        1    0.000    0.000    0.067    0.067 /home/fedecf/msprime-benchmarks/ms_sim.py:44(case6)
+        1    0.000    0.000    0.067    0.067 /home/fedecf/msprime-benchmarks/.venv/lib/python3.13/site-packages/msprime/ancestry.py:1100(sim_ancestry)
+        1    0.000    0.000    0.066    0.066 /home/fedecf/msprime-benchmarks/.venv/lib/python3.13/site-packages/msprime/ancestry.py:791(_parse_sim_ancestry)
+       50    0.001    0.000    0.058    0.001 /home/fedecf/msprime-benchmarks/.venv/lib/python3.13/site-packages/tskit/tables.py:3525(tree_sequence)
+       50    0.001    0.000    0.056    0.001 /home/fedecf/msprime-benchmarks/.venv/lib/python3.13/site-packages/tskit/trees.py:4287(load_tables)
+        1    0.000    0.000    0.054    0.054 /home/fedecf/msprime-benchmarks/.venv/lib/python3.13/site-packages/msprime/demography.py:1121(insert_populations)
+        1    0.000    0.000    0.054    0.054 /home/fedecf/msprime-benchmarks/.venv/lib/python3.13/site-packages/msprime/demography.py:80(_build_population_table)
+        3    0.000    0.000    0.053    0.018 /home/fedecf/msprime-benchmarks/.venv/lib/python3.13/site-packages/tskit/metadata.py:922(__init__)
+        4    0.000    0.000    0.052    0.013 /home/fedecf/msprime-benchmarks/.venv/lib/python3.13/site-packages/jsonschema/validators.py:306(check_schema)
+        5    0.000    0.000    0.050    0.010 /home/fedecf/msprime-benchmarks/.venv/lib/python3.13/site-packages/jsonschema/validators.py:349(iter_errors)
+     17/5    0.000    0.000    0.049    0.010 /home/fedecf/msprime-benchmarks/.venv/lib/python3.13/site-packages/jsonschema/_keywords.py:290(properties)
+   102/18    0.004    0.000    0.049    0.003 /home/fedecf/msprime-benchmarks/.venv/lib/python3.13/site-packages/jsonschema/validators.py:396(descend)
+    36/16    0.001    0.000    0.042    0.003 /home/fedecf/msprime-benchmarks/.venv/lib/python3.13/site-packages/jsonschema/_keywords.py:274(ref)
+       50    0.039    0.001    0.039    0.001 {method 'load_tables' of '_tskit.TreeSequence' objects}
+        5    0.000    0.000    0.033    0.007 /home/fedecf/msprime-benchmarks/.venv/lib/python3.13/site-packages/jsonschema/_keywords.py:36(additionalProperties)
+       50    0.033    0.001    0.033    0.001 {method 'reset' of '_msprime.Simulator' objects}
 
 

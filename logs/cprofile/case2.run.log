@@ -1,0 +1,5 @@
+== INICIO caso 2  |  2026-10-25 15:57:35
+--- caso 2  (n=20000 réplicas) ---
+  T_MRCA                        : media = 19.1993 gen  desvio = 27.3917   [escala de coalescencia]
+  Nº de árboles                 : media = 209.14  desvio = 40.95   [recombinación (rho)]
+== FIN caso 2  |  2026-10-25 15:58:51  |  75.72 s  |  RSS 58.0 MB  | OK

@@ -1,41 +1,80 @@
 === CPROFILE CASO 1 ===
-Wed Oct  7 19:48:42 2026    logs/cprofile/case1.prof
 
-         14664554 function calls (14557448 primitive calls) in 198.417 seconds
+Tiempo medido : 196.80 s
+Llamadas      : 14511429
 
-   Ordered by: cumulative time
-   List reduced from 2661 to 30 due to restriction <30>
+## Hotspots: top 25 por tiempo propio (tottime)
+
+Sun Oct 25 15:57:35 2026    /home/fedecf/msprime-benchmarks/logs/cprofile/case1.prof
+
+         14511429 function calls (14411014 primitive calls) in 196.798 seconds
+
+   Ordered by: internal time
+   List reduced from 618 to 25 due to restriction <25>
 
    ncalls  tottime  percall  cumtime  percall filename:lineno(function)
-    320/1    0.043    0.000  199.078  199.078 {built-in method builtins.exec}
-        1    0.000    0.000  199.078  199.078 ms_sim.py:1(<module>)
-        1    0.004    0.004  196.211  196.211 ms_sim.py:263(main)
-        1    3.826    3.826  196.112  196.112 ms_sim.py:235(stats)
-   100001    6.236    0.000  171.297    0.002 /home/fede/miniconda3/lib/python3.14/site-packages/msprime/ancestry.py:1593(run_replicates)
-   100000   10.961    0.000   72.291    0.001 /home/fede/miniconda3/lib/python3.14/site-packages/msprime/ancestry.py:1561(run)
-   100000    1.517    0.000   40.237    0.000 /home/fede/miniconda3/lib/python3.14/site-packages/tskit/tables.py:3525(tree_sequence)
-   100000    2.612    0.000   39.716    0.000 /home/fede/miniconda3/lib/python3.14/site-packages/msprime/ancestry.py:1533(_run_until)
-   100000    2.249    0.000   39.278    0.000 /home/fede/miniconda3/lib/python3.14/site-packages/tskit/tables.py:3510(fromdict)
-   100000    1.214    0.000   37.235    0.000 /home/fede/miniconda3/lib/python3.14/site-packages/tskit/trees.py:4287(load_tables)
-   100000   17.803    0.000   33.886    0.000 /home/fede/miniconda3/lib/python3.14/site-packages/tskit/trees.py:4157(__init__)
-   100000   33.410    0.000   33.410    0.000 {function Simulator.run at 0x7fb47585b7f0}
-   100001    5.528    0.000   32.752    0.000 /home/fede/miniconda3/lib/python3.14/site-packages/tskit/tables.py:3048(__init__)
-   800009   11.740    0.000   19.403    0.000 /home/fede/miniconda3/lib/python3.14/site-packages/tskit/tables.py:674(__init__)
-   100000    1.424    0.000   14.236    0.000 /home/fede/miniconda3/lib/python3.14/site-packages/msprime/ancestry.py:1747(_as_lowlevel)
-   100000    1.046    0.000   12.294    0.000 /home/fede/miniconda3/lib/python3.14/site-packages/msprime/ancestry.py:1752(asdict)
-   100004    1.465    0.000   11.249    0.000 /home/fede/miniconda3/lib/python3.14/dataclasses.py:1484(asdict)
-  2402394   11.119    0.000   11.119    0.000 {method 'startswith' of 'str' objects}
-200036/100004    2.965    0.000    8.296    0.000 /home/fede/miniconda3/lib/python3.14/dataclasses.py:1508(_asdict_inner)
-  1600020    7.663    0.000    7.663    0.000 /home/fede/miniconda3/lib/python3.14/site-packages/tskit/tables.py:703(__setattr__)
-   100000    1.260    0.000    7.189    0.000 /home/fede/miniconda3/lib/python3.14/site-packages/tskit/trees.py:5139(first)
-   100000    1.437    0.000    6.300    0.000 /home/fede/miniconda3/lib/python3.14/site-packages/tskit/trees.py:1059(tmrca)
-   100000    1.878    0.000    5.934    0.000 /home/fede/miniconda3/lib/python3.14/site-packages/tskit/trees.py:6500(samples)
-   400002    3.109    0.000    4.675    0.000 /home/fede/miniconda3/lib/python3.14/logging/__init__.py:1510(info)
-   100000    2.094    0.000    4.531    0.000 /home/fede/miniconda3/lib/python3.14/site-packages/tskit/trees.py:687(__init__)
-   100000    1.487    0.000    4.527    0.000 /home/fede/miniconda3/lib/python3.14/site-packages/tskit/tables.py:2584(add_row)
-   100000    4.421    0.000    4.421    0.000 {method 'asdict' of 'LightweightTableCollection' objects}
-   100004    2.482    0.000    4.370    0.000 /home/fede/miniconda3/lib/python3.14/dataclasses.py:1454(fields)
-911772/911758    4.322    0.000    4.326    0.000 {built-in method builtins.getattr}
-   100000    4.278    0.000    4.278    0.000 {method 'fromdict' of '_tskit.TableCollection' objects}
+   100000   33.453    0.000   33.453    0.000 {function Simulator.run at 0x7f9507922160}
+   100000   17.048    0.000   32.347    0.000 /home/fedecf/msprime-benchmarks/.venv/lib/python3.13/site-packages/tskit/trees.py:4157(__init__)
+   100000   11.731    0.000   72.447    0.001 /home/fedecf/msprime-benchmarks/.venv/lib/python3.13/site-packages/msprime/ancestry.py:1561(run)
+   800009   11.340    0.000   18.876    0.000 /home/fedecf/msprime-benchmarks/.venv/lib/python3.13/site-packages/tskit/tables.py:674(__init__)
+  2400154   10.484    0.000   10.484    0.000 {method 'startswith' of 'str' objects}
+  1600020    7.536    0.000    7.537    0.000 /home/fedecf/msprime-benchmarks/.venv/lib/python3.13/site-packages/tskit/tables.py:703(__setattr__)
+   100001    6.616    0.000  171.689    0.002 /home/fedecf/msprime-benchmarks/.venv/lib/python3.13/site-packages/msprime/ancestry.py:1593(run_replicates)
+   100001    5.433    0.000   32.025    0.000 /home/fedecf/msprime-benchmarks/.venv/lib/python3.13/site-packages/tskit/tables.py:3048(__init__)
+   100000    5.236    0.000    5.236    0.000 {method 'asdict' of 'LightweightTableCollection' objects}
+   100000    4.932    0.000    4.932    0.000 {method 'fromdict' of '_tskit.TableCollection' objects}
+        1    4.135    4.135  196.696  196.696 /home/fedecf/msprime-benchmarks/ms_sim.py:235(stats)
+   900639    3.988    0.000    3.988    0.000 {built-in method builtins.getattr}
+   400002    3.149    0.000    4.682    0.000 /usr/lib/python3.13/logging/__init__.py:1510(info)
+   100000    2.894    0.000    2.894    0.000 {method 'finalise_tables' of '_msprime.Simulator' objects}
+200036/100004    2.857    0.000    8.052    0.000 /usr/lib/python3.13/dataclasses.py:1362(_asdict_inner)
+   100000    2.560    0.000   39.660    0.000 /home/fedecf/msprime-benchmarks/.venv/lib/python3.13/site-packages/msprime/ancestry.py:1533(_run_until)
+   100004    2.506    0.000    4.244    0.000 /usr/lib/python3.13/dataclasses.py:1308(fields)
+   100000    2.353    0.000    2.353    0.000 {method 'load_tables' of '_tskit.TreeSequence' objects}
+   100000    2.312    0.000   39.269    0.000 /home/fedecf/msprime-benchmarks/.venv/lib/python3.13/site-packages/tskit/tables.py:3510(fromdict)
+   600002    2.311    0.000    2.311    0.000 /usr/lib/python3.13/logging/__init__.py:1765(isEnabledFor)
+   100000    2.186    0.000    4.633    0.000 /home/fedecf/msprime-benchmarks/.venv/lib/python3.13/site-packages/tskit/trees.py:687(__init__)
+   100006    1.973    0.000    3.620    0.000 /home/fedecf/msprime-benchmarks/.venv/lib/python3.13/site-packages/numpy/_core/numeric.py:323(full)
+   100000    1.926    0.000    6.068    0.000 /home/fedecf/msprime-benchmarks/.venv/lib/python3.13/site-packages/tskit/trees.py:6500(samples)
+   100000    1.655    0.000    1.655    0.000 {method 'reset' of '_msprime.Simulator' objects}
+   200000    1.617    0.000    2.395    0.000 /usr/lib/python3.13/logging/__init__.py:1498(debug)
+
+
+
+## Flujo: top 25 por tiempo acumulado (cumtime)
+
+Sun Oct 25 15:57:35 2026    /home/fedecf/msprime-benchmarks/logs/cprofile/case1.prof
+
+         14511429 function calls (14411014 primitive calls) in 196.798 seconds
+
+   Ordered by: cumulative time
+   List reduced from 618 to 25 due to restriction <25>
+
+   ncalls  tottime  percall  cumtime  percall filename:lineno(function)
+      2/1    0.000    0.000  196.799  196.799 {built-in method builtins.exec}
+        1    0.000    0.000  196.799  196.799 <string>:1(<module>)
+        1    0.004    0.004  196.799  196.799 /home/fedecf/msprime-benchmarks/ms_sim.py:275(main)
+        1    4.135    4.135  196.696  196.696 /home/fedecf/msprime-benchmarks/ms_sim.py:235(stats)
+   100001    6.616    0.000  171.689    0.002 /home/fedecf/msprime-benchmarks/.venv/lib/python3.13/site-packages/msprime/ancestry.py:1593(run_replicates)
+   100000   11.731    0.000   72.447    0.001 /home/fedecf/msprime-benchmarks/.venv/lib/python3.13/site-packages/msprime/ancestry.py:1561(run)
+   100000    2.560    0.000   39.660    0.000 /home/fedecf/msprime-benchmarks/.venv/lib/python3.13/site-packages/msprime/ancestry.py:1533(_run_until)
+   100000    2.312    0.000   39.269    0.000 /home/fedecf/msprime-benchmarks/.venv/lib/python3.13/site-packages/tskit/tables.py:3510(fromdict)
+   100000    1.525    0.000   38.823    0.000 /home/fedecf/msprime-benchmarks/.venv/lib/python3.13/site-packages/tskit/tables.py:3525(tree_sequence)
+   100000    1.193    0.000   35.893    0.000 /home/fedecf/msprime-benchmarks/.venv/lib/python3.13/site-packages/tskit/trees.py:4287(load_tables)
+   100000   33.453    0.000   33.453    0.000 {function Simulator.run at 0x7f9507922160}
+   100000   17.048    0.000   32.347    0.000 /home/fedecf/msprime-benchmarks/.venv/lib/python3.13/site-packages/tskit/trees.py:4157(__init__)
+   100001    5.433    0.000   32.025    0.000 /home/fedecf/msprime-benchmarks/.venv/lib/python3.13/site-packages/tskit/tables.py:3048(__init__)
+   800009   11.340    0.000   18.876    0.000 /home/fedecf/msprime-benchmarks/.venv/lib/python3.13/site-packages/tskit/tables.py:674(__init__)
+   100000    1.384    0.000   13.790    0.000 /home/fedecf/msprime-benchmarks/.venv/lib/python3.13/site-packages/msprime/ancestry.py:1747(_as_lowlevel)
+   100000    0.981    0.000   11.908    0.000 /home/fedecf/msprime-benchmarks/.venv/lib/python3.13/site-packages/msprime/ancestry.py:1752(asdict)
+   100004    1.422    0.000   10.928    0.000 /usr/lib/python3.13/dataclasses.py:1338(asdict)
+  2400154   10.484    0.000   10.484    0.000 {method 'startswith' of 'str' objects}
+200036/100004    2.857    0.000    8.052    0.000 /usr/lib/python3.13/dataclasses.py:1362(_asdict_inner)
+  1600020    7.536    0.000    7.537    0.000 /home/fedecf/msprime-benchmarks/.venv/lib/python3.13/site-packages/tskit/tables.py:703(__setattr__)
+   100000    1.211    0.000    7.248    0.000 /home/fedecf/msprime-benchmarks/.venv/lib/python3.13/site-packages/tskit/trees.py:5139(first)
+   100000    1.926    0.000    6.068    0.000 /home/fedecf/msprime-benchmarks/.venv/lib/python3.13/site-packages/tskit/trees.py:6500(samples)
+   100000    1.421    0.000    6.028    0.000 /home/fedecf/msprime-benchmarks/.venv/lib/python3.13/site-packages/tskit/trees.py:1059(tmrca)
+   100000    5.236    0.000    5.236    0.000 {method 'asdict' of 'LightweightTableCollection' objects}
+   100000    4.932    0.000    4.932    0.000 {method 'fromdict' of '_tskit.TableCollection' objects}
 
 
