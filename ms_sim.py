@@ -260,9 +260,23 @@ def stats(gen, label=""):
           f"desvio = {sd[1]:.2f}   [recombinación (rho)]")
 
 
+def consume(gen):
+    """Recorre el generador sin calcular estadísticas (solo simula)."""
+    for _ in gen:
+        pass
+
+
+def peak_rss_mb():
+    """Memoria pico del proceso (RSS) en MB. En Linux ru_maxrss viene en kB."""
+    import resource
+    return resource.getrusage(resource.RUSAGE_SELF).ru_maxrss / 1024
+
+
 def main():
     ap = argparse.ArgumentParser(description="Corre casos ms->msprime")
     ap.add_argument("cases", nargs="*", type=int)
+    ap.add_argument("--no-stats", action="store_true",
+                    help="solo simular, sin calcular T_MRCA ni nº de árboles")
     args = ap.parse_args()
 
     selected = args.cases or sorted(CASES.keys())
@@ -272,10 +286,13 @@ def main():
             continue
         t0 = time.perf_counter()
         print(f"== INICIO caso {c}  |  {time.strftime('%Y-%m-%d %H:%M:%S')}")
-        stats(CASES[c](), label=f"caso {c}")
+        if args.no_stats:
+            consume(CASES[c]())
+        else:
+            stats(CASES[c](), label=f"caso {c}")
         t1 = time.perf_counter()
         print(f"== FIN caso {c}  |  {time.strftime('%Y-%m-%d %H:%M:%S')}  |  "
-              f"{t1 - t0:.2f} s  | OK")
+              f"{t1 - t0:.2f} s  |  RSS {peak_rss_mb():.1f} MB  | OK")
 
 
 if __name__ == "__main__":

@@ -72,6 +72,16 @@ if [[ -n "${VENV}" ]]; then
     else
         die "VENV='${VENV}' no contiene bin/activate"
     fi
+else
+    # Sin VENV explícito, busca el virtualenv del repo (./venv o ./.venv).
+    for d in "${SCRIPT_DIR}/venv" "${SCRIPT_DIR}/.venv"; do
+        if [[ -f "${d}/bin/activate" ]]; then
+            log "Activando virtualenv: ${d}"
+            # shellcheck disable=SC1091
+            source "${d}/bin/activate"
+            break
+        fi
+    done
 fi
 
 command -v "${PYTHON}" >/dev/null 2>&1 \
