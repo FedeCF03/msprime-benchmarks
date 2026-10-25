@@ -1,23 +1,23 @@
-== PERF caso 6 | 2026-10-07 23:00:51
-== INICIO caso 6  |  2026-10-07 23:00:51
+== PERF caso 6 | 2026-10-17 22:22:33
+== INICIO caso 6  |  2026-10-17 22:22:33
 --- caso 6  (n=50 réplicas) ---
   T_MRCA                        : media = 2.1997 gen  desvio = 2.2912   [escala de coalescencia]
   Nº de árboles                 : media = 5653.30  desvio = 182.89   [recombinación (rho)]
-== FIN caso 6  |  2026-10-07 23:01:01  |  9.20 s  | OK
+== FIN caso 6  |  2026-10-17 22:22:39  |  6.01 s  | OK
 
- Performance counter stats for 'python3 /home/fede/msprime-benchmarks/ms_sim.py 6':
+ Performance counter stats for '/home/fedecf/msprime-benchmarks/.venv/bin/python /home/fedecf/msprime-benchmarks/ms_sim.py 6':
 
-     1.492.047.039      cache-references:u                                                    
-       125.951.666      cache-misses:u                                                        
-    31.521.761.614      cycles:u                                                              
-    33.495.097.018      instructions:u                                                        
-     7.959.657.435      branches:u                                                            
-            15.506      faults:u                                                              
-                 0      migrations:u                                                          
+       532,105,364      cache-references                                                      
+        17,965,849      cache-misses                     #    3.38% of all cache refs         
+    29,953,647,017      cycles                                                                
+    35,129,036,785      instructions                     #    1.17  insn per cycle            
+     8,216,303,183      branches                                                              
+            16,696      faults                                                                
+                 0      migrations                                                            
 
-       9,708485396 seconds time elapsed
+       6.244829619 seconds time elapsed
 
-       9,384487000 seconds user
-       0,139904000 seconds sys
+       7.064524000 seconds user
+       0.023934000 seconds sys
 
 

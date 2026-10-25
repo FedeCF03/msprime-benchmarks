@@ -1,0 +1,23 @@
+== PERF caso 5 | 2026-10-17 22:20:55
+== INICIO caso 5  |  2026-10-17 22:20:55
+--- caso 5  (n=100000 réplicas) ---
+  T_MRCA                        : media = 3.7171 gen  desvio = 3.7445   [escala de coalescencia]
+  Nº de árboles                 : media = 25.75  desvio = 8.77   [recombinación (rho)]
+== FIN caso 5  |  2026-10-17 22:21:45  |  49.97 s  | OK
+
+ Performance counter stats for '/home/fedecf/msprime-benchmarks/.venv/bin/python /home/fedecf/msprime-benchmarks/ms_sim.py 5':
+
+    10,218,481,549      cache-references                                                      
+       757,989,925      cache-misses                     #    7.42% of all cache refs         
+   198,423,024,727      cycles                                                                
+   239,577,997,005      instructions                     #    1.21  insn per cycle            
+    69,420,770,947      branches                                                              
+            13,591      faults                                                                
+                81      migrations                                                            
+
+      50.229412450 seconds time elapsed
+
+      50.900600000 seconds user
+       0.079988000 seconds sys
+
+

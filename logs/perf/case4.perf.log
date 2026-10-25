@@ -1,0 +1,23 @@
+== PERF caso 4 | 2026-10-17 22:19:04
+== INICIO caso 4  |  2026-10-17 22:19:04
+--- caso 4  (n=100000 réplicas) ---
+  T_MRCA                        : media = 4.0240 gen  desvio = 4.1986   [escala de coalescencia]
+  Nº de árboles                 : media = 28.23  desvio = 9.28   [recombinación (rho)]
+== FIN caso 4  |  2026-10-17 22:19:58  |  53.98 s  | OK
+
+ Performance counter stats for '/home/fedecf/msprime-benchmarks/.venv/bin/python /home/fedecf/msprime-benchmarks/ms_sim.py 4':
+
+    10,323,937,798      cache-references                                                      
+     1,075,357,336      cache-misses                     #   10.42% of all cache refs         
+   212,786,189,874      cycles                                                                
+   244,744,565,163      instructions                     #    1.15  insn per cycle            
+    70,786,079,882      branches                                                              
+            14,111      faults                                                                
+                65      migrations                                                            
+
+      54.245160032 seconds time elapsed
+
+      54.924797000 seconds user
+       0.072011000 seconds sys
+
+
