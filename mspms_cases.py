@@ -20,7 +20,7 @@ SCRIPT_DIR = os.path.dirname(os.path.abspath(__file__))
 sys.path.insert(0, SCRIPT_DIR)
 from ms_sim import SCALE  # unidades de ms -> generaciones (4 * NE)
 
-MSPMS = os.path.join(SCRIPT_DIR, "venv", "bin", "mspms")
+MSPMS = os.path.join(SCRIPT_DIR, ".venv", "bin", "mspms")
 LOG_DIR = os.path.join(SCRIPT_DIR, "logs")
 SEEDS = ["40328", "19150", "54118"]
 
@@ -76,6 +76,19 @@ def parse_newick(s):
     return tree
 
 
+def strip_length(s):
+    """Quita el prefijo [longitud] del segmento"""
+    return s[s.index("]") + 1:] if s.startswith("[") else s
+
+
+def count_distinct_trees(newicks):
+    """Cuenta árboles distintos de su vecino anterior.
+    ms imprime un Newick por intervalo entre recombinaciones, aunque el árbol
+    no cambie; tskit fusiona esos intervalos (ts.num_trees)."""
+    topo = [strip_length(s) for s in newicks]
+    return sum(1 for i, t in enumerate(topo) if i == 0 or t != topo[i - 1])
+
+
 def newick_tmrca(tree, la, lb):
     node = tree.mrca(taxon_labels=[la, lb])
     return float("nan") if node is None else node.distance_from_tip()
@@ -100,7 +113,8 @@ def iter_mspms_replicates(cmd):
             tree = parse_newick(newicks[0])
             tmrca = newick_tmrca(tree, "1", "2")
         return {
-            "n_trees": len(newicks),
+            "n_trees": count_distinct_trees(newicks),
+            "n_newick": len(newicks),
             "tmrca_ms": tmrca,
         }
 
@@ -151,7 +165,8 @@ def run_case(case):
     rows = []
     for rep in iter_mspms_replicates(cmd):
         rows.append((rep["tmrca_ms"] * SCALE,   # 4N0 -> generaciones
-                     rep["n_trees"]))
+                     rep["n_trees"],
+                     rep["n_newick"]))
 
     t1 = time.perf_counter()
 
@@ -166,6 +181,8 @@ def run_case(case):
         f"desvio = {sd[0]:.4f}   [escala de coalescencia]",
         f"  Nº de árboles                 : media = {mu[1]:.2f}  "
         f"desvio = {sd[1]:.2f}   [recombinación (rho)]",
+        f"  Nº de Newick (con repetidos)  : media = {mu[2]:.2f}  "
+        f"desvio = {sd[2]:.2f}   [salida cruda de ms]",
         f"  cmd: {cmd_str}",
     ]
     block = "\n".join(lines)
