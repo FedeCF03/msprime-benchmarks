@@ -20,6 +20,7 @@ msprime-benchmarks/
 ├── profile_cprofile.sh # cProfile (hotspots Python)
 ├── mspms_ref.txt     # Referencia/notas de mspms
 ├── logs/             # Salidas acumulativas de cada corrida
+├── optimizacion/     # Cambios en Fenwick: parches, scripts de medición y resultados
 └── venv/             # Entorno virtual con msprime, numpy y dendropy
 ```
 

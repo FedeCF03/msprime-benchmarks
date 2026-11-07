@@ -1,0 +1,15 @@
+--- a/lib/fenwick.c
++++ b/lib/fenwick.c
+@@ -188,8 +188,10 @@
+     memset(self->tree, 0, (1 + self->size) * sizeof(*self->tree));
+     for (j = 1; j <= self->size; j++) {
+         value = self->values[j];
+-        self->values[j] = 0;
+-        fenwick_increment(self, j, value);
++        if (value != 0) {
++            self->values[j] = 0;
++            fenwick_increment(self, j, value);
++        }
+     }
+     current_drift = fenwick_get_numerical_drift(self);
+     /* Since we have just rebuilt the tree, this is as good as we can
