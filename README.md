@@ -20,7 +20,7 @@ msprime-benchmarks/
 ├── profile_cprofile.sh # cProfile (hotspots Python)
 ├── mspms_ref.txt     # Referencia/notas de mspms
 ├── logs/             # Salidas acumulativas de cada corrida
-├── optimizacion/     # Cambios en Fenwick: parches, scripts de medición y resultados
+├── optimizacion/     # El if en Fenwick y LTO: parche, scripts de medición y resultados
 └── venv/             # Entorno virtual con msprime, numpy y dendropy
 ```
 
@@ -83,7 +83,7 @@ Se usan dos herramientas, una por cada capa de msprime:
 | Herramienta | Qué aporta |
 |---|---|
 | `cProfile` | Hotspots del lado **Python**: separa el tiempo de la API Python del tiempo dentro de la extensión en C. Salidas en `logs/cprofile/`. |
-| `perf` | Hotspots del **núcleo en C** (`perf record` + `perf report`) y contadores de hardware (`perf stat`: ciclos, instrucciones, cache-misses, ramas). Salidas en `logs/perf/`. |
+| `perf` | Hotspots del **núcleo en C** (`perf record` + `perf report`) y contadores de hardware (`perf stat`: ciclos, instrucciones, cache-misses, ramas). Salidas en `logs/perf/`; las de msprime con el `if` y LTO, en `logs/perf/optimizacion/` (ver `optimizacion/README.md`). |
 
 ```bash
 ./profile_cprofile.sh          # casos 1-6

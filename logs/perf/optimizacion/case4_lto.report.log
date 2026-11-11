@@ -1,0 +1,2159 @@
+# To display the perf.data header info, please use --header/--header-only options.
+#
+# comm: python
+#
+# Total Lost Samples: 0
+#
+# Samples: 3K of event 'cycles:P'
+# Event count (approx.): 134959826915
+#
+# Children      Self  Shared Object                                      Symbol                                                 
+# ........  ........  .................................................  .......................................................
+#
+    20.45%     0.00%  [unknown]                                          [.] 0x0000000000010000
+            |
+            ---0x10000
+               |          
+               |--14.22%--fenwick_rebuild
+               |          
+               |--2.48%--__memset_avx2_unaligned_erms
+               |          
+               |--1.03%--__log1p_fma
+               |          
+                --0.78%--msp_choose_uniform_breakpoint.lto_priv.0
+
+    19.00%     0.00%  [unknown]                                          [.] 0000000000000000
+            |
+            ---0
+               |          
+               |--6.98%--__memset_avx2_unaligned_erms
+               |          
+               |--2.27%--__log1p_fma
+               |          
+               |--1.27%--rate_map_position_to_mass
+               |          
+               |--0.98%--_int_malloc
+               |          
+               |--0.83%--0
+               |          
+               |--0.65%--msp_set_segment_mass.lto_priv.0
+               |          
+                --0.57%--avl_rebalance.lto_priv.0
+
+    14.22%    14.19%  _msprime.cpython-313-x86_64-linux-gnu.so           [.] fenwick_rebuild
+            |          
+             --14.19%--0x10000
+                       fenwick_rebuild
+
+    13.16%     0.00%  [unknown]                                          [.] 0x6e61720030353272
+            |
+            ---0x6e61720030353272
+               0xffffffff
+               0x1e664790
+               0
+               |          
+               |--6.98%--__memset_avx2_unaligned_erms
+               |          
+               |--2.27%--__log1p_fma
+               |          
+               |--1.27%--rate_map_position_to_mass
+               |          
+                --0.65%--msp_set_segment_mass.lto_priv.0
+
+    13.16%     0.00%  [unknown]                                          [.] 0x00000000ffffffff
+            |
+            ---0xffffffff
+               0x1e664790
+               0
+               |          
+               |--6.98%--__memset_avx2_unaligned_erms
+               |          
+               |--2.27%--__log1p_fma
+               |          
+               |--1.27%--rate_map_position_to_mass
+               |          
+                --0.65%--msp_set_segment_mass.lto_priv.0
+
+    13.16%     0.00%  [unknown]                                          [.] 0x000000001e664790
+            |
+            ---0x1e664790
+               0
+               |          
+               |--6.98%--__memset_avx2_unaligned_erms
+               |          
+               |--2.27%--__log1p_fma
+               |          
+               |--1.27%--rate_map_position_to_mass
+               |          
+                --0.65%--msp_set_segment_mass.lto_priv.0
+
+     9.83%     9.77%  libc.so.6                                          [.] __memset_avx2_unaligned_erms
+            |          
+            |--6.93%--0x6e61720030353272
+            |          0xffffffff
+            |          0x1e664790
+            |          0
+            |          __memset_avx2_unaligned_erms
+            |          
+             --2.48%--0x10000
+                       __memset_avx2_unaligned_erms
+
+     5.71%     5.66%  libm.so.6                                          [.] __log1p_fma
+            |          
+            |--2.43%--__log1p_fma
+            |          
+            |--2.27%--0x6e61720030353272
+            |          0xffffffff
+            |          0x1e664790
+            |          0
+            |          __log1p_fma
+            |          
+             --1.01%--0x10000
+                       __log1p_fma
+
+     5.17%     5.09%  python3.13                                         [.] _PyEval_EvalFrameDefault
+     3.44%     0.00%  [unknown]                                          [.] 0x00000000009fc840
+            |
+            ---0x9fc840
+
+     3.02%     3.02%  _msprime.cpython-313-x86_64-linux-gnu.so           [.] avl_rebalance.lto_priv.0
+     2.04%     2.04%  _msprime.cpython-313-x86_64-linux-gnu.so           [.] msp_run_coalescent
+            |          
+             --1.42%--msp_run_coalescent
+
+     1.73%     0.00%  [vdso]                                             [.] 0x00007f294ac4fca8
+            |
+            ---0x7f294ac4fca8
+               |          
+                --1.63%--0xffffffff87c0012f
+                          0xffffffff87b08777
+                          |          
+                           --1.58%--0xffffffff86fb0a5c
+                                     |          
+                                      --1.55%--0xffffffff86fae5b1
+                                                |          
+                                                 --1.53%--0xffffffff86fa7084
+                                                           |          
+                                                            --1.40%--0xffffffff86e96513
+
+     1.68%     0.00%  libc.so.6                                          [.] clock_gettime@@GLIBC_2.17
+            |
+            ---clock_gettime@@GLIBC_2.17
+               |          
+                --1.65%--0x7f294ac4fca8
+                          |          
+                           --1.63%--0xffffffff87c0012f
+                                     0xffffffff87b08777
+                                     |          
+                                      --1.58%--0xffffffff86fb0a5c
+                                                |          
+                                                 --1.55%--0xffffffff86fae5b1
+                                                           |          
+                                                            --1.53%--0xffffffff86fa7084
+                                                                      |          
+                                                                       --1.40%--0xffffffff86e96513
+
+     1.67%     0.00%  [kernel.kallsyms]                                  [k] 0xffffffff87c0012f
+            |
+            ---0xffffffff87c0012f
+               0xffffffff87b08777
+               |          
+                --1.58%--0xffffffff86fb0a5c
+                          |          
+                           --1.55%--0xffffffff86fae5b1
+                                     |          
+                                      --1.53%--0xffffffff86fa7084
+                                                |          
+                                                 --1.40%--0xffffffff86e96513
+
+     1.67%     0.00%  [kernel.kallsyms]                                  [k] 0xffffffff87b08777
+            |
+            ---0xffffffff87b08777
+               |          
+                --1.58%--0xffffffff86fb0a5c
+                          |          
+                           --1.55%--0xffffffff86fae5b1
+                                     |          
+                                      --1.53%--0xffffffff86fa7084
+                                                |          
+                                                 --1.40%--0xffffffff86e96513
+
+     1.63%     1.63%  _msprime.cpython-313-x86_64-linux-gnu.so           [.] msp_merge_two_ancestors.lto_priv.0
+     1.58%     1.58%  [kernel.kallsyms]                                  [k] 0xffffffff86e96513
+            |          
+             --1.42%--clock_gettime@@GLIBC_2.17
+                       0x7f294ac4fca8
+                       0xffffffff87c0012f
+                       0xffffffff87b08777
+                       0xffffffff86fb0a5c
+                       0xffffffff86fae5b1
+                       0xffffffff86fa7084
+                       |          
+                        --1.40%--0xffffffff86e96513
+
+     1.58%     0.00%  [kernel.kallsyms]                                  [k] 0xffffffff86fb0a5c
+            |
+            ---0xffffffff86fb0a5c
+               |          
+                --1.55%--0xffffffff86fae5b1
+                          |          
+                           --1.53%--0xffffffff86fa7084
+                                     |          
+                                      --1.40%--0xffffffff86e96513
+
+     1.55%     0.00%  [kernel.kallsyms]                                  [k] 0xffffffff86fae5b1
+            |
+            ---0xffffffff86fae5b1
+               |          
+                --1.53%--0xffffffff86fa7084
+                          |          
+                           --1.40%--0xffffffff86e96513
+
+     1.53%     0.00%  [kernel.kallsyms]                                  [k] 0xffffffff86fa7084
+            |
+            ---0xffffffff86fa7084
+               |          
+                --1.40%--0xffffffff86e96513
+
+     1.50%     1.48%  _msprime.cpython-313-x86_64-linux-gnu.so           [.] rate_map_position_to_mass
+            |          
+             --1.24%--0x6e61720030353272
+                       0xffffffff
+                       0x1e664790
+                       0
+                       rate_map_position_to_mass
+
+     1.47%     1.47%  libc.so.6                                          [.] _int_malloc
+            |          
+             --0.98%--0
+                       _int_malloc
+
+     1.34%     1.32%  libc.so.6                                          [.] msort_with_tmp.part.0
+     1.19%     1.16%  _msprime.cpython-313-x86_64-linux-gnu.so           [.] avl_insert_node
+     1.09%     0.00%  [unknown]                                          [.] 0x0000000000a06b80
+            |
+            ---0xa06b80
+
+     1.03%     1.03%  libc.so.6                                          [.] cfree@GLIBC_2.2.5
+     1.03%     1.01%  libc.so.6                                          [.] malloc_consolidate
+            |          
+             --0.98%--malloc_consolidate
+
+     1.03%     0.00%  [unknown]                                          [.] 0x0000000000000001
+            |
+            ---0x1
+
+     1.01%     0.00%  [unknown]                                          [.] 0x08508b4808468b48
+            |
+            ---0x8508b4808468b48
+
+     1.01%     1.01%  libc.so.6                                          [.] __memmove_avx_unaligned_erms
+            |          
+             --0.67%--__memmove_avx_unaligned_erms
+
+     1.00%     0.00%  [unknown]                                          [.] 0x0000000000a06020
+            |
+            ---0xa06020
+
+     0.98%     0.00%  [unknown]                                          [.] 0x00007f294997fa40
+            |
+            ---0x7f294997fa40
+
+     0.93%     0.00%  [unknown]                                          [.] 0x970fc12f0f66c031
+            |
+            ---0x970fc12f0f66c031
+
+     0.90%     0.90%  _msprime.cpython-313-x86_64-linux-gnu.so           [.] cmp_node_mapping
+     0.85%     0.85%  libc.so.6                                          [.] malloc
+            |          
+             --0.78%--malloc
+
+     0.83%     0.00%  [kernel.kallsyms]                                  [k] 0xffffffff87c012a6
+            |
+            ---0xffffffff87c012a6
+               0xffffffff87b0dd8e
+               0xffffffff86ea42e7
+               0xffffffff87185042
+               |          
+                --0.80%--0xffffffff871846cd
+                          0xffffffff8717dc32
+                          0xffffffff87125958
+
+     0.83%     0.00%  [kernel.kallsyms]                                  [k] 0xffffffff87b0dd8e
+            |
+            ---0xffffffff87b0dd8e
+               0xffffffff86ea42e7
+               0xffffffff87185042
+               |          
+                --0.80%--0xffffffff871846cd
+                          0xffffffff8717dc32
+                          0xffffffff87125958
+
+     0.83%     0.00%  [kernel.kallsyms]                                  [k] 0xffffffff86ea42e7
+            |
+            ---0xffffffff86ea42e7
+               0xffffffff87185042
+               |          
+                --0.80%--0xffffffff871846cd
+                          0xffffffff8717dc32
+                          0xffffffff87125958
+
+     0.83%     0.00%  [kernel.kallsyms]                                  [k] 0xffffffff87185042
+            |
+            ---0xffffffff87185042
+               |          
+                --0.80%--0xffffffff871846cd
+                          0xffffffff8717dc32
+                          0xffffffff87125958
+
+     0.80%     0.80%  _msprime.cpython-313-x86_64-linux-gnu.so           [.] cmp_index_sort
+     0.80%     0.78%  _msprime.cpython-313-x86_64-linux-gnu.so           [.] msp_choose_uniform_breakpoint.lto_priv.0
+            |          
+             --0.75%--0x10000
+                       msp_choose_uniform_breakpoint.lto_priv.0
+
+     0.80%     0.80%  [kernel.kallsyms]                                  [k] 0xffffffff87125958
+            |
+            ---0x6a0120
+               0xffffffff87c012a6
+               0xffffffff87b0dd8e
+               0xffffffff86ea42e7
+               0xffffffff87185042
+               0xffffffff871846cd
+               0xffffffff8717dc32
+               0xffffffff87125958
+
+     0.80%     0.00%  python3.13                                         [.] 0x00000000006a0120
+            |
+            ---0x6a0120
+               0xffffffff87c012a6
+               0xffffffff87b0dd8e
+               0xffffffff86ea42e7
+               0xffffffff87185042
+               0xffffffff871846cd
+               0xffffffff8717dc32
+               0xffffffff87125958
+
+     0.80%     0.00%  [kernel.kallsyms]                                  [k] 0xffffffff871846cd
+            |
+            ---0xffffffff871846cd
+               0xffffffff8717dc32
+               0xffffffff87125958
+
+     0.80%     0.00%  [kernel.kallsyms]                                  [k] 0xffffffff8717dc32
+            |
+            ---0xffffffff8717dc32
+               0xffffffff87125958
+
+     0.79%     0.00%  [kernel.kallsyms]                                  [k] 0xffffffff87c0160a
+            |
+            ---0xffffffff87c0160a
+               |          
+                --0.70%--0xffffffff87b0d388
+                          0xffffffff86e86f25
+                          |          
+                           --0.57%--0xffffffff86fa46ba
+                                     0xffffffff86fa35dd
+
+     0.78%     0.78%  _msprime.cpython-313-x86_64-linux-gnu.so           [.] msp_set_segment_mass.lto_priv.0
+            |          
+             --0.65%--0x6e61720030353272
+                       0xffffffff
+                       0x1e664790
+                       0
+                       msp_set_segment_mass.lto_priv.0
+
+     0.75%     0.00%  [kernel.kallsyms]                                  [k] 0xffffffff86e86f25
+            |
+            ---0xffffffff86e86f25
+               |          
+                --0.60%--0xffffffff86fa46ba
+                          0xffffffff86fa35dd
+
+     0.73%     0.00%  [unknown]                                          [.] 0x0000000000000800
+            |
+            ---0x800
+
+     0.72%     0.72%  libc.so.6                                          [.] __memmove_avx_unaligned
+     0.70%     0.00%  [kernel.kallsyms]                                  [k] 0xffffffff87b0d388
+            |
+            ---0xffffffff87b0d388
+               0xffffffff86e86f25
+               |          
+                --0.57%--0xffffffff86fa46ba
+                          0xffffffff86fa35dd
+
+     0.65%     0.00%  [unknown]                                          [.] 0x0000000000000021
+            |
+            ---0x21
+               |          
+                --0.57%--cfree@GLIBC_2.2.5
+
+     0.62%     0.62%  python3.13                                         [.] _PyObject_GenericGetAttrWithDict
+     0.60%     0.00%  [kernel.kallsyms]                                  [k] 0xffffffff86fa46ba
+            |
+            ---0xffffffff86fa46ba
+               0xffffffff86fa35dd
+
+     0.60%     0.00%  [kernel.kallsyms]                                  [k] 0xffffffff86fa35dd
+            |
+            ---0xffffffff86fa35dd
+
+     0.59%     0.59%  _multiarray_umath.cpython-313-x86_64-linux-gnu.so  [.] PyArray_NewFromDescr_int
+     0.59%     0.59%  _msprime.cpython-313-x86_64-linux-gnu.so           [.] msp_recombination_event.lto_priv.0
+     0.57%     0.00%  [unknown]                                          [.] 0x0000000000a07880
+            |
+            ---0xa07880
+
+     0.57%     0.57%  libc.so.6                                          [.] unlink_chunk.isra.0
+     0.54%     0.52%  _tskit.cpython-313-x86_64-linux-gnu.so             [.] tsk_table_collection_check_integrity
+     0.52%     0.00%  [unknown]                                          [.] 0x000000001dfaf360
+            |
+            ---0x1dfaf360
+
+     0.52%     0.52%  _msprime.cpython-313-x86_64-linux-gnu.so           [.] avl_unlink_node
+     0.52%     0.52%  libc.so.6                                          [.] __strlen_avx2
+     0.49%     0.49%  _msprime.cpython-313-x86_64-linux-gnu.so           [.] msp_insert_merged_ancestor
+     0.49%     0.47%  _msprime.cpython-313-x86_64-linux-gnu.so           [.] msp_move_individual.constprop.0
+     0.47%     0.47%  _msprime.cpython-313-x86_64-linux-gnu.so           [.] msp_is_completed
+     0.47%     0.47%  _msprime.cpython-313-x86_64-linux-gnu.so           [.] msp_std_common_ancestor_event.lto_priv.0
+     0.44%     0.41%  libgsl.so.28.0.0                                   [.] gsl_ran_exponential
+     0.41%     0.41%  _tskit.cpython-313-x86_64-linux-gnu.so             [.] tsk_treeseq_init
+     0.41%     0.41%  libgsl.so.28.0.0                                   [.] gsl_rng_uniform_int
+     0.41%     0.00%  [unknown]                                          [.] 0x000000001dfaf960
+     0.41%     0.41%  _msprime.cpython-313-x86_64-linux-gnu.so           [.] msp_std_get_common_ancestor_waiting_time.lto_priv.0
+     0.39%     0.39%  _msprime.cpython-313-x86_64-linux-gnu.so           [.] tsk_table_collection_check_integrity
+     0.36%     0.36%  _msprime.cpython-313-x86_64-linux-gnu.so           [.] fenwick_find
+     0.36%     0.00%  [unknown]                                          [.] 0x000000001dfb2360
+     0.34%     0.34%  libc.so.6                                          [.] pthread_getspecific@@GLIBC_2.34
+     0.34%     0.00%  [kernel.kallsyms]                                  [k] 0xffffffff86fb919f
+     0.34%     0.34%  _multiarray_umath.cpython-313-x86_64-linux-gnu.so  [.] PyArray_DiscoverDTypeAndShape_Recursive
+     0.34%     0.34%  _msprime.cpython-313-x86_64-linux-gnu.so           [.] msp_free_segment.lto_priv.0
+     0.34%     0.34%  _msprime.cpython-313-x86_64-linux-gnu.so           [.] cmp_individual.lto_priv.0
+     0.34%     0.34%  _multiarray_umath.cpython-313-x86_64-linux-gnu.so  [.] default_malloc
+     0.31%     0.00%  [kernel.kallsyms]                                  [k] 0xffffffff86fa2cb4
+     0.31%     0.00%  [unknown]                                          [.] 0x00007f294a81fbe0
+     0.31%     0.00%  [unknown]                                          [.] 0x00007f294a81c000
+     0.31%     0.31%  libc.so.6                                          [.] _int_free_merge_chunk
+     0.31%     0.31%  libgsl.so.28.0.0                                   [.] 0x0000000000186d83
+     0.31%     0.00%  libgsl.so.28.0.0                                   [.] 0x00007f2949b86d83
+     0.31%     0.31%  _msprime.cpython-313-x86_64-linux-gnu.so           [.] msp_copy_overlap_count
+     0.31%     0.31%  libgsl.so.28.0.0                                   [.] 0x0000000000186d7b
+     0.31%     0.00%  libgsl.so.28.0.0                                   [.] 0x00007f2949b86d7b
+     0.28%     0.28%  python3.13                                         [.] _PyObject_MakeTpCall
+     0.28%     0.00%  [unknown]                                          [.] 0x257568253a6e2575
+     0.28%     0.00%  [unknown]                                          [.] 0x00007f2943e8d6e0
+     0.28%     0.00%  [unknown]                                          [.] 0x00007f2943e8def8
+     0.28%     0.28%  libm.so.6                                          [.] __w_logp1
+     0.28%     0.00%  [unknown]                                          [.] 0x00007f2943e8dbb0
+     0.28%     0.00%  [unknown]                                          [.] 0x00007f2946cfd9e0
+     0.26%     0.00%  [unknown]                                          [.] 0x0000000000a069e0
+     0.26%     0.26%  _multiarray_umath.cpython-313-x86_64-linux-gnu.so  [.] array_dealloc
+     0.26%     0.00%  [unknown]                                          [.] 0x00007f2943e8c100
+     0.26%     0.26%  _msprime.cpython-313-x86_64-linux-gnu.so           [.] cmp_edge_cl
+     0.26%     0.00%  [unknown]                                          [.] 0x0000000000000002
+     0.26%     0.26%  python3.13                                         [.] 0x0000000000130afa
+     0.26%     0.00%  python3.13                                         [.] 0x0000000000530afa
+     0.26%     0.00%  [unknown]                                          [.] 0x00007f2943e8c918
+     0.26%     0.26%  libc.so.6                                          [.] _int_free_chunk
+     0.26%     0.00%  [unknown]                                          [.] 0x000000001dfb0560
+     0.26%     0.00%  [unknown]                                          [.] 0x00007f2943e8c250
+     0.26%     0.00%  [unknown]                                          [.] 0x00007f2943e8c448
+     0.26%     0.26%  libc.so.6                                          [.] indirect_msort_with_tmp
+     0.23%     0.23%  python3.13                                         [.] 0x00000000001273d5
+     0.23%     0.00%  python3.13                                         [.] 0x00000000005273d5
+     0.23%     0.23%  python3.13                                         [.] _PyEval_FrameClearAndPop
+     0.23%     0.00%  [unknown]                                          [.] 0xd029d2b60fc09f0f
+     0.23%     0.00%  [unknown]                                          [.] 0x00007f2943e8d7f8
+     0.23%     0.00%  [unknown]                                          [.] 0x00007f2943e8da28
+     0.23%     0.00%  [unknown]                                          [.] 0x00007f2943e8cbf0
+     0.23%     0.00%  [unknown]                                          [.] 0x00007f2943e8d1d8
+     0.23%     0.00%  [unknown]                                          [.] 0x00007f2943e8d910
+     0.23%     0.00%  [unknown]                                          [.] 0x00007f2943e8d4e8
+     0.23%     0.00%  [unknown]                                          [.] 0x00007f2943e8bfe8
+     0.23%     0.23%  python3.13                                         [.] PyObject_Free
+     0.23%     0.00%  [unknown]                                          [.] 0x00007f2943e8c870
+     0.23%     0.00%  [unknown]                                          [.] 0x00007f2943e8dbe8
+     0.23%     0.00%  [unknown]                                          [.] 0x00007f2943e8db40
+     0.23%     0.00%  [unknown]                                          [.] 0x00007f2943e8cf38
+     0.23%     0.00%  [unknown]                                          [.] 0x00007f2943e8c368
+     0.23%     0.00%  [unknown]                                          [.] 0x00007f2943e8d440
+     0.23%     0.23%  python3.13                                         [.] 0x0000000000130991
+     0.23%     0.00%  python3.13                                         [.] 0x0000000000530991
+     0.23%     0.00%  [unknown]                                          [.] 0x00007f2943e8c6b0
+     0.22%     0.22%  python3.13                                         [.] PyObject_GC_Del
+     0.22%     0.22%  libc.so.6                                          [.] __mempcpy@plt
+     0.21%     0.21%  python3.13                                         [.] 0x00000000001273e3
+     0.21%     0.00%  python3.13                                         [.] 0x00000000005273e3
+     0.21%     0.18%  libc.so.6                                          [.] __memcmp_avx2_movbe
+     0.21%     0.21%  python3.13                                         [.] _PySuper_Lookup
+     0.21%     0.21%  _msprime.cpython-313-x86_64-linux-gnu.so           [.] avl_insert_after
+     0.21%     0.00%  [unknown]                                          [.] 0x0000000000000048
+     0.21%     0.00%  [unknown]                                          [.] 0x00000000009fde00
+     0.21%     0.00%  [unknown]                                          [.] 0x00007f2943e8d088
+     0.21%     0.00%  [unknown]                                          [.] 0x00007f2943e8d1a0
+     0.21%     0.00%  [unknown]                                          [.] 0x00000000009f9680
+     0.21%     0.21%  _msprime.cpython-313-x86_64-linux-gnu.so           [.] write_table_arrays
+     0.21%     0.21%  libc.so.6                                          [.] _int_realloc
+     0.21%     0.00%  [unknown]                                          [.] 0x00007f2943e8c598
+     0.21%     0.00%  [unknown]                                          [.] 0x00007f2943e8de18
+     0.21%     0.21%  python3.13                                         [.] _PyObject_GenericSetAttrWithDict
+     0.21%     0.00%  [unknown]                                          [.] 0x00007f2943e8d750
+     0.21%     0.00%  [unknown]                                          [.] 0x00007f2943e8df68
+     0.21%     0.00%  [unknown]                                          [.] 0x00007f2943e8bfb0
+     0.18%     0.00%  [unknown]                                          [.] 0x00007f2943e8dfd8
+     0.18%     0.00%  [unknown]                                          [.] 0x00007f2943e8cd78
+     0.18%     0.05%  libc.so.6                                          [.] __isoc23_sscanf
+     0.18%     0.00%  [unknown]                                          [.] 0x00007f2943e8d788
+     0.18%     0.00%  [unknown]                                          [.] 0x00007f2943e8d9f0
+     0.18%     0.00%  [unknown]                                          [.] 0x00000000000003e8
+     0.18%     0.00%  [unknown]                                          [.] 0x3230256325643230
+     0.18%     0.18%  _tskit.cpython-313-x86_64-linux-gnu.so             [.] __tsk_safe_free
+     0.18%     0.00%  [unknown]                                          [.] 0x00007f2943e8d718
+     0.18%     0.18%  _msprime.cpython-313-x86_64-linux-gnu.so           [.] msp_alloc_segment.isra.0
+     0.18%     0.00%  [unknown]                                          [.] 0x00007f2943e8d018
+     0.18%     0.00%  [unknown]                                          [.] 0x00007f2943e8d670
+     0.18%     0.18%  _msprime.cpython-313-x86_64-linux-gnu.so           [.] msp_flush_edges.lto_priv.0
+     0.18%     0.18%  python3.13                                         [.] PyObject_GetAttr
+     0.18%     0.00%  [unknown]                                          [.] 0x00007f2943e8c058
+     0.18%     0.00%  [unknown]                                          [.] 0x0000000300000002
+     0.18%     0.00%  [unknown]                                          [.] 0x00007f2943e8c560
+     0.18%     0.00%  [unknown]                                          [.] 0x00007f2943e8dcc8
+     0.18%     0.00%  [unknown]                                          [.] 0x00007f2943e8c8a8
+     0.18%     0.00%  [unknown]                                          [.] 0x0000000000a00a00
+     0.18%     0.00%  [unknown]                                          [.] 0x00007f2943e8cde8
+     0.18%     0.18%  libc.so.6                                          [.] __strcmp_avx2
+     0.18%     0.00%  [unknown]                                          [.] 0x00007f2943e8d408
+     0.18%     0.00%  [unknown]                                          [.] 0x00007f2943e8cb48
+     0.18%     0.18%  libc.so.6                                          [.] _int_free_create_chunk
+     0.18%     0.00%  [unknown]                                          [.] 0x00007f2943e8dad0
+     0.16%     0.00%  [unknown]                                          [.] 0x00007f2943e8c170
+     0.16%     0.00%  [unknown]                                          [.] 0x00007f2943e8d980
+     0.16%     0.16%  _multiarray_umath.cpython-313-x86_64-linux-gnu.so  [.] IsAligned
+     0.16%     0.00%  [unknown]                                          [.] 0x00007f2943e8ca68
+     0.16%     0.00%  [unknown]                                          [.] 0x00007f2943e8dda8
+     0.16%     0.16%  _multiarray_umath.cpython-313-x86_64-linux-gnu.so  [.] PyArray_GetCastingImpl
+     0.16%     0.00%  [unknown]                                          [.] 0x00007f2949981a40
+     0.16%     0.00%  [kernel.kallsyms]                                  [k] 0xffffffff86fa6afd
+     0.16%     0.00%  [unknown]                                          [.] 0x00007f2943e8dc20
+     0.16%     0.16%  python3.13                                         [.] PyMem_Free
+     0.16%     0.00%  [unknown]                                          [.] 0x00007f2943e8bc68
+     0.16%     0.00%  [unknown]                                          [.] 0x00007f2943e8d3d0
+     0.16%     0.00%  [unknown]                                          [.] 0x00007f2943e8d210
+     0.16%     0.00%  [unknown]                                          [.] 0x00007f2943e8c950
+     0.16%     0.00%  [unknown]                                          [.] 0x0000000000000003
+     0.16%     0.00%  [unknown]                                          [.] 0x00007f2943e8c528
+     0.16%     0.00%  [unknown]                                          [.] 0x00007f2943e8d130
+     0.16%     0.00%  [unknown]                                          [.] 0x00007f2943e8dfa0
+     0.16%     0.00%  [unknown]                                          [.] 0x00007f2943e8d328
+     0.16%     0.00%  [unknown]                                          [.] 0x00007f2943e8da60
+     0.16%     0.16%  _multiarray_umath.cpython-313-x86_64-linux-gnu.so  [.] PyArray_Empty
+     0.16%     0.00%  [unknown]                                          [.] 0x00007f2943e8ce58
+     0.16%     0.00%  [unknown]                                          [.] 0x0000000000010303
+     0.16%     0.00%  [unknown]                                          [.] 0x00007f2943e8c7c8
+     0.15%     0.00%  [unknown]                                          [.] 0x00007f2943e8c800
+     0.15%     0.00%  [unknown]                                          [.] 0x00007f2943e8d8d8
+     0.15%     0.00%  [unknown]                                          [.] 0x000000001e6a99c0
+     0.15%     0.00%  [unknown]                                          [.] 0x00007f2943e8d9b8
+     0.15%     0.15%  _msprime.cpython-313-x86_64-linux-gnu.so           [.] msp_get_num_population_ancestors
+     0.15%     0.00%  [unknown]                                          [.] 0x00007f2943e8d5c8
+     0.15%     0.15%  python3.13                                         [.] PyType_IsSubtype
+     0.15%     0.00%  [unknown]                                          [.] 0x00007f2943e8bf08
+     0.13%     0.13%  _tskit.cpython-313-x86_64-linux-gnu.so             [.] tsk_node_table_append_columns
+     0.13%     0.00%  [unknown]                                          [.] 0x0000000000000400
+     0.13%     0.00%  [unknown]                                          [.] 0x000000000000ffd4
+     0.13%     0.00%  [unknown]                                          [.] 0x000000001df8e970
+     0.13%     0.13%  _multiarray_umath.cpython-313-x86_64-linux-gnu.so  [.] array_boolean_subscript
+     0.13%     0.10%  _multiarray_umath.cpython-313-x86_64-linux-gnu.so  [.] npy_alloc_cache_dim
+     0.13%     0.13%  python3.13                                         [.] PyGILState_Ensure
+     0.13%     0.13%  _msprime.cpython-313-x86_64-linux-gnu.so           [.] msp_setup_segment_indexes.lto_priv.0
+     0.13%     0.13%  libc.so.6                                          [.] realloc
+     0.13%     0.00%  [unknown]                                          [.] 0x00007f2943e8cd08
+     0.13%     0.00%  [unknown]                                          [.] 0x0000740072007265
+     0.13%     0.00%  python3.13                                         [.] 0x000000000053093f
+     0.13%     0.00%  [unknown]                                          [.] 0x00007f2943e8cb80
+     0.13%     0.00%  [kernel.kallsyms]                                  [k] 0xffffffff86f14f99
+     0.13%     0.00%  [kernel.kallsyms]                                  [k] 0xffffffff8710a51a
+     0.13%     0.00%  [unknown]                                          [.] 0x00007f2943e8d248
+     0.13%     0.00%  [unknown]                                          [.] 0x00007f2943e8d558
+     0.13%     0.10%  _multiarray_umath.cpython-313-x86_64-linux-gnu.so  [.] PyArray_UpdateFlags
+     0.13%     0.00%  [unknown]                                          [.] 0x00007f2943e8d168
+     0.13%     0.13%  _tskit.cpython-313-x86_64-linux-gnu.so             [.] tsk_tree_clear
+     0.13%     0.00%  [unknown]                                          [.] 0x000000001e6a9960
+     0.13%     0.00%  [unknown]                                          [.] 0x00007f2943e8d0c0
+     0.13%     0.00%  [unknown]                                          [.] 0x00007f2943e8d478
+     0.13%     0.00%  [unknown]                                          [.] 0x00007f2943e8cdb0
+     0.13%     0.13%  _multiarray_umath.cpython-313-x86_64-linux-gnu.so  [.] PyArray_FromAny_int
+     0.13%     0.13%  python3.13                                         [.] PyObject_Vectorcall
+     0.13%     0.00%  [unknown]                                          [.] 0x00007f2943e8df30
+     0.13%     0.13%  python3.13                                         [.] 0x0000000000133735
+     0.13%     0.00%  python3.13                                         [.] 0x0000000000533735
+     0.13%     0.00%  [unknown]                                          [.] 0x000000000000ffe8
+     0.13%     0.13%  libc.so.6                                          [.] printf_positional
+     0.13%     0.00%  [unknown]                                          [.] 0x00007f2943e8cbb8
+     0.13%     0.00%  [unknown]                                          [.] 0x00007f2943e8c3d8
+     0.13%     0.00%  [unknown]                                          [.] 0x00007f2943e8cfe0
+     0.13%     0.00%  [unknown]                                          [.] 0x00007f2943e8da98
+     0.13%     0.00%  [unknown]                                          [.] 0x000000000000ffd7
+     0.13%     0.13%  _msprime.cpython-313-x86_64-linux-gnu.so           [.] msp_store_edge.lto_priv.0
+     0.13%     0.00%  [unknown]                                          [.] 0x00007f2943e8cb10
+     0.13%     0.00%  [unknown]                                          [.] 0x00007f2943e8cfa8
+     0.13%     0.00%  [unknown]                                          [.] 0x0000000000000004
+     0.13%     0.00%  [unknown]                                          [.] 0x00007f2943e8d4b0
+     0.13%     0.00%  [unknown]                                          [.] 0x00007f2943e8c5d0
+     0.13%     0.00%  [unknown]                                          [.] 0x00007f2943e8c2f8
+     0.13%     0.00%  [unknown]                                          [.] 0x00007f2943e8d948
+     0.13%     0.00%  [unknown]                                          [.] 0x00007f2943e8cc60
+     0.13%     0.00%  [unknown]                                          [.] 0x00007f2943e8db78
+     0.13%     0.13%  _multiarray_umath.cpython-313-x86_64-linux-gnu.so  [.] PyArray_AssignArray
+     0.13%     0.00%  [unknown]                                          [.] 0x00007f2943e8d638
+     0.13%     0.00%  [unknown]                                          [.] 0x000000001dfadb60
+     0.13%     0.00%  [unknown]                                          [.] 0x00007f2943e8ce90
+     0.13%     0.00%  [unknown]                                          [.] 0x00007f2943e8dde0
+     0.13%     0.00%  [unknown]                                          [.] 0x00007f2943e8de88
+     0.13%     0.00%  [unknown]                                          [.] 0x00007f2943e8d830
+     0.13%     0.13%  _msprime.cpython-313-x86_64-linux-gnu.so           [.] tsk_table_collection_build_index
+     0.11%     0.00%  [kernel.kallsyms]                                  [k] 0xffffffff86fb921c
+     0.11%     0.00%  [kernel.kallsyms]                                  [k] 0xffffffff86fa81d0
+     0.10%     0.00%  [unknown]                                          [.] 0x00007f2943e8c2c0
+     0.10%     0.00%  [unknown]                                          [.] 0x000000001e37d3b0
+     0.10%     0.10%  _tskit.cpython-313-x86_64-linux-gnu.so             [.] tsk_edge_table_append_columns
+     0.10%     0.10%  libc.so.6                                          [.] __GI___qsort_r
+     0.10%     0.00%  [unknown]                                          [.] 0x00007f2946cff140
+     0.10%     0.10%  libc.so.6                                          [.] __strchrnul_avx2
+     0.10%     0.00%  [unknown]                                          [.] 0x00007f2943e8ce20
+     0.10%     0.00%  [unknown]                                          [.] 0x00007ffc5455dcb8
+     0.10%     0.10%  python3.13                                         [.] 0x00000000001309f2
+     0.10%     0.00%  python3.13                                         [.] 0x00000000005309f2
+     0.10%     0.10%  python3.13                                         [.] 0x0000000000133287
+     0.10%     0.00%  python3.13                                         [.] 0x0000000000533287
+     0.10%     0.00%  [unknown]                                          [.] 0x00007f2943e8c410
+     0.10%     0.10%  _multiarray_umath.cpython-313-x86_64-linux-gnu.so  [.] PyArray_DescrFromType
+     0.10%     0.00%  [unknown]                                          [.] 0x00007f2943e8c790
+     0.10%     0.10%  python3.13                                         [.] 0x000000000013093f
+     0.10%     0.00%  [unknown]                                          [.] 0x00007f2943307c20
+     0.10%     0.00%  [unknown]                                          [.] 0x00007f2943e8d398
+     0.10%     0.10%  python3.13                                         [.] 0x0000000000209e83
+     0.10%     0.00%  python3.13                                         [.] 0x0000000000609e83
+     0.10%     0.10%  libgsl.so.28.0.0                                   [.] 0x0000000000186b97
+     0.10%     0.00%  libgsl.so.28.0.0                                   [.] 0x00007f2949b86b97
+     0.10%     0.10%  _multiarray_umath.cpython-313-x86_64-linux-gnu.so  [.] prepare_index_noarray
+     0.10%     0.00%  [unknown]                                          [.] 0x0153015500360000
+     0.10%     0.00%  [kernel.kallsyms]                                  [k] 0xffffffff86fa4648
+     0.10%     0.00%  [kernel.kallsyms]                                  [k] 0xffffffff86fa8264
+     0.10%     0.10%  python3.13                                         [.] 0x00000000001338e5
+     0.10%     0.00%  python3.13                                         [.] 0x00000000005338e5
+     0.10%     0.00%  [unknown]                                          [.] 0x000000000000ffe6
+     0.10%     0.00%  [unknown]                                          [.] 0x00007f2943e8c838
+     0.10%     0.08%  libc.so.6                                          [.] __vfscanf_internal
+     0.10%     0.10%  python3.13                                         [.] 0x00000000001337cc
+     0.10%     0.00%  python3.13                                         [.] 0x00000000005337cc
+     0.10%     0.10%  python3.13                                         [.] 0x0000000000134e58
+     0.10%     0.00%  python3.13                                         [.] 0x0000000000534e58
+     0.10%     0.00%  [unknown]                                          [.] 0x000000000000ffea
+     0.10%     0.00%  [unknown]                                          [.] 0x00007f2943e8d520
+     0.10%     0.10%  python3.13                                         [.] 0x00000000001603f9
+     0.10%     0.00%  python3.13                                         [.] 0x00000000005603f9
+     0.10%     0.10%  python3.13                                         [.] 0x000000000019feee
+     0.10%     0.00%  [unknown]                                          [.] 0x0f495641cf8949d0
+     0.10%     0.00%  python3.13                                         [.] 0x000000000059feee
+     0.10%     0.00%  [unknown]                                          [.] 0x00007f2943e8c218
+     0.10%     0.00%  [unknown]                                          [.] 0x00007f2943e8bf40
+     0.10%     0.00%  [unknown]                                          [.] 0x00007f2943e8c480
+     0.10%     0.10%  python3.13                                         [.] _PyEvalFramePushAndInit
+     0.10%     0.00%  [unknown]                                          [.] 0x001c000001040340
+     0.10%     0.10%  libgsl.so.28.0.0                                   [.] 0x0000000000186bd5
+     0.10%     0.00%  libgsl.so.28.0.0                                   [.] 0x00007f2949b86bd5
+     0.10%     0.00%  [unknown]                                          [.] 0x00007f2943e8caa0
+     0.10%     0.10%  _multiarray_umath.cpython-313-x86_64-linux-gnu.so  [.] PyArray_CanCastArrayTo
+     0.10%     0.00%  [kernel.kallsyms]                                  [k] 0xffffffff86e12e1e
+     0.10%     0.00%  [unknown]                                          [.] 0x00007f2943e8c758
+     0.10%     0.10%  _msprime.cpython-313-x86_64-linux-gnu.so           [.] avl_at
+     0.10%     0.10%  python3.13                                         [.] PyDict_GetItemString
+     0.10%     0.10%  _multiarray_umath.cpython-313-x86_64-linux-gnu.so  [.] _array_fill_strides
+     0.10%     0.00%  [unknown]                                          [.] 0x00007f2943e8c090
+     0.10%     0.00%  [unknown]                                          [.] 0x00007f2943e8d868
+     0.10%     0.00%  [unknown]                                          [.] 0x40f86a0000000000
+     0.10%     0.00%  [unknown]                                          [.] 0x00007f2943e8c8e0
+     0.10%     0.00%  [unknown]                                          [.] 0x00007f2943e8db08
+     0.10%     0.10%  _multiarray_umath.cpython-313-x86_64-linux-gnu.so  [.] PyArray_SetBaseObject
+     0.10%     0.10%  python3.13                                         [.] PyArg_UnpackTuple
+     0.10%     0.00%  [unknown]                                          [.] 0x00007f2943e8c1a8
+     0.10%     0.00%  [unknown]                                          [.] 0x00007f2943e8cec8
+     0.10%     0.10%  libc.so.6                                          [.] _IO_str_init_static_internal
+     0.10%     0.00%  [kernel.kallsyms]                                  [k] 0xffffffff86f14f6f
+     0.10%     0.00%  [unknown]                                          [.] 0x00007f294ac3c178
+     0.10%     0.00%  [unknown]                                          [.] 0x00007f2943e8c4f0
+     0.10%     0.00%  [unknown]                                          [.] 0x0000000500000005
+     0.10%     0.10%  libgsl.so.28.0.0                                   [.] 0x0000000000186d60
+     0.10%     0.00%  libgsl.so.28.0.0                                   [.] 0x00007f2949b86d60
+     0.10%     0.00%  [unknown]                                          [.] 0x000000001dfae160
+     0.10%     0.00%  [unknown]                                          [.] 0x00007f2943e8c0c8
+     0.10%     0.08%  python3.13                                         [.] PyArg_ParseTupleAndKeywords
+     0.10%     0.00%  [unknown]                                          [.] 0x000000000000ffbf
+     0.10%     0.10%  _msprime.cpython-313-x86_64-linux-gnu.so           [.] msp_reset
+     0.10%     0.00%  [unknown]                                          [.] 0x00007f2943e8dec0
+     0.10%     0.00%  [unknown]                                          [.] 0x000000000000000b
+     0.10%     0.08%  libc.so.6                                          [.] __libc_calloc
+     0.10%     0.00%  [unknown]                                          [.] 0x00007f2943e8d050
+     0.10%     0.00%  [unknown]                                          [.] 0x0000010a4a020606
+     0.10%     0.00%  [unknown]                                          [.] 0x000000000000ffee
+     0.10%     0.00%  [unknown]                                          [.] 0x0007000000000000
+     0.08%     0.08%  [kernel.kallsyms]                                  [k] 0xffffffff86e992fa
+     0.08%     0.08%  [kernel.kallsyms]                                  [k] 0xffffffff86e96540
+     0.08%     0.08%  python3.13                                         [.] PyTraceMalloc_Untrack
+     0.08%     0.00%  [unknown]                                          [.] 0x000000000000ffd2
+     0.08%     0.05%  python3.13                                         [.] PyGILState_Release
+     0.08%     0.00%  [unknown]                                          [.] 0x000000000000ffd8
+     0.08%     0.08%  python3.13                                         [.] 0x00000000001309b2
+     0.08%     0.00%  python3.13                                         [.] 0x00000000005309b2
+     0.08%     0.08%  python3.13                                         [.] _PyObject_GetMethod
+     0.08%     0.00%  [unknown]                                          [.] 0x000000000000ffed
+     0.08%     0.00%  [unknown]                                          [.] 0x00007f2943e8cf70
+     0.08%     0.08%  _multiarray_umath.cpython-313-x86_64-linux-gnu.so  [.] dispatcher_vectorcall
+     0.08%     0.00%  [unknown]                                          [.] 0x00007f2943e8c3a0
+     0.08%     0.08%  python3.13                                         [.] PyTraceMalloc_Track
+     0.08%     0.00%  [unknown]                                          [.] 0x000000000000fff5
+     0.08%     0.00%  [unknown]                                          [.] 0x000000000000ffce
+     0.08%     0.00%  [unknown]                                          [.] 0x000000000000ffcd
+     0.08%     0.08%  python3.13                                         [.] 0x000000000013340c
+     0.08%     0.00%  python3.13                                         [.] 0x000000000053340c
+     0.08%     0.00%  [unknown]                                          [.] 0x00007f2943909c60
+     0.08%     0.00%  [unknown]                                          [.] 0x000000000000ffc1
+     0.08%     0.08%  _multiarray_umath.cpython-313-x86_64-linux-gnu.so  [.] default_free
+     0.08%     0.00%  [unknown]                                          [.] 0x000000000000ffdc
+     0.08%     0.00%  [unknown]                                          [.] 0x0000000000010024
+     0.08%     0.00%  [unknown]                                          [.] 0x00007f2943909a50
+     0.08%     0.08%  python3.13                                         [.] 0x0000000000133748
+     0.08%     0.00%  python3.13                                         [.] 0x0000000000533748
+     0.08%     0.08%  python3.13                                         [.] 0x000000000013dc8c
+     0.08%     0.00%  python3.13                                         [.] 0x000000000053dc8c
+     0.08%     0.08%  _multiarray_umath.cpython-313-x86_64-linux-gnu.so  [.] npy_free_cache_dim
+     0.08%     0.00%  [unknown]                                          [.] 0x00007f2943e8bf78
+     0.08%     0.08%  libc.so.6                                          [.] __parse_one_specmb
+     0.08%     0.00%  [unknown]                                          [.] 0x000000000000ffe9
+     0.08%     0.08%  python3.13                                         [.] 0x00000000001337df
+     0.08%     0.00%  python3.13                                         [.] 0x00000000005337df
+     0.08%     0.00%  [unknown]                                          [.] 0x00007f2943e8c9f8
+     0.08%     0.08%  _tskit.cpython-313-x86_64-linux-gnu.so             [.] tsk_table_collection_has_index
+     0.08%     0.00%  [unknown]                                          [.] 0x00007f2943e8d600
+     0.08%     0.08%  _multiarray_umath.cpython-313-x86_64-linux-gnu.so  [.] array_subscript
+     0.08%     0.00%  [unknown]                                          [.] 0x00007f294aadfb30
+     0.08%     0.00%  [unknown]                                          [.] 0x000000001df1fef0
+     0.08%     0.00%  [unknown]                                          [.] 0x00007f2943e8bd80
+     0.08%     0.00%  [unknown]                                          [.] 0x00007f2943e8d360
+     0.08%     0.08%  python3.13                                         [.] 0x00000000001309a5
+     0.08%     0.00%  python3.13                                         [.] 0x00000000005309a5
+     0.08%     0.08%  libm.so.6                                          [.] fetestexcept
+     0.08%     0.00%  [unknown]                                          [.] 0x00007f2943e8dd38
+     0.08%     0.00%  [unknown]                                          [.] 0x00a0788000000000
+     0.08%     0.00%  [unknown]                                          [.] 0x000000000000ffe7
+     0.08%     0.00%  [unknown]                                          [.] 0x00007f2943e8cc28
+     0.08%     0.00%  [unknown]                                          [.] 0x00007f2943e8de50
+     0.08%     0.08%  libc.so.6                                          [.] __printf_buffer_write
+     0.08%     0.00%  [unknown]                                          [.] 0x00000000009feba0
+     0.08%     0.08%  python3.13                                         [.] PyCapsule_GetPointer
+     0.08%     0.00%  [kernel.kallsyms]                                  [k] 0xffffffff8710b6b3
+     0.08%     0.08%  python3.13                                         [.] PyObject_RichCompare
+     0.08%     0.00%  [unknown]                                          [.] 0x000000000000ffdf
+     0.08%     0.08%  [kernel.kallsyms]                                  [k] 0xffffffff86e96546
+     0.08%     0.08%  _tskit.cpython-313-x86_64-linux-gnu.so             [.] tsk_tree_next
+     0.08%     0.08%  libgsl.so.28.0.0                                   [.] 0x0000000000186cc4
+     0.08%     0.00%  libgsl.so.28.0.0                                   [.] 0x00007f2949b86cc4
+     0.08%     0.08%  python3.13                                         [.] PyDict_GetItemRef
+     0.08%     0.00%  [kernel.kallsyms]                                  [k] 0xffffffff86f1f3a9
+     0.08%     0.08%  _multiarray_umath.cpython-313-x86_64-linux-gnu.so  [.] PyArray_ExtractDTypeAndDescriptor
+     0.08%     0.00%  [unknown]                                          [.] 0x000000000000ffe5
+     0.08%     0.08%  python3.13                                         [.] 0x000000000013379d
+     0.08%     0.00%  python3.13                                         [.] 0x000000000053379d
+     0.08%     0.08%  _msprime.cpython-313-x86_64-linux-gnu.so           [.] msp_alloc_segment.constprop.0
+     0.08%     0.08%  libgsl.so.28.0.0                                   [.] 0x0000000000186d64
+     0.08%     0.00%  libgsl.so.28.0.0                                   [.] 0x00007f2949b86d64
+     0.08%     0.08%  _msprime.cpython-313-x86_64-linux-gnu.so           [.] msp_compute_population_indexes
+     0.08%     0.00%  [unknown]                                          [.] 0x00007f2943e8d6a8
+     0.08%     0.00%  [unknown]                                          [.] 0x00007f294aadfac0
+     0.08%     0.08%  python3.13                                         [.] 0x0000000000130b07
+     0.08%     0.00%  python3.13                                         [.] 0x0000000000530b07
+     0.08%     0.00%  [unknown]                                          [.] 0x0000000000000126
+     0.08%     0.00%  [unknown]                                          [.] 0x00007f2943e8c678
+     0.08%     0.00%  [unknown]                                          [.] 0x000000000000ffc5
+     0.08%     0.00%  [unknown]                                          [.] 0x0000000000a084f0
+     0.08%     0.00%  [unknown]                                          [.] 0x0000003000000010
+     0.08%     0.00%  [unknown]                                          [.] 0x00007f2943e8c1e0
+     0.08%     0.00%  [unknown]                                          [.] 0x015b55550b620255
+     0.08%     0.00%  [unknown]                                          [.] 0x000000000000ffcf
+     0.08%     0.00%  [kernel.kallsyms]                                  [k] 0xffffffff86e103ff
+     0.08%     0.08%  [kernel.kallsyms]                                  [k] 0xffffffff87c015f0
+     0.08%     0.00%  [unknown]                                          [.] 0x000000000000ffcc
+     0.08%     0.00%  [unknown]                                          [.] 0x0000000000000008
+     0.08%     0.00%  [unknown]                                          [.] 0x00007f2943e8dc90
+     0.08%     0.08%  _tskit.cpython-313-x86_64-linux-gnu.so             [.] tsk_individual_table_append_columns
+     0.08%     0.00%  [unknown]                                          [.] 0x6428004b7c006e4c
+     0.08%     0.00%  [unknown]                                          [.] 0x000000000000ffc0
+     0.08%     0.08%  _multiarray_umath.cpython-313-x86_64-linux-gnu.so  [.] PyDataMem_UserFREE
+     0.08%     0.08%  libgsl.so.28.0.0                                   [.] 0x0000000000186b9e
+     0.08%     0.00%  libgsl.so.28.0.0                                   [.] 0x00007f2949b86b9e
+     0.08%     0.00%  [unknown]                                          [.] 0x00007f2943e8d590
+     0.08%     0.00%  [unknown]                                          [.] 0x00007f2943e8c138
+     0.08%     0.00%  [unknown]                                          [.] 0x00007f2943e8cf00
+     0.08%     0.00%  [unknown]                                          [.] 0x0000000000000031
+     0.08%     0.08%  python3.13                                         [.] 0x0000000000145281
+     0.08%     0.00%  python3.13                                         [.] 0x0000000000545281
+     0.08%     0.08%  python3.13                                         [.] Py_BuildValue
+     0.08%     0.00%  [unknown]                                          [.] 0x000000000000fff6
+     0.08%     0.08%  python3.13                                         [.] PyUnicode_RichCompare
+     0.08%     0.00%  [unknown]                                          [.] 0x00007f2943e8cad8
+     0.08%     0.08%  _multiarray_umath.cpython-313-x86_64-linux-gnu.so  [.] PyDataMem_UserNEW
+     0.08%     0.00%  [unknown]                                          [.] 0x00007f2943e8c640
+     0.08%     0.08%  libc.so.6                                          [.] __strcpy_avx2
+     0.08%     0.00%  [unknown]                                          [.] 0x00007f2943e8ca30
+     0.08%     0.08%  python3.13                                         [.] 0x0000000000208894
+     0.08%     0.00%  python3.13                                         [.] 0x0000000000608894
+     0.08%     0.08%  python3.13                                         [.] 0x0000000000135630
+     0.08%     0.00%  python3.13                                         [.] 0x0000000000535630
+     0.08%     0.08%  _multiarray_umath.cpython-313-x86_64-linux-gnu.so  [.] PyArray_FromArray
+     0.06%     0.00%  [kernel.kallsyms]                                  [k] 0xffffffff86fa64b1
+     0.05%     0.00%  [unknown]                                          [.] 0x0000000100000001
+     0.05%     0.05%  _msprime.cpython-313-x86_64-linux-gnu.so           [.] Simulator_get_model
+     0.05%     0.00%  [unknown]                                          [.] 0x00000000034000d7
+     0.05%     0.00%  [unknown]                                          [.] 0x00007f294ac3c340
+     0.05%     0.05%  python3.13                                         [.] 0x00000000001dbf69
+     0.05%     0.00%  python3.13                                         [.] 0x00000000005dbf69
+     0.05%     0.05%  python3.13                                         [.] 0x00000000001fe38e
+     0.05%     0.00%  python3.13                                         [.] 0x00000000005fe38e
+     0.05%     0.05%  libgsl.so.28.0.0                                   [.] 0x0000000000186d01
+     0.05%     0.00%  libgsl.so.28.0.0                                   [.] 0x00007f2949b86d01
+     0.05%     0.00%  [unknown]                                          [.] 0x00007f29433079b8
+     0.05%     0.05%  _multiarray_umath.cpython-313-x86_64-linux-gnu.so  [.] raw_array_assign_array
+     0.05%     0.00%  [unknown]                                          [.] 0x000000000000fff0
+     0.05%     0.00%  [unknown]                                          [.] 0x00007f2943e8dc58
+     0.05%     0.05%  [kernel.kallsyms]                                  [k] 0xffffffff87106da7
+     0.05%     0.05%  python3.13                                         [.] 0x0000000000131163
+     0.05%     0.00%  python3.13                                         [.] 0x0000000000531163
+     0.05%     0.00%  [unknown]                                          [.] 0x000000000000ffd0
+     0.05%     0.00%  [unknown]                                          [.] 0x000000000000ffbb
+     0.05%     0.05%  python3.13                                         [.] 0x000000000020ecfc
+     0.05%     0.00%  python3.13                                         [.] 0x000000000060ecfc
+     0.05%     0.05%  _msprime.cpython-313-x86_64-linux-gnu.so           [.] tsk_squash_edges
+     0.05%     0.00%  [unknown]                                          [.] 0x445c0ff2c9ef0f66
+     0.05%     0.00%  [unknown]                                          [.] 0x000000000000ffd3
+     0.05%     0.00%  [unknown]                                          [.] 0x016c205800000000
+     0.05%     0.05%  libc.so.6                                          [.] __tzstring_len
+     0.05%     0.00%  [unknown]                                          [.] 0x0000000000000024
+     0.05%     0.05%  python3.13                                         [.] 0x000000000013252a
+     0.05%     0.00%  python3.13                                         [.] 0x000000000053252a
+     0.05%     0.00%  [unknown]                                          [.] 0x00007f294ac3c470
+     0.05%     0.00%  [unknown]                                          [.] 0x00007f2943e8cc98
+     0.05%     0.00%  [unknown]                                          [.] 0x00007f2943909e70
+     0.05%     0.00%  [unknown]                                          [.] 0x000000001e0b4520
+     0.05%     0.05%  _multiarray_umath.cpython-313-x86_64-linux-gnu.so  [.] int_index
+     0.05%     0.00%  [unknown]                                          [.] 0x5465746953006969
+     0.05%     0.00%  [unknown]                                          [.] 0x00007ffc5455d730
+     0.05%     0.05%  _tskit.cpython-313-x86_64-linux-gnu.so             [.] tsk_table_collection_set_indexes
+     0.05%     0.00%  [kernel.kallsyms]                                  [k] 0xffffffff8710b715
+     0.05%     0.05%  libc.so.6                                          [.] __tzfile_compute
+     0.05%     0.00%  [unknown]                                          [.] 0x3a6b656577206469
+     0.05%     0.00%  [unknown]                                          [.] 0x00007f2943909948
+     0.05%     0.00%  [unknown]                                          [.] 0x00007f2943e8c608
+     0.05%     0.05%  _multiarray_umath.cpython-313-x86_64-linux-gnu.so  [.] signed_integers_is_known_scalar_types
+     0.05%     0.00%  [unknown]                                          [.] 0x0000000000000011
+     0.05%     0.05%  python3.13                                         [.] PyObject_IsTrue
+     0.05%     0.00%  [unknown]                                          [.] 0x000000001e636d70
+     0.05%     0.00%  [unknown]                                          [.] 0x00007f2943e8d0f8
+     0.05%     0.00%  [unknown]                                          [.] 0x0000244900020629
+     0.05%     0.00%  [unknown]                                          [.] 0x0000000000000012
+     0.05%     0.00%  [unknown]                                          [.] 0x00007f2943e8c4b8
+     0.05%     0.05%  python3.13                                         [.] 0x0000000000134a76
+     0.05%     0.00%  python3.13                                         [.] 0x0000000000534a76
+     0.05%     0.05%  python3.13                                         [.] 0x000000000013dd53
+     0.05%     0.00%  python3.13                                         [.] 0x000000000053dd53
+     0.05%     0.00%  [unknown]                                          [.] 0x000000000000ffe0
+     0.05%     0.05%  python3.13                                         [.] 0x0000000000191427
+     0.05%     0.00%  python3.13                                         [.] 0x0000000000591427
+     0.05%     0.00%  [unknown]                                          [.] 0x000000000000ffef
+     0.05%     0.05%  python3.13                                         [.] 0x0000000000133384
+     0.05%     0.00%  python3.13                                         [.] 0x0000000000533384
+     0.05%     0.05%  python3.13                                         [.] _PyUnicodeWriter_PrepareInternal
+     0.05%     0.05%  _multiarray_umath.cpython-313-x86_64-linux-gnu.so  [.] NpyIter_Deallocate
+     0.05%     0.00%  [unknown]                                          [.] 0x0000000000000006
+     0.05%     0.00%  [unknown]                                          [.] 0x000000000000ffb9
+     0.05%     0.05%  python3.13                                         [.] PyMem_RawMalloc
+     0.05%     0.05%  libgsl.so.28.0.0                                   [.] 0x0000000000186bc5
+     0.05%     0.00%  libgsl.so.28.0.0                                   [.] 0x00007f2949b86bc5
+     0.05%     0.05%  _msprime.cpython-313-x86_64-linux-gnu.so           [.] msp_run
+     0.05%     0.05%  python3.13                                         [.] _PyObject_GC_New
+     0.05%     0.05%  _multiarray_umath.cpython-313-x86_64-linux-gnu.so  [.] python_builtins_are_known_scalar_types
+     0.05%     0.00%  [unknown]                                          [.] 0x00007f2943e8cd40
+     0.05%     0.05%  libc.so.6                                          [.] __errno_location
+     0.05%     0.05%  libgsl.so.28.0.0                                   [.] 0x0000000000186bb6
+     0.05%     0.00%  libgsl.so.28.0.0                                   [.] 0x00007f2949b86bb6
+     0.05%     0.00%  [unknown]                                          [.] 0x000000000000ffc8
+     0.05%     0.05%  _tskit.cpython-313-x86_64-linux-gnu.so             [.] tsk_provenance_table_add_row
+     0.05%     0.05%  _tskit.cpython-313-x86_64-linux-gnu.so             [.] tsk_site_table_append_columns
+     0.05%     0.05%  python3.13                                         [.] _PyObject_New
+     0.05%     0.00%  [unknown]                                          [.] 0x44841e4000000101
+     0.05%     0.05%  libc.so.6                                          [.] __strchr_avx2
+     0.05%     0.00%  [unknown]                                          [.] 0x000000001e65c5e0
+     0.05%     0.00%  [unknown]                                          [.] 0x2454894830245489
+     0.05%     0.05%  _tskit.cpython-313-x86_64-linux-gnu.so             [.] tsk_table_collection_init
+     0.05%     0.05%  python3.13                                         [.] PyObject_Hash
+     0.05%     0.00%  [unknown]                                          [.] 0x00007f2943e8d2b8
+     0.05%     0.00%  [unknown]                                          [.] 0x000000000000ffc2
+     0.05%     0.05%  _tskit.cpython-313-x86_64-linux-gnu.so             [.] TreeSequence_get_nodes_individual
+     0.05%     0.05%  python3.13                                         [.] 0x00000000001ff215
+     0.05%     0.00%  python3.13                                         [.] 0x00000000005ff215
+     0.05%     0.00%  [unknown]                                          [.] 0x00007f29433077c0
+     0.05%     0.05%  python3.13                                         [.] 0x00000000001da3d4
+     0.05%     0.00%  python3.13                                         [.] 0x00000000005da3d4
+     0.05%     0.05%  libc.so.6                                          [.] __GI_____strtoull_l_internal
+     0.05%     0.05%  python3.13                                         [.] 0x000000000019da4e
+     0.05%     0.00%  python3.13                                         [.] 0x000000000059da4e
+     0.05%     0.00%  [unknown]                                          [.] 0x00007f2943307360
+     0.05%     0.00%  [unknown]                                          [.] 0x000000001e6a9a20
+     0.05%     0.05%  _tskit.cpython-313-x86_64-linux-gnu.so             [.] tsk_provenance_table_append_columns
+     0.05%     0.00%  [unknown]                                          [.] 0x000000a06d200000
+     0.05%     0.05%  python3.13                                         [.] 0x0000000000136f3a
+     0.05%     0.00%  python3.13                                         [.] 0x0000000000536f3a
+     0.05%     0.00%  [unknown]                                          [.] 0x28004b7c006e4c7c
+     0.05%     0.00%  [unknown]                                          [.] 0x00007f2943e8bd10
+     0.05%     0.05%  python3.13                                         [.] 0x00000000001d4ec3
+     0.05%     0.00%  python3.13                                         [.] 0x00000000005d4ec3
+     0.05%     0.00%  [unknown]                                          [.] 0x000000000000ffca
+     0.05%     0.00%  [unknown]                                          [.] 0x000000000000ffda
+     0.05%     0.05%  _multiarray_umath.cpython-313-x86_64-linux-gnu.so  [.] PyArray_MultiplyList
+     0.05%     0.00%  [unknown]                                          [.] 0x000000000000fff9
+     0.05%     0.05%  python3.13                                         [.] 0x00000000001fe392
+     0.05%     0.00%  python3.13                                         [.] 0x00000000005fe392
+     0.05%     0.00%  [unknown]                                          [.] 0x00007f2943e8bed0
+     0.05%     0.05%  python3.13                                         [.] 0x0000000000123b68
+     0.05%     0.00%  python3.13                                         [.] 0x0000000000523b68
+     0.05%     0.05%  _msprime.cpython-313-x86_64-linux-gnu.so           [.] tsk_table_collection_truncate
+     0.05%     0.05%  python3.13                                         [.] PyUnicode_FromFormatV
+     0.05%     0.00%  [unknown]                                          [.] 0x000000000011005b
+     0.05%     0.05%  libgsl.so.28.0.0                                   [.] 0x0000000000186c3a
+     0.05%     0.00%  libgsl.so.28.0.0                                   [.] 0x00007f2949b86c3a
+     0.05%     0.05%  python3.13                                         [.] 0x0000000000133787
+     0.05%     0.00%  python3.13                                         [.] 0x0000000000533787
+     0.05%     0.00%  [unknown]                                          [.] 0x000000001e5d1230
+     0.05%     0.05%  _msprime.cpython-313-x86_64-linux-gnu.so           [.] msp_insert_sample.lto_priv.0
+     0.05%     0.00%  [unknown]                                          [.] 0x033701670020000b
+     0.05%     0.00%  [unknown]                                          [.] 0x0453000000000000
+     0.05%     0.00%  [unknown]                                          [.] 0x00007f2943e8c6e8
+     0.05%     0.00%  [unknown]                                          [.] 0x00007f2943e8d280
+     0.05%     0.00%  [unknown]                                          [.] 0x00000101000203f8
+     0.05%     0.00%  [unknown]                                          [.] 0x0000000000002011
+     0.05%     0.05%  _multiarray_umath.cpython-313-x86_64-linux-gnu.so  [.] array_copyto
+     0.05%     0.00%  [kernel.kallsyms]                                  [k] 0xffffffff86fa46e3
+     0.05%     0.00%  [kernel.kallsyms]                                  [k] 0xffffffff86fb63b3
+     0.05%     0.00%  [unknown]                                          [.] 0x000000000000ffba
+     0.05%     0.05%  _multiarray_umath.cpython-313-x86_64-linux-gnu.so  [.] npyiter_fill_axisdata
+     0.05%     0.00%  [unknown]                                          [.] 0x0000004803400bc3
+     0.05%     0.00%  [unknown]                                          [.] 0x4a80431000000000
+     0.05%     0.05%  python3.13                                         [.] 0x000000000013252e
+     0.05%     0.00%  python3.13                                         [.] 0x000000000053252e
+     0.05%     0.05%  python3.13                                         [.] PyObject_SetAttr
+     0.05%     0.05%  python3.13                                         [.] 0x0000000000143d73
+     0.05%     0.00%  python3.13                                         [.] 0x0000000000543d73
+     0.05%     0.05%  libgsl.so.28.0.0                                   [.] 0x0000000000186c36
+     0.05%     0.00%  libgsl.so.28.0.0                                   [.] 0x00007f2949b86c36
+     0.05%     0.05%  python3.13                                         [.] 0x00000000001276b0
+     0.05%     0.00%  python3.13                                         [.] 0x00000000005276b0
+     0.05%     0.05%  python3.13                                         [.] PyEval_RestoreThread
+     0.05%     0.05%  [kernel.kallsyms]                                  [k] 0xffffffff86e9654d
+     0.05%     0.00%  [kernel.kallsyms]                                  [k] 0xffffffff86e96587
+     0.05%     0.00%  [kernel.kallsyms]                                  [k] 0xffffffff87b0d3bc
+     0.05%     0.00%  [unknown]                                          [.] 0x00007ffc5455d6c0
+     0.05%     0.00%  [unknown]                                          [.] 0x000000000000ffeb
+     0.05%     0.00%  python3.13                                         [.] 0x0000000000670020
+     0.05%     0.05%  libc.so.6                                          [.] __offtime
+     0.05%     0.00%  [unknown]                                          [.] 0x4415cc0000000107
+     0.05%     0.05%  python3.13                                         [.] PyUnicode_AsUTF8AndSize
+     0.05%     0.00%  [unknown]                                          [.] 0x00007f29440c2a18
+     0.05%     0.05%  python3.13                                         [.] 0x000000000018b26e
+     0.05%     0.00%  python3.13                                         [.] 0x000000000058b26e
+     0.05%     0.05%  _multiarray_umath.cpython-313-x86_64-linux-gnu.so  [.] PyArray_OrderConverter
+     0.05%     0.00%  [unknown]                                          [.] 0x441a93a000001f5d
+     0.05%     0.00%  [unknown]                                          [.] 0x0000000000210000
+     0.05%     0.00%  [unknown]                                          [.] 0x01b50055004e002e
+     0.05%     0.00%  [unknown]                                          [.] 0x0000034002a6001e
+     0.05%     0.05%  libgsl.so.28.0.0                                   [.] 0x0000000000186bd8
+     0.05%     0.00%  libgsl.so.28.0.0                                   [.] 0x00007f2949b86bd8
+     0.05%     0.00%  [unknown]                                          [.] 0x00007f2943307910
+     0.05%     0.00%  [unknown]                                          [.] 0x00020643034007c4
+     0.05%     0.05%  _tskit.cpython-313-x86_64-linux-gnu.so             [.] tsk_isfinite
+     0.05%     0.05%  _msprime.cpython-313-x86_64-linux-gnu.so           [.] msp_insert_breakpoint.lto_priv.0
+     0.05%     0.00%  [unknown]                                          [k] 0x00007f294ac3c318
+     0.05%     0.05%  libgsl.so.28.0.0                                   [.] gsl_ran_flat
+     0.05%     0.05%  _tskit.cpython-313-x86_64-linux-gnu.so             [.] table_read_offset_array
+     0.05%     0.00%  [unknown]                                          [.] 0x000000000000fffc
+     0.05%     0.05%  _tskit.cpython-313-x86_64-linux-gnu.so             [.] tsk_site_table_free
+     0.05%     0.00%  [unknown]                                          [.] 0x00007f2943e8bd48
+     0.05%     0.00%  [unknown]                                          [.] 0x000000000000ffc7
+     0.05%     0.00%  [unknown]                                          [.] 0x11ce00550354004c
+     0.05%     0.00%  [unknown]                                          [.] 0x000000001e4e1d80
+     0.05%     0.00%  [unknown]                                          [.] 0x00007f2943e8c988
+     0.05%     0.05%  python3.13                                         [.] 0x0000000000127110
+     0.05%     0.00%  python3.13                                         [.] 0x0000000000527110
+     0.05%     0.05%  python3.13                                         [.] 0x000000000023d593
+     0.05%     0.00%  python3.13                                         [.] 0x000000000063d593
+     0.05%     0.00%  [unknown]                                          [.] 0x000000000000fff1
+     0.05%     0.00%  [unknown]                                          [.] 0x0000006700000000
+     0.05%     0.00%  [unknown]                                          [.] 0x000000001e4c7750
+     0.05%     0.00%  [unknown]                                          [.] 0x00007f2943e8dd00
+     0.05%     0.05%  _msprime.cpython-313-x86_64-linux-gnu.so           [.] tsk_node_table_expand_main_columns.lto_priv.0
+     0.05%     0.00%  [unknown]                                          [.] 0x00007f2943e8c9c0
+     0.05%     0.05%  python3.13                                         [.] 0x0000000000130b11
+     0.05%     0.00%  python3.13                                         [.] 0x0000000000530b11
+     0.05%     0.05%  _multiarray_umath.cpython-313-x86_64-linux-gnu.so  [.] raw_array_is_aligned
+     0.05%     0.05%  python3.13                                         [.] PyType_GenericAlloc
+     0.05%     0.00%  [unknown]                                          [.] 0x03f803400bc4001e
+     0.05%     0.03%  _multiarray_umath.cpython-313-x86_64-linux-gnu.so  [.] PyArray_FromAny
+     0.05%     0.05%  _msprime.cpython-313-x86_64-linux-gnu.so           [.] tsk_node_table_add_row.part.0
+     0.05%     0.05%  _tskit.cpython-313-x86_64-linux-gnu.so             [.] tsk_tree_position_next
+     0.05%     0.00%  [unknown]                                          [.] 0x1dce00550554004c
+     0.05%     0.00%  [unknown]                                          [.] 0x00007f29433075c8
+     0.05%     0.00%  [unknown]                                          [.] 0x0000003000000008
+     0.05%     0.00%  [unknown]                                          [.] 0x00007f2943e8bc30
+     0.05%     0.00%  [unknown]                                          [.] 0x034001b50155004e
+     0.05%     0.05%  python3.13                                         [.] 0x0000000000145144
+     0.05%     0.00%  python3.13                                         [.] 0x0000000000545144
+     0.05%     0.05%  python3.13                                         [.] PyContextVar_Get
+     0.05%     0.00%  [unknown]                                          [.] 0x000000000000ffd5
+     0.05%     0.05%  _multiarray_umath.cpython-313-x86_64-linux-gnu.so  [.] broadcast_strides
+     0.05%     0.00%  [unknown]                                          [.] 0x000000000000000e
+     0.05%     0.05%  python3.13                                         [.] 0x00000000001cbeb4
+     0.05%     0.00%  python3.13                                         [.] 0x00000000005cbeb4
+     0.05%     0.05%  python3.13                                         [.] 0x000000000017fe5c
+     0.05%     0.00%  python3.13                                         [.] 0x000000000057fe5c
+     0.05%     0.00%  [unknown]                                          [.] 0x000000001e4d7300
+     0.05%     0.05%  python3.13                                         [.] 0x000000000013099d
+     0.05%     0.00%  python3.13                                         [.] 0x000000000053099d
+     0.05%     0.00%  [unknown]                                          [.] 0x00007f29499796a0
+     0.05%     0.00%  [unknown]                                          [.] 0x000000000000ffdd
+     0.05%     0.00%  [unknown]                                          [.] 0x00007f2943e8dd70
+     0.05%     0.05%  _msprime.cpython-313-x86_64-linux-gnu.so           [.] LightweightTableCollection_asdict.lto_priv.0
+     0.05%     0.05%  _multiarray_umath.cpython-313-x86_64-linux-gnu.so  [.] npy_clear_floatstatus_barrier
+     0.05%     0.00%  [unknown]                                          [.] 0x000000000000ffd1
+     0.05%     0.00%  [unknown]                                          [.] 0x2058000000000000
+     0.05%     0.05%  [kernel.kallsyms]                                  [k] 0xffffffff87ab0395
+     0.05%     0.00%  libc.so.6                                          [.] __internal_syscall_cancel
+     0.05%     0.00%  [kernel.kallsyms]                                  [k] 0xffffffff872465dd
+     0.05%     0.00%  [kernel.kallsyms]                                  [k] 0xffffffff87245acd
+     0.05%     0.00%  [kernel.kallsyms]                                  [k] 0xffffffff871276fe
+     0.05%     0.00%  [kernel.kallsyms]                                  [k] 0xffffffff8749e7bc
+     0.05%     0.00%  [kernel.kallsyms]                                  [k] 0xffffffff8749cacc
+     0.04%     0.04%  [kernel.kallsyms]                                  [k] 0xffffffff871844ce
+     0.04%     0.00%  python3.13                                         [.] 0x00000000005281e1
+     0.04%     0.00%  [unknown]                                          [.] 0x40e5b04000000000
+     0.03%     0.03%  python3.13                                         [.] 0x00000000001831da
+     0.03%     0.00%  python3.13                                         [.] 0x00000000005831da
+     0.03%     0.00%  [unknown]                                          [k] 0x000000000001100f
+     0.03%     0.00%  python3.13                                         [.] 0x0000000000536326
+     0.03%     0.03%  python3.13                                         [.] 0x00000000001d0ccb
+     0.03%     0.00%  python3.13                                         [.] 0x00000000005d0ccb
+     0.03%     0.03%  python3.13                                         [.] _PyObject_GC_NewVar
+     0.03%     0.03%  python3.13                                         [.] 0x000000000018f204
+     0.03%     0.00%  python3.13                                         [.] 0x000000000058f204
+     0.03%     0.03%  python3.13                                         [.] 0x00000000001d5f42
+     0.03%     0.00%  python3.13                                         [.] 0x00000000005d5f42
+     0.03%     0.03%  _msprime.cpython-313-x86_64-linux-gnu.so           [.] segment_init.lto_priv.0
+     0.03%     0.00%  [unknown]                                          [.] 0x000000000000bad6
+     0.03%     0.03%  [kernel.kallsyms]                                  [k] 0xffffffff86f35fb4
+     0.03%     0.00%  [kernel.kallsyms]                                  [k] 0xffffffff86f27f5a
+     0.03%     0.00%  [unknown]                                          [.] 0x000000000000fff8
+     0.03%     0.00%  [unknown]                                          [.] 0x40ed288000000000
+     0.03%     0.00%  [unknown]                                          [.] 0x00007f2943307da8
+     0.03%     0.03%  python3.13                                         [.] 0x0000000000143d1d
+     0.03%     0.00%  python3.13                                         [.] 0x0000000000543d1d
+     0.03%     0.03%  python3.13                                         [.] 0x0000000000134e42
+     0.03%     0.00%  python3.13                                         [.] 0x0000000000534e42
+     0.03%     0.03%  python3.13                                         [.] 0x000000000013259f
+     0.03%     0.00%  python3.13                                         [.] 0x000000000053259f
+     0.03%     0.03%  _multiarray_umath.cpython-313-x86_64-linux-gnu.so  [.] nonparametric_discover_descr_from_pyobject
+     0.03%     0.00%  [unknown]                                          [.] 0x00007ffc5455d940
+     0.03%     0.00%  [unknown]                                          [.] 0x00000000000001a1
+     0.03%     0.03%  libgsl.so.28.0.0                                   [.] 0x0000000000186b94
+     0.03%     0.00%  libgsl.so.28.0.0                                   [.] 0x00007f2949b86b94
+     0.03%     0.03%  python3.13                                         [.] 0x000000000013380f
+     0.03%     0.00%  python3.13                                         [.] 0x000000000053380f
+     0.03%     0.03%  _msprime.cpython-313-x86_64-linux-gnu.so           [.] gsl_ran_exponential@plt
+     0.03%     0.03%  _multiarray_umath.cpython-313-x86_64-linux-gnu.so  [.] npyiter_compute_index_strides
+     0.03%     0.03%  python3.13                                         [.] 0x00000000001358e1
+     0.03%     0.00%  python3.13                                         [.] 0x00000000005358e1
+     0.03%     0.03%  python3.13                                         [.] 0x0000000000134e88
+     0.03%     0.00%  python3.13                                         [.] 0x0000000000534e88
+     0.03%     0.00%  [unknown]                                          [.] 0x00070086002e00c2
+     0.03%     0.03%  [kernel.kallsyms]                                  [k] 0xffffffff87b0a204
+     0.03%     0.00%  [unknown]                                          [k] 0x00007f2942c08030
+     0.03%     0.00%  [kernel.kallsyms]                                  [k] 0xffffffff87c015ff
+     0.03%     0.03%  libgsl.so.28.0.0                                   [.] 0x0000000000186d70
+     0.03%     0.00%  libgsl.so.28.0.0                                   [.] 0x00007f2949b86d70
+     0.03%     0.03%  python3.13                                         [.] 0x00000000001993f8
+     0.03%     0.00%  python3.13                                         [.] 0x00000000005993f8
+     0.03%     0.03%  python3.13                                         [.] 0x00000000001dc0bb
+     0.03%     0.00%  python3.13                                         [.] 0x00000000005dc0bb
+     0.03%     0.03%  python3.13                                         [.] 0x000000000013332a
+     0.03%     0.00%  python3.13                                         [.] 0x000000000053332a
+     0.03%     0.00%  [unknown]                                          [.] 0x40ecd7e000000000
+     0.03%     0.03%  _multiarray_umath.cpython-313-x86_64-linux-gnu.so  [.] _aligned_contig_cast_uint_to_ulong
+     0.03%     0.03%  _tskit.cpython-313-x86_64-linux-gnu.so             [.] TreeSequence_get_sites_position
+     0.03%     0.03%  python3.13                                         [.] 0x0000000000153eb1
+     0.03%     0.00%  python3.13                                         [.] 0x0000000000553eb1
+     0.03%     0.03%  python3.13                                         [.] 0x00000000001a37f2
+     0.03%     0.00%  python3.13                                         [.] 0x00000000005a37f2
+     0.03%     0.03%  python3.13                                         [.] 0x000000000013094e
+     0.03%     0.00%  python3.13                                         [.] 0x000000000053094e
+     0.03%     0.03%  python3.13                                         [.] 0x00000000001d4f30
+     0.03%     0.00%  python3.13                                         [.] 0x00000000005d4f30
+     0.03%     0.03%  python3.13                                         [.] 0x00000000001336fe
+     0.03%     0.00%  python3.13                                         [.] 0x00000000005336fe
+     0.03%     0.03%  python3.13                                         [.] 0x00000000001274f7
+     0.03%     0.00%  python3.13                                         [.] 0x00000000005274f7
+     0.03%     0.03%  _multiarray_umath.cpython-313-x86_64-linux-gnu.so  [.] PyObject_Free@plt
+     0.03%     0.03%  python3.13                                         [.] 0x0000000000135f62
+     0.03%     0.00%  python3.13                                         [.] 0x0000000000535f62
+     0.03%     0.03%  python3.13                                         [.] 0x0000000000209d40
+     0.03%     0.00%  python3.13                                         [.] 0x0000000000609d40
+     0.03%     0.00%  [unknown]                                          [.] 0x40b9590000000000
+     0.03%     0.00%  [unknown]                                          [.] 0x40de5c4000000000
+     0.03%     0.00%  [unknown]                                          [.] 0x40e5ed6000000000
+     0.03%     0.00%  [unknown]                                          [.] 0xffffffff00000002
+     0.03%     0.03%  python3.13                                         [.] 0x000000000014b312
+     0.03%     0.00%  [unknown]                                          [.] 0x207473756d20656d
+     0.03%     0.00%  [unknown]                                          [.] 0x00007ffc5455d8e0
+     0.03%     0.00%  python3.13                                         [.] 0x000000000054b312
+     0.03%     0.03%  _multiarray_umath.cpython-313-x86_64-linux-gnu.so  [.] PyArray_DiscoverDTypeAndShape
+     0.03%     0.00%  [unknown]                                          [.] 0x00007f2949976920
+     0.03%     0.00%  [unknown]                                          [.] 0x00000006000203f8
+     0.03%     0.00%  [unknown]                                          [.] 0x00ec034008cc0020
+     0.03%     0.00%  [unknown]                                          [.] 0x01a2035500410000
+     0.03%     0.00%  [unknown]                                          [.] 0x40d0fac000000000
+     0.03%     0.00%  [unknown]                                          [.] 0x0000000000000791
+     0.03%     0.00%  [unknown]                                          [.] 0x40e326c000000000
+     0.03%     0.00%  [unknown]                                          [.] 0x000b0104334d025f
+     0.03%     0.03%  _multiarray_umath.cpython-313-x86_64-linux-gnu.so  [.] npyiter_buffered_reduce_iternext_iters2
+     0.03%     0.00%  [unknown]                                          [.] 0x41322f6600000000
+     0.03%     0.00%  [unknown]                                          [.] 0x000000001e99cf00
+     0.03%     0.03%  _tskit.cpython-313-x86_64-linux-gnu.so             [.] tsk_memcpy
+     0.03%     0.03%  _multiarray_umath.cpython-313-x86_64-linux-gnu.so  [.] _aligned_cast_uint_to_ulong
+     0.03%     0.03%  python3.13                                         [.] 0x00000000002f1ad6
+     0.03%     0.00%  python3.13                                         [.] 0x00000000006f1ad6
+     0.03%     0.00%  [unknown]                                          [.] 0x0a0a737361702067
+     0.03%     0.03%  python3.13                                         [.] 0x00000000001604d6
+     0.03%     0.00%  python3.13                                         [.] 0x00000000005604d6
+     0.03%     0.00%  [unknown]                                          [.] 0x40e06e2000000000
+     0.03%     0.00%  [unknown]                                          [.] 0x40d0a08000000000
+     0.03%     0.03%  python3.13                                         [.] 0x0000000000123ad8
+     0.03%     0.00%  python3.13                                         [.] 0x0000000000523ad8
+     0.03%     0.03%  libgsl.so.28.0.0                                   [.] 0x0000000000186c10
+     0.03%     0.00%  libgsl.so.28.0.0                                   [.] 0x00007f2949b86c10
+     0.03%     0.00%  [unknown]                                          [.] 0x00000000000000a1
+     0.03%     0.00%  [unknown]                                          [.] 0xffff356202550020
+     0.03%     0.00%  [kernel.kallsyms]                                  [k] 0xffffffff86fb912d
+     0.03%     0.03%  python3.13                                         [.] PyThread_tss_get
+     0.03%     0.03%  python3.13                                         [.] 0x00000000001356c3
+     0.03%     0.00%  python3.13                                         [.] 0x00000000005356c3
+     0.03%     0.03%  _multiarray_umath.cpython-313-x86_64-linux-gnu.so  [.] get_byteswap_loop
+     0.03%     0.03%  python3.13                                         [.] PyTuple_New
+     0.03%     0.00%  [unknown]                                          [.] 0x0ed1005500530006
+     0.03%     0.03%  libc.so.6                                          [.] __localtime_r
+     0.03%     0.00%  [unknown]                                          [.] 0x00000000034002ad
+     0.03%     0.03%  python3.13                                         [.] 0x00000000002088e1
+     0.03%     0.00%  python3.13                                         [.] 0x00000000006088e1
+     0.03%     0.03%  libgsl.so.28.0.0                                   [.] 0x0000000000186d87
+     0.03%     0.00%  libgsl.so.28.0.0                                   [.] 0x00007f2949b86d87
+     0.03%     0.03%  [kernel.kallsyms]                                  [k] 0xffffffff86fae5a0
+     0.03%     0.00%  [unknown]                                          [.] 0x00380000002c0000
+     0.03%     0.03%  python3.13                                         [.] 0x000000000013556e
+     0.03%     0.00%  python3.13                                         [.] 0x000000000053556e
+     0.03%     0.03%  python3.13                                         [.] 0x000000000023d66e
+     0.03%     0.00%  python3.13                                         [.] 0x000000000063d66e
+     0.03%     0.03%  python3.13                                         [.] 0x00000000001a8399
+     0.03%     0.00%  [unknown]                                          [.] 0x000000001e644c90
+     0.03%     0.00%  python3.13                                         [.] 0x00000000005a8399
+     0.03%     0.00%  [unknown]                                          [.] 0x40ef63e000000000
+     0.03%     0.00%  [unknown]                                          [.] 0x4489aa7000000000
+     0.03%     0.00%  [unknown]                                          [.] 0x000000001e4e1100
+     0.03%     0.03%  python3.13                                         [.] 0x00000000001a6816
+     0.03%     0.00%  python3.13                                         [.] 0x00000000005a6816
+     0.03%     0.03%  python3.13                                         [.] 0x0000000000130916
+     0.03%     0.00%  python3.13                                         [.] 0x0000000000530916
+     0.03%     0.00%  [unknown]                                          [.] 0x00007f29439099a0
+     0.03%     0.00%  [unknown]                                          [.] 0x000000001e6a9b70
+     0.03%     0.03%  python3.13                                         [.] 0x000000000021112a
+     0.03%     0.00%  python3.13                                         [.] 0x000000000061112a
+     0.03%     0.03%  libgsl.so.28.0.0                                   [.] 0x0000000000186bce
+     0.03%     0.00%  libgsl.so.28.0.0                                   [.] 0x00007f2949b86bce
+     0.03%     0.03%  python3.13                                         [.] 0x00000000001fe2d9
+     0.03%     0.00%  python3.13                                         [.] 0x00000000005fe2d9
+     0.03%     0.00%  [unknown]                                          [.] 0x44154a0000000103
+     0.03%     0.03%  python3.13                                         [.] 0x000000000019da35
+     0.03%     0.00%  [unknown]                                          [.] 0x006f747561007461
+     0.03%     0.00%  python3.13                                         [.] 0x000000000059da35
+     0.03%     0.03%  libgsl.so.28.0.0                                   [.] 0x0000000000186c21
+     0.03%     0.00%  libgsl.so.28.0.0                                   [.] 0x00007f2949b86c21
+     0.03%     0.03%  python3.13                                         [.] 0x00000000001f06a4
+     0.03%     0.00%  python3.13                                         [.] 0x00000000005f06a4
+     0.03%     0.00%  [unknown]                                          [.] 0x40e2b12000000000
+     0.03%     0.00%  [unknown]                                          [.] 0x40f46af000000000
+     0.03%     0.03%  python3.13                                         [.] 0x00000000001a6671
+     0.03%     0.00%  python3.13                                         [.] 0x00000000005a6671
+     0.03%     0.00%  [unknown]                                          [.] 0x40f6cba000000000
+     0.03%     0.00%  [unknown]                                          [.] 0x00c1005500010002
+     0.03%     0.03%  _tskit.cpython-313-x86_64-linux-gnu.so             [.] tsk_table_collection_set_time_units
+     0.03%     0.03%  python3.13                                         [.] 0x00000000002f1b57
+     0.03%     0.00%  python3.13                                         [.] 0x00000000006f1b57
+     0.03%     0.03%  python3.13                                         [.] 0x0000000000123a14
+     0.03%     0.00%  python3.13                                         [.] 0x0000000000523a14
+     0.03%     0.03%  _tskit.cpython-313-x86_64-linux-gnu.so             [.] parse_mutation_table_dict
+     0.03%     0.03%  python3.13                                         [.] PyMem_Malloc
+     0.03%     0.03%  _tskit.cpython-313-x86_64-linux-gnu.so             [.] parse_provenance_table_dict
+     0.03%     0.03%  python3.13                                         [.] PyObject_ClearWeakRefs
+     0.03%     0.03%  python3.13                                         [.] 0x00000000001604cc
+     0.03%     0.00%  python3.13                                         [.] 0x00000000005604cc
+     0.03%     0.00%  python3.13                                         [.] 0x0000000000523aa1
+     0.03%     0.03%  python3.13                                         [.] 0x0000000000160a70
+     0.03%     0.00%  python3.13                                         [.] 0x0000000000560a70
+     0.03%     0.03%  python3.13                                         [.] 0x0000000000132617
+     0.03%     0.00%  python3.13                                         [.] 0x0000000000532617
+     0.03%     0.00%  [unknown]                                          [.] 0x00007f294aadfb50
+     0.03%     0.03%  python3.13                                         [.] 0x00000000002088a2
+     0.03%     0.00%  python3.13                                         [.] 0x00000000006088a2
+     0.03%     0.03%  _tskit.cpython-313-x86_64-linux-gnu.so             [.] TreeSequence_get_migrations_left
+     0.03%     0.00%  [unknown]                                          [.] 0x40f4e72000000000
+     0.03%     0.00%  [unknown]                                          [.] 0x40e1168000000000
+     0.03%     0.00%  [unknown]                                          [.] 0x34520555000e0002
+     0.03%     0.03%  _multiarray_umath.cpython-313-x86_64-linux-gnu.so  [.] IsUintAligned
+     0.03%     0.00%  [unknown]                                          [.] 0x000000000000ffc9
+     0.03%     0.03%  python3.13                                         [.] 0x0000000000160436
+     0.03%     0.00%  python3.13                                         [.] 0x0000000000560436
+     0.03%     0.00%  [unknown]                                          [.] 0x000000000000ffbe
+     0.03%     0.00%  [unknown]                                          [.] 0x00007f294ac3c388
+     0.03%     0.03%  python3.13                                         [.] 0x0000000000143f60
+     0.03%     0.00%  python3.13                                         [.] 0x0000000000543f60
+     0.03%     0.03%  _multiarray_umath.cpython-313-x86_64-linux-gnu.so  [.] npyiter_prepare_operands
+     0.03%     0.00%  [unknown]                                          [.] 0x34580258002d0000
+     0.03%     0.00%  [unknown]                                          [.] 0x00007f2943307c58
+     0.03%     0.03%  python3.13                                         [.] 0x0000000000127775
+     0.03%     0.00%  python3.13                                         [.] 0x0000000000527775
+     0.03%     0.03%  python3.13                                         [.] PyDict_New
+     0.03%     0.00%  [unknown]                                          [.] 0x6574697300736c61
+     0.03%     0.00%  [unknown]                                          [.] 0x00007ffc5455d2f0
+     0.03%     0.00%  [unknown]                                          [.] 0x40c1ee0000000000
+     0.03%     0.03%  python3.13                                         [.] 0x00000000001c5194
+     0.03%     0.00%  [unknown]                                          [.] 0x034002b203400a9c
+     0.03%     0.00%  python3.13                                         [.] 0x00000000005c5194
+     0.03%     0.03%  python3.13                                         [.] 0x0000000000134e60
+     0.03%     0.00%  python3.13                                         [.] 0x0000000000534e60
+     0.03%     0.03%  [kernel.kallsyms]                                  [k] 0xffffffff86f14f6a
+     0.03%     0.03%  python3.13                                         [.] 0x0000000000132586
+     0.03%     0.00%  python3.13                                         [.] 0x0000000000532586
+     0.03%     0.00%  [unknown]                                          [.] 0x034002c500180000
+     0.03%     0.03%  [vdso]                                             [.] 0x0000000000000c00
+     0.03%     0.00%  [vdso]                                             [.] 0x00007f294ac4fc00
+     0.03%     0.03%  _tskit.cpython-313-x86_64-linux-gnu.so             [.] tsk_mutation_table_copy
+     0.03%     0.03%  python3.13                                         [.] 0x00000000001f076d
+     0.03%     0.00%  python3.13                                         [.] 0x00000000005f076d
+     0.03%     0.03%  _multiarray_umath.cpython-313-x86_64-linux-gnu.so  [.] legacy_same_dtype_resolve_descriptors
+     0.03%     0.00%  [unknown]                                          [.] 0x0000000000000013
+     0.03%     0.00%  [unknown]                                          [.] 0x000000001e1dcd00
+     0.03%     0.03%  python3.13                                         [.] 0x000000000013dd43
+     0.03%     0.00%  python3.13                                         [.] 0x000000000053dd43
+     0.03%     0.00%  [unknown]                                          [.] 0x000000000000ffc4
+     0.03%     0.03%  [kernel.kallsyms]                                  [k] 0xffffffff87106d8e
+     0.03%     0.00%  [unknown]                                          [k] 0x04c5001900000104
+     0.03%     0.00%  python3.13                                         [.] 0x00000000005ccb44
+     0.03%     0.03%  python3.13                                         [.] 0x0000000000174bd3
+     0.03%     0.00%  python3.13                                         [.] 0x0000000000574bd3
+     0.03%     0.00%  [unknown]                                          [.] 0x40e74cc000000000
+     0.03%     0.03%  python3.13                                         [.] 0x00000000001a0723
+     0.03%     0.00%  python3.13                                         [.] 0x00000000005a0723
+     0.03%     0.03%  python3.13                                         [.] 0x0000000000133745
+     0.03%     0.00%  python3.13                                         [.] 0x0000000000533745
+     0.03%     0.03%  python3.13                                         [.] 0x000000000019e2a0
+     0.03%     0.00%  python3.13                                         [.] 0x000000000059e2a0
+     0.03%     0.00%  [unknown]                                          [.] 0x0104034008cc0030
+     0.03%     0.00%  [unknown]                                          [.] 0x034031be00130273
+     0.03%     0.00%  [unknown]                                          [.] 0x000000f1034008cc
+     0.03%     0.03%  [kernel.kallsyms]                                  [k] 0xffffffff86f1d013
+     0.03%     0.03%  python3.13                                         [.] PyObject_RichCompareBool
+     0.03%     0.00%  [unknown]                                          [.] 0x0000000000a04200
+     0.03%     0.00%  [unknown]                                          [.] 0x7452055500000000
+     0.03%     0.00%  [unknown]                                          [.] 0x40ebf08000000000
+     0.03%     0.03%  python3.13                                         [.] 0x0000000000199301
+     0.03%     0.00%  [unknown]                                          [.] 0x0000000206290340
+     0.03%     0.00%  python3.13                                         [.] 0x0000000000599301
+     0.03%     0.00%  python3.13                                         [.] 0x0000000000670000
+     0.03%     0.00%  [unknown]                                          [.] 0x40b4cf0000000000
+     0.03%     0.03%  python3.13                                         [.] 0x00000000001240ca
+     0.03%     0.00%  python3.13                                         [.] 0x00000000005240ca
+     0.03%     0.00%  [unknown]                                          [.] 0x00007f2946cfd840
+     0.03%     0.00%  [unknown]                                          [.] 0x00000000000001c1
+     0.03%     0.03%  python3.13                                         [.] 0x0000000000130cf1
+     0.03%     0.00%  python3.13                                         [.] 0x0000000000530cf1
+     0.03%     0.03%  _multiarray_umath.cpython-313-x86_64-linux-gnu.so  [.] PyArray_PrepareTwoRawArrayIter
+     0.03%     0.03%  python3.13                                         [.] 0x00000000001337e5
+     0.03%     0.00%  python3.13                                         [.] 0x00000000005337e5
+     0.03%     0.03%  libc.so.6                                          [.] __mempcpy_avx_unaligned
+     0.03%     0.00%  [unknown]                                          [.] 0x40debac000000000
+     0.03%     0.03%  _tskit.cpython-313-x86_64-linux-gnu.so             [.] TreeSequence_get_populations_metadata
+     0.03%     0.00%  [unknown]                                          [.] 0x4001037b4a2339c1
+     0.03%     0.03%  _tskit.cpython-313-x86_64-linux-gnu.so             [.] Tree_get_mrca
+     0.03%     0.00%  [unknown]                                          [.] 0x40f6aa9000000000
+     0.03%     0.03%  python3.13                                         [.] 0x00000000001cd274
+     0.03%     0.00%  python3.13                                         [.] 0x00000000005cd274
+     0.03%     0.03%  python3.13                                         [.] 0x000000000012396c
+     0.03%     0.00%  [unknown]                                          [.] 0x00616d6500736c00
+     0.03%     0.00%  python3.13                                         [.] 0x000000000052396c
+     0.03%     0.00%  [unknown]                                          [.] 0x0000000000000076
+     0.03%     0.03%  python3.13                                         [.] 0x00000000001d508a
+     0.03%     0.00%  python3.13                                         [.] 0x00000000005d508a
+     0.03%     0.00%  [unknown]                                          [.] 0x0000000000010011
+     0.03%     0.03%  _tskit.cpython-313-x86_64-linux-gnu.so             [.] table_read_column_array.constprop.0
+     0.03%     0.03%  python3.13                                         [.] 0x000000000022bf33
+     0.03%     0.00%  python3.13                                         [.] 0x000000000062bf33
+     0.03%     0.00%  [unknown]                                          [.] 0x4023204a1d195860
+     0.03%     0.03%  _tskit.cpython-313-x86_64-linux-gnu.so             [.] TableCollection_has_index
+     0.03%     0.00%  [unknown]                                          [.] 0x40e7954000000000
+     0.03%     0.03%  python3.13                                         [.] 0x00000000002a4234
+     0.03%     0.00%  python3.13                                         [.] 0x00000000006a4234
+     0.03%     0.00%  [unknown]                                          [.] 0x40c7558000000000
+     0.03%     0.03%  python3.13                                         [.] 0x0000000000123adf
+     0.03%     0.00%  [unknown]                                          [.] 0x0000740074657300
+     0.03%     0.00%  python3.13                                         [.] 0x0000000000523adf
+     0.03%     0.00%  [unknown]                                          [.] 0x40e1cb0000000000
+     0.03%     0.00%  [unknown]                                          [.] 0x034000c100550004
+     0.03%     0.00%  [unknown]                                          [.] 0x000000001e6a9990
+     0.03%     0.00%  [unknown]                                          [.] 0x40d647c000000000
+     0.03%     0.03%  python3.13                                         [.] 0x000000000014b2c5
+     0.03%     0.00%  [unknown]                                          [.] 0x6962726574695600
+     0.03%     0.00%  [unknown]                                          [.] 0x00007ffc5455d960
+     0.03%     0.00%  python3.13                                         [.] 0x000000000054b2c5
+     0.03%     0.03%  python3.13                                         [.] 0x00000000001da3ee
+     0.03%     0.00%  python3.13                                         [.] 0x00000000005da3ee
+     0.03%     0.03%  python3.13                                         [.] 0x0000000000133a2d
+     0.03%     0.00%  python3.13                                         [.] 0x0000000000533a2d
+     0.03%     0.03%  python3.13                                         [.] 0x00000000001c2ea6
+     0.03%     0.00%  python3.13                                         [.] 0x00000000005c2ea6
+     0.03%     0.03%  python3.13                                         [.] 0x0000000000143e62
+     0.03%     0.00%  python3.13                                         [.] 0x0000000000543e62
+     0.03%     0.03%  python3.13                                         [.] 0x00000000001991e4
+     0.03%     0.00%  python3.13                                         [.] 0x00000000005991e4
+     0.03%     0.03%  python3.13                                         [.] 0x0000000000208994
+     0.03%     0.00%  python3.13                                         [.] 0x0000000000608994
+     0.03%     0.03%  libc.so.6                                          [.] __GI___pthread_self
+     0.03%     0.03%  _tskit.cpython-313-x86_64-linux-gnu.so             [.] tsk_individual_table_init
+     0.03%     0.03%  python3.13                                         [.] 0x000000000016085a
+     0.03%     0.00%  python3.13                                         [.] 0x000000000056085a
+     0.03%     0.03%  _tskit.cpython-313-x86_64-linux-gnu.so             [.] TreeSequence_get_migrations_node
+     0.03%     0.03%  _tskit.cpython-313-x86_64-linux-gnu.so             [.] tsk_memset
+     0.03%     0.03%  python3.13                                         [.] 0x000000000020ed0f
+     0.03%     0.00%  python3.13                                         [.] 0x000000000060ed0f
+     0.03%     0.03%  _tskit.cpython-313-x86_64-linux-gnu.so             [.] TreeSequence_get_migrations_time
+     0.03%     0.00%  [unknown]                                          [.] 0x00007f2943e8be28
+     0.03%     0.00%  [unknown]                                          [.] 0x00007f2943e8bb88
+     0.03%     0.00%  [unknown]                                          [.] 0x00007f2943e8d8a0
+     0.03%     0.03%  python3.13                                         [.] 0x00000000001453f0
+     0.03%     0.00%  python3.13                                         [.] 0x00000000005453f0
+     0.03%     0.03%  python3.13                                         [.] 0x00000000001337c8
+     0.03%     0.00%  python3.13                                         [.] 0x00000000005337c8
+     0.03%     0.03%  _tskit.cpython-313-x86_64-linux-gnu.so             [.] ProvenanceTable_add_row
+     0.03%     0.00%  [unknown]                                          [.] 0x40f1ac7000000000
+     0.03%     0.03%  [kernel.kallsyms]                                  [k] 0xffffffff86e99119
+     0.03%     0.00%  [kernel.kallsyms]                                  [k] 0xffffffff86e103b3
+     0.03%     0.00%  [unknown]                                          [.] 0x448413a000000101
+     0.03%     0.03%  _tskit.cpython-313-x86_64-linux-gnu.so             [.] tsk_treeseq_get_num_trees
+     0.03%     0.00%  [unknown]                                          [.] 0x00007f29433079f0
+     0.03%     0.03%  _multiarray_umath.cpython-313-x86_64-linux-gnu.so  [.] array_asarray
+     0.03%     0.03%  python3.13                                         [.] 0x000000000013255a
+     0.03%     0.00%  python3.13                                         [.] 0x000000000053255a
+     0.03%     0.03%  python3.13                                         [.] 0x00000000001603f5
+     0.03%     0.00%  python3.13                                         [.] 0x00000000005603f5
+     0.03%     0.00%  [unknown]                                          [.] 0x0452000000000000
+     0.03%     0.00%  [unknown]                                          [.] 0x0000000000000451
+     0.03%     0.00%  [unknown]                                          [.] 0x000000001e842df0
+     0.03%     0.00%  [unknown]                                          [.] 0x00007f294aadff30
+     0.03%     0.03%  python3.13                                         [.] 0x00000000001fe318
+     0.03%     0.00%  python3.13                                         [.] 0x00000000005fe318
+     0.03%     0.03%  _tskit.cpython-313-x86_64-linux-gnu.so             [.] tsk_reference_sequence_is_null
+     0.03%     0.03%  python3.13                                         [.] PyStructSequence_SetItem
+     0.03%     0.03%  python3.13                                         [.] 0x000000000019fe44
+     0.03%     0.00%  python3.13                                         [.] 0x000000000059fe44
+     0.03%     0.03%  python3.13                                         [.] PyObject_Str
+     0.03%     0.00%  [unknown]                                          [.] 0x034028c80755086e
+     0.03%     0.00%  [unknown]                                          [.] 0x0000000100000024
+     0.03%     0.00%  [unknown]                                          [.] 0x40e94e4000000000
+     0.03%     0.03%  python3.13                                         [.] 0x00000000001b0ca1
+     0.03%     0.00%  python3.13                                         [.] 0x00000000005b0ca1
+     0.03%     0.03%  python3.13                                         [.] 0x00000000001367f1
+     0.03%     0.00%  python3.13                                         [.] 0x00000000005367f1
+     0.03%     0.03%  python3.13                                         [.] PyUnicode_FromString
+     0.03%     0.03%  python3.13                                         [.] 0x00000000002f1ad0
+     0.03%     0.00%  python3.13                                         [.] 0x00000000006f1ad0
+     0.03%     0.00%  [unknown]                                          [.] 0x40c1a98000000000
+     0.03%     0.03%  libgsl.so.28.0.0                                   [.] 0x0000000000186ba8
+     0.03%     0.00%  libgsl.so.28.0.0                                   [.] 0x00007f2949b86ba8
+     0.03%     0.00%  [unknown]                                          [.] 0x40e3b70000000000
+     0.03%     0.03%  _multiarray_umath.cpython-313-x86_64-linux-gnu.so  [.] count_boolean_trues
+     0.03%     0.00%  [unknown]                                          [.] 0x00f103400bcc0020
+     0.03%     0.03%  python3.13                                         [.] 0x0000000000184f92
+     0.03%     0.00%  python3.13                                         [.] 0x0000000000584f92
+     0.03%     0.03%  [kernel.kallsyms]                                  [k] 0xffffffff86f820a2
+     0.03%     0.00%  [kernel.kallsyms]                                  [k] 0xffffffff86fa2c90
+     0.03%     0.00%  [unknown]                                          [.] 0x40155838d8c2bd88
+     0.03%     0.03%  python3.13                                         [.] PyNumber_Check
+     0.03%     0.03%  python3.13                                         [.] 0x0000000000133270
+     0.03%     0.00%  python3.13                                         [.] 0x0000000000533270
+     0.03%     0.00%  [unknown]                                          [.] 0xf89c30520555000d
+     0.03%     0.00%  [unknown]                                          [.] 0x000000001e6a9ae0
+     0.03%     0.03%  python3.13                                         [.] 0x0000000000130926
+     0.03%     0.00%  python3.13                                         [.] 0x0000000000530926
+     0.03%     0.03%  _tskit.cpython-313-x86_64-linux-gnu.so             [.] tsk_edge_table_set_columns
+     0.03%     0.03%  _tskit.cpython-313-x86_64-linux-gnu.so             [.] Tree_get_right_child_array
+     0.03%     0.00%  [unknown]                                          [.] 0x03f8034002c10055
+     0.03%     0.03%  python3.13                                         [.] 0x0000000000127376
+     0.03%     0.00%  python3.13                                         [.] 0x0000000000527376
+     0.03%     0.00%  [unknown]                                          [.] 0x01a100000166001f
+     0.03%     0.03%  _multiarray_umath.cpython-313-x86_64-linux-gnu.so  [.] scalar_value
+     0.03%     0.00%  [unknown]                                          [.] 0x00007f29433070f8
+     0.03%     0.03%  python3.13                                         [.] PyObject_GetItem
+     0.03%     0.00%  [unknown]                                          [.] 0x00000000009f7d60
+     0.03%     0.03%  libgsl.so.28.0.0                                   [.] 0x0000000000186b84
+     0.03%     0.00%  libgsl.so.28.0.0                                   [.] 0x00007f2949b86b84
+     0.03%     0.03%  python3.13                                         [.] 0x000000000020ecc7
+     0.03%     0.00%  python3.13                                         [.] 0x000000000060ecc7
+     0.03%     0.00%  [unknown]                                          [.] 0x40b45b0000000000
+     0.03%     0.00%  [unknown]                                          [.] 0x40e8e7c000000000
+     0.03%     0.03%  python3.13                                         [.] PyLong_FromLong
+     0.03%     0.00%  [unknown]                                          [.] 0x034009c4001e0000
+     0.03%     0.03%  python3.13                                         [.] 0x0000000000135ebc
+     0.03%     0.00%  python3.13                                         [.] 0x0000000000535ebc
+     0.03%     0.03%  python3.13                                         [.] 0x00000000002f1b3f
+     0.03%     0.00%  [unknown]                                          [.] 0x0152085400200000
+     0.03%     0.00%  python3.13                                         [.] 0x00000000006f1b3f
+     0.03%     0.00%  [unknown]                                          [.] 0x40d2b24000000000
+     0.03%     0.03%  python3.13                                         [.] 0x000000000020892c
+     0.03%     0.00%  python3.13                                         [.] 0x000000000060892c
+     0.03%     0.03%  _tskit.cpython-313-x86_64-linux-gnu.so             [.] tsk_population_table_init
+     0.03%     0.03%  [kernel.kallsyms]                                  [k] 0xffffffff86efeec9
+     0.03%     0.00%  [kernel.kallsyms]                                  [k] 0xffffffff86fa67a2
+     0.03%     0.00%  [kernel.kallsyms]                                  [k] 0xffffffff86fa5a82
+     0.03%     0.00%  [unknown]                                          [.] 0x3fff95f226937591
+     0.03%     0.03%  python3.13                                         [.] 0x0000000000127711
+     0.03%     0.00%  python3.13                                         [.] 0x0000000000527711
+     0.03%     0.00%  [unknown]                                          [.] 0x000000001e4e3df0
+     0.03%     0.03%  python3.13                                         [.] 0x0000000000134ea3
+     0.03%     0.00%  python3.13                                         [.] 0x0000000000534ea3
+     0.03%     0.03%  _tskit.cpython-313-x86_64-linux-gnu.so             [.] TreeSequence_get_edges_parent
+     0.03%     0.00%  [unknown]                                          [.] 0x00007f2946cfdb80
+     0.03%     0.00%  [unknown]                                          [.] 0x00007f2943307130
+     0.03%     0.03%  python3.13                                         [.] 0x0000000000134e7c
+     0.03%     0.00%  python3.13                                         [.] 0x0000000000534e7c
+     0.03%     0.00%  [unknown]                                          [.] 0x40d768c000000000
+     0.03%     0.00%  [unknown]                                          [k] 0x40f5f49000000000
+     0.03%     0.00%  [unknown]                                          [.] 0x40f4919000000000
+     0.03%     0.00%  [unknown]                                          [.] 0x00000000034001b0
+     0.03%     0.03%  python3.13                                         [.] 0x0000000000160a8d
+     0.03%     0.00%  [unknown]                                          [.] 0x0134005500340000
+     0.03%     0.00%  python3.13                                         [.] 0x0000000000560a8d
+     0.03%     0.03%  python3.13                                         [.] 0x00000000001603df
+     0.03%     0.00%  python3.13                                         [.] 0x00000000005603df
+     0.03%     0.03%  libgsl.so.28.0.0                                   [.] 0x0000000000186ce3
+     0.03%     0.00%  libgsl.so.28.0.0                                   [.] 0x00007f2949b86ce3
+     0.03%     0.03%  python3.13                                         [.] 0x000000000013368d
+     0.03%     0.00%  python3.13                                         [.] 0x000000000053368d
+     0.03%     0.00%  [unknown]                                          [.] 0x9f51c00000000000
+     0.03%     0.03%  python3.13                                         [.] 0x00000000001239a9
+     0.03%     0.00%  [unknown]                                          [.] 0x0074657366666f5f
+     0.03%     0.00%  python3.13                                         [.] 0x00000000005239a9
+     0.03%     0.00%  [unknown]                                          [.] 0x401430862ce3a561
+     0.03%     0.03%  python3.13                                         [.] 0x0000000000209b43
+     0.03%     0.00%  python3.13                                         [.] 0x0000000000609b43
+     0.03%     0.03%  python3.13                                         [.] 0x0000000000143dce
+     0.03%     0.00%  [unknown]                                          [.] 0xfd89485554415541
+     0.03%     0.00%  python3.13                                         [.] 0x0000000000543dce
+     0.03%     0.03%  python3.13                                         [.] 0x0000000000133344
+     0.03%     0.00%  python3.13                                         [.] 0x0000000000533344
+     0.03%     0.03%  python3.13                                         [.] 0x00000000002f1b52
+     0.03%     0.00%  python3.13                                         [.] 0x00000000006f1b52
+     0.03%     0.03%  [kernel.kallsyms]                                  [k] 0xffffffff87c00084
+     0.03%     0.03%  python3.13                                         [.] 0x0000000000123b41
+     0.03%     0.00%  python3.13                                         [.] 0x0000000000523b41
+     0.03%     0.00%  [unknown]                                          [.] 0x40f3d56000000000
+     0.03%     0.00%  [unknown]                                          [.] 0x00007f2943307a98
+     0.03%     0.03%  [kernel.kallsyms]                                  [k] 0xffffffff86f406ee
+     0.03%     0.00%  [kernel.kallsyms]                                  [k] 0xffffffff86f1d15b
+     0.03%     0.03%  python3.13                                         [.] 0x000000000013dc7c
+     0.03%     0.00%  python3.13                                         [.] 0x000000000053dc7c
+     0.03%     0.00%  [unknown]                                          [k] 0x034002ca0055016e
+     0.03%     0.03%  _multiarray_umath.cpython-313-x86_64-linux-gnu.so  [.] get_implementing_args_and_methods
+     0.03%     0.03%  python3.13                                         [.] 0x000000000019fe7f
+     0.03%     0.00%  python3.13                                         [.] 0x000000000059fe7f
+     0.03%     0.00%  [unknown]                                          [.] 0x00007f2943e8d7c0
+     0.03%     0.03%  _tskit.cpython-313-x86_64-linux-gnu.so             [.] TreeSequence_get_edges_left
+     0.03%     0.03%  _tskit.cpython-313-x86_64-linux-gnu.so             [.] get_dict_value_dict
+     0.03%     0.00%  [unknown]                                          [.] 0x4a7ecea000000000
+     0.03%     0.03%  python3.13                                         [.] 0x0000000000209d5b
+     0.03%     0.00%  python3.13                                         [.] 0x0000000000609d5b
+     0.03%     0.00%  [unknown]                                          [.] 0x0000000000000005
+     0.03%     0.00%  [unknown]                                          [.] 0x000000000000ffcb
+     0.03%     0.00%  [unknown]                                          [.] 0x00007f29433071a0
+     0.03%     0.00%  [unknown]                                          [.] 0x3ff1b6113404ea4b
+     0.03%     0.03%  python3.13                                         [.] 0x00000000001da4b1
+     0.03%     0.00%  python3.13                                         [.] 0x00000000005da4b1
+     0.03%     0.00%  [unknown]                                          [.] 0x000000000000ffd6
+     0.03%     0.00%  [unknown]                                          [.] 0x40ebbee000000000
+     0.03%     0.03%  _msprime.cpython-313-x86_64-linux-gnu.so           [.] Simulator_run
+     0.03%     0.03%  python3.13                                         [.] 0x0000000000136649
+     0.03%     0.00%  python3.13                                         [.] 0x0000000000536649
+     0.03%     0.00%  [unknown]                                          [.] 0x00fc034004c50019
+     0.03%     0.03%  python3.13                                         [.] 0x0000000000134dcb
+     0.03%     0.00%  python3.13                                         [.] 0x0000000000534dcb
+     0.03%     0.03%  python3.13                                         [.] 0x0000000000136f47
+     0.03%     0.00%  python3.13                                         [.] 0x0000000000536f47
+     0.03%     0.00%  [unknown]                                          [.] 0x00200000003b0340
+     0.03%     0.03%  python3.13                                         [.] 0x00000000001d5062
+     0.03%     0.00%  python3.13                                         [.] 0x00000000005d5062
+     0.03%     0.00%  [unknown]                                          [.] 0x000036cc0a520035
+     0.03%     0.03%  python3.13                                         [.] 0x00000000002088d9
+     0.03%     0.00%  python3.13                                         [.] 0x00000000006088d9
+     0.03%     0.00%  [unknown]                                          [.] 0x034000c100550005
+     0.03%     0.00%  [unknown]                                          [.] 0x00c5000a000000f1
+     0.03%     0.03%  python3.13                                         [.] 0x00000000001274a3
+     0.03%     0.00%  python3.13                                         [.] 0x00000000005274a3
+     0.03%     0.03%  python3.13                                         [.] 0x0000000000138f94
+     0.03%     0.00%  [unknown]                                          [.] 0x00070086002e003b
+     0.03%     0.00%  python3.13                                         [.] 0x0000000000538f94
+     0.03%     0.00%  [unknown]                                          [.] 0x000000000000ffc3
+     0.03%     0.03%  python3.13                                         [.] 0x00000000001dbfe1
+     0.03%     0.00%  python3.13                                         [.] 0x00000000005dbfe1
+     0.03%     0.00%  [unknown]                                          [.] 0x00000048034025c3
+     0.03%     0.00%  [unknown]                                          [.] 0x000000000000fff4
+     0.03%     0.03%  libc.so.6                                          [.] parse_tzname
+     0.03%     0.03%  python3.13                                         [.] 0x00000000001442c5
+     0.03%     0.00%  python3.13                                         [.] 0x00000000005442c5
+     0.03%     0.03%  python3.13                                         [.] 0x0000000000130c34
+     0.03%     0.00%  python3.13                                         [.] 0x0000000000530c34
+     0.03%     0.03%  python3.13                                         [.] 0x0000000000243250
+     0.03%     0.00%  python3.13                                         [.] 0x0000000000643250
+     0.03%     0.00%  [unknown]                                          [.] 0x00007f2943307be8
+     0.03%     0.00%  [unknown]                                          [.] 0x3000000012000000
+     0.03%     0.03%  python3.13                                         [.] 0x00000000002f1b49
+     0.03%     0.00%  python3.13                                         [.] 0x00000000006f1b49
+     0.03%     0.00%  [unknown]                                          [.] 0x000000000000fff7
+     0.03%     0.03%  python3.13                                         [.] 0x000000000022b041
+     0.03%     0.00%  [unknown]                                          [.] 0x00007f2946cfed60
+     0.03%     0.00%  python3.13                                         [.] 0x000000000062b041
+     0.03%     0.03%  python3.13                                         [.] 0x000000000012711d
+     0.03%     0.00%  python3.13                                         [.] 0x000000000052711d
+     0.03%     0.00%  [unknown]                                          [.] 0x40ceec8000000000
+     0.03%     0.03%  libc.so.6                                          [.] pthread_mutex_unlock@@GLIBC_2.2.5
+     0.03%     0.00%  [unknown]                                          [.] 0x00007f2949976b20
+     0.03%     0.00%  [unknown]                                          [.] 0x000000000000001f
+     0.03%     0.00%  [unknown]                                          [.] 0x000000001e6a9a80
+     0.03%     0.00%  [unknown]                                          [.] 0x034001aa01550021
+     0.03%     0.00%  [unknown]                                          [.] 0x0000000000002021
+     0.03%     0.03%  python3.13                                         [.] 0x000000000022b864
+     0.03%     0.00%  [unknown]                                          [.] 0x000000001e4e0540
+     0.03%     0.00%  python3.13                                         [.] 0x000000000062b864
+     0.03%     0.03%  _tskit.cpython-313-x86_64-linux-gnu.so             [.] parse_population_table_dict
+     0.03%     0.03%  python3.13                                         [.] 0x00000000001603c1
+     0.03%     0.00%  python3.13                                         [.] 0x00000000005603c1
+     0.03%     0.03%  _tskit.cpython-313-x86_64-linux-gnu.so             [.] table_read_column_array.constprop.1
+     0.03%     0.00%  [unknown]                                          [.] 0x00007f2943fafa50
+     0.03%     0.00%  [unknown]                                          [.] 0x0067002000000000
+     0.03%     0.03%  python3.13                                         [.] 0x0000000000133223
+     0.03%     0.00%  python3.13                                         [.] 0x0000000000533223
+     0.03%     0.03%  [kernel.kallsyms]                                  [k] 0xffffffff86f404e4
+     0.03%     0.00%  [kernel.kallsyms]                                  [k] 0xffffffff86f14efa
+     0.03%     0.00%  [unknown]                                          [.] 0x001e000000ec0340
+     0.03%     0.03%  _tskit.cpython-313-x86_64-linux-gnu.so             [.] tsk_node_table_set_metadata_schema
+     0.03%     0.00%  [unknown]                                          [.] 0x0dce00550354004c
+     0.03%     0.03%  python3.13                                         [.] 0x0000000000133793
+     0.03%     0.00%  python3.13                                         [.] 0x0000000000533793
+     0.03%     0.03%  python3.13                                         [.] strlen@plt
+     0.03%     0.03%  libgsl.so.28.0.0                                   [.] 0x0000000000186c33
+     0.03%     0.00%  libgsl.so.28.0.0                                   [.] 0x00007f2949b86c33
+     0.03%     0.00%  [unknown]                                          [.] 0xc22c38520555000f
+     0.03%     0.03%  python3.13                                         [.] PyDict_SetItemString
+     0.03%     0.03%  python3.13                                         [.] 0x00000000002904e2
+     0.03%     0.00%  python3.13                                         [.] 0x00000000006904e2
+     0.03%     0.00%  [unknown]                                          [.] 0xffff0661014c0020
+     0.03%     0.03%  [kernel.kallsyms]                                  [k] 0xffffffff86fa64e1
+     0.03%     0.00%  [unknown]                                          [k] 0x95c0000000000000
+     0.03%     0.03%  [kernel.kallsyms]                                  [k] 0xffffffff86f9d19e
+     0.03%     0.00%  [kernel.kallsyms]                                  [k] 0xffffffff86fb0a88
+     0.03%     0.00%  [unknown]                                          [.] 0x40f1db7000000000
+     0.03%     0.00%  [unknown]                                          [.] 0x40e96d0000000000
+     0.03%     0.00%  [unknown]                                          [.] 0x40f3092000000000
+     0.03%     0.03%  libc.so.6                                          [.] memcpy@@GLIBC_2.14@plt
+     0.03%     0.00%  [unknown]                                          [.] 0x0000001103520055
+     0.03%     0.03%  _multiarray_umath.cpython-313-x86_64-linux-gnu.so  [.] PyArray_CanCastTypeTo
+     0.03%     0.03%  python3.13                                         [.] PyFunction_NewWithQualName
+     0.03%     0.00%  [unknown]                                          [.] 0x4f40000000000000
+     0.03%     0.00%  [unknown]                                          [.] 0x0000000000000071
+     0.03%     0.03%  python3.13                                         [.] 0x000000000017507f
+     0.03%     0.00%  [unknown]                                          [.] 0x7540000000a980f6
+     0.03%     0.00%  python3.13                                         [.] 0x000000000057507f
+     0.03%     0.00%  [unknown]                                          [.] 0x40e4954000000000
+     0.03%     0.00%  [unknown]                                          [.] 0x01041b4d00030261
+     0.03%     0.00%  [unknown]                                          [.] 0x00007f2943909b00
+     0.03%     0.00%  [unknown]                                          [.] 0x00007f2943909dc0
+     0.03%     0.03%  python3.13                                         [.] 0x00000000001dc139
+     0.03%     0.00%  python3.13                                         [.] 0x00000000005dc139
+     0.03%     0.03%  libc.so.6                                          [.] parse_offset
+     0.03%     0.00%  [unknown]                                          [.] 0x000000000000003d
+     0.03%     0.00%  [unknown]                                          [.] 0x00007f2943307b78
+     0.03%     0.03%  python3.13                                         [.] _PyUnicode_JoinArray
+     0.03%     0.00%  [unknown]                                          [.] 0x03402fcc00070002
+     0.03%     0.03%  python3.13                                         [.] 0x00000000001b7bf4
+     0.03%     0.00%  python3.13                                         [.] 0x00000000005b7bf4
+     0.03%     0.00%  [unknown]                                          [.] 0x40f6308000000000
+     0.03%     0.03%  python3.13                                         [.] 0x000000000028e3d7
+     0.03%     0.00%  [unknown]                                          [.] 0x00007f2942d9cf50
+     0.03%     0.00%  python3.13                                         [.] 0x000000000068e3d7
+     0.03%     0.03%  python3.13                                         [.] 0x0000000000209da9
+     0.03%     0.00%  python3.13                                         [.] 0x0000000000609da9
+     0.03%     0.03%  python3.13                                         [.] 0x00000000001d4f77
+     0.03%     0.00%  python3.13                                         [.] 0x00000000005d4f77
+     0.03%     0.03%  _multiarray_umath.cpython-313-x86_64-linux-gnu.so  [.] npyiter_check_casting
+     0.03%     0.03%  python3.13                                         [.] 0x00000000001331dc
+     0.03%     0.00%  python3.13                                         [.] 0x00000000005331dc
+     0.03%     0.03%  _msprime.cpython-313-x86_64-linux-gnu.so           [.] tsk_table_sorter_sort_edges.lto_priv.0
+     0.03%     0.03%  python3.13                                         [.] 0x000000000018009e
+     0.03%     0.00%  python3.13                                         [.] 0x000000000058009e
+     0.03%     0.03%  python3.13                                         [.] 0x0000000000143cd8
+     0.03%     0.00%  python3.13                                         [.] 0x0000000000543cd8
+     0.03%     0.00%  [unknown]                                          [.] 0x40d8d2c000000000
+     0.03%     0.03%  python3.13                                         [.] 0x0000000000191525
+     0.03%     0.00%  python3.13                                         [.] 0x0000000000591525
+     0.03%     0.00%  [unknown]                                          [.] 0x0261034000ba0022
+     0.03%     0.00%  python3.13                                         [.] 0x0000000000670001
+     0.03%     0.03%  libgsl.so.28.0.0                                   [.] 0x0000000000186ca1
+     0.03%     0.00%  libgsl.so.28.0.0                                   [.] 0x00007f2949b86ca1
+     0.03%     0.00%  [unknown]                                          [.] 0x40e102a000000000
+     0.03%     0.03%  python3.13                                         [.] 0x0000000000243202
+     0.03%     0.00%  python3.13                                         [.] 0x0000000000643202
+     0.03%     0.00%  [unknown]                                          [.] 0x0000000000001011
+     0.03%     0.03%  python3.13                                         [.] 0x00000000001452b8
+     0.03%     0.00%  python3.13                                         [.] 0x00000000005452b8
+     0.03%     0.03%  python3.13                                         [.] 0x00000000001603a1
+     0.03%     0.00%  python3.13                                         [.] 0x00000000005603a1
+     0.03%     0.03%  libgsl.so.28.0.0                                   [.] 0x0000000000186cf9
+     0.03%     0.00%  libgsl.so.28.0.0                                   [.] 0x00007f2949b86cf9
+     0.03%     0.03%  python3.13                                         [.] 0x0000000000123ad1
+     0.03%     0.00%  python3.13                                         [.] 0x0000000000523ad1
+     0.03%     0.03%  python3.13                                         [.] PyObject_GetIter
+     0.03%     0.03%  python3.13                                         [.] 0x0000000000130948
+     0.03%     0.00%  python3.13                                         [.] 0x0000000000530948
+     0.03%     0.00%  [unknown]                                          [.] 0x00007f2943e8c330
+     0.03%     0.00%  [unknown]                                          [.] 0x40f6e8f000000000
+     0.03%     0.00%  [unknown]                                          [.] 0x00007f2943307e18
+     0.03%     0.03%  python3.13                                         [.] 0x0000000000127436
+     0.03%     0.00%  python3.13                                         [.] 0x0000000000527436
+     0.03%     0.00%  [unknown]                                          [.] 0x40f4310000000000
+     0.03%     0.00%  [unknown]                                          [.] 0x40eea58000000000
+     0.03%     0.00%  [unknown]                                          [.] 0x00007f2949980120
+     0.03%     0.03%  python3.13                                         [.] 0x0000000000185039
+     0.03%     0.00%  python3.13                                         [.] 0x0000000000585039
+     0.03%     0.03%  python3.13                                         [.] 0x0000000000195454
+     0.03%     0.00%  python3.13                                         [.] 0x0000000000595454
+     0.03%     0.00%  [unknown]                                          [.] 0x00000000e92c2952
+     0.03%     0.00%  [unknown]                                          [.] 0x0000002406550020
+     0.03%     0.03%  python3.13                                         [.] 0x000000000013e348
+     0.03%     0.00%  [unknown]                                          [.] 0x214f0029492c492c
+     0.03%     0.00%  python3.13                                         [.] 0x000000000053e348
+     0.03%     0.03%  python3.13                                         [.] 0x0000000000154053
+     0.03%     0.00%  python3.13                                         [.] 0x0000000000554053
+     0.03%     0.03%  python3.13                                         [.] 0x00000000000cb7d5
+     0.03%     0.00%  python3.13                                         [.] 0x00000000004cb7d5
+     0.03%     0.00%  [unknown]                                          [.] 0x00000000000000c1
+     0.03%     0.00%  [unknown]                                          [.] 0x00000000000000b1
+     0.03%     0.03%  _tskit.cpython-313-x86_64-linux-gnu.so             [.] tsk_individual_table_truncate
+     0.03%     0.00%  [unknown]                                          [.] 0x2e643230253a6432
+     0.03%     0.03%  python3.13                                         [.] 0x00000000001ab0c2
+     0.03%     0.00%  python3.13                                         [.] 0x00000000005ab0c2
+     0.03%     0.00%  [unknown]                                          [.] 0x40e01ec000000000
+     0.03%     0.00%  [unknown]                                          [.] 0x0000006700200000
+     0.03%     0.00%  [unknown]                                          [.] 0x03f8034015c4001e
+     0.03%     0.03%  python3.13                                         [.] 0x00000000001ccc32
+     0.03%     0.00%  [unknown]                                          [.] 0x00007f2942436250
+     0.03%     0.00%  python3.13                                         [.] 0x00000000005ccc32
+     0.03%     0.00%  [unknown]                                          [.] 0x0000003b00000039
+     0.03%     0.00%  [unknown]                                          [.] 0x4000ec14a6f94d52
+     0.03%     0.03%  _multiarray_umath.cpython-313-x86_64-linux-gnu.so  [.] PyArray_GetStridedCopyFn
+     0.03%     0.03%  python3.13                                         [.] 0x0000000000130930
+     0.03%     0.00%  python3.13                                         [.] 0x0000000000530930
+     0.03%     0.00%  [unknown]                                          [.] 0x0000aa9c08520017
+     0.03%     0.00%  [unknown]                                          [.] 0x015500240000005e
+     0.03%     0.00%  [unknown]                                          [.] 0x40c7dd8000000000
+     0.03%     0.00%  [unknown]                                          [.] 0x0020000013a20340
+     0.03%     0.00%  [unknown]                                          [.] 0x0000000100020643
+     0.03%     0.03%  [kernel.kallsyms]                                  [k] 0xffffffff86fa7065
+     0.03%     0.03%  _multiarray_umath.cpython-313-x86_64-linux-gnu.so  [.] array_empty
+     0.03%     0.03%  python3.13                                         [.] 0x0000000000134df7
+     0.03%     0.00%  python3.13                                         [.] 0x0000000000534df7
+     0.03%     0.00%  [unknown]                                          [.] 0x505f000000000000
+     0.03%     0.03%  python3.13                                         [.] 0x000000000018b250
+     0.03%     0.00%  python3.13                                         [.] 0x000000000058b250
+     0.03%     0.00%  [unknown]                                          [.] 0x00005f4c16520016
+     0.03%     0.03%  python3.13                                         [.] 0x00000000001cc336
+     0.03%     0.00%  python3.13                                         [.] 0x00000000005cc336
+     0.03%     0.03%  python3.13                                         [.] 0x000000000022a024
+     0.03%     0.00%  [unknown]                                          [.] 0x00000000a91c2952
+     0.03%     0.00%  python3.13                                         [.] 0x000000000062a024
+     0.03%     0.03%  python3.13                                         [.] 0x00000000001d4e94
+     0.03%     0.00%  [unknown]                                          [.] 0x079c205200550021
+     0.03%     0.00%  python3.13                                         [.] 0x00000000005d4e94
+     0.03%     0.03%  _tskit.cpython-313-x86_64-linux-gnu.so             [.] tsk_malloc
+     0.03%     0.03%  python3.13                                         [.] 0x00000000001852fc
+     0.03%     0.00%  python3.13                                         [.] 0x00000000005852fc
+     0.03%     0.00%  [unknown]                                          [.] 0x40e0730000000000
+     0.03%     0.03%  _multiarray_umath.cpython-313-x86_64-linux-gnu.so  [.] PyArray_New
+     0.03%     0.00%  [unknown]                                          [.] 0x00007f2943909d10
+     0.03%     0.00%  [unknown]                                          [.] 0x40ecfea000000000
+     0.03%     0.03%  python3.13                                         [.] 0x00000000001da4b8
+     0.03%     0.00%  python3.13                                         [.] 0x00000000005da4b8
+     0.03%     0.03%  python3.13                                         [.] 0x000000000013e1a4
+     0.03%     0.00%  python3.13                                         [.] 0x000000000053e1a4
+     0.03%     0.00%  [unknown]                                          [.] 0x00007f29433072f0
+     0.03%     0.00%  [unknown]                                          [.] 0x00007f294ac3c248
+     0.03%     0.00%  [unknown]                                          [.] 0x40e7bf4000000000
+     0.03%     0.00%  [unknown]                                          [.] 0x8e6c2c520555000c
+     0.03%     0.03%  _msprime.cpython-313-x86_64-linux-gnu.so           [.] cmp_edge
+     0.03%     0.00%  [unknown]                                          [.] 0x4086f80000000000
+     0.03%     0.03%  python3.13                                         [.] 0x0000000000134dc1
+     0.03%     0.00%  python3.13                                         [.] 0x0000000000534dc1
+     0.03%     0.00%  [unknown]                                          [.] 0x000000001e44b500
+     0.03%     0.00%  [unknown]                                          [.] 0x0000000400000000
+     0.03%     0.03%  python3.13                                         [.] 0x00000000002dad21
+     0.03%     0.00%  python3.13                                         [.] 0x00000000006dad21
+     0.03%     0.00%  [unknown]                                          [.] 0x0000000000080011
+     0.03%     0.03%  python3.13                                         [.] 0x0000000000145267
+     0.03%     0.00%  python3.13                                         [.] 0x0000000000545267
+     0.03%     0.03%  python3.13                                         [.] 0x0000000000229994
+     0.03%     0.00%  [unknown]                                          [.] 0x04553470034002de
+     0.03%     0.00%  python3.13                                         [.] 0x0000000000629994
+     0.03%     0.00%  [unknown]                                          [.] 0x55006f7475610074
+     0.03%     0.03%  python3.13                                         [.] 0x000000000028ea4c
+     0.03%     0.00%  [unknown]                                          [.] 0x6e75727400616870
+     0.03%     0.00%  [unknown]                                          [.] 0x0000003000000018
+     0.03%     0.00%  python3.13                                         [.] 0x000000000068ea4c
+     0.03%     0.00%  [unknown]                                          [.] 0x00007f2943307b40
+     0.03%     0.03%  python3.13                                         [.] 0x000000000017fce1
+     0.03%     0.00%  python3.13                                         [.] 0x000000000057fce1
+     0.03%     0.03%  python3.13                                         [.] 0x00000000001d4f41
+     0.03%     0.00%  python3.13                                         [.] 0x00000000005d4f41
+     0.03%     0.00%  [unknown]                                          [.] 0x75bc3b4800130273
+     0.03%     0.03%  python3.13                                         [.] 0x0000000000130967
+     0.03%     0.00%  python3.13                                         [.] 0x0000000000530967
+     0.03%     0.00%  [unknown]                                          [.] 0x40e2d7c000000000
+     0.03%     0.00%  [kernel.kallsyms]                                  [k] 0xffffffff87106d5c
+     0.03%     0.03%  python3.13                                         [.] 0x0000000000130bea
+     0.03%     0.00%  python3.13                                         [.] 0x0000000000530bea
+     0.03%     0.00%  [unknown]                                          [.] 0x3ffc3f48897fe507
+     0.03%     0.00%  [unknown]                                          [.] 0x4417c72000000107
+     0.03%     0.00%  [unknown]                                          [.] 0x40d357c000000000
+     0.03%     0.00%  [unknown]                                          [.] 0x40df534000000000
+     0.03%     0.00%  [unknown]                                          [.] 0x034002a3001b0000
+     0.03%     0.00%  [unknown]                                          [.] 0xffff0b6103403ab7
+     0.03%     0.03%  _multiarray_umath.cpython-313-x86_64-linux-gnu.so  [.] NpyIter_GetDataPtrArray
+     0.03%     0.03%  python3.13                                         [.] 0x00000000002f1ae2
+     0.03%     0.00%  python3.13                                         [.] 0x00000000006f1ae2
+     0.03%     0.00%  [unknown]                                          [.] 0x40de070000000000
+     0.03%     0.03%  python3.13                                         [.] 0x0000000000123c5c
+     0.03%     0.00%  python3.13                                         [.] 0x0000000000523c5c
+     0.03%     0.03%  _tskit.cpython-313-x86_64-linux-gnu.so             [.] tsk_population_table_free
+     0.03%     0.03%  python3.13                                         [.] 0x00000000001273fb
+     0.03%     0.00%  python3.13                                         [.] 0x00000000005273fb
+     0.03%     0.03%  python3.13                                         [.] _Py_Dealloc
+     0.03%     0.00%  [unknown]                                          [.] 0x000000110c520055
+     0.03%     0.00%  [unknown]                                          [.] 0x000000000000fffa
+     0.03%     0.03%  python3.13                                         [.] 0x0000000000130bc4
+     0.03%     0.00%  python3.13                                         [.] 0x0000000000530bc4
+     0.03%     0.03%  _tskit.cpython-313-x86_64-linux-gnu.so             [.] tsk_mutation_table_set_metadata_schema
+     0.03%     0.03%  [kernel.kallsyms]                                  [k] 0xffffffff86fb0a03
+     0.03%     0.03%  python3.13                                         [.] 0x000000000018b27b
+     0.03%     0.00%  python3.13                                         [.] 0x000000000058b27b
+     0.03%     0.03%  python3.13                                         [.] PyObject_Size
+     0.03%     0.00%  [unknown]                                          [.] 0x001123520755ffff
+     0.03%     0.03%  python3.13                                         [.] 0x0000000000185033
+     0.03%     0.00%  python3.13                                         [.] 0x0000000000585033
+     0.03%     0.00%  [unknown]                                          [.] 0x40f03f0000000000
+     0.03%     0.03%  python3.13                                         [.] 0x0000000000209db4
+     0.03%     0.00%  python3.13                                         [.] 0x0000000000609db4
+     0.03%     0.00%  [unknown]                                          [.] 0x3ffa758e219652be
+     0.03%     0.03%  python3.13                                         [.] 0x000000000018b2a4
+     0.03%     0.00%  python3.13                                         [.] 0x000000000058b2a4
+     0.03%     0.03%  libgsl.so.28.0.0                                   [.] 0x0000000000186bcb
+     0.03%     0.00%  libgsl.so.28.0.0                                   [.] 0x00007f2949b86bcb
+     0.03%     0.03%  python3.13                                         [.] 0x0000000000147221
+     0.03%     0.00%  python3.13                                         [.] 0x0000000000547221
+     0.03%     0.03%  _msprime.cpython-313-x86_64-linux-gnu.so           [.] msp_finalise_tables
+     0.03%     0.00%  [unknown]                                          [.] 0x6365722074736f6d
+     0.03%     0.03%  python3.13                                         [.] 0x0000000000136796
+     0.03%     0.00%  python3.13                                         [.] 0x0000000000536796
+     0.03%     0.03%  python3.13                                         [.] 0x00000000001a11dd
+     0.03%     0.00%  [unknown]                                          [.] 0x00007f2942ebc0f0
+     0.03%     0.00%  python3.13                                         [.] 0x00000000005a11dd
+     0.03%     0.00%  [unknown]                                          [.] 0x40f278b000000000
+     0.03%     0.00%  python3.13                                         [.] 0x0000000000543e2b
+     0.03%     0.03%  python3.13                                         [.] 0x0000000000211034
+     0.03%     0.00%  [unknown]                                          [.] 0x0000000000100002
+     0.03%     0.00%  python3.13                                         [.] 0x0000000000611034
+     0.03%     0.00%  [unknown]                                          [.] 0x40ed8c6000000000
+     0.03%     0.03%  python3.13                                         [.] 0x0000000000127b44
+     0.03%     0.00%  python3.13                                         [.] 0x0000000000527b44
+     0.03%     0.03%  python3.13                                         [.] 0x00000000001452e5
+     0.03%     0.00%  python3.13                                         [.] 0x00000000005452e5
+     0.03%     0.00%  [unknown]                                          [.] 0x003c002e00c50340
+     0.03%     0.00%  [unknown]                                          [.] 0x0104564d00200000
+     0.03%     0.00%  [unknown]                                          [.] 0xd60c205200550021
+     0.03%     0.03%  python3.13                                         [.] 0x00000000001d4eb0
+     0.03%     0.00%  python3.13                                         [.] 0x00000000005d4eb0
+     0.03%     0.03%  python3.13                                         [.] 0x00000000001a6689
+     0.03%     0.00%  python3.13                                         [.] 0x00000000005a6689
+     0.03%     0.03%  python3.13                                         [.] 0x0000000000145254
+     0.03%     0.00%  python3.13                                         [.] 0x0000000000545254
+     0.03%     0.00%  [unknown]                                          [.] 0x00c1005500020002
+     0.03%     0.03%  libc.so.6                                          [.] pthread_mutex_lock@@GLIBC_2.2.5
+     0.03%     0.00%  [unknown]                                          [.] 0x0000000000a84590
+     0.03%     0.03%  python3.13                                         [.] 0x000000000019fe6d
+     0.03%     0.00%  [unknown]                                          [.] 0x40f5bf1000000000
+     0.03%     0.00%  python3.13                                         [.] 0x000000000059fe6d
+     0.03%     0.03%  python3.13                                         [.] 0x00000000001336c5
+     0.03%     0.00%  python3.13                                         [.] 0x00000000005336c5
+     0.03%     0.03%  _tskit.cpython-313-x86_64-linux-gnu.so             [.] Tree_get_parent_array
+     0.03%     0.03%  libgsl.so.28.0.0                                   [.] 0x0000000000186cec
+     0.03%     0.00%  libgsl.so.28.0.0                                   [.] 0x00007f2949b86cec
+     0.03%     0.03%  libc.so.6                                          [.] __printf_buffer_done
+     0.03%     0.00%  [unknown]                                          [.] 0x01041b4de0000261
+     0.03%     0.00%  [unknown]                                          [.] 0x00007f2943307830
+     0.03%     0.00%  [unknown]                                          [.] 0x03400ad100550136
+     0.03%     0.03%  _multiarray_umath.cpython-313-x86_64-linux-gnu.so  [.] _get_cast_safety_from_castingimpl
+     0.03%     0.03%  _tskit.cpython-313-x86_64-linux-gnu.so             [.] tsk_migration_table_append_columns
+     0.03%     0.00%  [unknown]                                          [.] 0x40f6d5b000000000
+     0.03%     0.00%  [unknown]                                          [.] 0x03402dc407550020
+     0.03%     0.03%  python3.13                                         [.] 0x000000000020ecd6
+     0.03%     0.00%  python3.13                                         [.] 0x000000000060ecd6
+     0.03%     0.00%  [unknown]                                          [.] 0x0643034004c10055
+     0.03%     0.03%  python3.13                                         [.] 0x0000000000133458
+     0.03%     0.00%  python3.13                                         [.] 0x0000000000533458
+     0.03%     0.03%  _tskit.cpython-313-x86_64-linux-gnu.so             [.] tsk_treeseq_free
+     0.03%     0.03%  python3.13                                         [.] 0x0000000000123a24
+     0.03%     0.00%  python3.13                                         [.] 0x0000000000523a24
+     0.03%     0.00%  [unknown]                                          [.] 0x40f538a000000000
+     0.03%     0.00%  [unknown]                                          [k] 0x4418e8e00000010b
+     0.03%     0.00%  [unknown]                                          [.] 0x001a0353004d002e
+     0.03%     0.03%  python3.13                                         [.] PyObject_GenericHash
+     0.03%     0.00%  [unknown]                                          [.] 0x0000000000000014
+     0.03%     0.03%  python3.13                                         [.] 0x000000000013565a
+     0.03%     0.00%  python3.13                                         [.] 0x000000000053565a
+     0.03%     0.03%  python3.13                                         [.] 0x0000000000135fa9
+     0.03%     0.00%  python3.13                                         [.] 0x0000000000535fa9
+     0.03%     0.03%  python3.13                                         [.] PyLong_AsLong
+     0.03%     0.03%  python3.13                                         [.] 0x0000000000123b43
+     0.03%     0.00%  python3.13                                         [.] 0x0000000000523b43
+     0.03%     0.00%  [unknown]                                          [.] 0x4a61526000000000
+     0.03%     0.03%  _multiarray_umath.cpython-313-x86_64-linux-gnu.so  [.] PyCapsule_GetPointer@plt
+     0.03%     0.00%  [unknown]                                          [.] 0xf9c00000010b0002
+     0.03%     0.00%  [unknown]                                          [.] 0x0000000000000151
+     0.03%     0.03%  python3.13                                         [.] PyObject_GetOptionalAttr
+     0.03%     0.00%  [unknown]                                          [.] 0x00007f29433070c0
+     0.03%     0.00%  [unknown]                                          [.] 0x40d6b2c000000000
+     0.03%     0.00%  [unknown]                                          [.] 0x0000000000000042
+     0.03%     0.03%  python3.13                                         [.] 0x000000000023d647
+     0.03%     0.00%  python3.13                                         [.] 0x000000000063d647
+     0.03%     0.03%  python3.13                                         [.] 0x0000000000160449
+     0.03%     0.00%  python3.13                                         [.] 0x0000000000560449
+     0.03%     0.03%  libc.so.6                                          [.] _IO_no_init
+     0.03%     0.03%  python3.13                                         [.] PyObject_LengthHint
+     0.03%     0.03%  python3.13                                         [.] 0x00000000001238e0
+     0.03%     0.00%  python3.13                                         [.] 0x00000000005238e0
+     0.03%     0.03%  python3.13                                         [.] 0x000000000012716f
+     0.03%     0.00%  python3.13                                         [.] 0x000000000052716f
+     0.03%     0.03%  python3.13                                         [.] 0x00000000001fe304
+     0.03%     0.00%  python3.13                                         [.] 0x00000000005fe304
+     0.03%     0.03%  python3.13                                         [.] 0x00000000001914f7
+     0.03%     0.00%  python3.13                                         [.] 0x00000000005914f7
+     0.03%     0.00%  [unknown]                                          [.] 0x0b5bffff0b610340
+     0.03%     0.03%  python3.13                                         [.] 0x000000000017fe73
+     0.03%     0.00%  python3.13                                         [.] 0x000000000057fe73
+     0.03%     0.03%  python3.13                                         [.] 0x00000000001355ef
+     0.03%     0.00%  python3.13                                         [.] 0x00000000005355ef
+     0.03%     0.03%  python3.13                                         [.] 0x00000000001441c9
+     0.03%     0.00%  python3.13                                         [.] 0x00000000005441c9
+     0.03%     0.00%  [unknown]                                          [.] 0x40e0954000000000
+     0.03%     0.00%  [unknown]                                          [.] 0x0000010b00020643
+     0.03%     0.03%  python3.13                                         [.] 0x000000000022b851
+     0.03%     0.00%  python3.13                                         [.] 0x000000000062b851
+     0.03%     0.03%  libgsl.so.28.0.0                                   [.] 0x0000000000186cfd
+     0.03%     0.00%  libgsl.so.28.0.0                                   [.] 0x00007f2949b86cfd
+     0.03%     0.03%  python3.13                                         [.] 0x0000000000131196
+     0.03%     0.00%  python3.13                                         [.] 0x0000000000531196
+     0.03%     0.03%  _tskit.cpython-313-x86_64-linux-gnu.so             [.] TableCollection_get_populations
+     0.03%     0.03%  python3.13                                         [.] _PyTuple_FromArraySteal
+     0.03%     0.03%  python3.13                                         [.] 0x0000000000145192
+     0.03%     0.00%  python3.13                                         [.] 0x0000000000545192
+     0.03%     0.03%  _tskit.cpython-313-x86_64-linux-gnu.so             [.] TreeSequence_get_nodes_time
+     0.03%     0.00%  [unknown]                                          [.] 0x000000001e6a99f0
+     0.03%     0.03%  _tskit.cpython-313-x86_64-linux-gnu.so             [.] tsk_edge_table_init
+     0.03%     0.00%  [unknown]                                          [.] 0x000000000000ffbd
+     0.03%     0.00%  [unknown]                                          [.] 0x000000000000ffe3
+     0.03%     0.03%  python3.13                                         [.] 0x0000000000130b47
+     0.03%     0.00%  python3.13                                         [.] 0x0000000000530b47
+     0.03%     0.00%  [unknown]                                          [.] 0x034009cc036e046e
+     0.03%     0.03%  python3.13                                         [.] 0x0000000000318876
+     0.03%     0.00%  python3.13                                         [.] 0x0000000000718876
+     0.03%     0.03%  python3.13                                         [.] 0x0000000000134e76
+     0.03%     0.00%  python3.13                                         [.] 0x0000000000534e76
+     0.03%     0.00%  [unknown]                                          [.] 0x40d37dc000000000
+     0.03%     0.03%  python3.13                                         [.] 0x00000000001883ad
+     0.03%     0.00%  python3.13                                         [.] 0x00000000005883ad
+     0.03%     0.03%  python3.13                                         [.] 0x0000000000160a57
+     0.03%     0.00%  python3.13                                         [.] 0x0000000000560a57
+     0.03%     0.00%  [unknown]                                          [.] 0x437c205200550021
+     0.03%     0.03%  _msprime.cpython-313-x86_64-linux-gnu.so           [.] Simulator_reset
+     0.03%     0.03%  python3.13                                         [.] 0x00000000001cee32
+     0.03%     0.00%  python3.13                                         [.] 0x00000000005cee32
+     0.03%     0.03%  python3.13                                         [.] 0x00000000001a1653
+     0.03%     0.00%  [unknown]                                          [.] 0x00007f29429bdcd0
+     0.03%     0.00%  python3.13                                         [.] 0x00000000005a1653
+     0.03%     0.00%  [unknown]                                          [.] 0x40e0a4a000000000
+     0.03%     0.03%  [kernel.kallsyms]                                  [k] 0xffffffff86f18f87
+     0.03%     0.00%  python3.13                                         [.] 0x0000000000533718
+     0.03%     0.00%  [kernel.kallsyms]                                  [k] 0xffffffff86f1f3b9
+     0.03%     0.03%  python3.13                                         [.] PyObject_Init
+     0.03%     0.03%  [kernel.kallsyms]                                  [k] 0xffffffff86fbd628
+     0.03%     0.00%  [kernel.kallsyms]                                  [k] 0xffffffff87b0d38d
+     0.03%     0.00%  [kernel.kallsyms]                                  [k] 0xffffffff86ecb7fd
+     0.03%     0.00%  [kernel.kallsyms]                                  [k] 0xffffffff86ecb5af
+     0.03%     0.00%  [unknown]                                          [.] 0x0104034006cc0000
+     0.03%     0.00%  [unknown]                                          [.] 0x00fc03400ac50019
+     0.03%     0.00%  [unknown]                                          [.] 0x40cfce8000000000
+     0.03%     0.00%  [unknown]                                          [.] 0x0004000206290340
+     0.03%     0.00%  [unknown]                                          [.] 0x0000000000020640
+     0.03%     0.03%  python3.13                                         [.] 0x00000000001325c8
+     0.03%     0.00%  python3.13                                         [.] 0x00000000005325c8
+     0.03%     0.03%  python3.13                                         [.] 0x000000000013e2cd
+     0.03%     0.00%  [unknown]                                          [.] 0x656c6c61004f694f
+     0.03%     0.00%  python3.13                                         [.] 0x000000000053e2cd
+     0.03%     0.03%  libc.so.6                                          [.] __tz_convert
+     0.03%     0.03%  python3.13                                         [.] 0x00000000001447f0
+     0.03%     0.00%  python3.13                                         [.] 0x00000000005447f0
+     0.03%     0.03%  python3.13                                         [.] 0x00000000001a6890
+     0.03%     0.00%  python3.13                                         [.] 0x00000000005a6890
+     0.03%     0.03%  python3.13                                         [.] PySequence_Tuple
+     0.03%     0.03%  python3.13                                         [.] PyMem_RawFree
+     0.03%     0.03%  [kernel.kallsyms]                                  [k] 0xffffffff87106d06
+     0.03%     0.00%  [unknown]                                          [.] 0x40ed57a000000000
+     0.03%     0.00%  [unknown]                                          [.] 0x40f5fde000000000
+     0.03%     0.03%  python3.13                                         [.] 0x0000000000143d0c
+     0.03%     0.00%  python3.13                                         [.] 0x0000000000543d0c
+     0.03%     0.03%  python3.13                                         [.] 0x0000000000133274
+     0.03%     0.00%  python3.13                                         [.] 0x0000000000533274
+     0.03%     0.03%  python3.13                                         [.] 0x00000000001ab08f
+     0.03%     0.00%  python3.13                                         [.] 0x00000000005ab08f
+     0.03%     0.03%  libc.so.6                                          [.] _IO_str_underflow
+     0.03%     0.00%  [unknown]                                          [.] 0x000000000000fffb
+     0.03%     0.00%  [unknown]                                          [.] 0x40c06f8000000000
+     0.03%     0.03%  libc.so.6                                          [.] qsort
+     0.03%     0.03%  python3.13                                         [.] 0x0000000000134db5
+     0.03%     0.00%  python3.13                                         [.] 0x0000000000534db5
+     0.03%     0.00%  [unknown]                                          [.] 0x055304530155026e
+     0.03%     0.03%  python3.13                                         [.] 0x000000000020edfc
+     0.03%     0.00%  python3.13                                         [.] 0x000000000060edfc
+     0.03%     0.03%  python3.13                                         [.] 0x0000000000137128
+     0.03%     0.00%  python3.13                                         [.] 0x0000000000537128
+     0.03%     0.03%  _tskit.cpython-313-x86_64-linux-gnu.so             [.] tsk_site_table_expand_main_columns
+     0.03%     0.03%  python3.13                                         [.] 0x00000000001d5044
+     0.03%     0.00%  python3.13                                         [.] 0x00000000005d5044
+     0.03%     0.03%  python3.13                                         [.] 0x0000000000135ea2
+     0.03%     0.00%  python3.13                                         [.] 0x0000000000535ea2
+     0.03%     0.03%  libgsl.so.28.0.0                                   [.] 0x0000000000186cf0
+     0.03%     0.00%  libgsl.so.28.0.0                                   [.] 0x00007f2949b86cf0
+     0.03%     0.03%  python3.13                                         [.] 0x00000000002a3f34
+     0.03%     0.00%  [unknown]                                          [.] 0x346330c900000000
+     0.03%     0.00%  python3.13                                         [.] 0x00000000006a3f34
+     0.03%     0.03%  python3.13                                         [.] 0x0000000000134efa
+     0.03%     0.00%  python3.13                                         [.] 0x0000000000534efa
+     0.03%     0.03%  _tskit.cpython-313-x86_64-linux-gnu.so             [.] tsk_node_table_set_columns
+     0.03%     0.00%  [unknown]                                          [.] 0x93a000001f5d0002
+     0.03%     0.00%  [unknown]                                          [.] 0x400a8fcdae408e5c
+     0.03%     0.03%  python3.13                                         [.] 0x00000000001355fc
+     0.03%     0.00%  python3.13                                         [.] 0x00000000005355fc
+     0.03%     0.00%  [unknown]                                          [.] 0x40cd168000000000
+     0.03%     0.00%  [unknown]                                          [.] 0x13b4034001b10025
+     0.03%     0.00%  [unknown]                                          [.] 0x22520035000000ec
+     0.03%     0.03%  python3.13                                         [.] 0x000000000018fab6
+     0.03%     0.00%  python3.13                                         [.] 0x000000000058fab6
+     0.03%     0.03%  python3.13                                         [.] 0x0000000000191544
+     0.03%     0.00%  python3.13                                         [.] 0x0000000000591544
+     0.03%     0.03%  python3.13                                         [.] 0x0000000000130b4b
+     0.03%     0.00%  python3.13                                         [.] 0x0000000000530b4b
+     0.03%     0.00%  [unknown]                                          [.] 0x00007f2946cfe540
+     0.03%     0.00%  [unknown]                                          [.] 0x40d6e28000000000
+     0.03%     0.03%  python3.13                                         [.] _PyObject_GC_Resize
+     0.03%     0.03%  python3.13                                         [.] 0x0000000000134a40
+     0.03%     0.00%  python3.13                                         [.] 0x0000000000534a40
+     0.03%     0.03%  python3.13                                         [.] 0x0000000000135d06
+     0.03%     0.00%  python3.13                                         [.] 0x0000000000535d06
+     0.03%     0.03%  _tskit.cpython-313-x86_64-linux-gnu.so             [.] TreeSequence_get_individuals_metadata
+     0.03%     0.00%  [unknown]                                          [.] 0x4005e420bab9beae
+     0.03%     0.03%  python3.13                                         [.] 0x000000000013385b
+     0.03%     0.00%  python3.13                                         [.] 0x000000000053385b
+     0.03%     0.00%  [unknown]                                          [.] 0x00000000000a0191
+     0.03%     0.00%  [unknown]                                          [.] 0x000000001e7ed7a0
+     0.03%     0.00%  [unknown]                                          [.] 0x00007f294aadfb20
+     0.03%     0.00%  [unknown]                                          [.] 0x000000001e2ff880
+     0.03%     0.03%  python3.13                                         [.] 0x0000000000160bea
+     0.03%     0.00%  [unknown]                                          [.] 0x0000000000a06ec0
+     0.03%     0.00%  [unknown]                                          [.] 0x00007f2944969f80
+     0.03%     0.00%  python3.13                                         [.] 0x0000000000560bea
+     0.03%     0.03%  python3.13                                         [.] 0x000000000019e0d7
+     0.03%     0.00%  python3.13                                         [.] 0x000000000059e0d7
+     0.03%     0.03%  _msprime.cpython-313-x86_64-linux-gnu.so           [.] cmp_pointer
+     0.03%     0.00%  [unknown]                                          [.] 0x0000000000a54d50
+     0.03%     0.00%  [unknown]                                          [.] 0x00007f29433077f8
+     0.03%     0.03%  python3.13                                         [.] 0x00000000001332ec
+     0.03%     0.00%  python3.13                                         [.] 0x00000000005332ec
+     0.03%     0.00%  [unknown]                                          [.] 0x00007f2943307de0
+     0.03%     0.03%  python3.13                                         [.] 0x000000000012770e
+     0.03%     0.00%  python3.13                                         [.] 0x000000000052770e
+     0.03%     0.00%  [unknown]                                          [.] 0x00007f2943307ec0
+     0.03%     0.03%  python3.13                                         [.] 0x000000000015404f
+     0.03%     0.00%  python3.13                                         [.] 0x000000000055404f
+     0.03%     0.03%  python3.13                                         [.] 0x000000000021f70b
+     0.03%     0.00%  [unknown]                                          [.] 0x000000001e4bd8f0
+     0.03%     0.00%  python3.13                                         [.] 0x000000000061f70b
+     0.03%     0.00%  [unknown]                                          [.] 0x40f18e0000000000
+     0.03%     0.03%  python3.13                                         [.] 0x0000000000130bf3
+     0.03%     0.00%  python3.13                                         [.] 0x0000000000530bf3
+     0.03%     0.00%  [unknown]                                          [.] 0x0000000000000191
+     0.03%     0.03%  _tskit.cpython-313-x86_64-linux-gnu.so             [.] TreeSequence_get_indexes_edge_removal_order
+     0.03%     0.00%  [unknown]                                          [.] 0x00007f2943e8d2f0
+     0.03%     0.00%  [unknown]                                          [.] 0x40f85ba000000000
+     0.03%     0.00%  [unknown]                                          [.] 0x000000000000ffde
+     0.03%     0.03%  python3.13                                         [.] 0x0000000000191ac4
+     0.03%     0.00%  python3.13                                         [.] 0x0000000000591ac4
+     0.03%     0.00%  [unknown]                                          [.] 0x000000000000fff2
+     0.03%     0.00%  [unknown]                                          [.] 0x0053000000020640
+     0.03%     0.00%  [unknown]                                          [.] 0x00007f2943307408
+     0.03%     0.03%  python3.13                                         [.] 0x000000000013e1c6
+     0.03%     0.00%  python3.13                                         [.] 0x000000000053e1c6
+     0.03%     0.00%  [unknown]                                          [.] 0x40f3ae9000000000
+     0.03%     0.03%  python3.13                                         [.] 0x0000000000133298
+     0.03%     0.00%  python3.13                                         [.] 0x0000000000533298
+     0.03%     0.03%  python3.13                                         [.] 0x00000000002df53c
+     0.03%     0.00%  python3.13                                         [.] 0x00000000006df53c
+     0.03%     0.03%  _multiarray_umath.cpython-313-x86_64-linux-gnu.so  [.] npyiter_allocate_arrays
+     0.03%     0.00%  [unknown]                                          [.] 0x005703400ac50012
+     0.03%     0.03%  _tskit.cpython-313-x86_64-linux-gnu.so             [.] tsk_mutation_table_append_columns
+     0.03%     0.03%  python3.13                                         [.] 0x00000000001605d6
+     0.03%     0.00%  python3.13                                         [.] 0x00000000005605d6
+     0.03%     0.00%  [unknown]                                          [.] 0x4a7d4f9000000000
+     0.03%     0.00%  [unknown]                                          [.] 0x00007f2943e8c720
+     0.03%     0.03%  python3.13                                         [.] 0x00000000001337f1
+     0.03%     0.00%  python3.13                                         [.] 0x00000000005337f1
+     0.03%     0.00%  [unknown]                                          [.] 0x4018351085771fcb
+     0.03%     0.00%  [unknown]                                          [.] 0x3fd6d3bee3f2b44b
+     0.03%     0.00%  [kernel.kallsyms]                                  [k] 0xffffffff86f1d198
+     0.03%     0.00%  [kernel.kallsyms]                                  [k] 0xffffffff86f342a8
+     0.03%     0.00%  [kernel.kallsyms]                                  [k] 0xffffffff86f2b6f7
+     0.03%     0.00%  [unknown]                                          [.] 0x40dd898000000000
+     0.03%     0.03%  _multiarray_umath.cpython-313-x86_64-linux-gnu.so  [.] npy_default_get_strided_loop
+     0.03%     0.00%  [unknown]                                          [.] 0x0000000000000a01
+     0.03%     0.00%  [unknown]                                          [.] 0x000000001e85cdc0
+     0.03%     0.00%  [unknown]                                          [.] 0x00007f294aae00a0
+     0.03%     0.00%  [unknown]                                          [.] 0x00007f294aae00b0
+     0.03%     0.00%  [unknown]                                          [.] 0x00007f294aae00c0
+     0.03%     0.00%  [unknown]                                          [.] 0x00007f294aae00d0
+     0.03%     0.00%  [unknown]                                          [.] 0x00007f294aae00e0
+     0.03%     0.00%  [unknown]                                          [.] 0x00007f294aae00f0
+     0.03%     0.00%  [unknown]                                          [.] 0x00007f294aae0100
+     0.03%     0.00%  [unknown]                                          [.] 0x00007f294aae0110
+     0.03%     0.00%  [unknown]                                          [.] 0x00007f294aae0120
+     0.03%     0.00%  [unknown]                                          [.] 0x00007f294aae0130
+     0.03%     0.00%  [unknown]                                          [.] 0x00007f294aae0140
+     0.03%     0.00%  [unknown]                                          [.] 0x00007f294aae0150
+     0.03%     0.00%  [unknown]                                          [.] 0x00007f294aae0160
+     0.03%     0.00%  [unknown]                                          [.] 0x00007f294aae0170
+     0.03%     0.00%  [unknown]                                          [.] 0x00007f294aae0180
+     0.03%     0.00%  [unknown]                                          [.] 0x00007f294aae0190
+     0.03%     0.00%  [unknown]                                          [.] 0x00007f294aae01a0
+     0.03%     0.00%  [unknown]                                          [.] 0x502824448d4800a3
+     0.03%     0.00%  [unknown]                                          [.] 0x00007f2943307088
+     0.03%     0.00%  [unknown]                                          [.] 0x40f699b000000000
+     0.03%     0.03%  python3.13                                         [.] 0x0000000000143e11
+     0.03%     0.00%  python3.13                                         [.] 0x0000000000543e11
+     0.03%     0.00%  [unknown]                                          [.] 0x0c6c3b4800130273
+     0.03%     0.00%  [unknown]                                          [.] 0x40f15e0000000000
+     0.03%     0.03%  _tskit.cpython-313-x86_64-linux-gnu.so             [.] tsk_memcpy@plt
+     0.03%     0.00%  [unknown]                                          [.] 0x00007ffc5455dbc0
+     0.03%     0.00%  [unknown]                                          [.] 0x00007f2943307050
+     0.03%     0.03%  python3.13                                         [.] 0x00000000001451e3
+     0.03%     0.00%  python3.13                                         [.] 0x00000000005451e3
+     0.03%     0.03%  _tskit.cpython-313-x86_64-linux-gnu.so             [.] tsk_population_table_truncate
+     0.03%     0.00%  [unknown]                                          [.] 0x00000011015bffff
+     0.03%     0.03%  _msprime.cpython-313-x86_64-linux-gnu.so           [.] Simulator_get_num_ancestors
+     0.03%     0.00%  [unknown]                                          [.] 0x00c5034002c5000c
+     0.03%     0.03%  python3.13                                         [.] 0x00000000001a163a
+     0.03%     0.00%  [unknown]                                          [.] 0x00007f2942afeb10
+     0.03%     0.00%  python3.13                                         [.] 0x00000000005a163a
+     0.03%     0.00%  [unknown]                                          [.] 0x402b07eb22f37c83
+     0.03%     0.00%  [unknown]                                          [.] 0x000000000000000f
+     0.03%     0.00%  [unknown]                                          [.] 0x034002a3001e0000
+     0.03%     0.03%  python3.13                                         [.] 0x00000000001aa704
+     0.03%     0.00%  python3.13                                         [.] 0x00000000005aa704
+     0.03%     0.03%  python3.13                                         [.] 0x00000000001453c8
+     0.03%     0.00%  python3.13                                         [.] 0x00000000005453c8
+     0.03%     0.03%  python3.13                                         [.] 0x00000000001a6835
+     0.03%     0.00%  python3.13                                         [.] 0x00000000005a6835
+     0.03%     0.03%  python3.13                                         [.] 0x00000000001325be
+     0.03%     0.00%  python3.13                                         [.] 0x00000000005325be
+     0.03%     0.03%  python3.13                                         [.] 0x00000000001ccc4b
+     0.03%     0.00%  [unknown]                                          [.] 0x00007f2942440870
+     0.03%     0.00%  python3.13                                         [.] 0x00000000005ccc4b
+     0.03%     0.03%  python3.13                                         [.] 0x0000000000135d04
+     0.03%     0.00%  python3.13                                         [.] 0x0000000000535d04
+     0.03%     0.03%  python3.13                                         [.] 0x0000000000131240
+     0.03%     0.00%  python3.13                                         [.] 0x0000000000531240
+     0.03%     0.00%  [unknown]                                          [.] 0x40d7e58000000000
+     0.03%     0.03%  python3.13                                         [.] 0x00000000001a67ba
+     0.03%     0.00%  python3.13                                         [.] 0x00000000005a67ba
+     0.03%     0.03%  python3.13                                         [.] 0x000000000023d544
+     0.03%     0.00%  python3.13                                         [.] 0x000000000063d544
+     0.03%     0.03%  python3.13                                         [.] 0x0000000000135832
+     0.03%     0.00%  python3.13                                         [.] 0x0000000000535832
+     0.03%     0.00%  [unknown]                                          [.] 0x0055004e002e00c5
+     0.03%     0.00%  [unknown]                                          [.] 0x23b8034002a3001a
+     0.03%     0.00%  [unknown]                                          [.] 0x0000000000000010
+     0.03%     0.00%  [unknown]                                          [.] 0x034002a300210000
+     0.03%     0.00%  [unknown]                                          [.] 0x00fc034018c50017
+     0.03%     0.00%  [unknown]                                          [.] 0x000000001e8946c0
+     0.03%     0.00%  [unknown]                                          [.] 0x000000001e552170
+     0.03%     0.03%  _tskit.cpython-313-x86_64-linux-gnu.so             [.] TreeSequence_load_tables
+     0.03%     0.00%  [unknown]                                          [.] 0x0000000900020629
+     0.03%     0.03%  _tskit.cpython-313-x86_64-linux-gnu.so             [.] tsk_mutation_table_truncate
+     0.03%     0.03%  python3.13                                         [.] 0x00000000001367e0
+     0.03%     0.00%  python3.13                                         [.] 0x00000000005367e0
+     0.03%     0.00%  [unknown]                                          [.] 0x00007f2943307018
+     0.03%     0.00%  [unknown]                                          [.] 0x20cc0755076e0000
+     0.03%     0.00%  [unknown]                                          [.] 0x40f1e9e000000000
+     0.03%     0.00%  [unknown]                                          [.] 0x0000010a00020640
+     0.02%     0.00%  [unknown]                                          [.] 0x034003c30255046e
+     0.01%     0.00%  _tskit.cpython-313-x86_64-linux-gnu.so             [.] TreeSequence_get_mutations_site
+     0.01%     0.00%  [kernel.kallsyms]                                  [k] 0xffffffff87b0e43c
+     0.01%     0.00%  [kernel.kallsyms]                                  [k] 0xffffffff87b14ae7
+     0.01%     0.00%  [kernel.kallsyms]                                  [k] 0xffffffff87b143c2
+     0.01%     0.00%  [kernel.kallsyms]                                  [k] 0xffffffff86f0d3e1
+     0.01%     0.00%  [kernel.kallsyms]                                  [k] 0xffffffff8710c6da
+     0.01%     0.00%  [kernel.kallsyms]                                  [k] 0xffffffff8710467c
+     0.01%     0.00%  [kernel.kallsyms]                                  [k] 0xffffffff86e12dcb
+     0.01%     0.00%  [kernel.kallsyms]                                  [k] 0xffffffff86e11032
+     0.00%     0.00%  [kernel.kallsyms]                                  [k] 0xffffffff86e10ff8
+
+
+#
+# (Tip: To show context switches in perf report sample context add --switch-events to perf record.)
+#

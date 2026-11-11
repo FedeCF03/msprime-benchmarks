@@ -14,17 +14,16 @@ B = f"{ROOT}/build"
 REPO = os.path.expanduser("~/msprime-benchmarks")
 PY = f"{B}/venv/bin/python"
 # wheel_default: el wheel sin tocar malloc, para ver lo que obtiene un usuario normal
-VARIANTS = ["base", "if", "block4k", "block4k_if"]
+VARIANTS = ["base", "if"]
 EVENTS = "cycles,instructions,instructions:u,cache-references,cache-misses,branch-misses,page-faults"
 # Con el umbral dinámico de malloc, el heap se devuelve al sistema o no según detalles del
 # binario, y eso mezcla ~320 fallos de página por réplica en la comparación. Se fija para todas.
 MALLOC = ["MALLOC_TRIM_THRESHOLD_=134217728", "MALLOC_MMAP_THRESHOLD_=67108864"]
 ROUNDS = 1
 CASES = [1, 2, 3, 4, 5, 6]
-OUT = f"{ROOT}/results_block4k.jsonl"
-HASHES = f"{ROOT}/hashes_block4k.jsonl"
-# El if no cambia resultados (sumar 0 no cambia un double): el hash compara solo block_size
-HASH_VARIANTS = ["base", "block4k"]
+OUT = f"{ROOT}/results.jsonl"
+HASHES = f"{ROOT}/hashes.jsonl"
+HASH_VARIANTS = ["base", "if"]
 HASH_CASES = ((1, 100_000), (2, 20_000), (3, 100_000), (4, 100_000), (5, 100_000), (6, 50))
 STAT = f"{ROOT}/stat.csv"
 

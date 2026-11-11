@@ -65,13 +65,6 @@ def patch_if(d):
              "        }")
 
 
-def patch_block4k(d):
-    """Bloques de 4K en vez de 64K: achica el árbol de Fenwick que se crea en cada réplica."""
-    sub_once(f"{d}/msprime/ancestry.py",
-             "        block_size = 64 * 1024\n",
-             "        block_size = 4 * 1024\n")
-
-
 def patch_force(d):
     """Inlining forzado: copia always_inline de fenwick_increment para rebuild."""
     p = f"{d}/lib/fenwick.c"
@@ -164,11 +157,10 @@ def main():
     variant("inline", cflags=NOSI)
     variant("symbolic", ldflags="-Wl,-Bsymbolic-functions")
     variant("lto", cflags=f"-flto {NOSI}", ldflags="-flto -O3")
+    variant("if_lto", [patch_if], cflags=f"-flto {NOSI}", ldflags="-flto -O3")
     variant("if", [patch_if])
     variant("force", [patch_force])
     variant("native", cflags="-march=native")
-    variant("block4k", [patch_block4k], compile_c=False)
-    variant("block4k_if", [patch_if, patch_block4k])
     pgo()
     print("listo", flush=True)
 

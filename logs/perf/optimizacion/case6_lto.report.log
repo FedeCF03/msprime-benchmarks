@@ -1,0 +1,1835 @@
+# To display the perf.data header info, please use --header/--header-only options.
+#
+# comm: python
+#
+# Total Lost Samples: 0
+#
+# Samples: 667  of event 'cycles:P'
+# Event count (approx.): 26058409453
+#
+# Children      Self  Shared Object                             Symbol                                                 
+# ........  ........  ........................................  .......................................................
+#
+    24.70%     0.00%  [unknown]                                 [.] 0000000000000000
+            |
+            ---0
+               |          
+               |--10.09%--msp_set_segment_mass.lto_priv.0
+               |          
+               |--8.62%--rate_map_position_to_mass
+               |          
+               |--2.26%--__log1p_fma
+               |          
+               |--0.55%--0
+               |          avl_rebalance.lto_priv.0
+               |          
+                --0.53%--msp_std_get_common_ancestor_waiting_time.lto_priv.0
+
+    22.55%     0.00%  [unknown]                                 [.] 0x6e61720030353272
+            |
+            ---0x6e61720030353272
+               0xffffffff
+               0x2cf98f70
+               0
+               |          
+               |--10.09%--msp_set_segment_mass.lto_priv.0
+               |          
+               |--8.62%--rate_map_position_to_mass
+               |          
+                --2.26%--__log1p_fma
+
+    22.55%     0.00%  [unknown]                                 [.] 0x00000000ffffffff
+            |
+            ---0xffffffff
+               0x2cf98f70
+               0
+               |          
+               |--10.09%--msp_set_segment_mass.lto_priv.0
+               |          
+               |--8.62%--rate_map_position_to_mass
+               |          
+                --2.26%--__log1p_fma
+
+    22.55%     0.00%  [unknown]                                 [.] 0x000000002cf98f70
+            |
+            ---0x2cf98f70
+               0
+               |          
+               |--10.09%--msp_set_segment_mass.lto_priv.0
+               |          
+               |--8.62%--rate_map_position_to_mass
+               |          
+                --2.26%--__log1p_fma
+
+    13.49%    13.49%  _msprime.cpython-313-x86_64-linux-gnu.so  [.] avl_rebalance.lto_priv.0
+            |          
+            |--3.18%--0x8508b4808468b48
+            |          avl_rebalance.lto_priv.0
+            |          
+             --1.21%--avl_rebalance.lto_priv.0
+
+    13.35%     0.00%  [unknown]                                 [.] 0x0000000000010000
+            |
+            ---0x10000
+               |          
+               |--4.57%--fenwick_find
+               |          
+               |--2.40%--__log1p_fma
+               |          
+               |--2.39%--msp_choose_uniform_breakpoint.lto_priv.0
+               |          
+               |--0.80%--msp_run_coalescent
+               |          
+               |--0.53%--rate_map_position_to_mass
+               |          
+                --0.53%--gsl_ran_flat
+
+    12.17%     0.00%  [unknown]                                 [.] 0x08508b4808468b48
+            |
+            ---0x8508b4808468b48
+               |          
+               |--4.53%--cmp_individual.lto_priv.0
+               |          
+               |--4.46%--avl_insert_node
+               |          
+                --3.18%--avl_rebalance.lto_priv.0
+
+    10.22%    10.21%  _msprime.cpython-313-x86_64-linux-gnu.so  [.] msp_set_segment_mass.lto_priv.0
+            |          
+             --10.07%--0x6e61720030353272
+                       0xffffffff
+                       0x2cf98f70
+                       0
+                       msp_set_segment_mass.lto_priv.0
+
+     9.16%     8.90%  _msprime.cpython-313-x86_64-linux-gnu.so  [.] rate_map_position_to_mass
+            |          
+            |--8.37%--0x6e61720030353272
+            |          0xffffffff
+            |          0x2cf98f70
+            |          0
+            |          rate_map_position_to_mass
+            |          
+             --0.53%--0x10000
+                       rate_map_position_to_mass
+
+     5.48%     5.48%  _msprime.cpython-313-x86_64-linux-gnu.so  [.] msp_std_common_ancestor_event.lto_priv.0
+            |          
+             --2.49%--msp_std_common_ancestor_event.lto_priv.0
+
+     5.41%     5.41%  _msprime.cpython-313-x86_64-linux-gnu.so  [.] avl_insert_node
+            |          
+            |--4.46%--0x8508b4808468b48
+            |          avl_insert_node
+            |          
+             --0.66%--0x970fc12f0f66c031
+                       avl_insert_node
+
+     4.66%     4.53%  libm.so.6                                 [.] __log1p_fma
+            |          
+            |--2.27%--0x10000
+            |          __log1p_fma
+            |          
+             --2.26%--0x6e61720030353272
+                       0xffffffff
+                       0x2cf98f70
+                       0
+                       __log1p_fma
+
+     4.57%     4.44%  _msprime.cpython-313-x86_64-linux-gnu.so  [.] fenwick_find
+            |          
+             --4.44%--0x10000
+                       fenwick_find
+
+     4.53%     4.53%  _msprime.cpython-313-x86_64-linux-gnu.so  [.] cmp_individual.lto_priv.0
+            |
+            ---0x8508b4808468b48
+               cmp_individual.lto_priv.0
+
+     3.95%     3.81%  _msprime.cpython-313-x86_64-linux-gnu.so  [.] msp_recombination_event.lto_priv.0
+     3.70%     3.70%  _msprime.cpython-313-x86_64-linux-gnu.so  [.] msp_merge_two_ancestors.lto_priv.0
+     3.29%     3.29%  _msprime.cpython-313-x86_64-linux-gnu.so  [.] msp_insert_merged_ancestor
+     2.39%     2.39%  _msprime.cpython-313-x86_64-linux-gnu.so  [.] msp_choose_uniform_breakpoint.lto_priv.0
+            |
+            ---0x10000
+               msp_choose_uniform_breakpoint.lto_priv.0
+
+     2.14%     2.14%  _msprime.cpython-313-x86_64-linux-gnu.so  [.] cmp_node_mapping
+            |          
+             --0.90%--0x970fc12f0f66c031
+                       cmp_node_mapping
+
+     1.83%     0.00%  [unknown]                                 [.] 0x970fc12f0f66c031
+            |
+            ---0x970fc12f0f66c031
+               |          
+               |--0.90%--cmp_node_mapping
+               |          
+                --0.66%--avl_insert_node
+
+     1.60%     1.60%  _msprime.cpython-313-x86_64-linux-gnu.so  [.] msp_run_coalescent
+            |          
+            |--0.80%--msp_run_coalescent
+            |          
+             --0.80%--0x10000
+                       msp_run_coalescent
+
+     1.07%     1.07%  _msprime.cpython-313-x86_64-linux-gnu.so  [.] avl_unlink_node
+     1.05%     1.05%  libc.so.6                                 [.] msort_with_tmp.part.0
+     0.93%     0.93%  _msprime.cpython-313-x86_64-linux-gnu.so  [.] cmp_index_sort
+     0.86%     0.86%  python3.13                                [.] _PyEval_EvalFrameDefault
+     0.80%     0.80%  _msprime.cpython-313-x86_64-linux-gnu.so  [.] msp_is_completed
+            |
+            ---msp_is_completed
+
+     0.79%     0.00%  [kernel.kallsyms]                         [k] 0xffffffff87c0160a
+            |
+            ---0xffffffff87c0160a
+               0xffffffff87b0d388
+               0xffffffff86e86f25
+               |          
+                --0.66%--0xffffffff86fa46ba
+                          0xffffffff86fa35dd
+
+     0.79%     0.00%  [kernel.kallsyms]                         [k] 0xffffffff87b0d388
+            |
+            ---0xffffffff87b0d388
+               0xffffffff86e86f25
+               |          
+                --0.66%--0xffffffff86fa46ba
+                          0xffffffff86fa35dd
+
+     0.79%     0.00%  [kernel.kallsyms]                         [k] 0xffffffff86e86f25
+            |
+            ---0xffffffff86e86f25
+               |          
+                --0.66%--0xffffffff86fa46ba
+                          0xffffffff86fa35dd
+
+     0.69%     0.00%  [unknown]                                 [.] 0x00007fda55cdae30
+            |
+            ---0x7fda55cdae30
+
+     0.69%     0.00%  [unknown]                                 [.] 0x00007fda55ce0e18
+            |
+            ---0x7fda55ce0e18
+
+     0.69%     0.00%  [unknown]                                 [.] 0x00007fda55ce0948
+            |
+            ---0x7fda55ce0948
+
+     0.66%     0.00%  [unknown]                                 [.] 0x00007fda55cdf768
+            |
+            ---0x7fda55cdf768
+
+     0.66%     0.66%  libgsl.so.28.0.0                          [.] gsl_rng_uniform_int
+            |          
+             --0.53%--gsl_rng_uniform_int
+
+     0.66%     0.66%  libgsl.so.28.0.0                          [.] 0x0000000000186d60
+     0.66%     0.00%  libgsl.so.28.0.0                          [.] 0x00007fda5bf86d60
+            |
+            ---0x7fda5bf86d60
+
+     0.66%     0.00%  [unknown]                                 [.] 0x00007fda55cdb148
+            |
+            ---0x7fda55cdb148
+
+     0.66%     0.00%  [kernel.kallsyms]                         [k] 0xffffffff86fa46ba
+            |
+            ---0xffffffff86fa46ba
+               0xffffffff86fa35dd
+
+     0.66%     0.00%  [kernel.kallsyms]                         [k] 0xffffffff86fa35dd
+            |
+            ---0xffffffff86fa35dd
+
+     0.66%     0.00%  [unknown]                                 [.] 0x00007fda55cdd610
+            |
+            ---0x7fda55cdd610
+
+     0.66%     0.53%  libc.so.6                                 [.] __memmove_avx_unaligned
+     0.56%     0.00%  [unknown]                                 [.] 0x00007fda55cde848
+            |
+            ---0x7fda55cde848
+
+     0.56%     0.00%  [unknown]                                 [.] 0x00007fda55cde0b8
+            |
+            ---0x7fda55cde0b8
+
+     0.56%     0.00%  [unknown]                                 [.] 0x00007fda55cddc40
+            |
+            ---0x7fda55cddc40
+
+     0.56%     0.00%  [unknown]                                 [.] 0x00007fda55cdb1f8
+            |
+            ---0x7fda55cdb1f8
+
+     0.56%     0.00%  [unknown]                                 [.] 0x00007fda55cddc98
+            |
+            ---0x7fda55cddc98
+
+     0.56%     0.00%  [unknown]                                 [.] 0x00007fda55ce0420
+            |
+            ---0x7fda55ce0420
+
+     0.56%     0.00%  [unknown]                                 [.] 0x00007fda55cde428
+            |
+            ---0x7fda55cde428
+
+     0.53%     0.53%  libgsl.so.28.0.0                          [.] 0x0000000000186d70
+     0.53%     0.00%  libgsl.so.28.0.0                          [.] 0x00007fda5bf86d70
+            |
+            ---0x7fda5bf86d70
+
+     0.53%     0.00%  [unknown]                                 [.] 0x00007fda55cde008
+            |
+            ---0x7fda55cde008
+
+     0.53%     0.00%  [unknown]                                 [.] 0x00007fda55cdb988
+            |
+            ---0x7fda55cdb988
+
+     0.53%     0.00%  [unknown]                                 [.] 0x00007fda55cddd48
+            |
+            ---0x7fda55cddd48
+
+     0.53%     0.53%  libgsl.so.28.0.0                          [.] gsl_ran_flat
+            |
+            ---0x10000
+               gsl_ran_flat
+
+     0.53%     0.00%  [unknown]                                 [.] 0x00007fda55cdaac0
+            |
+            ---0x7fda55cdaac0
+
+     0.53%     0.00%  [unknown]                                 [.] 0x00007fda55ce0ec8
+            |
+            ---0x7fda55ce0ec8
+
+     0.53%     0.00%  [unknown]                                 [.] 0x00007fda55cde690
+            |
+            ---0x7fda55cde690
+
+     0.53%     0.00%  [unknown]                                 [.] 0x00007fda55cda6a0
+            |
+            ---0x7fda55cda6a0
+
+     0.53%     0.00%  [unknown]                                 [.] 0x00007fda55cde270
+            |
+            ---0x7fda55cde270
+
+     0.53%     0.00%  [unknown]                                 [.] 0x00007fda55cdb930
+            |
+            ---0x7fda55cdb930
+
+     0.53%     0.00%  [unknown]                                 [.] 0x00007fda55cdc220
+            |
+            ---0x7fda55cdc220
+
+     0.53%     0.00%  [unknown]                                 [.] 0x00007fda55ce0d10
+            |
+            ---0x7fda55ce0d10
+
+     0.53%     0.00%  [unknown]                                 [.] 0x00007fda55cda490
+            |
+            ---0x7fda55cda490
+
+     0.53%     0.00%  [unknown]                                 [.] 0x00007fda55cdb250
+            |
+            ---0x7fda55cdb250
+
+     0.53%     0.00%  [unknown]                                 [.] 0x00007fda55cdebb8
+            |
+            ---0x7fda55cdebb8
+
+     0.53%     0.00%  [unknown]                                 [.] 0x00007fda55cde378
+            |
+            ---0x7fda55cde378
+
+     0.53%     0.00%  [unknown]                                 [.] 0x00007fda55cde5e0
+            |
+            ---0x7fda55cde5e0
+
+     0.53%     0.53%  libc.so.6                                 [.] __mempcpy@plt
+     0.53%     0.00%  [unknown]                                 [.] 0x00007fda55cdf348
+            |
+            ---0x7fda55cdf348
+
+     0.53%     0.53%  _msprime.cpython-313-x86_64-linux-gnu.so  [.] msp_std_get_common_ancestor_waiting_time.lto_priv.0
+     0.43%     0.00%  [unknown]                                 [.] 0x00007fda55cde218
+     0.42%     0.00%  [unknown]                                 [.] 0x00007fda55cda0c8
+     0.42%     0.00%  [unknown]                                 [.] 0x00007fda55ce0790
+     0.42%     0.00%  [unknown]                                 [.] 0x00000000009fc840
+     0.42%     0.00%  [unknown]                                 [.] 0x00007fda55cdd878
+     0.42%     0.00%  [unknown]                                 [.] 0x00007fda55cdc170
+     0.42%     0.00%  [unknown]                                 [.] 0x00007fda55cd9eb8
+     0.42%     0.00%  [unknown]                                 [.] 0x00007fda55cdf660
+     0.41%     0.00%  [unknown]                                 [.] 0x00007fda5621e8d8
+     0.41%     0.00%  [unknown]                                 [.] 0x00007fda5621e9b8
+     0.40%     0.00%  [unknown]                                 [.] 0x00007fda55cdee20
+     0.40%     0.00%  [unknown]                                 [.] 0x00007fda55cde7f0
+     0.40%     0.00%  [unknown]                                 [.] 0x00007fda55cdbe00
+     0.40%     0.00%  [unknown]                                 [.] 0x00007fda55cdf030
+     0.40%     0.00%  [unknown]                                 [.] 0x00007fda55cdc380
+     0.40%     0.00%  [unknown]                                 [.] 0x00007fda55cdd038
+     0.40%     0.00%  [unknown]                                 [.] 0x00007fda55cddea8
+     0.40%     0.00%  [unknown]                                 [.] 0x00007fda55cda070
+     0.40%     0.00%  [unknown]                                 [.] 0x00007fda55cda120
+     0.40%     0.00%  [unknown]                                 [.] 0x00007fda55cdf710
+     0.40%     0.00%  [unknown]                                 [.] 0x00007fda55cda5f0
+     0.40%     0.00%  [unknown]                                 [.] 0x00007fda55cdaa68
+     0.40%     0.00%  [unknown]                                 [.] 0x00007fda55ce0cb8
+     0.40%     0.00%  [unknown]                                 [.] 0x00007fda55cdc278
+     0.40%     0.00%  [unknown]                                 [.] 0x00007fda55cda750
+     0.40%     0.00%  [unknown]                                 [.] 0x00007fda55ce0318
+     0.40%     0.00%  [unknown]                                 [.] 0x00007fda55cdf920
+     0.40%     0.00%  [unknown]                                 [.] 0x00007fda55cdd140
+     0.40%     0.00%  [unknown]                                 [.] 0x00007fda55cdb778
+     0.40%     0.00%  [unknown]                                 [.] 0x00007fda55cdab18
+     0.40%     0.40%  _msprime.cpython-313-x86_64-linux-gnu.so  [.] msp_copy_overlap_count
+     0.40%     0.40%  libgsl.so.28.0.0                          [.] 0x0000000000186d83
+     0.40%     0.00%  libgsl.so.28.0.0                          [.] 0x00007fda5bf86d83
+     0.40%     0.00%  [unknown]                                 [.] 0x00007fda55cdc7f8
+     0.40%     0.00%  [unknown]                                 [.] 0x00007fda55cdcc18
+     0.40%     0.00%  [unknown]                                 [.] 0x00007fda55cdd350
+     0.40%     0.00%  [unknown]                                 [.] 0x00007fda55cdf3f8
+     0.40%     0.00%  [unknown]                                 [.] 0x00007fda55cde3d0
+     0.40%     0.00%  [unknown]                                 [.] 0x00007fda55cdd8d0
+     0.40%     0.00%  [unknown]                                 [.] 0x00007fda55cdadd8
+     0.40%     0.00%  [unknown]                                 [.] 0x00007fda55cdb460
+     0.40%     0.00%  [unknown]                                 [.] 0x00007fda55cdf5b0
+     0.40%     0.00%  [unknown]                                 [.] 0x00007fda55cdcf30
+     0.40%     0.00%  [unknown]                                 [.] 0x00007fda55ce0fd0
+     0.40%     0.00%  [unknown]                                 [.] 0x00007fda55cdf7c0
+     0.40%     0.00%  [unknown]                                 [.] 0x00007fda55cdf450
+     0.40%     0.00%  [unknown]                                 [.] 0x00007fda55cdfa80
+     0.40%     0.00%  [unknown]                                 [.] 0x00007fda55cdfb30
+     0.40%     0.00%  [unknown]                                 [.] 0x00007fda55cdda88
+     0.40%     0.00%  [unknown]                                 [.] 0x00007fda55ce0898
+     0.40%     0.00%  [unknown]                                 [.] 0x00007fda55cddda0
+     0.40%     0.00%  [unknown]                                 [.] 0x00007fda55cdf8c8
+     0.40%     0.00%  [unknown]                                 [.] 0x00007fda55cdc7a0
+     0.40%     0.00%  [unknown]                                 [.] 0x00007fda55cdfe48
+     0.40%     0.00%  [unknown]                                 [.] 0x00007fda55cdbda8
+     0.40%     0.00%  [unknown]                                 [.] 0x00007fda55cda8b0
+     0.40%     0.00%  [unknown]                                 [.] 0x00007fda55cde798
+     0.40%     0.00%  [unknown]                                 [.] 0x00007fda55ce0bb0
+     0.40%     0.00%  [unknown]                                 [.] 0x00007fda55cde1c0
+     0.40%     0.00%  [unknown]                                 [.] 0x00007fda55cdb6c8
+     0.40%     0.00%  [unknown]                                 [.] 0x00007fda55cdae88
+     0.40%     0.00%  [unknown]                                 [.] 0x00007fda55ce01b8
+     0.40%     0.00%  [unknown]                                 [.] 0x00007fda55cded18
+     0.40%     0.00%  [unknown]                                 [.] 0x00007fda55cde2c8
+     0.40%     0.00%  [unknown]                                 [.] 0x00007fda55ce0108
+     0.40%     0.00%  [unknown]                                 [.] 0x00007fda55cdd718
+     0.40%     0.00%  [unknown]                                 [.] 0x00007fda55cdecc0
+     0.40%     0.40%  _msprime.cpython-313-x86_64-linux-gnu.so  [.] msp_store_edge.lto_priv.0
+     0.40%     0.00%  [unknown]                                 [.] 0x00007fda55cdfce8
+     0.40%     0.00%  [unknown]                                 [.] 0x00007fda55cdfc38
+     0.39%     0.39%  libgsl.so.28.0.0                          [.] 0x0000000000186d64
+     0.39%     0.00%  libgsl.so.28.0.0                          [.] 0x00007fda5bf86d64
+     0.34%     0.34%  python3.13                                [.] 0x0000000000177ec8
+     0.34%     0.00%  python3.13                                [.] 0x0000000000577ec8
+     0.30%     0.30%  python3.13                                [.] 0x0000000000156559
+     0.30%     0.00%  python3.13                                [.] 0x0000000000556559
+     0.29%     0.00%  [unknown]                                 [.] 0x00007fda55cdced8
+     0.29%     0.00%  [unknown]                                 [.] 0x00007fda55cdb4b8
+     0.29%     0.00%  [unknown]                                 [.] 0x00007fda55cdcd78
+     0.29%     0.00%  [unknown]                                 [.] 0x00007fda55cdad80
+     0.28%     0.00%  [unknown]                                 [.] 0x00007fda56246530
+     0.28%     0.00%  [unknown]                                 [.] 0x00007fda5623b048
+     0.28%     0.00%  [unknown]                                 [.] 0x00007fda5620d960
+     0.28%     0.00%  [unknown]                                 [.] 0x00007fda56253ff0
+     0.27%     0.13%  libc.so.6                                 [.] _int_malloc
+     0.27%     0.00%  [unknown]                                 [.] 0x00007fda5625f778
+     0.27%     0.00%  [unknown]                                 [.] 0x00007fda55cdd560
+     0.27%     0.00%  [unknown]                                 [.] 0x00007fda55ce0630
+     0.27%     0.00%  [unknown]                                 [.] 0x00007fda55cda018
+     0.27%     0.00%  [unknown]                                 [.] 0x00007fda55cde950
+     0.27%     0.00%  [unknown]                                 [.] 0x00007fda55cdacd0
+     0.27%     0.00%  [unknown]                                 [.] 0x00007fda55cdc430
+     0.27%     0.00%  [unknown]                                 [.] 0x00007fda55cdbca0
+     0.27%     0.00%  [unknown]                                 [.] 0x00007fda55cdf818
+     0.27%     0.00%  [unknown]                                 [.] 0x00007fda55cdd198
+     0.27%     0.00%  [unknown]                                 [.] 0x00007fda55cdfef8
+     0.27%     0.00%  [unknown]                                 [.] 0x00007fda55cde8a0
+     0.27%     0.00%  [unknown]                                 [.] 0x00007fda55cda598
+     0.27%     0.00%  [unknown]                                 [.] 0x00007fda55cdc4e0
+     0.27%     0.00%  [unknown]                                 [.] 0x00007fda55cde110
+     0.27%     0.00%  [unknown]                                 [.] 0x00007fda55cdfbe0
+     0.27%     0.00%  [unknown]                                 [.] 0x00007fda55cdd2f8
+     0.27%     0.00%  [unknown]                                 [.] 0x00007fda55cdbb98
+     0.27%     0.00%  [kernel.kallsyms]                         [k] 0xffffffff8710b715
+     0.27%     0.00%  [kernel.kallsyms]                         [k] 0xffffffff86fa6afd
+     0.27%     0.00%  [unknown]                                 [.] 0x00007fda56248a60
+     0.27%     0.00%  [unknown]                                 [.] 0x00007fda5622e3f8
+     0.27%     0.00%  [unknown]                                 [.] 0x00007fda562257c0
+     0.27%     0.00%  [unknown]                                 [.] 0x00007fda562541e8
+     0.27%     0.00%  [unknown]                                 [.] 0x00007fda56253110
+     0.27%     0.00%  [unknown]                                 [.] 0x000000000000f723
+     0.27%     0.27%  libgsl.so.28.0.0                          [.] gsl_ran_exponential
+     0.27%     0.00%  [kernel.kallsyms]                         [k] 0xffffffff87c012a6
+     0.27%     0.00%  [kernel.kallsyms]                         [k] 0xffffffff87b0dd8e
+     0.27%     0.00%  [kernel.kallsyms]                         [k] 0xffffffff86ea42e7
+     0.27%     0.00%  [kernel.kallsyms]                         [k] 0xffffffff87185042
+     0.27%     0.00%  [kernel.kallsyms]                         [k] 0xffffffff87184af8
+     0.27%     0.00%  [kernel.kallsyms]                         [k] 0xffffffff87182603
+     0.27%     0.00%  [kernel.kallsyms]                         [k] 0xffffffff871e9e6f
+     0.27%     0.00%  [kernel.kallsyms]                         [k] 0xffffffff871e9c67
+     0.27%     0.00%  [unknown]                                 [.] 0x00007fda55cdfc90
+     0.27%     0.00%  [unknown]                                 [.] 0x00007fda55cdf9d0
+     0.27%     0.00%  [unknown]                                 [.] 0x00007fda55ce0580
+     0.27%     0.00%  [unknown]                                 [.] 0x00007fda55cdca60
+     0.27%     0.00%  [unknown]                                 [.] 0x00007fda55cdde50
+     0.27%     0.00%  [unknown]                                 [.] 0x00007fda55ce0210
+     0.27%     0.00%  [unknown]                                 [.] 0x00007fda55ce0b58
+     0.27%     0.00%  [unknown]                                 [.] 0x00007fda55cdf138
+     0.27%     0.00%  [unknown]                                 [.] 0x00007fda55ce0b00
+     0.27%     0.00%  [unknown]                                 [.] 0x00007fda55cdb1a0
+     0.27%     0.00%  [unknown]                                 [.] 0x00007fda55cdb040
+     0.27%     0.00%  [unknown]                                 [.] 0x00007fda55cddcf0
+     0.27%     0.00%  [unknown]                                 [.] 0x00007fda55cdac78
+     0.27%     0.00%  [unknown]                                 [.] 0x00007fda5622ddd8
+     0.27%     0.00%  [unknown]                                 [.] 0x00007fda56207760
+     0.27%     0.00%  [unknown]                                 [.] 0x00007fda55ce05d8
+     0.27%     0.00%  [unknown]                                 [.] 0x00007fda55cd9f10
+     0.27%     0.00%  [unknown]                                 [.] 0x00007fda55cda9b8
+     0.27%     0.00%  [unknown]                                 [.] 0x00007fda55cdc5e8
+     0.27%     0.00%  [unknown]                                 [.] 0x00007fda55cded70
+     0.27%     0.00%  [unknown]                                 [.] 0x00007fda55cdef80
+     0.27%     0.00%  [unknown]                                 [.] 0x00007fda55cdc9b0
+     0.27%     0.00%  [unknown]                                 [.] 0x00007fda55cdf978
+     0.27%     0.00%  [unknown]                                 [.] 0x00007fda55cdb510
+     0.27%     0.00%  [unknown]                                 [.] 0x00007fda55cd9db0
+     0.27%     0.00%  [unknown]                                 [.] 0x00007fda55cde060
+     0.27%     0.00%  [unknown]                                 [.] 0x00007fda55cdcab8
+     0.27%     0.00%  [unknown]                                 [.] 0x00007fda55cda7a8
+     0.27%     0.00%  [unknown]                                 [.] 0x00007fda55cd9fc0
+     0.27%     0.00%  [unknown]                                 [.] 0x00007fda55cdec10
+     0.27%     0.00%  [unknown]                                 [.] 0x00007fda55ce04d0
+     0.27%     0.00%  [unknown]                                 [.] 0x00007fda55cdb0f0
+     0.27%     0.00%  [unknown]                                 [.] 0x00007fda55cda4e8
+     0.27%     0.00%  [unknown]                                 [.] 0x00007fda55cdee78
+     0.27%     0.00%  [unknown]                                 [.] 0x00007fda55cdcbc0
+     0.27%     0.00%  [unknown]                                 [.] 0x00007fda55cdcfe0
+     0.27%     0.00%  [unknown]                                 [.] 0x00007fda5623d380
+     0.27%     0.00%  [unknown]                                 [.] 0x00007fda56235970
+     0.27%     0.00%  [unknown]                                 [.] 0x00007fda56204e08
+     0.27%     0.00%  [unknown]                                 [.] 0x00007fda56211400
+     0.27%     0.00%  [unknown]                                 [.] 0x00007fda5624b770
+     0.27%     0.00%  [unknown]                                 [.] 0x00007fda56243270
+     0.27%     0.00%  [unknown]                                 [.] 0x00007fda55ce0738
+     0.27%     0.00%  [unknown]                                 [.] 0x00007fda55cdd400
+     0.27%     0.00%  [unknown]                                 [.] 0x00007fda55cdeb08
+     0.27%     0.00%  [unknown]                                 [.] 0x00007fda55cdbeb0
+     0.27%     0.00%  [unknown]                                 [.] 0x00007fda55cde6e8
+     0.27%     0.00%  [unknown]                                 [.] 0x00007fda55cda540
+     0.27%     0.00%  [unknown]                                 [.] 0x00007fda55cde168
+     0.27%     0.00%  [unknown]                                 [.] 0x00007fda55cdc0c0
+     0.27%     0.00%  [unknown]                                 [.] 0x00007fda55cdea00
+     0.27%     0.00%  [unknown]                                 [.] 0x00007fda55cdd3a8
+     0.27%     0.00%  [unknown]                                 [.] 0x00007fda55ce0f78
+     0.27%     0.00%  [unknown]                                 [.] 0x00007fda55cdafe8
+     0.27%     0.00%  [unknown]                                 [.] 0x00007fda55cdad28
+     0.27%     0.00%  [unknown]                                 [.] 0x00007fda55cde9a8
+     0.27%     0.00%  [unknown]                                 [.] 0x00007fda55cdedc8
+     0.27%     0.00%  [unknown]                                 [.] 0x00007fda55cdbf08
+     0.27%     0.00%  [unknown]                                 [.] 0x00007fda55cdffa8
+     0.27%     0.00%  [unknown]                                 [.] 0x00007fda55cdce28
+     0.27%     0.00%  [unknown]                                 [.] 0x00007fda55cddbe8
+     0.27%     0.00%  [unknown]                                 [.] 0x00007fda55cdeb60
+     0.27%     0.00%  [unknown]                                 [.] 0x00007fda55cdc118
+     0.27%     0.00%  [unknown]                                 [.] 0x00007fda55cdfd40
+     0.27%     0.00%  [unknown]                                 [.] 0x00007fda55ce0d68
+     0.27%     0.00%  [unknown]                                 [.] 0x00007fda55cddfb0
+     0.27%     0.00%  [unknown]                                 [.] 0x00007fda55cdbbf0
+     0.27%     0.00%  [unknown]                                 [.] 0x00007fda55cdc8a8
+     0.27%     0.00%  [unknown]                                 [.] 0x00007fda55cda648
+     0.27%     0.00%  [unknown]                                 [.] 0x00007fda55cdfad8
+     0.27%     0.00%  [unknown]                                 [.] 0x00007fda55cdc538
+     0.27%     0.00%  [unknown]                                 [.] 0x00007fda55cdb300
+     0.27%     0.00%  [unknown]                                 [.] 0x00007fda55cdec68
+     0.27%     0.00%  [unknown]                                 [.] 0x00007fda55cdeed0
+     0.27%     0.00%  [unknown]                                 [.] 0x00007fda55ce0a50
+     0.27%     0.00%  [unknown]                                 [.] 0x00007fda55cdb098
+     0.27%     0.00%  [unknown]                                 [.] 0x00007fda55cde320
+     0.27%     0.27%  _tskit.cpython-313-x86_64-linux-gnu.so    [.] tsk_table_collection_check_integrity
+     0.27%     0.00%  [unknown]                                 [.] 0x00007fda55cdb8d8
+     0.27%     0.00%  [unknown]                                 [.] 0x00007fda55cdce80
+     0.26%     0.00%  [unknown]                                 [.] 0x0000000000000002
+     0.26%     0.26%  _msprime.cpython-313-x86_64-linux-gnu.so  [.] cmp_edge_cl
+     0.26%     0.00%  [unknown]                                 [.] 0x00007fda556c5cb0
+     0.26%     0.00%  [unknown]                                 [.] 0x00007fda55cdb828
+     0.26%     0.00%  [unknown]                                 [.] 0x00007fda55cdd1f0
+     0.26%     0.00%  [unknown]                                 [.] 0x00007fda55cdc2d0
+     0.26%     0.00%  [unknown]                                 [.] 0x00007fda55cdba90
+     0.26%     0.00%  [unknown]                                 [.] 0x00007fda55cdbcf8
+     0.26%     0.00%  [unknown]                                 [.] 0x00007fda55cdb408
+     0.26%     0.00%  [unknown]                                 [.] 0x00007fda55cdf608
+     0.26%     0.00%  [kernel.kallsyms]                         [k] 0xffffffff86e12e1e
+     0.26%     0.26%  _msprime.cpython-313-x86_64-linux-gnu.so  [.] msp_free_segment.lto_priv.0
+     0.26%     0.00%  [unknown]                                 [.] 0x00007fda55cda3e0
+     0.26%     0.26%  libm.so.6                                 [.] __w_logp1
+     0.26%     0.00%  [unknown]                                 [.] 0x00007fda55ce0528
+     0.26%     0.00%  [unknown]                                 [.] 0x00007fda55ce08f0
+     0.26%     0.00%  [unknown]                                 [.] 0x00007fda55cdd2a0
+     0.26%     0.00%  [unknown]                                 [.] 0x00007fda55cdaf38
+     0.26%     0.00%  [unknown]                                 [.] 0x00007fda55cdb7d0
+     0.26%     0.00%  [unknown]                                 [.] 0x00007fda55cdb2a8
+     0.26%     0.00%  [unknown]                                 [.] 0x00007fda55cde740
+     0.26%     0.00%  [unknown]                                 [.] 0x00007fda55cdb358
+     0.26%     0.00%  [unknown]                                 [.] 0x00007fda55cddb38
+     0.26%     0.00%  [unknown]                                 [.] 0x00007fda55cdc640
+     0.26%     0.00%  [unknown]                                 [.] 0x00007fda55ce02c0
+     0.26%     0.00%  [unknown]                                 [.] 0x00007fda55cddf58
+     0.26%     0.00%  [unknown]                                 [.] 0x00007fda55cda330
+     0.26%     0.00%  [unknown]                                 [.] 0x00007fda55cdbe58
+     0.20%     0.00%  [unknown]                                 [.] 0x00007fda556cd730
+     0.19%     0.00%  [unknown]                                 [.] 0x00007fda556b4d00
+     0.17%     0.00%  [unknown]                                 [.] 0x7fbf02630655066e
+     0.17%     0.00%  [unknown]                                 [.] 0x000000000000fa9b
+     0.16%     0.00%  [unknown]                                 [.] 0x0000001107520055
+     0.16%     0.00%  [unknown]                                 [.] 0x00007fda55cdab70
+     0.16%     0.00%  [unknown]                                 [.] 0x00007fda55cdf1e8
+     0.15%     0.15%  python3.13                                [.] 0x0000000000145264
+     0.15%     0.00%  python3.13                                [.] 0x0000000000545264
+     0.15%     0.00%  [unknown]                                 [.] 0x00007fda56207370
+     0.15%     0.00%  [unknown]                                 [.] 0x00007fda562099b8
+     0.15%     0.00%  [unknown]                                 [.] 0x00007fda561fe150
+     0.15%     0.00%  [unknown]                                 [.] 0x00007fda56209018
+     0.15%     0.00%  [unknown]                                 [.] 0x00007fda5622fbd0
+     0.15%     0.00%  [unknown]                                 [.] 0x00007fda56262098
+     0.15%     0.00%  [unknown]                                 [.] 0x00007fda5620e8b0
+     0.15%     0.00%  [unknown]                                 [.] 0x00007fda56200450
+     0.15%     0.00%  [unknown]                                 [.] 0x00007fda5625c090
+     0.15%     0.00%  [unknown]                                 [.] 0x00007fda56247560
+     0.15%     0.00%  [unknown]                                 [.] 0x00007fda5624bf18
+     0.15%     0.00%  [unknown]                                 [.] 0x00007fda56221738
+     0.15%     0.00%  [unknown]                                 [.] 0x00007fda562392c0
+     0.15%     0.00%  [unknown]                                 [.] 0x00007fda56223370
+     0.15%     0.00%  [unknown]                                 [.] 0x00007fda5625c170
+     0.15%     0.00%  [unknown]                                 [.] 0x00007fda561fee38
+     0.15%     0.00%  [unknown]                                 [.] 0x00007fda56218470
+     0.15%     0.00%  [unknown]                                 [.] 0x00007fda56210328
+     0.15%     0.00%  [unknown]                                 [.] 0x00007fda5621ff28
+     0.15%     0.00%  [unknown]                                 [.] 0x00007fda56235c10
+     0.15%     0.00%  [unknown]                                 [.] 0x00007fda56207a70
+     0.15%     0.00%  [unknown]                                 [.] 0x00007fda56254488
+     0.15%     0.00%  [unknown]                                 [.] 0x00007fda562143e8
+     0.15%     0.00%  [unknown]                                 [.] 0x00007fda5620d3e8
+     0.15%     0.00%  [unknown]                                 [.] 0x00007fda56204fc8
+     0.15%     0.00%  [unknown]                                 [.] 0x00007fda561ff928
+     0.15%     0.00%  [unknown]                                 [.] 0x00007fda56255170
+     0.15%     0.00%  [unknown]                                 [.] 0x00007fda5621aa48
+     0.15%     0.00%  [unknown]                                 [.] 0x00007fda56235468
+     0.15%     0.00%  [unknown]                                 [.] 0x00007fda5623b748
+     0.15%     0.00%  [unknown]                                 [.] 0x00007fda56257ba8
+     0.15%     0.00%  [unknown]                                 [.] 0x00007fda562349b0
+     0.15%     0.00%  [unknown]                                 [.] 0x00007fda56202c20
+     0.15%     0.00%  [unknown]                                 [.] 0x00007fda5622ca98
+     0.15%     0.00%  [unknown]                                 [.] 0x00007fda56238f78
+     0.15%     0.00%  [unknown]                                 [.] 0x00007fda56253f80
+     0.15%     0.00%  [unknown]                                 [.] 0x00007fda5623b390
+     0.15%     0.00%  [unknown]                                 [.] 0x00007fda56244a80
+     0.15%     0.00%  [unknown]                                 [.] 0x00007fda56255560
+     0.15%     0.00%  [unknown]                                 [.] 0x00007fda5621ac78
+     0.15%     0.00%  [unknown]                                 [.] 0x00007fda5621cf40
+     0.15%     0.00%  [unknown]                                 [.] 0x00007fda5620e990
+     0.15%     0.00%  [unknown]                                 [.] 0x00007fda56235580
+     0.15%     0.00%  [unknown]                                 [.] 0x00007fda56249710
+     0.15%     0.00%  [unknown]                                 [.] 0x00007fda562594d0
+     0.15%     0.00%  [unknown]                                 [.] 0x00007fda56233a98
+     0.15%     0.00%  [unknown]                                 [.] 0x00007fda5620d490
+     0.15%     0.00%  [unknown]                                 [.] 0x00007fda562040e8
+     0.15%     0.00%  [unknown]                                 [.] 0x00007fda56247c98
+     0.15%     0.00%  [unknown]                                 [.] 0x00007fda5625ccd0
+     0.15%     0.00%  [unknown]                                 [.] 0x00007fda56228c78
+     0.15%     0.00%  [unknown]                                 [.] 0x00007fda5622e200
+     0.15%     0.00%  [unknown]                                 [.] 0x00007fda56204e40
+     0.15%     0.00%  [unknown]                                 [.] 0x00007fda5620f758
+     0.15%     0.00%  [unknown]                                 [.] 0x00007fda56211630
+     0.15%     0.00%  [unknown]                                 [.] 0x00007fda561ff570
+     0.15%     0.00%  [unknown]                                 [.] 0x00007fda56258900
+     0.15%     0.00%  [unknown]                                 [.] 0x00007fda56253228
+     0.15%     0.00%  [unknown]                                 [.] 0x00007fda56221850
+     0.15%     0.00%  [unknown]                                 [.] 0x00007fda562219d8
+     0.15%     0.00%  [unknown]                                 [.] 0x00007fda56215290
+     0.15%     0.00%  [unknown]                                 [.] 0x00007fda5625c3a0
+     0.15%     0.00%  [unknown]                                 [.] 0x00007fda56226c88
+     0.15%     0.00%  [unknown]                                 [.] 0x00007fda56219b30
+     0.15%     0.00%  [unknown]                                 [.] 0x00007fda5624a350
+     0.15%     0.00%  [unknown]                                 [.] 0x00007fda5622ea18
+     0.15%     0.00%  [unknown]                                 [.] 0x00007fda5625b098
+     0.15%     0.00%  [unknown]                                 [.] 0x00007fda5622fc40
+     0.15%     0.00%  [unknown]                                 [.] 0x00007fda56241ec0
+     0.15%     0.00%  [unknown]                                 [.] 0x00007fda56227970
+     0.15%     0.00%  [unknown]                                 [.] 0x00007fda56224608
+     0.15%     0.00%  [unknown]                                 [.] 0x00007fda56258ac0
+     0.15%     0.00%  [unknown]                                 [.] 0x00007fda56236930
+     0.15%     0.00%  [unknown]                                 [.] 0x00007fda56242f28
+     0.15%     0.00%  [unknown]                                 [.] 0x00007fda5622cd38
+     0.15%     0.00%  [unknown]                                 [.] 0x00007fda56226ef0
+     0.15%     0.00%  [unknown]                                 [.] 0x00007fda56213310
+     0.15%     0.00%  [unknown]                                 [.] 0x00007fda56234ef0
+     0.15%     0.00%  [unknown]                                 [.] 0x00007fda562019f8
+     0.15%     0.00%  [unknown]                                 [.] 0x00007fda56226e80
+     0.15%     0.00%  [unknown]                                 [.] 0x00007fda56253618
+     0.15%     0.00%  [unknown]                                 [.] 0x00007fda56215878
+     0.15%     0.00%  [unknown]                                 [.] 0x00007fda562128c8
+     0.15%     0.00%  [unknown]                                 [.] 0x00007fda5624ec28
+     0.15%     0.00%  [unknown]                                 [.] 0x00007fda5625e0b8
+     0.15%     0.00%  [unknown]                                 [.] 0x00007fda5622a990
+     0.15%     0.00%  [unknown]                                 [.] 0x00007fda56260f88
+     0.15%     0.00%  [unknown]                                 [.] 0x00007fda5622c2f0
+     0.15%     0.00%  [unknown]                                 [.] 0x00007fda5624c848
+     0.15%     0.00%  [unknown]                                 [.] 0x00007fda562305a8
+     0.15%     0.00%  [unknown]                                 [.] 0x00007fda56207680
+     0.15%     0.00%  [unknown]                                 [.] 0x00007fda562570b8
+     0.15%     0.00%  [unknown]                                 [.] 0x00007fda56262610
+     0.15%     0.00%  [unknown]                                 [.] 0x00007fda56257c88
+     0.15%     0.00%  [unknown]                                 [.] 0x00007fda5623c6d0
+     0.15%     0.00%  [unknown]                                 [.] 0x00007fda562241a8
+     0.15%     0.00%  [unknown]                                 [.] 0x00007fda56220a18
+     0.15%     0.00%  [unknown]                                 [.] 0x00007fda56220238
+     0.15%     0.00%  [unknown]                                 [.] 0x00007fda56236fc0
+     0.15%     0.00%  [unknown]                                 [.] 0x00007fda562406e8
+     0.15%     0.00%  [unknown]                                 [.] 0x00007fda562649b8
+     0.15%     0.00%  [unknown]                                 [.] 0x00007fda56238140
+     0.15%     0.00%  [unknown]                                 [.] 0x00007fda56225c90
+     0.15%     0.00%  [unknown]                                 [.] 0x00007fda5620fbf0
+     0.15%     0.00%  [unknown]                                 [.] 0x00007fda5624f360
+     0.15%     0.00%  [unknown]                                 [.] 0x00007fda56212708
+     0.15%     0.00%  [unknown]                                 [.] 0x00007fda562235a0
+     0.15%     0.00%  [unknown]                                 [.] 0x00007fda56208a30
+     0.15%     0.00%  [unknown]                                 [.] 0x00007fda56253810
+     0.15%     0.00%  [unknown]                                 [.] 0x00007fda56234470
+     0.15%     0.00%  [unknown]                                 [.] 0x00007fda5620dfb8
+     0.15%     0.00%  [unknown]                                 [.] 0x00007fda5625fc10
+     0.15%     0.00%  [unknown]                                 [.] 0x00007fda5621d758
+     0.15%     0.00%  [unknown]                                 [.] 0x00007fda56260ea8
+     0.15%     0.00%  [unknown]                                 [.] 0x00007fda5621f4a8
+     0.15%     0.00%  [unknown]                                 [.] 0x00007fda561ff730
+     0.15%     0.00%  [unknown]                                 [.] 0x00007fda56230030
+     0.15%     0.00%  [unknown]                                 [.] 0x00007fda562279a8
+     0.15%     0.00%  [unknown]                                 [.] 0x000000000000fb2b
+     0.14%     0.14%  python3.13                                [.] PyMem_Calloc
+     0.14%     0.00%  [unknown]                                 [.] 0x00007fda556bee70
+     0.14%     0.00%  [unknown]                                 [.] 0x00007fda556c5348
+     0.14%     0.14%  python3.13                                [.] _PyDict_LoadGlobal
+     0.14%     0.00%  [unknown]                                 [.] 0x000000000000f44c
+     0.14%     0.14%  python3.13                                [.] PyMem_Realloc
+     0.14%     0.00%  [unknown]                                 [.] 0x00007fda56991260
+     0.14%     0.00%  [unknown]                                 [.] 0x00007fda5698ddb0
+     0.14%     0.00%  [unknown]                                 [.] 0x000000000000fec0
+     0.14%     0.00%  [unknown]                                 [.] 0x000000000000f571
+     0.14%     0.14%  python3.13                                [.] 0x00000000001760f0
+     0.14%     0.00%  [unknown]                                 [.] 0x00000000009fde00
+     0.14%     0.00%  python3.13                                [.] 0x00000000005760f0
+     0.14%     0.00%  [unknown]                                 [.] 0x00007fda556ca828
+     0.14%     0.00%  [unknown]                                 [.] 0x000000000000f596
+     0.14%     0.00%  [unknown]                                 [.] 0x000000000000f4d3
+     0.13%     0.13%  [kernel.kallsyms]                         [k] 0xffffffff874b77f3
+     0.13%     0.00%  [kernel.kallsyms]                         [k] 0xffffffff871b2ffb
+     0.13%     0.00%  [kernel.kallsyms]                         [k] 0xffffffff871b091d
+     0.13%     0.00%  [kernel.kallsyms]                         [k] 0xffffffff871ae633
+     0.13%     0.00%  [unknown]                                 [.] 0x0000000000000007
+     0.13%     0.00%  [unknown]                                 [.] 0x00007fda562021a0
+     0.13%     0.00%  [unknown]                                 [.] 0x00007fda56243078
+     0.13%     0.00%  [unknown]                                 [.] 0x00007fda562553d8
+     0.13%     0.00%  [unknown]                                 [.] 0x00007fda56201c98
+     0.13%     0.00%  [unknown]                                 [.] 0x00007fda56209e88
+     0.13%     0.00%  [unknown]                                 [.] 0x00007fda56231878
+     0.13%     0.00%  [unknown]                                 [.] 0x00007fda562571d0
+     0.13%     0.00%  [unknown]                                 [.] 0x00007fda5620ada0
+     0.13%     0.00%  [unknown]                                 [.] 0x00007fda5622c9f0
+     0.13%     0.00%  [unknown]                                 [.] 0x00007fda56234b00
+     0.13%     0.00%  [unknown]                                 [.] 0x00007fda5620f4f0
+     0.13%     0.00%  [unknown]                                 [.] 0x00007fda562468e8
+     0.13%     0.00%  [unknown]                                 [.] 0x00007fda5622ae98
+     0.13%     0.00%  [unknown]                                 [.] 0x00007fda5620f090
+     0.13%     0.00%  [unknown]                                 [.] 0x00007fda5624dd80
+     0.13%     0.00%  [unknown]                                 [.] 0x00007fda56260658
+     0.13%     0.00%  [unknown]                                 [.] 0x00007fda5621cdf0
+     0.13%     0.00%  [unknown]                                 [.] 0x00007fda56243a50
+     0.13%     0.00%  [unknown]                                 [.] 0x00007fda56221f18
+     0.13%     0.00%  [unknown]                                 [.] 0x00007fda5620ddc0
+     0.13%     0.00%  [unknown]                                 [.] 0x00007fda562109b8
+     0.13%     0.00%  [unknown]                                 [.] 0x00007fda5620d030
+     0.13%     0.00%  [unknown]                                 [.] 0x00007fda562102b8
+     0.13%     0.00%  [unknown]                                 [.] 0x00007fda56222c00
+     0.13%     0.00%  [unknown]                                 [.] 0x00007fda5623ce08
+     0.13%     0.00%  [unknown]                                 [.] 0x00007fda56237e30
+     0.13%     0.00%  [unknown]                                 [.] 0x00007fda56239ec8
+     0.13%     0.00%  [unknown]                                 [.] 0x00007fda56205968
+     0.13%     0.00%  [unknown]                                 [.] 0x00007fda5624e560
+     0.13%     0.00%  [unknown]                                 [.] 0x00007fda56234e48
+     0.13%     0.00%  [unknown]                                 [.] 0x00007fda5622d358
+     0.13%     0.00%  [unknown]                                 [.] 0x00007fda5625bf78
+     0.13%     0.00%  [unknown]                                 [.] 0x00007fda5623e500
+     0.13%     0.00%  [unknown]                                 [.] 0x00007fda56209c20
+     0.13%     0.00%  [unknown]                                 [.] 0x00007fda562124a0
+     0.13%     0.00%  [unknown]                                 [.] 0x00007fda5621c0d0
+     0.13%     0.00%  [unknown]                                 [.] 0x00007fda56221070
+     0.13%     0.00%  [unknown]                                 [.] 0x00007fda56243e08
+     0.13%     0.00%  [unknown]                                 [.] 0x00007fda5623bfd0
+     0.13%     0.00%  [unknown]                                 [.] 0x00007fda56241590
+     0.13%     0.00%  [unknown]                                 [.] 0x00007fda56214618
+     0.13%     0.00%  [unknown]                                 [.] 0x00007fda5624e0c8
+     0.13%     0.00%  [unknown]                                 [.] 0x00007fda56205460
+     0.13%     0.00%  [unknown]                                 [.] 0x00007fda5623dd20
+     0.13%     0.00%  [unknown]                                 [.] 0x00007fda5620d0d8
+     0.13%     0.00%  [unknown]                                 [.] 0x00007fda561fd548
+     0.13%     0.00%  [unknown]                                 [.] 0x00007fda56232f38
+     0.13%     0.00%  [unknown]                                 [.] 0x00007fda5624fec0
+     0.13%     0.00%  [unknown]                                 [.] 0x00007fda56249898
+     0.13%     0.00%  [unknown]                                 [.] 0x00007fda56254220
+     0.13%     0.00%  [unknown]                                 [.] 0x00007fda5624bce8
+     0.13%     0.00%  [unknown]                                 [.] 0x00007fda56231d48
+     0.13%     0.00%  [unknown]                                 [.] 0x00007fda5625d948
+     0.13%     0.00%  [unknown]                                 [.] 0x00007fda56234198
+     0.13%     0.00%  [unknown]                                 [.] 0x00007fda562042a8
+     0.13%     0.00%  [unknown]                                 [.] 0x00007fda56208e20
+     0.13%     0.00%  [unknown]                                 [.] 0x00007fda5622f620
+     0.13%     0.00%  [unknown]                                 [.] 0x00007fda56224480
+     0.13%     0.00%  [unknown]                                 [.] 0x00007fda5620e1e8
+     0.13%     0.00%  [unknown]                                 [.] 0x00007fda56215c68
+     0.13%     0.00%  [unknown]                                 [.] 0x00007fda56244380
+     0.13%     0.00%  [unknown]                                 [.] 0x00007fda5625f040
+     0.13%     0.00%  [unknown]                                 [.] 0x00007fda5621a380
+     0.13%     0.00%  [unknown]                                 [.] 0x00007fda56248168
+     0.13%     0.00%  [unknown]                                 [.] 0x00007fda56209670
+     0.13%     0.00%  [unknown]                                 [.] 0x00007fda56208b10
+     0.13%     0.00%  [unknown]                                 [.] 0x00007fda561fff48
+     0.13%     0.00%  [unknown]                                 [.] 0x00007fda562036d8
+     0.13%     0.00%  [unknown]                                 [.] 0x00007fda562009c8
+     0.13%     0.00%  [unknown]                                 [.] 0x00007fda56221ea8
+     0.13%     0.00%  [unknown]                                 [.] 0x00007fda56208aa0
+     0.13%     0.00%  [unknown]                                 [.] 0x00007fda5622f6c8
+     0.13%     0.00%  [unknown]                                 [.] 0x00007fda56254aa8
+     0.13%     0.00%  [unknown]                                 [.] 0x00007fda56243c10
+     0.13%     0.00%  [unknown]                                 [.] 0x00007fda5620c0a8
+     0.13%     0.00%  [unknown]                                 [.] 0x00007fda561fcbe0
+     0.13%     0.00%  [unknown]                                 [.] 0x00007fda56248590
+     0.13%     0.00%  [unknown]                                 [.] 0x00007fda56224020
+     0.13%     0.00%  [unknown]                                 [.] 0x00007fda56218828
+     0.13%     0.00%  [unknown]                                 [.] 0x00007fda5620f8e0
+     0.13%     0.00%  [unknown]                                 [.] 0x00007fda5625a068
+     0.13%     0.00%  [unknown]                                 [.] 0x00007fda56244968
+     0.13%     0.00%  [unknown]                                 [.] 0x00007fda5624fd38
+     0.13%     0.00%  [unknown]                                 [.] 0x00007fda562555d0
+     0.13%     0.00%  [unknown]                                 [.] 0x00007fda5622e0b0
+     0.13%     0.00%  [unknown]                                 [.] 0x00007fda562101a0
+     0.13%     0.00%  [unknown]                                 [.] 0x00007fda562138f8
+     0.13%     0.00%  [unknown]                                 [.] 0x00007fda5622d2e8
+     0.13%     0.00%  [unknown]                                 [.] 0x00007fda5620da40
+     0.13%     0.00%  [unknown]                                 [.] 0x00007fda5620b4a0
+     0.13%     0.00%  [unknown]                                 [.] 0x00007fda562509b0
+     0.13%     0.00%  [unknown]                                 [.] 0x00007fda56225718
+     0.13%     0.00%  [unknown]                                 [.] 0x00007fda5624e6b0
+     0.13%     0.00%  [unknown]                                 [.] 0x00007fda56238ed0
+     0.13%     0.00%  [unknown]                                 [.] 0x00007fda56241750
+     0.13%     0.00%  [unknown]                                 [.] 0x00007fda561fe118
+     0.13%     0.00%  [unknown]                                 [.] 0x00007fda5623a6a8
+     0.13%     0.00%  [unknown]                                 [.] 0x00007fda56256ef8
+     0.13%     0.00%  [unknown]                                 [.] 0x00007fda56240528
+     0.13%     0.00%  [unknown]                                 [.] 0x00007fda5620f918
+     0.13%     0.00%  [unknown]                                 [.] 0x00007fda56258dd0
+     0.13%     0.00%  [unknown]                                 [.] 0x00007fda5624bee0
+     0.13%     0.00%  [unknown]                                 [.] 0x00007fda56239f70
+     0.13%     0.00%  [unknown]                                 [.] 0x00007fda56256440
+     0.13%     0.00%  [unknown]                                 [.] 0x00007fda5622ecb8
+     0.13%     0.00%  [unknown]                                 [.] 0x00007fda5625b648
+     0.13%     0.00%  [unknown]                                 [.] 0x00007fda5625f3f8
+     0.13%     0.00%  [unknown]                                 [.] 0x00007fda56212040
+     0.13%     0.00%  [unknown]                                 [.] 0x00007fda5623f808
+     0.13%     0.00%  [unknown]                                 [.] 0x00007fda56244e00
+     0.13%     0.00%  [unknown]                                 [.] 0x00007fda562154f8
+     0.13%     0.00%  [unknown]                                 [.] 0x00007fda56210ef8
+     0.13%     0.00%  [unknown]                                 [.] 0x00007fda5620d308
+     0.13%     0.00%  [unknown]                                 [.] 0x00007fda562187f0
+     0.13%     0.00%  [unknown]                                 [.] 0x00007fda562560f8
+     0.13%     0.00%  [unknown]                                 [.] 0x00007fda556bf228
+     0.13%     0.00%  [unknown]                                 [.] 0x00007fda56259230
+     0.13%     0.00%  [unknown]                                 [.] 0x00007fda56262fe8
+     0.13%     0.00%  [unknown]                                 [.] 0x00007fda56251cf0
+     0.13%     0.00%  [unknown]                                 [.] 0x00007fda56202868
+     0.13%     0.00%  [unknown]                                 [.] 0x00007fda5621f7f0
+     0.13%     0.00%  [unknown]                                 [.] 0x00007fda562188d0
+     0.13%     0.00%  [unknown]                                 [.] 0x00007fda5620c7a8
+     0.13%     0.00%  [unknown]                                 [.] 0x00007fda5623f450
+     0.13%     0.00%  [unknown]                                 [.] 0x00007fda56249ef0
+     0.13%     0.00%  [unknown]                                 [.] 0x00007fda56221fc0
+     0.13%     0.00%  [unknown]                                 [.] 0x00007fda56200648
+     0.13%     0.00%  [unknown]                                 [.] 0x00007fda562499e8
+     0.13%     0.00%  [unknown]                                 [.] 0x00007fda56245688
+     0.13%     0.00%  [unknown]                                 [.] 0x00007fda56223ae0
+     0.13%     0.00%  [unknown]                                 [.] 0x00007fda562412b8
+     0.13%     0.00%  [unknown]                                 [.] 0x00007fda56235548
+     0.13%     0.00%  [unknown]                                 [.] 0x00007fda5625dd38
+     0.13%     0.00%  [unknown]                                 [.] 0x00007fda5621aab8
+     0.13%     0.00%  [unknown]                                 [.] 0x00007fda5624f788
+     0.13%     0.00%  [unknown]                                 [.] 0x00007fda5624aac0
+     0.13%     0.00%  [unknown]                                 [.] 0x00007fda56264360
+     0.13%     0.00%  [unknown]                                 [.] 0x00007fda56236118
+     0.13%     0.00%  [unknown]                                 [.] 0x00007fda562426d8
+     0.13%     0.00%  [unknown]                                 [.] 0x00007fda56236620
+     0.13%     0.00%  [unknown]                                 [.] 0x00007fda56255cd0
+     0.13%     0.00%  [unknown]                                 [.] 0x00007fda562455a8
+     0.13%     0.00%  [unknown]                                 [.] 0x00007fda56223178
+     0.13%     0.00%  [unknown]                                 [.] 0x00007fda56258388
+     0.13%     0.00%  [unknown]                                 [.] 0x00007fda56218cc0
+     0.13%     0.00%  [unknown]                                 [.] 0x00007fda56249278
+     0.13%     0.00%  [unknown]                                 [.] 0x00007fda56233478
+     0.13%     0.00%  [unknown]                                 [.] 0x00007fda562529a0
+     0.13%     0.00%  [unknown]                                 [.] 0x00007fda562270b0
+     0.13%     0.00%  [unknown]                                 [.] 0x00007fda5622b1e0
+     0.13%     0.00%  [unknown]                                 [.] 0x00007fda56250a90
+     0.13%     0.00%  [unknown]                                 [.] 0x00007fda5623c938
+     0.13%     0.00%  [unknown]                                 [.] 0x00007fda5624b1f8
+     0.13%     0.00%  [unknown]                                 [.] 0x00007fda561fe968
+     0.13%     0.00%  [unknown]                                 [.] 0x00007fda56216448
+     0.13%     0.00%  [unknown]                                 [.] 0x00007fda5623a398
+     0.13%     0.00%  [unknown]                                 [.] 0x00007fda56206a78
+     0.13%     0.00%  [unknown]                                 [.] 0x00007fda5625a848
+     0.13%     0.00%  [unknown]                                 [.] 0x00007fda56206848
+     0.13%     0.00%  [unknown]                                 [.] 0x00007fda56204238
+     0.13%     0.00%  [unknown]                                 [.] 0x00007fda5625edd8
+     0.13%     0.00%  [unknown]                                 [.] 0x00007fda5622f578
+     0.13%     0.00%  [unknown]                                 [.] 0x00007fda56244460
+     0.13%     0.00%  [unknown]                                 [.] 0x00007fda562518c8
+     0.13%     0.00%  [unknown]                                 [.] 0x00007fda56220f20
+     0.13%     0.00%  [unknown]                                 [.] 0x00007fda5624a200
+     0.13%     0.00%  [unknown]                                 [.] 0x00007fda56212468
+     0.13%     0.00%  [unknown]                                 [.] 0x00007fda562060d8
+     0.13%     0.00%  [unknown]                                 [.] 0x00007fda5623df18
+     0.13%     0.00%  [unknown]                                 [.] 0x00007fda5622b9f8
+     0.13%     0.00%  [unknown]                                 [.] 0x00007fda56237228
+     0.13%     0.00%  [unknown]                                 [.] 0x00007fda56224b80
+     0.13%     0.00%  [unknown]                                 [.] 0x00007fda5622a370
+     0.13%     0.00%  [unknown]                                 [.] 0x00007fda5622f540
+     0.13%     0.00%  [unknown]                                 [.] 0x00007fda56224100
+     0.13%     0.00%  [unknown]                                 [.] 0x00007fda56219698
+     0.13%     0.00%  [unknown]                                 [.] 0x00007fda5622c328
+     0.13%     0.00%  [unknown]                                 [.] 0x00007fda5622ac68
+     0.13%     0.00%  [unknown]                                 [.] 0x00007fda5622b800
+     0.13%     0.00%  [unknown]                                 [.] 0x00007fda5621b2d0
+     0.13%     0.00%  [unknown]                                 [.] 0x00007fda5621af50
+     0.13%     0.00%  [unknown]                                 [.] 0x00007fda5625db08
+     0.13%     0.00%  [unknown]                                 [.] 0x00007fda5625d750
+     0.13%     0.00%  [unknown]                                 [.] 0x00007fda56229fb8
+     0.13%     0.00%  [unknown]                                 [.] 0x00007fda56250898
+     0.13%     0.00%  [unknown]                                 [.] 0x00007fda562084b8
+     0.13%     0.00%  [unknown]                                 [.] 0x00007fda56209830
+     0.13%     0.00%  [unknown]                                 [.] 0x00007fda5621d560
+     0.13%     0.00%  [unknown]                                 [.] 0x00007fda562585b8
+     0.13%     0.00%  [unknown]                                 [.] 0x00007fda56241408
+     0.13%     0.00%  [unknown]                                 [.] 0x00007fda56234b38
+     0.13%     0.00%  [unknown]                                 [.] 0x00007fda56264be8
+     0.13%     0.00%  [unknown]                                 [.] 0x00007fda56237ff0
+     0.13%     0.00%  [unknown]                                 [.] 0x00007fda56256c90
+     0.13%     0.00%  [unknown]                                 [.] 0x00007fda56250cc0
+     0.13%     0.00%  [unknown]                                 [.] 0x00007fda56258548
+     0.13%     0.00%  [unknown]                                 [.] 0x00007fda5621dec8
+     0.13%     0.00%  [unknown]                                 [.] 0x00007fda5625c2f8
+     0.13%     0.00%  [unknown]                                 [.] 0x00007fda562427b8
+     0.13%     0.00%  [unknown]                                 [.] 0x00007fda56223b18
+     0.13%     0.00%  [unknown]                                 [.] 0x00007fda56241c58
+     0.13%     0.00%  [unknown]                                 [.] 0x00007fda56208ec8
+     0.13%     0.00%  [unknown]                                 [.] 0x00007fda5621b340
+     0.13%     0.00%  [unknown]                                 [.] 0x00007fda56216170
+     0.13%     0.00%  [unknown]                                 [.] 0x00007fda56209d70
+     0.13%     0.00%  [unknown]                                 [.] 0x00007fda5620e1b0
+     0.13%     0.00%  [unknown]                                 [.] 0x00007fda56216aa0
+     0.13%     0.00%  [unknown]                                 [.] 0x00007fda56263f38
+     0.13%     0.00%  [unknown]                                 [.] 0x00007fda5621bdc0
+     0.13%     0.00%  [unknown]                                 [.] 0x00007fda56226c50
+     0.13%     0.00%  [unknown]                                 [.] 0x00007fda5620caf0
+     0.13%     0.00%  [unknown]                                 [.] 0x00007fda56211940
+     0.13%     0.00%  [unknown]                                 [.] 0x00007fda562256e0
+     0.13%     0.00%  [unknown]                                 [.] 0x00007fda5621b0d8
+     0.13%     0.00%  [unknown]                                 [.] 0x00007fda5624d290
+     0.13%     0.00%  [unknown]                                 [.] 0x00007fda5621d9c0
+     0.13%     0.00%  [unknown]                                 [.] 0x00007fda56209050
+     0.13%     0.00%  [unknown]                                 [.] 0x00007fda562234c0
+     0.13%     0.00%  [unknown]                                 [.] 0x00007fda5625eda0
+     0.13%     0.00%  [unknown]                                 [.] 0x00007fda5623a590
+     0.13%     0.00%  [unknown]                                 [.] 0x00007fda5625f5f0
+     0.13%     0.00%  [unknown]                                 [.] 0x00007fda56244620
+     0.13%     0.00%  [unknown]                                 [.] 0x00007fda56247170
+     0.13%     0.00%  [unknown]                                 [.] 0x00007fda5625d520
+     0.13%     0.00%  [unknown]                                 [.] 0x00007fda56217948
+     0.13%     0.00%  [unknown]                                 [.] 0x00007fda5621ab60
+     0.13%     0.00%  [unknown]                                 [.] 0x00007fda56257278
+     0.13%     0.00%  [unknown]                                 [.] 0x00007fda56206df8
+     0.13%     0.00%  [unknown]                                 [.] 0x00007fda562130a8
+     0.13%     0.00%  [unknown]                                 [.] 0x00007fda56256050
+     0.13%     0.00%  [unknown]                                 [.] 0x00007fda562614c8
+     0.13%     0.00%  [unknown]                                 [.] 0x00007fda5620e5a0
+     0.13%     0.00%  [unknown]                                 [.] 0x00007fda556d5258
+     0.13%     0.13%  python3.13                                [.] 0x000000000013093f
+     0.13%     0.00%  python3.13                                [.] 0x000000000053093f
+     0.13%     0.13%  _tskit.cpython-313-x86_64-linux-gnu.so    [.] tsk_treeseq_init
+     0.13%     0.00%  [unknown]                                 [.] 0x2d5b287961727261
+     0.13%     0.13%  [kernel.kallsyms]                         [k] 0xffffffff86e96540
+     0.13%     0.00%  [unknown]                                 [k] 0x000000000000fbe8
+     0.13%     0.00%  [unknown]                                 [.] 0x00007fda556c7fb0
+     0.13%     0.00%  [unknown]                                 [.] 0x000000000000fe51
+     0.13%     0.00%  [unknown]                                 [.] 0x00007fda556d5c68
+     0.13%     0.00%  [unknown]                                 [.] 0x00007fda556da0e0
+     0.13%     0.00%  [unknown]                                 [.] 0x40d8550000000000
+     0.13%     0.00%  [unknown]                                 [.] 0x40f1d89000000000
+     0.13%     0.00%  [unknown]                                 [.] 0x00007fda556ddfa8
+     0.13%     0.00%  [unknown]                                 [.] 0x00007fda556cfb80
+     0.13%     0.00%  [unknown]                                 [.] 0x000000000000ff8d
+     0.13%     0.00%  [unknown]                                 [.] 0x00007fda556bb520
+     0.13%     0.00%  [unknown]                                 [.] 0x000000000000fba2
+     0.13%     0.00%  [unknown]                                 [.] 0x000000000000fb6c
+     0.13%     0.00%  [unknown]                                 [.] 0x00007fda55cdc958
+     0.13%     0.00%  [unknown]                                 [.] 0x00007fda55ce03c8
+     0.13%     0.00%  [unknown]                                 [.] 0x00007fda55cdbf60
+     0.13%     0.00%  [unknown]                                 [.] 0x00007fda55cdd820
+     0.13%     0.00%  [unknown]                                 [.] 0x00007fda55cdf0e0
+     0.13%     0.00%  [unknown]                                 [.] 0x00007fda55cda228
+     0.13%     0.00%  [unknown]                                 [.] 0x00007fda55cddb90
+     0.13%     0.00%  [unknown]                                 [.] 0x00007fda55cdd6c0
+     0.13%     0.00%  [unknown]                                 [.] 0x00007fda55cdfdf0
+     0.13%     0.00%  [unknown]                                 [.] 0x00007fda55cdc3d8
+     0.13%     0.00%  [unknown]                                 [.] 0x00007fda55cdbfb8
+     0.13%     0.00%  [unknown]                                 [.] 0x00007fda55cdd508
+     0.13%     0.00%  [unknown]                                 [.] 0x00007fda55cdf6b8
+     0.13%     0.00%  [unknown]                                 [.] 0x00007fda55cdc748
+     0.13%     0.00%  [unknown]                                 [.] 0x00007fda55cdbd50
+     0.13%     0.00%  [unknown]                                 [.] 0x00007fda55cdfea0
+     0.13%     0.00%  [unknown]                                 [.] 0x00007fda55cdccc8
+     0.13%     0.00%  [unknown]                                 [.] 0x00007fda55cdcd20
+     0.13%     0.00%  [unknown]                                 [.] 0x00007fda55cda960
+     0.13%     0.00%  [unknown]                                 [.] 0x00007fda55cde530
+     0.13%     0.00%  [unknown]                                 [.] 0x00007fda55cde588
+     0.13%     0.00%  [unknown]                                 [.] 0x00007fda55ce0e70
+     0.13%     0.00%  [unknown]                                 [.] 0x00007fda55ce0478
+     0.13%     0.00%  [unknown]                                 [.] 0x00007fda55cda1d0
+     0.13%     0.00%  [unknown]                                 [.] 0x00007fda55cdd5b8
+     0.13%     0.00%  [unknown]                                 [.] 0x00007fda55cdff50
+     0.13%     0.00%  [unknown]                                 [.] 0x00007fda55cdd7c8
+     0.13%     0.00%  [unknown]                                 [.] 0x00007fda55cdd770
+     0.13%     0.00%  [unknown]                                 [.] 0x00007fda55ce0160
+     0.13%     0.00%  [unknown]                                 [.] 0x00007fda55cd9e60
+     0.13%     0.00%  [unknown]                                 [.] 0x00007fda55ce0c08
+     0.13%     0.00%  [unknown]                                 [.] 0x00007fda55cde8f8
+     0.13%     0.00%  [unknown]                                 [.] 0x00007fda55cdcdd0
+     0.13%     0.00%  [unknown]                                 [.] 0x00007fda55cddf00
+     0.13%     0.00%  [unknown]                                 [.] 0x00007fda55cdb5c0
+     0.13%     0.00%  [unknown]                                 [.] 0x00007fda55cdb3b0
+     0.13%     0.00%  [unknown]                                 [.] 0x00007fda55cdc010
+     0.13%     0.00%  [unknown]                                 [.] 0x00007fda55cdb618
+     0.13%     0.00%  [unknown]                                 [.] 0x00007fda55cda858
+     0.13%     0.00%  [unknown]                                 [.] 0x00007fda55cdaa10
+     0.13%     0.00%  [unknown]                                 [.] 0x000000000000f866
+     0.13%     0.00%  [unknown]                                 [.] 0x00007fda556d9858
+     0.13%     0.00%  [unknown]                                 [.] 0x000000000000fd98
+     0.13%     0.00%  [unknown]                                 [.] 0x00007fda556d6720
+     0.13%     0.00%  [unknown]                                 [.] 0x00007fda556daf50
+     0.13%     0.00%  [unknown]                                 [.] 0x00007fda556bf3e8
+     0.13%     0.13%  libgsl.so.28.0.0                          [.] 0x0000000000186cfd
+     0.13%     0.00%  libgsl.so.28.0.0                          [.] 0x00007fda5bf86cfd
+     0.13%     0.00%  [unknown]                                 [.] 0x000000000000f761
+     0.13%     0.00%  [unknown]                                 [.] 0x00007fda556b7038
+     0.13%     0.00%  [unknown]                                 [.] 0x00007fda556b9ed0
+     0.13%     0.00%  [unknown]                                 [.] 0x40f5605000000000
+     0.13%     0.00%  [unknown]                                 [.] 0x00007fda556bfa78
+     0.13%     0.00%  [unknown]                                 [.] 0x00007fda556d9cb8
+     0.13%     0.00%  [unknown]                                 [.] 0x00007fda556ca6d8
+     0.13%     0.00%  [unknown]                                 [.] 0x034001b50155004e
+     0.13%     0.00%  [unknown]                                 [.] 0x000000000000feb5
+     0.13%     0.13%  _tskit.cpython-313-x86_64-linux-gnu.so    [.] tsk_edge_table_append_columns
+     0.13%     0.13%  [kernel.kallsyms]                         [k] 0xffffffff86e96513
+     0.13%     0.13%  python3.13                                [.] 0x00000000001325be
+     0.13%     0.00%  python3.13                                [.] 0x00000000005325be
+     0.13%     0.00%  [unknown]                                 [.] 0x000000000000f932
+     0.13%     0.00%  [unknown]                                 [.] 0x000000000000fb91
+     0.13%     0.00%  [unknown]                                 [.] 0x00007fda556cc770
+     0.13%     0.00%  [unknown]                                 [.] 0x000000000000f9b0
+     0.13%     0.13%  libgsl.so.28.0.0                          [.] 0x0000000000186c21
+     0.13%     0.00%  libgsl.so.28.0.0                          [.] 0x00007fda5bf86c21
+     0.13%     0.00%  [unknown]                                 [.] 0x00007fda556c94e8
+     0.13%     0.00%  [unknown]                                 [.] 0x40f727e000000000
+     0.13%     0.00%  [unknown]                                 [.] 0x40e43f8000000000
+     0.13%     0.00%  [unknown]                                 [.] 0x000000000000fbb0
+     0.13%     0.00%  [unknown]                                 [.] 0x000000000000fb51
+     0.13%     0.00%  [unknown]                                 [.] 0x40e8e70000000000
+     0.13%     0.00%  [unknown]                                 [.] 0x0000000000000089
+     0.13%     0.00%  [unknown]                                 [.] 0x000000002cf6a680
+     0.13%     0.00%  [unknown]                                 [.] 0x000000000000ffa8
+     0.13%     0.00%  [unknown]                                 [.] 0x000000000000f471
+     0.13%     0.00%  [unknown]                                 [.] 0x000000000000ffb7
+     0.13%     0.00%  [unknown]                                 [.] 0x000000000000f457
+     0.13%     0.00%  [unknown]                                 [.] 0x40f4e87000000000
+     0.13%     0.00%  [unknown]                                 [.] 0x00007fda56202018
+     0.13%     0.00%  [unknown]                                 [.] 0x00007fda56231178
+     0.13%     0.00%  [unknown]                                 [.] 0x00007fda562618f0
+     0.13%     0.00%  [unknown]                                 [.] 0x00007fda562190e8
+     0.13%     0.00%  [unknown]                                 [.] 0x00007fda5621f3c8
+     0.13%     0.00%  [unknown]                                 [.] 0x00007fda56207958
+     0.13%     0.00%  [unknown]                                 [.] 0x00007fda56203940
+     0.13%     0.00%  [unknown]                                 [.] 0x00007fda5623daf0
+     0.13%     0.00%  [unknown]                                 [.] 0x00007fda56245650
+     0.13%     0.00%  [unknown]                                 [.] 0x00007fda5622c750
+     0.13%     0.00%  [unknown]                                 [.] 0x00007fda5624b3b8
+     0.13%     0.00%  [unknown]                                 [.] 0x00007fda56216058
+     0.13%     0.00%  [unknown]                                 [.] 0x00007fda56242c18
+     0.13%     0.00%  [unknown]                                 [.] 0x00007fda5625fbd8
+     0.13%     0.00%  [unknown]                                 [.] 0x00007fda56222e68
+     0.13%     0.00%  [unknown]                                 [.] 0x00007fda562410f8
+     0.13%     0.00%  [unknown]                                 [.] 0x00007fda56215d48
+     0.13%     0.00%  [unknown]                                 [.] 0x00007fda5620bd98
+     0.13%     0.00%  [unknown]                                 [.] 0x00007fda56243ee8
+     0.13%     0.00%  [unknown]                                 [.] 0x00007fda5620d378
+     0.13%     0.00%  [unknown]                                 [.] 0x00007fda5623de70
+     0.13%     0.00%  [unknown]                                 [.] 0x00007fda56247ad8
+     0.13%     0.00%  [unknown]                                 [.] 0x00007fda56235d98
+     0.13%     0.00%  [unknown]                                 [.] 0x00007fda56212158
+     0.13%     0.00%  [unknown]                                 [.] 0x00007fda56259ea8
+     0.13%     0.00%  [unknown]                                 [.] 0x00007fda5624bf88
+     0.13%     0.00%  [unknown]                                 [.] 0x00007fda5623d348
+     0.13%     0.00%  [unknown]                                 [.] 0x00007fda56221b60
+     0.13%     0.00%  [unknown]                                 [.] 0x00007fda56229bc8
+     0.13%     0.00%  [unknown]                                 [.] 0x00007fda561fd580
+     0.13%     0.00%  [unknown]                                 [.] 0x00007fda56241600
+     0.13%     0.00%  [unknown]                                 [.] 0x00007fda562045b8
+     0.13%     0.00%  [unknown]                                 [.] 0x00007fda5625cb80
+     0.13%     0.00%  [unknown]                                 [.] 0x00007fda562067a0
+     0.13%     0.00%  [unknown]                                 [.] 0x00007fda562186d8
+     0.13%     0.00%  [unknown]                                 [.] 0x00007fda56205540
+     0.13%     0.00%  [unknown]                                 [.] 0x00007fda562308f0
+     0.13%     0.00%  [unknown]                                 [.] 0x00007fda5621af18
+     0.13%     0.00%  [unknown]                                 [.] 0x00007fda56235740
+     0.13%     0.00%  [unknown]                                 [.] 0x00007fda56264ec0
+     0.13%     0.00%  [unknown]                                 [.] 0x00007fda562621b0
+     0.13%     0.00%  [unknown]                                 [.] 0x00007fda56223098
+     0.13%     0.00%  [unknown]                                 [.] 0x00007fda5623a948
+     0.13%     0.00%  [unknown]                                 [.] 0x00007fda5622be58
+     0.13%     0.00%  [unknown]                                 [.] 0x00007fda5622f2d8
+     0.13%     0.00%  [unknown]                                 [.] 0x00007fda56228e70
+     0.13%     0.00%  [unknown]                                 [.] 0x00007fda56219628
+     0.13%     0.00%  [unknown]                                 [.] 0x00007fda56228f18
+     0.13%     0.00%  [unknown]                                 [.] 0x00007fda5625a1f0
+     0.13%     0.00%  [unknown]                                 [.] 0x00007fda5620e370
+     0.13%     0.00%  [unknown]                                 [.] 0x00007fda56242550
+     0.13%     0.00%  [unknown]                                 [.] 0x00007fda562496d8
+     0.13%     0.00%  [unknown]                                 [.] 0x00007fda56227d28
+     0.13%     0.00%  [unknown]                                 [.] 0x00007fda56258e08
+     0.13%     0.00%  [unknown]                                 [.] 0x00007fda561fd7b0
+     0.13%     0.00%  [unknown]                                 [.] 0x00007fda5623b908
+     0.13%     0.00%  [unknown]                                 [.] 0x00007fda5624b700
+     0.13%     0.00%  [unknown]                                 [.] 0x00007fda5622bd08
+     0.13%     0.00%  [unknown]                                 [.] 0x00007fda56215df0
+     0.13%     0.00%  [unknown]                                 [.] 0x00007fda5624f328
+     0.13%     0.00%  [unknown]                                 [.] 0x00007fda562590e0
+     0.13%     0.00%  [unknown]                                 [.] 0x00007fda562502b0
+     0.13%     0.00%  [unknown]                                 [.] 0x00007fda5620a2b0
+     0.13%     0.00%  [unknown]                                 [.] 0x00007fda56249c18
+     0.13%     0.00%  [unknown]                                 [.] 0x00007fda56213e38
+     0.13%     0.00%  [unknown]                                 [.] 0x00007fda56252fc0
+     0.13%     0.00%  [unknown]                                 [.] 0x00007fda5621dd40
+     0.13%     0.00%  [unknown]                                 [.] 0x00007fda562447a8
+     0.13%     0.00%  [unknown]                                 [.] 0x00007fda5621ee18
+     0.13%     0.00%  [unknown]                                 [.] 0x00007fda5625b290
+     0.13%     0.00%  [unknown]                                 [.] 0x00007fda56204708
+     0.13%     0.00%  [unknown]                                 [.] 0x00007fda5623e848
+     0.13%     0.00%  [unknown]                                 [.] 0x00007fda5625f858
+     0.13%     0.00%  [unknown]                                 [.] 0x00007fda562359e0
+     0.13%     0.00%  [unknown]                                 [.] 0x00007fda562122e0
+     0.13%     0.00%  [unknown]                                 [.] 0x00007fda562107f8
+     0.13%     0.00%  [unknown]                                 [.] 0x00007fda56227120
+     0.13%     0.00%  [unknown]                                 [.] 0x00007fda56247790
+     0.13%     0.00%  [unknown]                                 [.] 0x00007fda5621f908
+     0.13%     0.00%  [unknown]                                 [.] 0x00007fda56232870
+     0.13%     0.00%  [unknown]                                 [.] 0x00007fda5625cbf0
+     0.13%     0.00%  [unknown]                                 [.] 0x00007fda5624cc00
+     0.13%     0.00%  [unknown]                                 [.] 0x00007fda56263ad8
+     0.13%     0.00%  [unknown]                                 [.] 0x00007fda56221188
+     0.13%     0.00%  [unknown]                                 [.] 0x00007fda56210210
+     0.13%     0.00%  [unknown]                                 [.] 0x00007fda56240640
+     0.13%     0.00%  [unknown]                                 [.] 0x00007fda562384f8
+     0.13%     0.00%  [unknown]                                 [.] 0x00007fda5622fe70
+     0.13%     0.00%  [unknown]                                 [.] 0x00007fda562506d8
+     0.13%     0.00%  [unknown]                                 [.] 0x00007fda5623dce8
+     0.13%     0.00%  [unknown]                                 [.] 0x00007fda56209e18
+     0.13%     0.00%  [unknown]                                 [.] 0x00007fda56255de8
+     0.13%     0.00%  [unknown]                                 [.] 0x00007fda5620dd50
+     0.13%     0.00%  [unknown]                                 [.] 0x00007fda5625c950
+     0.13%     0.00%  [unknown]                                 [.] 0x00007fda56263950
+     0.13%     0.00%  [unknown]                                 [.] 0x00007fda56258d28
+     0.13%     0.00%  [unknown]                                 [.] 0x00007fda5622e238
+     0.13%     0.00%  [unknown]                                 [.] 0x00007fda56240fe0
+     0.13%     0.00%  [unknown]                                 [.] 0x00007fda562203f8
+     0.13%     0.00%  [unknown]                                 [.] 0x00007fda5620ce38
+     0.13%     0.00%  [unknown]                                 [.] 0x00007fda5623a868
+     0.13%     0.00%  [unknown]                                 [.] 0x00007fda5622e3c0
+     0.13%     0.00%  [unknown]                                 [.] 0x00007fda562385d8
+     0.13%     0.00%  [unknown]                                 [.] 0x00007fda56212430
+     0.13%     0.00%  [unknown]                                 [.] 0x00007fda5620d650
+     0.13%     0.00%  [unknown]                                 [.] 0x00007fda56238488
+     0.13%     0.00%  [unknown]                                 [.] 0x00007fda5621cf08
+     0.13%     0.00%  [unknown]                                 [.] 0x00007fda56211be0
+     0.13%     0.00%  [unknown]                                 [.] 0x00007fda5625b6b8
+     0.13%     0.00%  [unknown]                                 [.] 0x00007fda56223d10
+     0.13%     0.00%  [unknown]                                 [.] 0x00007fda56220c10
+     0.13%     0.00%  [unknown]                                 [.] 0x00007fda56201640
+     0.13%     0.00%  [unknown]                                 [.] 0x00007fda56243c48
+     0.13%     0.00%  [unknown]                                 [.] 0x00007fda5621d218
+     0.13%     0.00%  [unknown]                                 [.] 0x00007fda56202d38
+     0.13%     0.00%  [unknown]                                 [.] 0x0000000000000009
+     0.13%     0.00%  [unknown]                                 [.] 0x40f3c32000000000
+     0.13%     0.00%  [unknown]                                 [.] 0x00007fda556bd858
+     0.13%     0.00%  [unknown]                                 [.] 0x407e083d70a3d70a
+     0.13%     0.00%  [unknown]                                 [.] 0x40f08c5000000000
+     0.13%     0.00%  [unknown]                                 [.] 0x00007fda00000aef
+     0.13%     0.00%  [unknown]                                 [.] 0x000000002cf6a650
+     0.13%     0.00%  [unknown]                                 [.] 0x00007fda556d3a48
+     0.13%     0.00%  [unknown]                                 [.] 0x40f0abc000000000
+     0.13%     0.00%  [unknown]                                 [.] 0x000000000000fbf3
+     0.13%     0.00%  [unknown]                                 [.] 0x3fe9c97658901501
+     0.13%     0.00%  [unknown]                                 [.] 0x000000000000fd6c
+     0.13%     0.00%  [unknown]                                 [.] 0x00007fda556b5e10
+     0.13%     0.00%  [unknown]                                 [.] 0x000000000000f83a
+     0.13%     0.00%  [unknown]                                 [.] 0x000000000000fa2a
+     0.13%     0.13%  libc.so.6                                 [.] __strlen_avx2
+     0.13%     0.00%  [unknown]                                 [.] 0x6428004b7c006e4c
+     0.13%     0.00%  [unknown]                                 [.] 0x0000003000000010
+     0.13%     0.00%  [unknown]                                 [.] 0x40c3218000000000
+     0.13%     0.00%  [unknown]                                 [.] 0x000000000000fe05
+     0.13%     0.00%  [unknown]                                 [.] 0x000000000000fbdc
+     0.13%     0.13%  libc.so.6                                 [.] __mempcpy_avx_unaligned
+     0.13%     0.00%  [unknown]                                 [.] 0x40f6551000000000
+     0.13%     0.00%  [unknown]                                 [.] 0x00007fda556b6c48
+     0.13%     0.00%  [unknown]                                 [.] 0x00007fda556c3080
+     0.13%     0.00%  [unknown]                                 [.] 0x000000000000fd81
+     0.13%     0.00%  [unknown]                                 [.] 0x000000000000fd8a
+     0.13%     0.00%  [unknown]                                 [.] 0x000000000000faba
+     0.13%     0.00%  [unknown]                                 [.] 0x000000000000fdc3
+     0.13%     0.00%  [unknown]                                 [.] 0x000000000000f984
+     0.13%     0.13%  _msprime.cpython-313-x86_64-linux-gnu.so  [.] tsk_table_collection_build_index
+     0.13%     0.00%  [unknown]                                 [.] 0x00007fda55cdf298
+     0.13%     0.00%  [unknown]                                 [.] 0x00007fda55cdbae8
+     0.13%     0.00%  [unknown]                                 [.] 0x00007fda55cdc900
+     0.13%     0.00%  [unknown]                                 [.] 0x00007fda55cdac20
+     0.13%     0.00%  [unknown]                                 [.] 0x00007fda55cdb9e0
+     0.13%     0.00%  [unknown]                                 [.] 0x00007fda55ce0370
+     0.13%     0.00%  [unknown]                                 [.] 0x00007fda55cdd928
+     0.13%     0.00%  [unknown]                                 [.] 0x00007fda556d13c8
+     0.13%     0.00%  [unknown]                                 [.] 0x00007fda556c89c0
+     0.13%     0.00%  [unknown]                                 [.] 0x00007fda556b5908
+     0.13%     0.00%  [unknown]                                 [.] 0x000000000000faae
+     0.13%     0.00%  [unknown]                                 [.] 0x40f0454000000000
+     0.13%     0.00%  [unknown]                                 [.] 0x00007fda556ba480
+     0.13%     0.00%  [unknown]                                 [.] 0x000000000000f80a
+     0.13%     0.00%  [unknown]                                 [.] 0x000000000000fd8d
+     0.13%     0.00%  [unknown]                                 [.] 0x00007fda556cd6f8
+     0.13%     0.00%  [unknown]                                 [.] 0x000000000000ff1a
+     0.13%     0.00%  [unknown]                                 [.] 0x40efab4000000000
+     0.13%     0.13%  _tskit.cpython-313-x86_64-linux-gnu.so    [.] tsk_individual_table_append_columns
+     0.13%     0.00%  [unknown]                                 [.] 0x000000000000f9c7
+     0.13%     0.00%  [unknown]                                 [.] 0x000000000000fc7a
+     0.13%     0.00%  [unknown]                                 [.] 0x00007fda556bbad0
+     0.13%     0.13%  python3.13                                [.] 0x0000000000173606
+     0.13%     0.00%  [unknown]                                 [.] 0x0000000000000006
+     0.13%     0.00%  [unknown]                                 [.] 0x000000000000000a
+     0.13%     0.00%  [unknown]                                 [.] 0x000000000000009e
+     0.13%     0.00%  [unknown]                                 [.] 0x00007fda564ff910
+     0.13%     0.00%  python3.13                                [.] 0x0000000000573606
+     0.13%     0.00%  [unknown]                                 [.] 0x000000000000fe2d
+     0.13%     0.00%  [unknown]                                 [.] 0x000000000000f561
+     0.13%     0.00%  [unknown]                                 [.] 0x000000000000f486
+     0.13%     0.00%  [unknown]                                 [.] 0x000000000000fce5
+     0.13%     0.00%  [unknown]                                 [.] 0x000000000000f6b3
+     0.13%     0.00%  [unknown]                                 [.] 0x00007fda556d1c18
+     0.13%     0.00%  [unknown]                                 [.] 0x000000000000fdbc
+     0.13%     0.00%  [unknown]                                 [.] 0x000000000000fab9
+     0.13%     0.13%  _msprime.cpython-313-x86_64-linux-gnu.so  [.] msp_alloc_segment.isra.0
+     0.13%     0.00%  [unknown]                                 [.] 0x00007fda556ca588
+     0.13%     0.00%  [unknown]                                 [.] 0x00007fda556c5150
+     0.13%     0.00%  [unknown]                                 [.] 0x3ffe9356b0e39f0c
+     0.13%     0.00%  [unknown]                                 [.] 0x00007fda556bbd38
+     0.13%     0.00%  [unknown]                                 [.] 0x0000000000000849
+     0.13%     0.00%  [unknown]                                 [.] 0x000000002cf6a710
+     0.13%     0.00%  [unknown]                                 [.] 0x00007fda55cda800
+     0.13%     0.00%  [unknown]                                 [.] 0x00007fda55cd9d00
+     0.13%     0.00%  [unknown]                                 [.] 0x00007fda55cdb670
+     0.13%     0.00%  [unknown]                                 [.] 0x00007fda55ce0058
+     0.13%     0.00%  [unknown]                                 [.] 0x00007fda55cdefd8
+     0.13%     0.00%  [unknown]                                 [.] 0x00007fda55ce06e0
+     0.13%     0.00%  [unknown]                                 [.] 0x00007fda55cdddf8
+     0.13%     0.00%  [unknown]                                 [.] 0x00007fda55cda908
+     0.13%     0.00%  [unknown]                                 [.] 0x00007fda55cdcb68
+     0.13%     0.00%  [unknown]                                 [.] 0x00007fda55cddae0
+     0.13%     0.00%  [unknown]                                 [.] 0x00007fda55cdbb40
+     0.13%     0.00%  [unknown]                                 [.] 0x00007fda55cdc328
+     0.13%     0.00%  [unknown]                                 [.] 0x00007fda55cdef28
+     0.13%     0.00%  [unknown]                                 [.] 0x00007fda55cdb880
+     0.13%     0.00%  [unknown]                                 [.] 0x00007fda55cdcc70
+     0.13%     0.00%  [unknown]                                 [.] 0x00007fda55cdd090
+     0.13%     0.00%  [unknown]                                 [.] 0x00007fda55cda438
+     0.13%     0.00%  [unknown]                                 [.] 0x00007fda55cdea58
+     0.13%     0.00%  [unknown]                                 [.] 0x00007fda55ce09a0
+     0.13%     0.00%  [unknown]                                 [.] 0x00007fda55ce0688
+     0.13%     0.00%  [unknown]                                 [.] 0x00007fda55cdc698
+     0.13%     0.00%  [unknown]                                 [.] 0x00007fda55ce0268
+     0.13%     0.00%  [unknown]                                 [.] 0x00007fda55cdc068
+     0.13%     0.00%  [unknown]                                 [.] 0x00007fda55cdc590
+     0.13%     0.00%  [unknown]                                 [.] 0x00007fda55ce0c60
+     0.13%     0.00%  [unknown]                                 [.] 0x00007fda55cdf500
+     0.13%     0.00%  [unknown]                                 [.] 0x00007fda55cdc850
+     0.13%     0.00%  [unknown]                                 [.] 0x00007fda55cdda30
+     0.13%     0.00%  [unknown]                                 [.] 0x00007fda55cdd248
+     0.13%     0.00%  [unknown]                                 [.] 0x00007fda55cdaee0
+     0.13%     0.00%  [unknown]                                 [.] 0x00007fda55cda178
+     0.13%     0.00%  [unknown]                                 [.] 0x00007fda55cdf3a0
+     0.13%     0.00%  [unknown]                                 [.] 0x000000000000fc1d
+     0.13%     0.00%  [unknown]                                 [.] 0x000000000000fda0
+     0.13%     0.00%  [unknown]                                 [.] 0x00007fda556cad68
+     0.13%     0.00%  [unknown]                                 [.] 0x000000000000fd0f
+     0.13%     0.00%  [unknown]                                 [.] 0x00007fda556c5658
+     0.13%     0.00%  [unknown]                                 [.] 0x000000000000fb6a
+     0.13%     0.00%  [unknown]                                 [.] 0x407248e147ae147b
+     0.13%     0.00%  [unknown]                                 [.] 0x000000000000f721
+     0.13%     0.00%  [unknown]                                 [.] 0x000000000000fd89
+     0.13%     0.00%  [unknown]                                 [.] 0x000000000000ff83
+     0.13%     0.00%  [unknown]                                 [.] 0x000000000000f764
+     0.13%     0.00%  [unknown]                                 [.] 0x000000000000faee
+     0.13%     0.00%  [unknown]                                 [.] 0x000000000000fcd2
+     0.13%     0.00%  [unknown]                                 [.] 0x00007fda556cfe20
+     0.13%     0.00%  [unknown]                                 [.] 0x00007fda556c6ae8
+     0.13%     0.00%  [unknown]                                 [.] 0x00007fda5621ce98
+     0.13%     0.00%  [unknown]                                 [.] 0x00007fda5623e650
+     0.13%     0.00%  [unknown]                                 [.] 0x00007fda5621a7e0
+     0.13%     0.00%  [unknown]                                 [.] 0x00007fda56233590
+     0.13%     0.00%  [unknown]                                 [.] 0x00007fda56261260
+     0.13%     0.00%  [unknown]                                 [.] 0x00007fda5625d408
+     0.13%     0.00%  [unknown]                                 [.] 0x00007fda5623d5e8
+     0.13%     0.00%  [unknown]                                 [.] 0x00007fda5623f258
+     0.13%     0.00%  [unknown]                                 [.] 0x00007fda56222538
+     0.13%     0.00%  [unknown]                                 [.] 0x00007fda5621fe80
+     0.13%     0.00%  [unknown]                                 [.] 0x00007fda5620e878
+     0.13%     0.00%  [unknown]                                 [.] 0x00007fda562469c8
+     0.13%     0.00%  [unknown]                                 [.] 0x00007fda56217a60
+     0.13%     0.00%  [unknown]                                 [.] 0x00007fda562357e8
+     0.13%     0.00%  [unknown]                                 [.] 0x00007fda56260150
+     0.13%     0.00%  [unknown]                                 [.] 0x00007fda5620e680
+     0.13%     0.00%  [unknown]                                 [.] 0x00007fda5622f8f8
+     0.13%     0.00%  [unknown]                                 [.] 0x00007fda5621f8d0
+     0.13%     0.00%  [unknown]                                 [.] 0x00007fda56231140
+     0.13%     0.00%  [unknown]                                 [.] 0x00007fda56237c38
+     0.13%     0.00%  [unknown]                                 [.] 0x00007fda5623fae0
+     0.13%     0.00%  [unknown]                                 [.] 0x00007fda562472f8
+     0.13%     0.00%  [unknown]                                 [.] 0x00007fda56228e38
+     0.13%     0.00%  [unknown]                                 [.] 0x00007fda56203f60
+     0.13%     0.00%  [unknown]                                 [.] 0x00007fda5624c340
+     0.13%     0.00%  [unknown]                                 [.] 0x00007fda56219318
+     0.13%     0.00%  [unknown]                                 [.] 0x00007fda562120e8
+     0.13%     0.00%  [unknown]                                 [.] 0x00007fda56237fb8
+     0.13%     0.00%  [unknown]                                 [.] 0x00007fda5620c818
+     0.13%     0.00%  [unknown]                                 [.] 0x00007fda5621b3b0
+     0.13%     0.00%  [unknown]                                 [.] 0x00007fda562277b0
+     0.13%     0.00%  [unknown]                                 [.] 0x00007fda5624d4f8
+     0.13%     0.00%  [unknown]                                 [.] 0x00007fda56221dc8
+     0.13%     0.00%  [unknown]                                 [.] 0x00007fda56210910
+     0.13%     0.00%  [unknown]                                 [.] 0x00007fda56228460
+     0.13%     0.00%  [unknown]                                 [.] 0x00007fda5625c640
+     0.13%     0.00%  [unknown]                                 [.] 0x00007fda56229b90
+     0.13%     0.00%  [unknown]                                 [.] 0x00007fda56226240
+     0.13%     0.00%  [unknown]                                 [.] 0x00007fda56245a08
+     0.13%     0.00%  [unknown]                                 [.] 0x00007fda562346d8
+     0.13%     0.00%  [unknown]                                 [.] 0x00007fda56255b48
+     0.13%     0.00%  [unknown]                                 [.] 0x00007fda56264168
+     0.13%     0.00%  [unknown]                                 [.] 0x00007fda56226940
+     0.13%     0.00%  [unknown]                                 [.] 0x00007fda562072c8
+     0.13%     0.00%  [unknown]                                 [.] 0x00007fda562629c8
+     0.13%     0.00%  [unknown]                                 [.] 0x00007fda562554f0
+     0.13%     0.00%  [unknown]                                 [.] 0x00007fda56254a70
+     0.13%     0.00%  [unknown]                                 [.] 0x00007fda56242710
+     0.13%     0.00%  [unknown]                                 [.] 0x00007fda56203c50
+     0.13%     0.00%  [unknown]                                 [.] 0x00007fda5621fa58
+     0.13%     0.00%  [unknown]                                 [.] 0x00007fda562363f0
+     0.13%     0.00%  [unknown]                                 [.] 0x00007fda562370d8
+     0.13%     0.00%  [unknown]                                 [.] 0x00007fda56241c20
+     0.13%     0.00%  [unknown]                                 [.] 0x00007fda56206810
+     0.13%     0.00%  [unknown]                                 [.] 0x00007fda56223798
+     0.13%     0.00%  [unknown]                                 [.] 0x00007fda5624d680
+     0.13%     0.00%  [unknown]                                 [.] 0x00007fda56223760
+     0.13%     0.00%  [unknown]                                 [.] 0x00007fda562462c8
+     0.13%     0.00%  [unknown]                                 [.] 0x00007fda5622c0c0
+     0.13%     0.00%  [unknown]                                 [.] 0x00007fda56259690
+     0.13%     0.00%  [unknown]                                 [.] 0x00007fda56209478
+     0.13%     0.00%  [unknown]                                 [.] 0x00007fda56217398
+     0.13%     0.00%  [unknown]                                 [.] 0x00007fda562089f8
+     0.13%     0.00%  [unknown]                                 [.] 0x00007fda562216c8
+     0.13%     0.00%  [unknown]                                 [.] 0x00007fda561fe2d8
+     0.13%     0.00%  [unknown]                                 [.] 0x00007fda562521f8
+     0.13%     0.00%  [unknown]                                 [.] 0x00007fda561fca20
+     0.13%     0.00%  [unknown]                                 [.] 0x00007fda5621fc88
+     0.13%     0.00%  [unknown]                                 [.] 0x00007fda562351c8
+     0.13%     0.00%  [unknown]                                 [.] 0x00007fda561fee00
+     0.13%     0.00%  [unknown]                                 [.] 0x00007fda5621eb08
+     0.13%     0.00%  [unknown]                                 [.] 0x00007fda56226a90
+     0.13%     0.00%  [unknown]                                 [.] 0x00007fda56262a70
+     0.13%     0.00%  [unknown]                                 [.] 0x00007fda5625a2d0
+     0.13%     0.00%  [unknown]                                 [.] 0x00007fda56225638
+     0.13%     0.00%  [unknown]                                 [.] 0x00007fda5620cea8
+     0.13%     0.00%  [unknown]                                 [.] 0x00007fda5623abb0
+     0.13%     0.00%  [unknown]                                 [.] 0x00007fda56236af0
+     0.13%     0.00%  [unknown]                                 [.] 0x00007fda56239218
+     0.13%     0.00%  [unknown]                                 [.] 0x00007fda5621e7c0
+     0.13%     0.00%  [unknown]                                 [.] 0x00007fda561fedc8
+     0.13%     0.00%  [unknown]                                 [.] 0x00007fda56201de8
+     0.13%     0.00%  [unknown]                                 [.] 0x00007fda56202d70
+     0.13%     0.00%  [unknown]                                 [.] 0x00007fda562262e8
+     0.13%     0.00%  [unknown]                                 [.] 0x00007fda56252380
+     0.13%     0.00%  [unknown]                                 [.] 0x00007fda562328a8
+     0.13%     0.00%  [unknown]                                 [.] 0x00007fda56246b88
+     0.13%     0.00%  [unknown]                                 [.] 0x00007fda562117b8
+     0.13%     0.00%  [unknown]                                 [.] 0x00007fda56233ad0
+     0.13%     0.00%  [unknown]                                 [.] 0x00007fda56214538
+     0.13%     0.00%  [unknown]                                 [.] 0x00007fda5623e378
+     0.13%     0.00%  [unknown]                                 [.] 0x00007fda56243f20
+     0.13%     0.00%  [unknown]                                 [.] 0x00007fda56221818
+     0.13%     0.00%  [unknown]                                 [.] 0x00007fda562318e8
+     0.13%     0.00%  [unknown]                                 [.] 0x00007fda562552c0
+     0.13%     0.00%  [unknown]                                 [.] 0x00007fda5625dde0
+     0.13%     0.00%  [unknown]                                 [.] 0x00007fda56236540
+     0.13%     0.00%  [unknown]                                 [.] 0x00007fda56220e40
+     0.13%     0.00%  [unknown]                                 [.] 0x00007fda56225980
+     0.13%     0.00%  [unknown]                                 [.] 0x00007fda5622a5d8
+     0.13%     0.00%  [unknown]                                 [.] 0x00007fda5621b6c0
+     0.13%     0.00%  [unknown]                                 [.] 0x00007fda56200ed0
+     0.13%     0.00%  [unknown]                                 [.] 0x00007fda5622d3c8
+     0.13%     0.00%  [unknown]                                 [.] 0x00007fda5620b238
+     0.13%     0.00%  [unknown]                                 [.] 0x00007fda56219e08
+     0.13%     0.00%  [unknown]                                 [.] 0x00007fda56205a10
+     0.13%     0.00%  [unknown]                                 [.] 0x00007fda56263480
+     0.13%     0.00%  [unknown]                                 [.] 0x00007fda56249860
+     0.13%     0.00%  [unknown]                                 [.] 0x00007fda5625d3d0
+     0.13%     0.00%  [unknown]                                 [.] 0x00007fda56261b90
+     0.13%     0.00%  [unknown]                                 [.] 0x00007fda56224a68
+     0.13%     0.00%  [unknown]                                 [.] 0x00007fda562076b8
+     0.13%     0.00%  [unknown]                                 [.] 0x00007fda5624d8e8
+     0.13%     0.00%  [unknown]                                 [.] 0x00007fda56222c70
+     0.13%     0.00%  [unknown]                                 [.] 0x00007fda562407c8
+     0.13%     0.00%  [unknown]                                 [.] 0x00007fda5623de00
+     0.13%     0.00%  [unknown]                                 [.] 0x00007fda56245f10
+     0.13%     0.00%  [unknown]                                 [.] 0x00007fda56212eb0
+     0.13%     0.00%  [unknown]                                 [.] 0x00007fda5625dfd8
+     0.13%     0.00%  [unknown]                                 [.] 0x00007fda5622f3b8
+     0.13%     0.00%  [unknown]                                 [.] 0x00007fda56241910
+     0.13%     0.13%  libgsl.so.28.0.0                          [.] 0x0000000000186bd8
+     0.13%     0.00%  libgsl.so.28.0.0                          [.] 0x00007fda5bf86bd8
+     0.13%     0.00%  [unknown]                                 [.] 0x000000000000f78b
+     0.13%     0.00%  [unknown]                                 [.] 0x00007fda556be540
+     0.13%     0.13%  [kernel.kallsyms]                         [k] 0xffffffff86e992fa
+     0.13%     0.00%  [kernel.kallsyms]                         [k] 0xffffffff86fb919f
+     0.13%     0.00%  [kernel.kallsyms]                         [k] 0xffffffff86fa2cb4
+     0.13%     0.00%  [kernel.kallsyms]                         [k] 0xffffffff86f14f99
+     0.13%     0.00%  [kernel.kallsyms]                         [k] 0xffffffff8710a51a
+     0.13%     0.00%  [kernel.kallsyms]                         [k] 0xffffffff87106d5c
+     0.13%     0.00%  [kernel.kallsyms]                         [k] 0xffffffff86e103ff
+     0.13%     0.13%  [kernel.kallsyms]                         [k] 0xffffffff87216549
+     0.13%     0.00%  libc.so.6                                 [.] __brk
+     0.13%     0.00%  [kernel.kallsyms]                         [k] 0xffffffff87c0012f
+     0.13%     0.00%  [kernel.kallsyms]                         [k] 0xffffffff87b08777
+     0.13%     0.00%  [kernel.kallsyms]                         [k] 0xffffffff8718b5ce
+     0.13%     0.00%  [kernel.kallsyms]                         [k] 0xffffffff871a7907
+     0.13%     0.00%  [kernel.kallsyms]                         [k] 0xffffffff871a7335
+     0.13%     0.00%  [kernel.kallsyms]                         [k] 0xffffffff871a53bc
+     0.13%     0.00%  [kernel.kallsyms]                         [k] 0xffffffff8718e488
+     0.13%     0.00%  [kernel.kallsyms]                         [k] 0xffffffff8718dc75
+     0.13%     0.00%  [kernel.kallsyms]                         [k] 0xffffffff871cbc6f
+     0.13%     0.00%  [kernel.kallsyms]                         [k] 0xffffffff87137817
+     0.13%     0.00%  [kernel.kallsyms]                         [k] 0xffffffff871374b9
+     0.13%     0.00%  [kernel.kallsyms]                         [k] 0xffffffff871360d2
+     0.13%     0.00%  [unknown]                                 [.] 0x00007fda556d4a08
+     0.13%     0.00%  [unknown]                                 [.] 0x00007fda556ccbd0
+     0.13%     0.13%  python3.13                                [.] 0x0000000000133407
+     0.13%     0.00%  python3.13                                [.] 0x0000000000533407
+     0.13%     0.00%  [unknown]                                 [.] 0x00007fda556cdc38
+     0.13%     0.00%  [unknown]                                 [.] 0x00007fda556c3f98
+     0.13%     0.13%  python3.13                                [.] 0x00000000001272b7
+     0.13%     0.00%  [unknown]                                 [.] 0x0000000000000800
+     0.13%     0.00%  python3.13                                [.] 0x00000000005272b7
+     0.13%     0.00%  [unknown]                                 [.] 0x00007fda556d1a90
+     0.13%     0.00%  [unknown]                                 [.] 0x000000000000f8ca
+     0.13%     0.00%  [unknown]                                 [.] 0x00000000000005bd
+     0.13%     0.00%  [unknown]                                 [.] 0x000000002cf6a530
+     0.13%     0.13%  python3.13                                [.] 0x0000000000185e00
+     0.13%     0.00%  python3.13                                [.] 0x0000000000585e00
+     0.13%     0.00%  [unknown]                                 [.] 0x00007fda556d5798
+     0.13%     0.00%  [unknown]                                 [.] 0x000000000000f3f1
+     0.13%     0.00%  [unknown]                                 [.] 0x000000000000fb87
+     0.13%     0.00%  [unknown]                                 [.] 0x000000000000fb2e
+     0.13%     0.00%  [unknown]                                 [.] 0x40d0ed0000000000
+     0.13%     0.00%  [unknown]                                 [.] 0x00007fda556d3dc8
+     0.13%     0.00%  [unknown]                                 [.] 0x000000000000fe1c
+     0.13%     0.13%  [kernel.kallsyms]                         [k] 0xffffffff86e103ae
+     0.13%     0.00%  _msprime.cpython-313-x86_64-linux-gnu.so  [.] fenwick_rebuild
+     0.13%     0.00%  [kernel.kallsyms]                         [k] 0xffffffff8710b6b3
+     0.13%     0.00%  [unknown]                                 [.] 0x00007fda556bd938
+     0.13%     0.00%  [unknown]                                 [.] 0x000000000000fb47
+     0.13%     0.00%  [unknown]                                 [.] 0x00007fda556cc038
+     0.13%     0.00%  [unknown]                                 [.] 0x000000000000f6a9
+     0.13%     0.00%  [unknown]                                 [.] 0x000000000000faeb
+     0.13%     0.00%  [unknown]                                 [.] 0x032017cb02550165
+     0.13%     0.00%  [unknown]                                 [.] 0x000000000000f84b
+     0.13%     0.13%  _msprime.cpython-313-x86_64-linux-gnu.so  [.] msp_flush_edges.lto_priv.0
+     0.13%     0.00%  [unknown]                                 [.] 0x00007fda556dc338
+     0.13%     0.00%  [unknown]                                 [.] 0x000000000000fd72
+     0.13%     0.00%  [unknown]                                 [.] 0x000000000000fe5c
+     0.13%     0.00%  [unknown]                                 [.] 0x000000000000ffc5
+     0.13%     0.00%  [unknown]                                 [.] 0x00007fda556b7508
+     0.13%     0.00%  [unknown]                                 [.] 0x000000000000fc71
+     0.13%     0.13%  libgsl.so.28.0.0                          [.] 0x0000000000186bbb
+     0.13%     0.00%  libgsl.so.28.0.0                          [.] 0x00007fda5bf86bbb
+     0.13%     0.13%  python3.13                                [.] PyErr_SetObject
+     0.13%     0.00%  [unknown]                                 [.] 0x00007fda556b6580
+     0.13%     0.13%  [kernel.kallsyms]                         [k] 0xffffffff871b2f37
+     0.13%     0.00%  [unknown]                                 [k] 0x40f45cf000000000
+     0.13%     0.00%  [unknown]                                 [.] 0x000000000000f804
+     0.13%     0.00%  [unknown]                                 [.] 0x00007fda556c66c0
+     0.13%     0.00%  [unknown]                                 [.] 0x0055001e00240155
+     0.13%     0.00%  [unknown]                                 [.] 0x000000000000f65d
+     0.13%     0.13%  python3.13                                [.] 0x00000000001754b3
+     0.13%     0.00%  [unknown]                                 [.] 0x00007fda5cc79e30
+     0.13%     0.00%  [unknown]                                 [.] 0x00007fda5cc79de0
+     0.13%     0.00%  [unknown]                                 [.] 0x00007fda5cc79d90
+     0.13%     0.00%  [unknown]                                 [.] 0x00007fda5cc79d40
+     0.13%     0.00%  [unknown]                                 [.] 0x00007fda5cc79cf0
+     0.13%     0.00%  [unknown]                                 [.] 0x00007fda5cc79ca0
+     0.13%     0.00%  [unknown]                                 [.] 0x00007fda5cc79c50
+     0.13%     0.00%  [unknown]                                 [.] 0x00007fda5cc79c00
+     0.13%     0.00%  [unknown]                                 [.] 0x00007fda5cc79bb0
+     0.13%     0.00%  [unknown]                                 [.] 0x00007fda5cc79b60
+     0.13%     0.00%  [unknown]                                 [.] 0x00007fda5cc79b10
+     0.13%     0.00%  [unknown]                                 [.] 0x00007fda5cc79ac0
+     0.13%     0.00%  [unknown]                                 [.] 0x00007fda5cc79a70
+     0.13%     0.00%  [unknown]                                 [.] 0x00007fda5cc79a20
+     0.13%     0.00%  [unknown]                                 [.] 0x00007fda5cc799d0
+     0.13%     0.00%  [unknown]                                 [.] 0x00007fda5cc79980
+     0.13%     0.00%  [unknown]                                 [.] 0x00007fda5cc79930
+     0.13%     0.00%  [unknown]                                 [.] 0x00007fda5cc798e0
+     0.13%     0.00%  [unknown]                                 [.] 0x00007fda5cc79890
+     0.13%     0.00%  [unknown]                                 [.] 0x00007fda5cc79840
+     0.13%     0.00%  [unknown]                                 [.] 0x00007fda5cc797f0
+     0.13%     0.00%  [unknown]                                 [.] 0x00007fda5cc797a0
+     0.13%     0.00%  [unknown]                                 [.] 0x00007fda5cc79750
+     0.13%     0.00%  [unknown]                                 [.] 0x00007fda5cc79700
+     0.13%     0.00%  [unknown]                                 [.] 0x00007fda5cc796b0
+     0.13%     0.00%  [unknown]                                 [.] 0x00007fda5cc79660
+     0.13%     0.00%  [unknown]                                 [.] 0x00007fda5cc79610
+     0.13%     0.00%  [unknown]                                 [.] 0x00007fda5cc795c0
+     0.13%     0.00%  [unknown]                                 [.] 0x00007fda5cc79570
+     0.13%     0.00%  [unknown]                                 [.] 0x00007fda5cc79520
+     0.13%     0.00%  [unknown]                                 [.] 0x00007fda5cc794d0
+     0.13%     0.00%  [unknown]                                 [.] 0x00007fda5cc79480
+     0.13%     0.00%  [unknown]                                 [.] 0x00007fda5cc79430
+     0.13%     0.00%  [unknown]                                 [.] 0x00007fda5cc793e0
+     0.13%     0.00%  [unknown]                                 [.] 0x00007fda5cc79390
+     0.13%     0.00%  [unknown]                                 [.] 0x00007fda5cc79340
+     0.13%     0.00%  [unknown]                                 [.] 0x00007fda5cc792f0
+     0.13%     0.00%  [unknown]                                 [.] 0x00007fda5cc792a0
+     0.13%     0.00%  [unknown]                                 [.] 0x00007fda5cc79250
+     0.13%     0.00%  [unknown]                                 [.] 0x00007fda5cc79200
+     0.13%     0.00%  [unknown]                                 [.] 0x00007fda5cc791b0
+     0.13%     0.00%  [unknown]                                 [.] 0x00007fda5cc74c30
+     0.13%     0.00%  [unknown]                                 [.] 0x00007fda5cc79110
+     0.13%     0.00%  [unknown]                                 [.] 0x00007fda5cc790c0
+     0.13%     0.00%  [unknown]                                 [.] 0x00007fda5cc79070
+     0.13%     0.00%  [unknown]                                 [.] 0x00007fda5cc79020
+     0.13%     0.00%  [unknown]                                 [.] 0x00007fda5cc78fd0
+     0.13%     0.00%  [unknown]                                 [.] 0x00007fda5cc74bb0
+     0.13%     0.00%  [unknown]                                 [.] 0x00007fda5cc78f30
+     0.13%     0.00%  [unknown]                                 [.] 0x00007fda5cc74b30
+     0.13%     0.00%  [unknown]                                 [.] 0x00007fda5cc74af0
+     0.13%     0.00%  [unknown]                                 [.] 0x00007fda5cc74a70
+     0.13%     0.00%  [unknown]                                 [.] 0x00007fda5cc749f0
+     0.13%     0.00%  [unknown]                                 [.] 0x00007fda5cc749b0
+     0.13%     0.00%  [unknown]                                 [.] 0x00007fda5cc74970
+     0.13%     0.00%  [unknown]                                 [.] 0x00007fda5cc748f0
+     0.13%     0.00%  [unknown]                                 [.] 0x00007fda5cc78ee0
+     0.13%     0.00%  [unknown]                                 [.] 0x00007fda5cc78e90
+     0.13%     0.00%  [unknown]                                 [.] 0x00007fda5cc78e40
+     0.13%     0.00%  [unknown]                                 [.] 0x00007fda5cc78df0
+     0.13%     0.00%  [unknown]                                 [.] 0x00007fda5cc78da0
+     0.13%     0.00%  [unknown]                                 [.] 0x00007fda5cc78d50
+     0.13%     0.00%  [unknown]                                 [.] 0x00007fda5cc78d00
+     0.13%     0.00%  [unknown]                                 [.] 0x00007fda5cc78cb0
+     0.13%     0.00%  [unknown]                                 [.] 0x00007fda5cc74870
+     0.13%     0.00%  [unknown]                                 [.] 0x00007fda5cc74830
+     0.13%     0.00%  [unknown]                                 [.] 0x00007fda5cc747f0
+     0.13%     0.00%  [unknown]                                 [.] 0x00007fda5cc747b0
+     0.13%     0.00%  [unknown]                                 [.] 0x00007fda5cc74730
+     0.13%     0.00%  [unknown]                                 [.] 0x00007fda5cc746f0
+     0.13%     0.00%  [unknown]                                 [.] 0x00007fda5cc746b0
+     0.13%     0.00%  [unknown]                                 [.] 0x00007fda5cc74670
+     0.13%     0.00%  [unknown]                                 [.] 0x00007fda5cc74630
+     0.13%     0.00%  [unknown]                                 [.] 0x00007fda5cc745f0
+     0.13%     0.00%  [unknown]                                 [.] 0x00007fda5cc745b0
+     0.13%     0.00%  [unknown]                                 [.] 0x00007fda5cc74570
+     0.13%     0.00%  [unknown]                                 [.] 0x00007fda5cc74530
+     0.13%     0.00%  [unknown]                                 [.] 0x00007fda5cc744f0
+     0.13%     0.00%  [unknown]                                 [.] 0x00007fda5cc74470
+     0.13%     0.00%  [unknown]                                 [.] 0x00007fda5cc743f0
+     0.13%     0.00%  [unknown]                                 [.] 0x00007fda5cc74370
+     0.13%     0.00%  [unknown]                                 [.] 0x00007fda5cc742f0
+     0.13%     0.00%  [unknown]                                 [.] 0x00007fda5cc74270
+     0.13%     0.00%  [unknown]                                 [.] 0x00007fda5cc78bc0
+     0.13%     0.00%  [unknown]                                 [.] 0x00007fda5cc78b70
+     0.13%     0.00%  [unknown]                                 [.] 0x00007fda5cc78b20
+     0.13%     0.00%  [unknown]                                 [.] 0x00007fda5cc78ad0
+     0.13%     0.00%  [unknown]                                 [.] 0x00007fda5cc78a80
+     0.13%     0.00%  [unknown]                                 [.] 0x00007fda5cc78a30
+     0.13%     0.00%  [unknown]                                 [.] 0x00007fda5cc789e0
+     0.13%     0.00%  [unknown]                                 [.] 0x00007fda5cc78990
+     0.13%     0.00%  [unknown]                                 [.] 0x00007fda5cc78940
+     0.13%     0.00%  [unknown]                                 [.] 0x00007fda5cc788f0
+     0.13%     0.00%  [unknown]                                 [.] 0x00007fda5cc788a0
+     0.13%     0.00%  [unknown]                                 [.] 0x00007fda5cc78850
+     0.13%     0.00%  [unknown]                                 [.] 0x00007fda5cc78800
+     0.13%     0.00%  [unknown]                                 [.] 0x00007fda5cc787b0
+     0.13%     0.00%  [unknown]                                 [.] 0x00007fda5cc78760
+     0.13%     0.00%  [unknown]                                 [.] 0x00007fda5cc741b0
+     0.13%     0.00%  [unknown]                                 [.] 0x00007fda5cc74170
+     0.13%     0.00%  [unknown]                                 [.] 0x00007fda5cc786c0
+     0.13%     0.00%  [unknown]                                 [.] 0x00007fda5cc78670
+     0.13%     0.00%  [unknown]                                 [.] 0x00007fda5cc78620
+     0.13%     0.00%  [unknown]                                 [.] 0x00007fda5cc785d0
+     0.13%     0.00%  [unknown]                                 [.] 0x00007fda5cc78580
+     0.13%     0.00%  [unknown]                                 [.] 0x00007fda5cc78530
+     0.13%     0.00%  [unknown]                                 [.] 0x00007fda5cc784e0
+     0.13%     0.00%  [unknown]                                 [.] 0x00007fda5cc78490
+     0.13%     0.00%  [unknown]                                 [.] 0x00007fda5cc78440
+     0.13%     0.00%  [unknown]                                 [.] 0x00007fda5cc783f0
+     0.13%     0.00%  [unknown]                                 [.] 0x00007fda5cc783a0
+     0.13%     0.00%  [unknown]                                 [.] 0x00007fda5cc78350
+     0.13%     0.00%  [unknown]                                 [.] 0x00007fda5cc78300
+     0.13%     0.00%  [unknown]                                 [.] 0x00007fda5cc782b0
+     0.13%     0.00%  [unknown]                                 [.] 0x00007fda5cc78260
+     0.13%     0.00%  [unknown]                                 [.] 0x00007fda5cc78210
+     0.13%     0.00%  [unknown]                                 [.] 0x00007fda5cc781c0
+     0.13%     0.00%  [unknown]                                 [.] 0x00007fda5cc78170
+     0.13%     0.00%  [unknown]                                 [.] 0x00007fda5cc78120
+     0.13%     0.00%  [unknown]                                 [.] 0x00007fda5cc780d0
+     0.13%     0.00%  [unknown]                                 [.] 0x00007fda5cc78080
+     0.13%     0.00%  [unknown]                                 [.] 0x00007fda5cc740f0
+     0.13%     0.00%  [unknown]                                 [.] 0x00007fda5cc740b0
+     0.13%     0.00%  [unknown]                                 [.] 0x00007fda5cc74070
+     0.13%     0.00%  [unknown]                                 [.] 0x0000000000a56a7c
+     0.13%     0.00%  [unknown]                                 [.] 0x00007fda567f61c0
+     0.13%     0.00%  python3.13                                [.] 0x00000000005754b3
+     0.13%     0.13%  python3.13                                [.] 0x000000000015d57c
+     0.13%     0.00%  python3.13                                [.] 0x000000000055d57c
+     0.13%     0.00%  [unknown]                                 [.] 0x00007fda556ca9b0
+     0.13%     0.00%  [unknown]                                 [.] 0x000000000000fe31
+     0.13%     0.13%  python3.13                                [.] PyModuleDef_Init
+     0.13%     0.00%  [unknown]                                 [.] 0x00007fda5620b2e0
+     0.13%     0.00%  [unknown]                                 [.] 0x00007fda56236c40
+     0.13%     0.00%  [unknown]                                 [.] 0x00007fda5623de38
+     0.13%     0.00%  [unknown]                                 [.] 0x00007fda562091d8
+     0.13%     0.00%  [unknown]                                 [.] 0x00007fda5620a630
+     0.13%     0.00%  [unknown]                                 [.] 0x00007fda562480c0
+     0.13%     0.00%  [unknown]                                 [.] 0x00007fda562646a8
+     0.13%     0.00%  [unknown]                                 [.] 0x00007fda56209248
+     0.13%     0.00%  [unknown]                                 [.] 0x00007fda5620b820
+     0.13%     0.00%  [unknown]                                 [.] 0x00007fda5624c650
+     0.13%     0.00%  [unknown]                                 [.] 0x00007fda562220a0
+     0.13%     0.00%  [unknown]                                 [.] 0x00007fda56233670
+     0.13%     0.00%  [unknown]                                 [.] 0x00007fda5625e3c8
+     0.13%     0.00%  [unknown]                                 [.] 0x00007fda56215798
+     0.13%     0.00%  [unknown]                                 [.] 0x00007fda5622c6e0
+     0.13%     0.00%  [unknown]                                 [.] 0x00007fda56256830
+     0.13%     0.00%  [unknown]                                 [.] 0x00007fda56253ed8
+     0.13%     0.00%  [unknown]                                 [.] 0x00007fda56255fa8
+     0.13%     0.00%  [unknown]                                 [.] 0x00007fda5624a190
+     0.13%     0.00%  [unknown]                                 [.] 0x00007fda5622dcf8
+     0.13%     0.00%  [unknown]                                 [.] 0x00007fda56227548
+     0.13%     0.00%  [unknown]                                 [.] 0x00007fda56211860
+     0.13%     0.00%  [unknown]                                 [.] 0x00007fda5621bf48
+     0.13%     0.00%  [unknown]                                 [.] 0x00007fda561fec08
+     0.13%     0.00%  [unknown]                                 [.] 0x00007fda56225130
+     0.13%     0.00%  [unknown]                                 [.] 0x00007fda5621e440
+     0.13%     0.00%  [unknown]                                 [.] 0x00007fda56246060
+     0.13%     0.00%  [unknown]                                 [.] 0x00007fda562319c8
+     0.13%     0.00%  [unknown]                                 [.] 0x00007fda56238840
+     0.13%     0.00%  [unknown]                                 [.] 0x00007fda5621dbf0
+     0.13%     0.00%  [unknown]                                 [.] 0x00007fda56218908
+     0.13%     0.00%  [unknown]                                 [.] 0x00007fda56252188
+     0.13%     0.00%  [unknown]                                 [.] 0x00007fda5623f290
+     0.13%     0.00%  [unknown]                                 [.] 0x00007fda5620a470
+     0.13%     0.00%  [unknown]                                 [.] 0x00007fda56239b10
+     0.13%     0.00%  [unknown]                                 [.] 0x00007fda5624f520
+     0.13%     0.00%  [unknown]                                 [.] 0x00007fda56207840
+     0.13%     0.00%  [unknown]                                 [.] 0x00007fda5620aa58
+     0.13%     0.00%  [unknown]                                 [.] 0x00007fda562418a0
+     0.13%     0.00%  [unknown]                                 [.] 0x00007fda56204200
+     0.13%     0.00%  [unknown]                                 [.] 0x00007fda56210590
+     0.13%     0.00%  [unknown]                                 [.] 0x00007fda56208608
+     0.13%     0.00%  [unknown]                                 [.] 0x00007fda5622df28
+     0.13%     0.00%  [unknown]                                 [.] 0x00007fda56201528
+     0.13%     0.00%  [unknown]                                 [.] 0x00007fda56214e30
+     0.13%     0.00%  [unknown]                                 [.] 0x00007fda56237ca8
+     0.13%     0.00%  [unknown]                                 [.] 0x00007fda5625ecf8
+     0.13%     0.00%  [unknown]                                 [.] 0x00007fda56218fd0
+     0.13%     0.00%  [unknown]                                 [.] 0x00007fda562562b8
+     0.13%     0.00%  [unknown]                                 [.] 0x00007fda56256fd8
+     0.13%     0.00%  [unknown]                                 [.] 0x00007fda562461e8
+     0.13%     0.00%  [unknown]                                 [.] 0x00007fda5623c200
+     0.13%     0.00%  [unknown]                                 [.] 0x00007fda56209638
+     0.13%     0.00%  [unknown]                                 [.] 0x00007fda5625b418
+     0.13%     0.00%  [unknown]                                 [.] 0x00007fda562517b0
+     0.13%     0.00%  [unknown]                                 [.] 0x00007fda56256168
+     0.13%     0.00%  [unknown]                                 [.] 0x00007fda56221f88
+     0.13%     0.00%  [unknown]                                 [.] 0x00007fda56247b80
+     0.13%     0.00%  [unknown]                                 [.] 0x00007fda5621ca00
+     0.13%     0.00%  [unknown]                                 [.] 0x00007fda5624ee20
+     0.13%     0.00%  [unknown]                                 [.] 0x00007fda56207140
+     0.13%     0.00%  [unknown]                                 [.] 0x00007fda56205498
+     0.13%     0.00%  [unknown]                                 [.] 0x00007fda562172b8
+     0.13%     0.00%  [unknown]                                 [.] 0x00007fda562266a0
+     0.13%     0.00%  [unknown]                                 [.] 0x00007fda56206ff0
+     0.13%     0.00%  [unknown]                                 [.] 0x00007fda5622c1d8
+     0.13%     0.00%  [unknown]                                 [.] 0x00007fda5624f638
+     0.13%     0.00%  [unknown]                                 [.] 0x00007fda56201598
+     0.13%     0.00%  [unknown]                                 [.] 0x00007fda5620a898
+     0.13%     0.00%  [unknown]                                 [.] 0x00007fda562544f8
+     0.13%     0.00%  [unknown]                                 [.] 0x00007fda562515b8
+     0.13%     0.00%  [unknown]                                 [.] 0x00007fda561fd2e0
+     0.13%     0.00%  [unknown]                                 [.] 0x00007fda5621ce28
+     0.13%     0.00%  [unknown]                                 [.] 0x00007fda5622fc08
+     0.13%     0.00%  [unknown]                                 [.] 0x00007fda56239368
+     0.13%     0.00%  [unknown]                                 [.] 0x00007fda562298f0
+     0.13%     0.00%  [unknown]                                 [.] 0x00007fda5624a890
+     0.13%     0.00%  [unknown]                                 [.] 0x00007fda5625f4d8
+     0.13%     0.00%  [unknown]                                 [.] 0x00007fda56263250
+     0.13%     0.00%  [unknown]                                 [.] 0x00007fda5623d8f8
+     0.13%     0.00%  [unknown]                                 [.] 0x00007fda5622a1b0
+     0.13%     0.00%  [unknown]                                 [.] 0x00007fda562386b8
+     0.13%     0.00%  [unknown]                                 [.] 0x00007fda56214df8
+     0.13%     0.00%  [unknown]                                 [.] 0x00007fda5622d630
+     0.13%     0.00%  [unknown]                                 [.] 0x00007fda56255f00
+     0.13%     0.00%  [unknown]                                 [.] 0x00007fda56261b58
+     0.13%     0.00%  [unknown]                                 [.] 0x00007fda5620a1d0
+     0.13%     0.00%  [unknown]                                 [.] 0x00007fda56247678
+     0.13%     0.00%  [unknown]                                 [.] 0x00007fda5624b070
+     0.13%     0.00%  [unknown]                                 [.] 0x00007fda5620c1f8
+     0.13%     0.00%  [unknown]                                 [.] 0x00007fda562508d0
+     0.13%     0.00%  [unknown]                                 [.] 0x00007fda562268d0
+     0.13%     0.00%  [unknown]                                 [.] 0x00007fda56262c68
+     0.13%     0.00%  [unknown]                                 [.] 0x00007fda561ffdc0
+     0.13%     0.00%  [unknown]                                 [.] 0x00007fda5625b450
+     0.13%     0.00%  [unknown]                                 [.] 0x00007fda562237d0
+     0.13%     0.00%  [unknown]                                 [.] 0x00007fda56213ff8
+     0.13%     0.00%  [unknown]                                 [.] 0x00007fda5624aa50
+     0.13%     0.00%  [unknown]                                 [.] 0x00007fda562116a0
+     0.13%     0.00%  [unknown]                                 [.] 0x00007fda562330c0
+     0.13%     0.00%  [unknown]                                 [.] 0x00007fda56236150
+     0.13%     0.00%  [unknown]                                 [.] 0x00007fda562094b0
+     0.13%     0.00%  [unknown]                                 [.] 0x00007fda5624fd00
+     0.13%     0.00%  [unknown]                                 [.] 0x00007fda562613b0
+     0.13%     0.00%  [unknown]                                 [.] 0x00007fda56250588
+     0.13%     0.00%  [unknown]                                 [.] 0x00007fda56244d20
+     0.13%     0.00%  [unknown]                                 [.] 0x00007fda5624e9f8
+     0.13%     0.00%  [unknown]                                 [.] 0x00007fda5622c910
+     0.13%     0.00%  [unknown]                                 [.] 0x00007fda562016b0
+     0.13%     0.00%  [unknown]                                 [.] 0x00007fda56243468
+     0.13%     0.00%  [unknown]                                 [.] 0x00007fda5621ee88
+     0.13%     0.00%  [unknown]                                 [.] 0x00007fda562514d8
+     0.13%     0.00%  [unknown]                                 [.] 0x00007fda56223530
+     0.13%     0.00%  [unknown]                                 [.] 0x00007fda56221310
+     0.13%     0.00%  [unknown]                                 [.] 0x00007fda5620aeb8
+     0.13%     0.00%  [unknown]                                 [.] 0x00007fda5620afd0
+     0.13%     0.00%  [unknown]                                 [.] 0x00007fda5622bec8
+     0.13%     0.00%  [unknown]                                 [.] 0x00007fda56225328
+     0.13%     0.00%  [unknown]                                 [.] 0x00007fda56216db0
+     0.13%     0.00%  [unknown]                                 [.] 0x00007fda5622f348
+     0.13%     0.00%  [unknown]                                 [.] 0x000000000000fe68
+     0.13%     0.00%  [unknown]                                 [.] 0x00007fda556b4bb0
+     0.13%     0.00%  [unknown]                                 [.] 0x000000000000f6b6
+     0.13%     0.00%  [unknown]                                 [.] 0x000000000000fa91
+     0.13%     0.13%  libc.so.6                                 [.] indirect_msort_with_tmp
+     0.13%     0.00%  [unknown]                                 [.] 0x000000000000064b
+     0.13%     0.00%  [unknown]                                 [.] 0x000000000000fdc5
+     0.13%     0.13%  python3.13                                [.] 0x000000000015a612
+     0.13%     0.00%  python3.13                                [.] 0x000000000055a612
+     0.13%     0.00%  [unknown]                                 [.] 0x000000000000038c
+     0.13%     0.00%  [unknown]                                 [.] 0x000000002cf6a590
+     0.13%     0.00%  [unknown]                                 [.] 0x00007fda55ce07e8
+     0.13%     0.00%  [unknown]                                 [.] 0x00007fda55cdc1c8
+     0.13%     0.00%  [unknown]                                 [.] 0x00007fda55cdf190
+     0.13%     0.00%  [unknown]                                 [.] 0x00007fda55ce0000
+     0.13%     0.00%  [unknown]                                 [.] 0x00007fda55cda388
+     0.13%     0.00%  [unknown]                                 [.] 0x00007fda55cde480
+     0.13%     0.00%  [unknown]                                 [.] 0x00007fda55ce0f20
+     0.13%     0.00%  [unknown]                                 [.] 0x00007fda55cdc488
+     0.13%     0.00%  [unknown]                                 [.] 0x00007fda55ce0aa8
+     0.13%     0.00%  [unknown]                                 [.] 0x00007fda55cdfa28
+     0.13%     0.00%  [unknown]                                 [.] 0x00007fda55cdd9d8
+     0.13%     0.13%  [kernel.kallsyms]                         [k] 0xffffffff86f43d1f
+     0.13%     0.00%  [kernel.kallsyms]                         [k] 0xffffffff86fb921c
+     0.13%     0.00%  [kernel.kallsyms]                         [k] 0xffffffff86fb90af
+     0.13%     0.00%  [unknown]                                 [.] 0x00007fda556cc578
+     0.13%     0.00%  [unknown]                                 [.] 0x00007fda556c0ca0
+     0.13%     0.00%  [unknown]                                 [.] 0x0000000000000003
+     0.13%     0.00%  [unknown]                                 [.] 0x00007fda556c3ac8
+     0.13%     0.00%  [unknown]                                 [.] 0x000000000000ff75
+     0.13%     0.00%  [unknown]                                 [.] 0x000000000000f864
+     0.13%     0.00%  [unknown]                                 [.] 0x000000000000fcca
+     0.13%     0.00%  [unknown]                                 [.] 0x00007fda55ce0dc0
+     0.13%     0.00%  [unknown]                                 [.] 0x00007fda55cdba38
+     0.13%     0.00%  [unknown]                                 [.] 0x00007fda55cdbc48
+     0.13%     0.00%  [unknown]                                 [.] 0x00007fda55cdd668
+     0.13%     0.00%  [unknown]                                 [.] 0x000000000000f86a
+     0.13%     0.00%  [unknown]                                 [.] 0x000000000000f686
+     0.13%     0.00%  [unknown]                                 [.] 0x000000000000f79b
+     0.13%     0.00%  [unknown]                                 [.] 0x000000000000fc0c
+     0.13%     0.13%  python3.13                                [.] 0x0000000000177f69
+     0.13%     0.00%  python3.13                                [.] 0x0000000000577f69
+     0.13%     0.00%  [unknown]                                 [.] 0x00007fda556bebd0
+     0.13%     0.00%  [unknown]                                 [.] 0x00007fda556d40a0
+     0.13%     0.13%  python3.13                                [.] 0x0000000000143e18
+     0.13%     0.00%  python3.13                                [.] 0x0000000000543e18
+     0.13%     0.00%  [unknown]                                 [.] 0x000000000000f93f
+     0.13%     0.13%  libc.so.6                                 [.] unlink_chunk.isra.0
+     0.13%     0.00%  [unknown]                                 [.] 0x0000000000000001
+     0.13%     0.00%  [unknown]                                 [.] 0x00007fda556d6d40
+     0.13%     0.00%  [unknown]                                 [.] 0x40e7cc8000000000
+     0.13%     0.00%  [unknown]                                 [.] 0x00007fda556d6c28
+     0.13%     0.00%  [unknown]                                 [.] 0x000000000000fedc
+     0.13%     0.00%  [unknown]                                 [.] 0x000000000000feac
+     0.13%     0.00%  [unknown]                                 [.] 0x40dd3f0000000000
+     0.13%     0.00%  [unknown]                                 [.] 0x000000000000fd52
+     0.13%     0.13%  [kernel.kallsyms]                         [k] 0xffffffff86e96542
+     0.13%     0.00%  [kernel.kallsyms]                         [k] 0xffffffff86fa4648
+     0.13%     0.00%  [kernel.kallsyms]                         [k] 0xffffffff86fa8264
+     0.13%     0.00%  [unknown]                                 [.] 0x40e90ae000000000
+     0.12%     0.00%  [unknown]                                 [.] 0x00007fda556d78a0
+     0.12%     0.12%  libgsl.so.28.0.0                          [.] 0x0000000000186bc5
+     0.12%     0.00%  libgsl.so.28.0.0                          [.] 0x00007fda5bf86bc5
+     0.12%     0.00%  [unknown]                                 [.] 0x000000000000fcb7
+     0.12%     0.00%  [unknown]                                 [.] 0x01010002061e0340
+     0.12%     0.00%  [unknown]                                 [.] 0x000000000000f577
+     0.12%     0.00%  [unknown]                                 [.] 0x000000000000f95c
+     0.11%     0.00%  [unknown]                                 [.] 0x000000000000fbae
+     0.10%     0.00%  [unknown]                                 [.] 0x000000000000f4c1
+     0.02%     0.02%  [kernel.kallsyms]                         [k] 0xffffffff86e992fc
+     0.02%     0.00%  [kernel.kallsyms]                         [k] 0xffffffff87c0164a
+     0.02%     0.00%  [kernel.kallsyms]                         [k] 0xffffffff87b0e43c
+     0.02%     0.00%  [kernel.kallsyms]                         [k] 0xffffffff87b14ae7
+     0.02%     0.00%  [kernel.kallsyms]                         [k] 0xffffffff87b143c2
+     0.02%     0.00%  [kernel.kallsyms]                         [k] 0xffffffff86f0d3e1
+     0.02%     0.00%  [kernel.kallsyms]                         [k] 0xffffffff8710c6da
+     0.02%     0.00%  [kernel.kallsyms]                         [k] 0xffffffff8710467c
+     0.02%     0.00%  [kernel.kallsyms]                         [k] 0xffffffff86e12dcb
+     0.02%     0.00%  [kernel.kallsyms]                         [k] 0xffffffff86e11032
+
+
+#
+# (Tip: To group events which need to be collected together for accuracy use {}: perf record -e {cycles,branches}' ...)
+#

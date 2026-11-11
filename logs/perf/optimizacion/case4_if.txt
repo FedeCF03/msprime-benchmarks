@@ -1,0 +1,19 @@
+# started on Wed Nov 11 15:25:59 2026
+
+
+ Performance counter stats for '/home/fedecf/msprime-benchmarks/.venv/bin/python /home/fedecf/msprime-benchmarks/ms_sim.py 4':
+
+    14,749,218,181      cache-references                                                        (83.32%)
+     2,948,393,381      cache-misses                     #   19.99% of all cache refs           (83.34%)
+   165,463,727,978      cycles                                                                  (83.33%)
+   197,460,924,836      instructions                     #    1.19  insn per cycle              (83.33%)
+    50,933,858,357      branches                                                                (83.33%)
+            13,707      faults                                                                
+                 3      migrations                                                            
+
+      47.841942500 seconds time elapsed
+
+      47.024708000 seconds user
+       0.811874000 seconds sys
+
+

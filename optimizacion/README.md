@@ -6,14 +6,13 @@ msprime 1.4.4. El perfil del caso 1 mostraba `fenwick_increment` (17.7 %) y
 65 536 posiciones del árbol en cada réplica y llama a `fenwick_increment`
 aunque casi todas valgan 0.
 
-El cambio elegido es un `if` de 3 líneas en `fenwick_rebuild`
-(`fenwick_if.patch`) que no llama a la función cuando el valor es 0.
+Se probaron dos cosas, por separado y juntas:
 
-El segundo cambio ataca la causa: el árbol tiene 65 536 posiciones porque
-`ancestry.py` reserva los segmentos en bloques de 64K, y msprime lo vuelve a
-crear en cada réplica (`fenwick_alloc` y `fenwick_rebuild` ponen en cero
-~1.5 MB por réplica, el 9 % del caso 1 en `memset`). `block4k.patch` baja el
-bloque a 4K, una línea.
+- **`if`** (`fenwick_if.patch`): un `if` de 3 líneas en `fenwick_rebuild` que
+  no llama a la función cuando el valor es 0.
+- **LTO**: compilar con `-flto -fno-semantic-interposition`, sin tocar código.
+  Deja que el compilador meta `fenwick_increment` (y otras funciones) adentro
+  de quien las llama, aunque estén en otro archivo.
 
 ---
 
@@ -21,14 +20,13 @@ bloque a 4K, una línea.
 
 ```
 optimizacion/
-├── fenwick_if.patch        # El if, sobre lib/fenwick.c de msprime 1.4.4
-├── block4k.patch           # Bloques de 4K, sobre msprime/ancestry.py de msprime 1.4.4
+├── fenwick_if.patch          # El if, sobre lib/fenwick.c de msprime 1.4.4
 ├── scripts/
-│   ├── setup_variants.py   # Compila las variantes de msprime fuera del repo
-│   ├── measure.py          # Corre los casos con perf stat, una simulación por vez
-│   ├── measure_big.py      # Una simulación grande (una réplica) con perf stat
-│   └── run_ctests.sh       # Compila y corre los tests C de msprime (CUnit)
-└── resultados/             # Mediciones en JSON Lines (una corrida por línea)
+│   ├── setup_variants.py     # Compila las variantes de msprime fuera del repo
+│   ├── profile_perf_opt.sh   # profile_perf.sh con una variante: logs/perf/optimizacion/
+│   ├── measure.py            # Corre los casos con perf stat, una simulación por vez
+│   └── run_ctests.sh         # Compila y corre los tests C de msprime (CUnit)
+└── resultados/               # Mediciones en JSON Lines (una corrida por línea)
 ```
 
 Los scripts trabajan en `~/msprime-opt`: ahí descargan msprime y GSL,
@@ -37,7 +35,59 @@ modifican el msprime del `.venv` del repo.
 
 ## Resultados
 
-Instrucciones ejecutadas (`instructions:u`), `base` → `if`:
+### Perfilado de los 6 casos con `if`, `lto` e `if_lto`
+
+Las mismas corridas de `profile_perf.sh` (mismo Python del `.venv`, mismos
+eventos, `perf record -g -F 99` alrededor de `perf stat`, solo
+`OPENBLAS_NUM_THREADS=1`), con `PYTHONPATH` apuntando a cada variante. Una
+corrida por caso, en orden: casos 1 a 6 con `if`, después con `lto` y después
+con `if_lto` (11/11/2026). Salida en `logs/perf/optimizacion/caseN_<variante>.{txt,data,report.log}`.
+Se comparan contra `logs/perf/caseN.txt` (msprime 1.4.4 de PyPI, 25/10/2026).
+
+Instrucciones ejecutadas (evento `instructions`, incluye las del kernel):
+
+| Caso | Original | `if` | `lto` | `if_lto` |
+|------|----------|------|-------|----------|
+| 1 | 246.3 G | 194.2 G (−21.2 %) | 290.1 G (+17.8 %) * | 246.3 G (0.0 %) * |
+| 2 | 196.8 G | 177.7 G (−9.7 %) | 163.6 G (−16.9 %) | 161.3 G (−18.1 %) |
+| 3 | 301.2 G | 248.1 G (−17.6 %) | 236.4 G (−21.5 %) | 229.9 G (−23.7 %) |
+| 4 | 252.2 G | 197.5 G (−21.7 %) | 189.3 G (−24.9 %) | 182.5 G (−27.6 %) |
+| 5 | 247.0 G | 192.6 G (−22.0 %) | 185.4 G (−24.9 %) | 178.0 G (−27.9 %) |
+| 6 | 33.3 G | 33.4 G (+0.2 %) | 31.3 G (−6.0 %) | 31.3 G (−6.2 %) |
+
+Tiempo y aceleración contra el original:
+
+| Caso | Original | `if` | `lto` | `if_lto` |
+|------|----------|------|-------|----------|
+| 1 | 67.91 s | 51.20 s (1.33x) | 100.12 s (0.68x) * | 101.23 s (0.67x) * |
+| 2 | 51.49 s | 39.14 s (1.32x) | 36.43 s (1.41x) | 37.79 s (1.36x) |
+| 3 | 84.23 s | 59.31 s (1.42x) | 56.94 s (1.48x) | 52.67 s (1.60x) |
+| 4 | 68.69 s | 47.84 s (1.44x) | 45.32 s (1.52x) | 40.91 s (1.68x) |
+| 5 | 67.50 s | 47.18 s (1.43x) | 53.62 s (1.26x) | 39.57 s (1.71x) |
+| 6 | 8.89 s | 7.53 s (1.18x) | 8.52 s (1.04x) | 6.99 s (1.27x) |
+
+\* En el caso 1, `lto` e `if_lto` tuvieron 24.3 y 17.1 millones de fallos de
+página, y pasaron 50.2 y 37.1 s en el kernel. En esa corrida, `malloc`
+devolvía memoria al sistema en cada réplica y la volvía a pedir. El resto de
+las corridas tuvo entre 10 000 y 20 000 fallos de página, como el original.
+El tiempo de usuario de `lto` en el caso 1 (49.9 s) es casi igual al de `if`
+(50.1 s). Con el msprime de PyPI no pasa, y no está claro por qué pasa con
+algunos de los binarios compilados acá.
+
+- **Los tiempos mezclan el cambio con el estado de la máquina.** En el caso 6,
+  `if` ejecuta las mismas instrucciones que el original y tardó 18 % menos: es
+  el día, no el cambio. Para tiempos confiables hace falta una máquina
+  dedicada y correr el original el mismo día.
+- **LTO solo baja más instrucciones que el `if`** en los casos 2 a 5, porque
+  además del Fenwick resuelve otras llamadas entre archivos. `if_lto` suma
+  un poco más.
+- **Resultados de la simulación:** `if`, `lto` e `if_lto` dan el mismo hash
+  que el original (2000 réplicas del caso 1 y 5 del caso 6).
+
+### Instrucciones de usuario, `base` → `if`
+
+Con `measure.py` (`instructions:u`, sin el kernel; umbrales de `malloc`
+fijos para todas las variantes):
 
 | Caso | Instrucciones | Diferencia |
 |------|---------------|------------|
@@ -51,44 +101,6 @@ Instrucciones ejecutadas (`instructions:u`), `base` → `if`:
 - Tiempo del caso 1 con la máquina libre (mediana de 3 rondas): 58.71 → 47.23 s (−19.6 %).
 - Las medias y desvíos de T_MRCA y nº de árboles dan iguales que `base` en los 6 casos.
 - Pasan los tests de msprime: los 8 de C (con `assert` y sanitizers) y 2354 de Python.
-- Los tiempos de los casos 2 a 5 todavía no son confiables: se midieron con la máquina cargada.
-
-### Bloques de 4K
-
-Diferencia con `base` en instrucciones (`instructions:u`) y, entre paréntesis,
-en tiempo. Una corrida por variante y caso, intercaladas, con la máquina algo
-cargada (load average ~2):
-
-| Caso | `if` | `block4k` | `block4k` + `if` |
-|------|------|-----------|------------------|
-| 1 | −21.4 % (−20.9 %) | −43.5 % (−43.3 %) | −44.7 % (−43.9 %) |
-| 2 | −10.2 % (−7.3 %) | −20.7 % (−19.2 %) | −21.4 % (−19.6 %) |
-| 3 | −18.1 % (−13.7 %) | −36.5 % (−34.1 %) | −37.7 % (−36.4 %) |
-| 4 | −22.0 % (−17.8 %) | −44.6 % (−41.3 %) | −46.0 % (−41.9 %) |
-| 5 | −22.3 % (−16.4 %) | −45.0 % (−41.1 %) | −46.5 % (−42.3 %) |
-| 6 | 0.0 % (+0.9 %) | −1.1 % (−3.2 %) | −1.0 % (−2.3 %) |
-
-- El hash de `block4k` es igual al de `base` en todas las réplicas de los 6
-  casos. En ninguno el heap de segmentos pasó del primer bloque de 4096: las
-  posiciones de más del árbol son ceros y sumar 0 no cambia el resultado.
-- Pasan los 2354 tests de Python en `block4k` y `block4k_if`. Los de C no
-  cambian: el bloque se fija en Python y el C de `block4k_if` es el de `if`.
-
-Simulación grande, una réplica (`measure_big.py`, población 10 000,
-recombinación 1e-8):
-
-| Simulación | Semillas | Mismo hash | Instrucciones (media, rango) | Tiempo (media, rango) |
-|------------|----------|------------|------------------------------|-----------------------|
-| 500 muestras, 5e7 pb (hasta ~32K segmentos) | 6 | 0 de 6 | +0.2 % (−1.3 a +1.9) | +2.9 % (−5.9 a +10.7) |
-| 2000 muestras, 1e8 pb (~64K segmentos o más) | 3 | 0 de 3 | +0.8 % (−0.7 a +2.2) | +3.3 % (+2.0 a +4.4) |
-
-- No hay costo medible en instrucciones: las diferencias van para los dos
-  lados porque cada variante simula otra realización.
-- Cuando el heap pasa de 4096 segmentos, `block4k` da otra tree sequence con
-  la misma semilla: los segmentos nuevos toman otros ids, que son su posición
-  en el árbol de Fenwick, y el mismo número aleatorio elige otro segmento.
-- No se midieron simulaciones con millones de segmentos, donde el heap
-  crecería de a 4096 y copiaría el árbol entero en cada expansión.
 
 ## Cómo reproducir
 
@@ -100,11 +112,21 @@ python3 optimizacion/scripts/setup_variants.py
 
 Descarga el sdist de msprime 1.4.4 y los paquetes de GSL (se extraen con
 `dpkg -x`, sin instalarlos), crea un entorno en `~/msprime-opt/build/venv` y
-compila `base`, `inline`, `symbolic`, `lto`, `if`, `force`, `native`,
-`block4k`, `block4k_if` y `pgo`. `block4k` copia `base` y cambia solo
-`ancestry.py`. Si se corta, retoma donde quedó.
+compila `base`, `inline`, `symbolic`, `lto`, `if_lto`, `if`, `force`,
+`native` y `pgo`. Si se corta, retoma donde quedó.
 
-### 2. Medir
+### 2. Perfilar como `profile_perf.sh`
+
+```bash
+optimizacion/scripts/profile_perf_opt.sh if          # casos 1 a 6 con el if
+optimizacion/scripts/profile_perf_opt.sh lto 1 6     # solo los casos 1 y 6
+REPS=3 optimizacion/scripts/profile_perf_opt.sh if_lto
+```
+
+Necesita `sudo` para `perf`. Escribe `logs/perf/optimizacion/caseN_<variante>.txt`,
+`.data` y `.report.log`.
+
+### 3. Medir con `perf stat`
 
 ```bash
 python3 optimizacion/scripts/measure.py
@@ -114,13 +136,7 @@ Necesita `sudo` sin contraseña para `perf`. Las variantes, los casos, las
 rondas y los casos con hash se eligen editando las constantes del principio
 (`VARIANTS`, `CASES`, `ROUNDS`, `HASH_VARIANTS`, `HASH_CASES`).
 
-La simulación grande recibe muestras, largo y semillas:
-
-```bash
-cd optimizacion/scripts && ~/msprime-opt/build/venv/bin/python measure_big.py 500 5e7 1,2,3,4,5 base block4k
-```
-
-### 3. Tests de msprime
+### 4. Tests de msprime
 
 Los tests C necesitan CUnit en `~/msprime-opt/build/cunit`:
 
@@ -149,9 +165,6 @@ cd ~/msprime-opt/build/v_if && PYTHONPATH=$PWD ../testvenv/bin/python -m pytest 
 | `hashes2.jsonl` | Hash y cantidad de rebuilds de Fenwick por caso, sobre parte de las réplicas |
 | `results_if_maquina_cargada.jsonl` | `base` e `if` en los 6 casos, una corrida, máquina cargada |
 | `results_if.jsonl` | `base` e `if` en los 6 casos, segunda corrida |
-| `results_block4k.jsonl` | `base`, `if`, `block4k` y `block4k_if` en los 6 casos, una corrida |
-| `hashes_block4k.jsonl` | Hash de todas las réplicas de los 6 casos y bloques de segmentos usados, en `base` y `block4k` |
-| `results_big.jsonl` | Simulaciones grandes: contadores, hash de las tablas y bloques usados, por semilla |
 
 `results.jsonl`, `hashes.jsonl` y `hashes2.jsonl` incluyen también variantes
 que se probaron y se descartaron. Las de Fenwick son `base`, `inline`, `force`
